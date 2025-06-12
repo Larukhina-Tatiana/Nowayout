@@ -1,0 +1,13 @@
+body {
+  margin: 0;
+  font-family: "MADE Outer Sans", Arial, sans-serif;
+  background: #000;
+  color: #f7f5f9;
+}
+
+.page {
+  min-width: 1920px;
+  background: #000;
+}
+
+/* Здесь будут стили по БЭМ для блоков макета */
