@@ -1,3 +1,5 @@
+import TransferElements from "./utils/TransferElements";
+
 $(function () {
   $(".header__location-btn")
     .off("click")
@@ -23,4 +25,56 @@ $(function () {
       $(".header__location").removeClass("is-open");
     }
   });
+
+  // Mobile menu logic
+  var burgerButton = $(".header__burger");
+  var mobileMenu = $(".header__mobile-menu");
+  var mobileMenuCloseButton = $(".header__mobile-menu-close");
+  var headerLocation = $(".header__location")[0];
+  var headerPhone = $(".header__phone")[0];
+  var headerNav = $(".header__nav")[0];
+
+  if (mobileMenu.length && headerLocation && headerPhone && headerNav) {
+    new TransferElements(
+      {
+        sourceElement: headerLocation,
+        breakpoints: {
+          1570: {
+            targetElement: mobileMenu[0],
+            targetPosition: 0,
+          },
+        },
+      },
+      {
+        sourceElement: headerPhone,
+        breakpoints: {
+          1570: {
+            targetElement: mobileMenu[0],
+            targetPosition: 1,
+          },
+        },
+      },
+      {
+        sourceElement: headerNav,
+        breakpoints: {
+          1570: {
+            targetElement: mobileMenu[0],
+            targetPosition: 2,
+          },
+        },
+      }
+    );
+  } else {
+    console.error(
+      "Ошибка: Один или несколько элементов хедера для TransferElements не найдены в DOM"
+    );
+  }
+
+  function toggleMobileMenu() {
+    mobileMenu.toggleClass("is-open");
+    $("body").toggleClass("no-scroll");
+  }
+
+  burgerButton.on("click", toggleMobileMenu);
+  mobileMenuCloseButton.on("click", toggleMobileMenu);
 });

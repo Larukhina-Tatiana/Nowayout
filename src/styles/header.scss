@@ -11,7 +11,7 @@
   -webkit-backdrop-filter: blur(26px);
   backdrop-filter: blur(26px);
   flex-shrink: 0;
-  // isolation: isolate;
+
 
   &__container {
     max-width: $container-width;
@@ -31,8 +31,12 @@
   }
 
   &__logo {
-    width: clamp(8rem, 6.963rem + 5.19vw, 12.5rem);
-    height: clamp(1.313rem, 1.125rem + 0.94vw, 2.125rem);
+    flex-shrink: 0;
+
+    &-img {
+      width: clamp(8rem, 6.963rem + 5.19vw, 12.5rem);
+      height: clamp(1.313rem, 1.125rem + 0.94vw, 2.125rem);
+    }
   }
 
 

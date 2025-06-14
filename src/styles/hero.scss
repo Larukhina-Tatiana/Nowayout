@@ -30,8 +30,8 @@
   &::after {
     content: '';
     position: absolute;
-    width: 221px;
-    height: 221px;
+    width: clamp(6.313rem, 4.583rem + 8.65vw, 13.813rem);
+    height: clamp(6.313rem, 4.583rem + 8.65vw, 13.813rem);
     bottom: 26%;
     right: 12%;
     background-image: url('../assets/images/travellers-choince.svg');
@@ -42,7 +42,7 @@
   .hero__content {
     padding-top: 237px;
     padding-bottom: 301px;
-    max-width: 720px;
+    max-width: clamp(18.188rem, 12.006rem + 30.91vw, 45rem);
 
   }
 
