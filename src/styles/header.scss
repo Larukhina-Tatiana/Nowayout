@@ -30,6 +30,11 @@
     gap: $header-wrapper;
   }
 
+  &__logo {
+    width: clamp(8rem, 6.963rem + 5.19vw, 12.5rem);
+    height: clamp(1.313rem, 1.125rem + 0.94vw, 2.125rem);
+  }
+
 
 
   &__nav {
