@@ -13,7 +13,7 @@ module.exports = (env, argv) => {
     entry: "./src/js/index.js",
     output: {
       filename: "bundle.js",
-      path: path.resolve(__dirname, "dist"),
+      path: path.resolve(__dirname, "docs"),
       publicPath: "/",
       clean: true,
     },
@@ -35,6 +35,15 @@ module.exports = (env, argv) => {
             {
               loader: "css-loader",
               options: {
+                sourceMap: true,
+              },
+            },
+            {
+              loader: "postcss-loader",
+              options: {
+                postcssOptions: {
+                  plugins: [["autoprefixer"]],
+                },
                 sourceMap: true,
               },
             },
@@ -186,7 +195,7 @@ module.exports = (env, argv) => {
     },
     devtool: "source-map",
     devServer: {
-      static: "./dist",
+      static: "./docs",
       open: true,
     },
   };
