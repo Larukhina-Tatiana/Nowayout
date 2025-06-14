@@ -9,12 +9,18 @@
 
   &__light-bg {
     position: absolute;
-    top: 0;
-    left: 238px;
+    top: auto;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
     width: 1208px;
     height: 603px;
     // background: radial-gradient(at center, rgba(199, 150, 82, 0.33) 0%, rgba(0, 0, 0, 0) 100%);
     background-image: url(../assets/images/footer-bg.png);
+
+
+    // background-size: contain;
+    background-repeat: no-repeat;
     pointer-events: none;
     z-index: 0;
 
@@ -26,14 +32,6 @@
     justify-content: space-between;
     align-items: flex-start;
     padding-bottom: 48px;
-
-    @media (max-width: 1024px) {
-      flex-direction: column;
-      align-items: center;
-      gap: 40px;
-      padding-bottom: 30px;
-      text-align: center;
-    }
   }
 
 
@@ -46,11 +44,6 @@
       flex-direction: column;
       align-items: flex-start;
       gap: 72px; // 191.71 - 119.71
-
-      @media (max-width: 1024px) {
-        align-items: center;
-        gap: 30px;
-      }
     }
   }
 
@@ -58,10 +51,6 @@
     line-height: 1.714;
     color: $footer-text;
     max-width: 257px; // From Figma: Impressum text block width
-
-    @media (max-width: 1024px) {
-      max-width: 100%;
-    }
   }
 
   &__nav {
@@ -70,40 +59,16 @@
     font-size: 18px;
     font-weight: 500;
 
-    @media (max-width: 1024px) {
-      flex-direction: column;
-      gap: 30px;
-      font-size: 14px;
-      text-align: center;
-    }
-
-    &-column {
-      @media (max-width: 1024px) {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 24px;
-      }
-    }
 
     &-title {
       line-height: 1.256;
       margin-bottom: 24px;
-
-      @media (max-width: 1024px) {
-        display: none; // Hide titles on mobile
-      }
     }
 
     &-list {
       display: flex;
       flex-direction: column;
       gap: 24px;
-
-      @media (max-width: 1024px) {
-        flex-direction: column; // Keep as column
-        gap: 15px; // Smaller gap for mobile list items
-      }
     }
 
     &-text {
@@ -128,10 +93,6 @@
 
   &__lang-switcher {
     display: flex;
-
-    @media (max-width: 1024px) {
-      margin-bottom: 20px;
-    }
   }
 
   &__lang-btn {
@@ -162,10 +123,6 @@
     justify-content: space-between;
     align-items: center;
 
-    @media (max-width: 1024px) {
-      flex-direction: column;
-      gap: 20px; // Gap between copyright, legal, and social
-    }
   }
 
   &__payment {
@@ -173,12 +130,6 @@
     align-items: center;
     gap: 28px; // 113 from start to 141 (first icon) 
     margin-bottom: 105px;
-
-    @media (max-width: 1024px) {
-      flex-direction: column;
-      gap: 15px; // Gap between text and icons
-      margin-bottom: 30px; // Adjust margin for mobile
-    }
 
     &-text {
       line-height: 1.714;
@@ -213,23 +164,11 @@
   &__copyright-bottom {
     line-height: 1.714;
     color: $footer-text;
-
-    @media (max-width: 1024px) {
-      order: 3; // Move copyright to the bottom
-      text-align: center;
-      margin-top: 20px;
-    }
   }
 
   &__legal-links {
     display: flex;
     gap: 30px;
-
-    @media (max-width: 1024px) {
-      order: 2; // Move legal links after social media
-      justify-content: center;
-      gap: 15px; // Smaller gap for mobile
-    }
   }
 
   &__legal-link {
@@ -249,11 +188,6 @@
     display: flex;
     gap: 38px;
     align-items: center;
-
-    @media (max-width: 1024px) {
-      order: 1; // Social media first in the bottom section
-      gap: 20px; // Smaller gap for mobile
-    }
   }
 
   &__social-link {
@@ -274,6 +208,85 @@
       &:hover {
         fill: $color-text-main;
       }
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .footer {
+    padding-top: 60px;
+    padding-bottom: 60px;
+
+    &__main {
+      flex-direction: column;
+      align-items: center;
+      gap: 40px;
+      padding-bottom: 30px;
+      text-align: center;
+    }
+
+    &__logo-section {
+      align-items: center;
+      gap: 30px;
+    }
+
+    &__impressum {
+      max-width: 100%;
+    }
+
+    &__nav {
+      flex-direction: column;
+      gap: 30px;
+      font-size: 14px;
+      text-align: center;
+
+      &-column {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 24px;
+      }
+
+      &-title {
+        display: none; // Hide titles on mobile
+      }
+
+      &-list {
+        flex-direction: column; // Keep as column
+        gap: 15px; // Smaller gap for mobile list items
+      }
+    }
+
+    &__lang-switcher {
+      margin-bottom: 20px;
+    }
+
+    &__bottom {
+      flex-direction: column;
+      gap: 20px; // Gap between copyright, legal, and social
+    }
+
+    &__payment {
+      flex-direction: column;
+      gap: 15px; // Gap between text and icons
+      margin-bottom: 30px; // Adjust margin for mobile
+    }
+
+    &__copyright-bottom {
+      order: 3; // Move copyright to the bottom
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    &__legal-links {
+      order: 2; // Move legal links after social media
+      justify-content: center;
+      gap: 15px; // Smaller gap for mobile
+    }
+
+    &__social-list {
+      order: 1; // Social media first in the bottom section
+      gap: 20px; // Smaller gap for mobile
     }
   }
 }
