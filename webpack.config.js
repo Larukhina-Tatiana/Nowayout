@@ -31,11 +31,14 @@ module.exports = (env, argv) => {
         {
           test: /\.(css|scss)$/i,
           use: [
-            {
-              loader: isDevelopment
-                ? "style-loader"
-                : MiniCssExtractPlugin.loader,
-            },
+            isDevelopment
+              ? { loader: "style-loader" }
+              : {
+                  loader: MiniCssExtractPlugin.loader,
+                  options: {
+                    publicPath: "../",
+                  },
+                },
             {
               loader: "css-loader",
               options: {
