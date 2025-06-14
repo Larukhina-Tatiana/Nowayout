@@ -1,0 +1,79 @@
+@use "./utils/vars.scss" as *;
+
+.hero {
+  position: relative;
+  min-height: 999px;
+  background-image: -webkit-image-set(url(../assets/images/hero1@1x.jpg) type("image/jpeg") 1x,
+      url(../assets/images/hero1@2x.jpg) type("image/jpeg") 2x,
+      url(../assets/images/hero1@3x.jpg) type("image/jpeg") 3x,
+      url(../assets/images/hero1@1x.webp) type("image/webp") 1x,
+      url(../assets/images/hero1@2x.webp) type("image/webp") 2x,
+      url(../assets/images/hero1@3x.webp) type("image/webp") 3x,
+      url(../assets/images/hero1@1x.avif) type("image/avif") 1x,
+      url(../assets/images/hero1@2x.avif) type("image/avif") 2x,
+      url(../assets/images/hero1@3x.avif) type("image/avif") 3x);
+  background-image: image-set(url(../assets/images/hero1@1x.jpg) 1x,
+      url(../assets/images/hero1@2x.jpg) 2x,
+      url(../assets/images/hero1@3x.jpg) 3x,
+      url(../assets/images/hero1@1x.webp) type("image/webp") 1x,
+      url(../assets/images/hero1@2x.webp) type("image/webp") 2x,
+      url(../assets/images/hero1@3x.webp) type("image/webp") 3x,
+      url(../assets/images/hero1@1x.avif) type("image/avif") 1x,
+      url(../assets/images/hero1@2x.avif) type("image/avif") 2x,
+      url(../assets/images/hero1@3x.avif) type("image/avif") 3x);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding-bottom: 40px;
+
+
+  &::after {
+    content: '';
+    position: absolute;
+    width: 221px;
+    height: 221px;
+    bottom: 26%;
+    right: 12%;
+    background-image: url('../assets/images/travellers-choince.svg');
+    z-index: 1;
+  }
+
+
+  .hero__content {
+    padding-top: 237px;
+    padding-bottom: 301px;
+    max-width: 720px;
+
+  }
+
+  .hero__title {
+    font-weight: 500;
+    font-size: 80px;
+    line-height: 1.0625;
+    margin-bottom: 21px;
+  }
+
+  .hero__description {
+    font-size: 24px;
+    line-height: 1.41666;
+    margin-bottom: 32px;
+  }
+
+  .hero__btn {
+    display: inline-block;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url("../assets/images/button.png");
+    font-weight: 500;
+    padding: 21px 30px;
+    text-align: center;
+    cursor: pointer;
+    border: none;
+    @include transition(transform);
+
+    &:hover {
+      transform: scale(1.3);
+    }
+  }
+}

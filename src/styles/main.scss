@@ -1,0 +1,17 @@
+@use "./utils/modern-normalize.min" as *;
+@use "./utils/vars.scss" as *;
+@use "./utils/fonts.scss" as *;
+@use "./utils/global.scss" as *;
+@use "./header.scss";
+@use "./hero.scss";
+@use "./footer.scss";
+@use "./rooms.scss";
+
+.page {
+  min-width: $container-width;
+  background: $color-bg;
+}
+
+main {
+  flex-grow: 1;
+}

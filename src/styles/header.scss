@@ -1,0 +1,280 @@
+@use './utils/vars.scss' as *;
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  background: $color-bg-header;
+  font-weight: 500;
+  padding-inline: $header-padding-x;
+
+
+  &__container {
+    max-width: $container-width;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: $header-height;
+    gap: $header-contacts-gap;
+  }
+
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: $header-wrapper;
+  }
+
+
+
+  &__nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: $header-menu-gap;
+
+  }
+
+  &__menu {
+    display: flex;
+    align-items: center;
+    gap: $header-menu-gap;
+
+    &-divider {
+      width: 1px;
+      height: 32px;
+      background: $color-header-border;
+      margin: 0 0;
+    }
+  }
+
+  &__link {
+    padding: 23px 30px;
+    transition: color 0.2s;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    @include transition($transition-property: color);
+
+    @media (any-hover: hover) {
+      &:hover {
+        color: $color-accent;
+
+        .header__icon {
+          fill: $color-accent;
+        }
+      }
+    }
+  }
+
+  &__contacts-group {
+    display: flex;
+    align-items: center;
+    gap: $header-contacts-gap;
+  }
+
+  &__contacts {
+    display: flex;
+    align-items: center;
+    // gap: $header-menu-gap;
+  }
+
+  &__location {
+    position: relative;
+
+    &-btn {
+      background: none;
+      border: none;
+      color: inherit;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      padding: 0;
+      @include transition($transition-property: color);
+
+      @media (any-hover: hover) {
+        &:hover {
+          color: $color-accent;
+        }
+      }
+    }
+
+    &-arrow {
+      margin-left: 4px;
+      width: 10px;
+      height: 5px;
+      flex-shrink: 0;
+      @include transition($transition-property: (transform, color));
+    }
+
+    &.is-open &-arrow {
+      transform: rotate(180deg);
+    }
+
+    &-current {
+      margin: 0 6px;
+      font-weight: 500;
+      flex-shrink: 0;
+    }
+
+    &-list {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      min-width: 120px;
+      background: $color-bg-header;
+      border: 1px solid $color-header-border;
+      border-radius: 4px;
+      z-index: 10;
+      margin: 4px 0 0 0;
+      padding: 0;
+      user-select: none;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    }
+
+    &-item {
+      padding: 8px 16px;
+      cursor: pointer;
+      color: $color-text-main;
+      transition: background 0.2s;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      height: 61px;
+      @include transition($transition-property: color);
+
+      @media (any-hover: hover) {
+        &:hover {
+          color: $color-accent;
+        }
+      }
+    }
+  }
+
+  &__phone {
+    display: flex;
+    align-items: center;
+    gap: $header-lang-gap;
+    font-weight: 500;
+    @include transition($transition-property: color);
+
+    @media (any-hover: hover) {
+      &:hover {
+        color: $color-accent;
+      }
+    }
+
+    .header__icon {
+      @include transition($transition-property: fill);
+    }
+  }
+
+  &__icon {
+    display: inline-block;
+    fill: currentColor;
+    vertical-align: middle;
+    flex-shrink: 0;
+
+    &--width {
+      width: 60px;
+      height: 18px;
+    }
+  }
+
+  &__city {
+    font-weight: 500;
+  }
+
+  &__phone-link {
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s;
+
+    @media (any-hover: hover) {
+      &:hover {
+        color: $color-accent;
+      }
+    }
+  }
+
+  &__lang {
+    &-switcher {
+      display: flex;
+      align-items: center;
+      width: 84px;
+      height: 35px;
+      border: 1px solid $color-header-border;
+    }
+
+
+    &-btn {
+      padding: 4px 9px;
+      cursor: pointer;
+      background: transparent;
+      border: none;
+      padding: 6.5px 10px;
+      cursor: pointer;
+      width: 42px;
+      height: 35px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      @include transition($transition-property: background);
+
+      &:first-child {
+        border-right: 1px solid $color-header-border;
+      }
+
+      &--active {
+        background: $color-header-lang-btn-hover;
+
+        .header__lang-icon {
+          opacity: 1;
+        }
+      }
+
+      &:not(.header__lang-btn--active) {
+        .header__lang-icon {
+          opacity: 0.3;
+        }
+      }
+
+      @media (any-hover: hover) {
+        &:hover {
+          background: $color-header-lang-btn-hover;
+        }
+      }
+    }
+
+    &-icon {
+      width: 22px;
+      height: 22px;
+    }
+  }
+
+  &__burger {
+    background: none;
+    border: none;
+    padding: 8px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background 0.2s;
+    display: flex;
+    align-items: center;
+    fill: $color-text-main;
+
+    @media (any-hover: hover) {
+
+      &:hover {
+        background: $color-header-lang-btn-hover;
+      }
+    }
+  }
+}
+
+.header__location.is-open .header__location-list {
+  display: block;
+}

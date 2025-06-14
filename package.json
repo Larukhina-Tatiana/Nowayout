@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
+    "convert-images": "node scripts/convert-images.js",
+    "start": "webpack serve --mode=development",
+    "build": "webpack --mode=production",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -10,11 +13,31 @@
   "license": "ISC",
   "description": "",
   "devDependencies": {
+    "copy-webpack-plugin": "^13.0.0",
     "css-loader": "^7.1.2",
+    "css-minimizer-webpack-plugin": "^7.0.2",
+    "events": "^3.3.0",
     "html-webpack-plugin": "^5.6.3",
+    "image-minimizer-webpack-plugin": "^4.1.3",
+    "imagemin": "^9.0.1",
+    "imagemin-avif": "^0.1.6",
+    "imagemin-jpegtran": "^8.0.0",
+    "imagemin-optipng": "^8.0.0",
+    "imagemin-webp": "^8.0.0",
     "jquery": "^3.7.1",
+    "mini-css-extract-plugin": "^2.9.2",
+    "resolve-url-loader": "^5.0.0",
+    "sass": "^1.89.2",
+    "sass-loader": "^16.0.5",
+    "sharp": "^0.34.2",
     "style-loader": "^4.0.0",
+    "svgo-loader": "^4.0.0",
     "webpack": "^5.99.9",
-    "webpack-cli": "^6.0.1"
+    "webpack-cli": "^6.0.1",
+    "webpack-dev-server": "^5.2.2"
+  },
+  "dependencies": {
+    "svg-sprite-loader": "^6.0.11",
+    "swiper": "^11.2.8"
   }
 }

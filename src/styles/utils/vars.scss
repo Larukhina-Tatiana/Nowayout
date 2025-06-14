@@ -1,0 +1,39 @@
+// Цвета
+$color-bg: #000;
+$color-bg-header: #121212;
+$color-text-main: #F7F5F9;
+$color-accent: #E50012;
+$color-header-link-hover: #E50012;
+$color-header-lang-btn-hover: rgba(255, 255, 255, 0.08);
+$color-header-border: rgba(255, 255, 255, 0.15);
+$color-header-secondary: #F0F0F0;
+$color-header-uk-blue: #0052B4;
+$color-header-de-black: #000;
+$color-header-de-red: #DD0000;
+$color-header-de-yellow: #FFCE00;
+$footer-text: rgba(255, 255, 255, 0.5);
+
+// Шрифты
+$font-main: 'MADE Outer Sans', Arial, sans-serif;
+$font-logo: 'MADE Outer Sans', Arial, sans-serif;
+$font-title: 'MADE Outer Sans', Arial, sans-serif;
+$font-secondary: 'Morganite', Arial, sans-serif;
+
+// Размеры и отступы
+$container-width: 1920px;
+$header-height: 64px;
+$header-padding-x: 40px;
+$header-logo-gap: 16px;
+$header-wrapper: 30px;
+$header-menu-gap: 43px;
+$header-contacts-gap: 32px;
+$header-lang-gap: 8px;
+$header-margin-left: 30px;
+$header-lang-margin-left: 32px;
+$header-burger-margin-left: 32px;
+
+
+@mixin transition ($transition-property: color, $transition-duration: 300ms, $transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1)) {
+  transition-duration: $transition-duration;
+  transition-timing-function: $transition-timing-function;
+}
