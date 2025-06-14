@@ -29,10 +29,6 @@ $(function () {
     document.documentElement.scrollTop = 0;
     document.body.scrollTop = 0;
     window.scrollTo(0, 0);
-    console.log(
-      "Reset Scroll Function Called. Current scrollTop:",
-      $(window).scrollTop()
-    );
   }
 
   // Call on DOM ready

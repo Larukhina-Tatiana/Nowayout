@@ -14,7 +14,7 @@ module.exports = (env, argv) => {
     output: {
       filename: "bundle.js",
       path: path.resolve(__dirname, "docs"),
-      publicPath: "/Nowayout/",
+      publicPath: ".",
       clean: true,
     },
     resolve: {
