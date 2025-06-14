@@ -153,6 +153,11 @@ module.exports = (env, argv) => {
             to: "assets/images/rooms/[name][ext]",
             noErrorOnMissing: true,
           },
+          {
+            from: "src/assets/images/*.svg",
+            to: "assets/images/[name][ext]",
+            noErrorOnMissing: true,
+          },
         ],
       }),
       new SpriteLoaderPlugin(),

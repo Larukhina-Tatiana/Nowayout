@@ -94,7 +94,7 @@ section {
   &__inner {
     width: 100%;
     height: 100%;
-    background-image: url("~@images/go-to-top.png");
+    // background-image: url("~@images/go-to-top.png");
     background-repeat: no-repeat;
     background-position: center;
     @include transition($transition-property: transform);
