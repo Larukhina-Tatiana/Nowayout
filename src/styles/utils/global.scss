@@ -58,7 +58,8 @@ body {
   height: 100%;
   display: flex;
   flex-direction: column;
-  overflow-x: hidden;
+  overflow: hidden;
+  overflow-y: scroll;
   // font-size: clamp(0.75rem, 0.556rem + 0.86vw, 1.25rem);
 }
 

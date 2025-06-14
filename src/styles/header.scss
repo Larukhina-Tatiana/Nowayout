@@ -1,14 +1,17 @@
 @use './utils/vars.scss' as *;
 
 .header {
-  position: sticky;
+  position: fixed;
   top: 0;
   z-index: 1000;
   width: 100%;
   background: $color-bg-header;
   font-weight: 500;
   padding-inline: $header-padding-x;
-
+  -webkit-backdrop-filter: blur(26px);
+  backdrop-filter: blur(26px);
+  flex-shrink: 0;
+  // isolation: isolate;
 
   &__container {
     max-width: $container-width;
