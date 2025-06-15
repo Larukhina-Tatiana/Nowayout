@@ -3,16 +3,19 @@
 .header {
   position: fixed;
   top: 0;
-  z-index: 1000;
-  width: 100%;
-  background: $color-bg-header;
-  font-weight: 500;
-  padding-inline: $header-padding-x;
-  -webkit-backdrop-filter: blur(26px);
-  backdrop-filter: blur(26px);
-  flex-shrink: 0;
   height: 63px;
-  border-bottom: 1px solid hsla(0, 0%, 100%, .15);
+  z-index: 1000;
+  background: rgba($color-bg-header, .5);
+  width: 100%;
+  font-weight: 500;
+  @include transition($transition-property: (background, backdrop-filter, border-bottom));
+
+  &.is-active {
+    background: $color-bg-header; // Фон при прокрутке
+    -webkit-backdrop-filter: blur(26px); // Блюр при прокрутке
+    backdrop-filter: blur(26px); // Блюр при прокрутке
+    border-bottom: 1px solid $color-header-border; // Граница при прокрутке
+  }
 
 
   &__container {
@@ -24,7 +27,7 @@
 
 
   &__logo {
-    border-right: 1px solid hsla(0, 0%, 100%, .15);
+    border-right: 1px solid $color-header-border;
 
     &-link {
       flex-shrink: 0;
@@ -34,14 +37,14 @@
     }
 
     &-img {
-      padding: 0 30px 0 23px;
+      padding: 0 clamp(0.625rem, 0.337rem + 1.44vw, 1.875rem) 0 clamp(0.625rem, 0.438rem + 0.94vw, 1.438rem);
       width: clamp(8rem, 6.963rem + 5.19vw, 12.5rem);
       height: clamp(1.313rem, 1.125rem + 0.94vw, 2.125rem);
     }
   }
 
   &__nav-wrapper {
-    color: #f7f5f9;
+    color: $color-text-main;
     display: flex;
     flex: 1 0 auto;
     font-size: 14px;
@@ -50,7 +53,7 @@
   }
 
   &__location {
-    border-right: 1px solid hsla(0, 0%, 100%, .15);
+    border-right: 1px solid $color-header-border;
     padding: 0 32px 0 23px;
 
     align-items: center;
@@ -113,7 +116,6 @@
       padding: 8px 16px;
       cursor: pointer;
       color: $color-text-main;
-      transition: background 0.2s;
       display: flex;
       align-items: center;
       gap: 8px;
@@ -131,9 +133,8 @@
   &__phone {
     display: flex;
     align-items: center;
-    gap: $header-lang-gap;
     font-weight: 500;
-    border-right: 1px solid hsla(0, 0%, 100%, .15);
+    border-right: 1px solid $color-header-border;
     padding: 0 31px;
     cursor: pointer;
     @include transition($transition-property: color);
@@ -149,8 +150,6 @@
     }
   }
 
-
-
   &__nav {
     display: flex;
     align-items: center;
@@ -160,14 +159,13 @@
   &__menu {
     display: flex;
     align-items: center;
-    border-right: 1px solid hsla(0, 0%, 100%, .15);
+    border-right: 1px solid $color-header-border;
     width: 100%;
     height: 100%;
 
     &-item {
-      border-left: 1px solid hsla(0, 0%, 100%, .15);
+      border-left: 1px solid $color-header-border;
     }
-
   }
 
   &__link {
@@ -188,8 +186,6 @@
       }
     }
   }
-
-
 
   &__icon {
     display: inline-block;
@@ -221,26 +217,21 @@
 
   &__lang {
     border-right: 1px solid $color-header-border;
-    padding: 0 30px;
+    padding: 0 clamp(0.625rem, 0.337rem + 1.44vw, 1.875rem);
     align-items: center;
     display: flex;
 
     &-container {
       display: flex;
       align-items: center;
-      border: 1px solid hsla(0, 0%, 100%, .15);
+      border: 1px solid $color-header-border;
     }
 
     &-btn {
       padding: 4px 9px;
       cursor: pointer;
       background: transparent;
-      border: 1px solid hsla(0, 0%, 100%, .15);
-      padding: 4px 9px;
-      cursor: pointer;
-      // display: flex;
-      // justify-content: center;
-      // align-items: center;
+      border: 1px solid $color-header-border;
       @include transition($transition-property: background);
 
       &:first-child {
@@ -275,31 +266,26 @@
   }
 
   &__burger {
-    padding: 0 0 0 30px;
-    cursor: pointer;
+    padding: 0 clamp(0.625rem, 0.337rem + 1.44vw, 1.875rem);
   }
 
   &__mobile-menu {
     position: fixed;
     top: 0;
     right: -100%;
-    /* Initially off-screen to the right */
     width: 100%;
     max-width: 320px;
-    /* Adjust as needed */
     height: 100%;
-    background: #2b2b2b;
-    /* Using a placeholder color for now, please define $color-header-bg-mobile */
+    background: $color-header-bg-mobile;
     z-index: 10000;
-    /* High z-index to be on top */
     padding: 20px;
     display: flex;
     flex-direction: column;
     gap: 20px;
     transition: right 0.3s ease-in-out;
-
+    overflow-y: auto;
     -webkit-overflow-scrolling: touch;
-    /* For smoother scrolling on iOS */
+
 
     &.is-open {
       right: 0;
@@ -348,7 +334,7 @@
       width: 100%;
       padding: 10px 0;
       border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-      /* Placeholder for $color-text-main */
+      /* Using rgba(255, 255, 255, 0.2) as placeholder for $color-text-main combined with opacity */
     }
 
     .header__location {
@@ -371,8 +357,7 @@
 
           &:hover {
             background: none;
-            color: #ff6b6b;
-            /* Placeholder for $color-accent */
+            color: $color-accent;
           }
         }
       }
@@ -380,20 +365,18 @@
   }
 
   @media (max-width: 1570px) {
-    .header {
+    &__container {
+      justify-content: space-between;
+    }
 
-      &__location,
-      &__phone,
-      &__nav {
-        display: none;
-      }
-
-      &__burger {
-        display: block;
-      }
+    &__location,
+    &__phone,
+    &__nav-wrapper {
+      display: none;
     }
   }
 }
+
 
 
 .header__location.is-open .header__location-list {

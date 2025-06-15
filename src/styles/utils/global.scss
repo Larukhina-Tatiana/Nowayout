@@ -4,13 +4,11 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
 
 img {
   display: block;
   max-width: 100%;
-  // width: 100%;
 }
 
 input,
@@ -61,9 +59,7 @@ body {
   height: 100%;
   display: flex;
   flex-direction: column;
-  // overflow: visible;
-  // overflow: hidden;
-  // font-size: clamp(0.75rem, 0.556rem + 0.86vw, 1.25rem);
+  overflow: visible;
 }
 
 .container {
@@ -97,7 +93,6 @@ section {
   &__inner {
     width: 100%;
     height: 100%;
-    // background-image: url("~@images/go-to-top.png");
     background-repeat: no-repeat;
     background-position: center;
     @include transition($transition-property: transform);

@@ -32,7 +32,7 @@ $(function () {
   var mobileMenuCloseButton = $(".header__mobile-menu-close");
   var headerLocation = $(".header__location")[0];
   var headerPhone = $(".header__phone")[0];
-  var headerNav = $(".header__nav")[0];
+  var headerNav = $(".header__nav-wrapper")[0];
 
   if (mobileMenu.length && headerLocation && headerPhone && headerNav) {
     new TransferElements(
@@ -75,6 +75,19 @@ $(function () {
     $("body").toggleClass("no-scroll");
   }
 
-  burgerButton.on("click", toggleMobileMenu);
-  mobileMenuCloseButton.on("click", toggleMobileMenu);
+  if (burgerButton.length) burgerButton.on("click", toggleMobileMenu);
+  if (mobileMenuCloseButton.length)
+    mobileMenuCloseButton.on("click", toggleMobileMenu);
+
+  $(function () {
+    var header = $(".header");
+
+    $(window).on("scroll", function () {
+      if ($(window).scrollTop() > 0) {
+        header.addClass("is-active");
+      } else {
+        header.removeClass("is-active");
+      }
+    });
+  });
 });
