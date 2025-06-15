@@ -26,6 +26,10 @@ a {
   text-decoration: none;
 }
 
+a:visited {
+  text-decoration: none;
+}
+
 ul {
   list-style: none;
 }
@@ -50,7 +54,6 @@ html {
 
 body {
   background-color: $color-bg;
-  min-width: 100vw;
   color: $color-text-main;
   font-family: $font-main;
   font-size: 14px;
@@ -58,14 +61,13 @@ body {
   height: 100%;
   display: flex;
   flex-direction: column;
-  overflow: hidden;
-  overflow-y: scroll;
+  // overflow: visible;
+  // overflow: hidden;
   // font-size: clamp(0.75rem, 0.556rem + 0.86vw, 1.25rem);
 }
 
 .container {
   max-width: 1708px;
-  width: 100%;
   margin: 0 auto;
   padding: 0 15px;
 }

@@ -7,10 +7,6 @@
 @use "./footer.scss";
 @use "./rooms.scss";
 
-.page {
-  min-width: $container-width;
-  background: $color-bg;
-}
 
 main {
   flex-grow: 1;

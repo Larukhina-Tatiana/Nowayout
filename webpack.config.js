@@ -4,6 +4,7 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 const ImageMinimizerPlugin = require("image-minimizer-webpack-plugin");
 const SpriteLoaderPlugin = require("svg-sprite-loader/plugin");
+const webpack = require("webpack");
 
 module.exports = (env, argv) => {
   const isDevelopment = argv.mode === "development";
@@ -168,6 +169,10 @@ module.exports = (env, argv) => {
         ],
       }),
       new SpriteLoaderPlugin(),
+      new webpack.ProvidePlugin({
+        $: "jquery",
+        jQuery: "jquery",
+      }),
     ],
     optimization: {
       minimizer: [

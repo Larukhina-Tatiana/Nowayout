@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=1920, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Nowayout - Escape Rooms in Vienna</title>
   <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.webp">
   <link rel="icon" type="image/webp" sizes="32x32" href="assets/favicon/favicon-32x32.webp">
@@ -15,12 +15,13 @@
 
   <header class="header">
     <div class="header__container">
-      <div class="header__wrapper">
-        <a class="header__logo" href="/Nowayout/">
+      <div class="header__logo">
+        <a class="header__logo-link" href="/Nowayout/" aria-label="Home page">
           <img src="assets/icons/logo.svg" alt="Nowayout logo" class="header__logo-img">
         </a>
         <div class="header__menu-divider"></div>
-
+      </div>
+      <div class="header__nav-wrapper">
         <div class="header__location">
           <button class="header__location-btn" type="button">
             <svg class="header__icon" aria-label="Location icon" width="24" height="24" viewBox="0 0 24 24"
@@ -67,7 +68,6 @@
             </li>
           </ul>
         </div>
-        <div class="header__menu-divider"></div>
         <div class="header__phone">
           <svg class="header__icon header__phone-icon" aria-label="Phone icon" width="24" height="24"
             viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -83,43 +83,40 @@
             </defs>
           </svg>
 
-          <a href="tel:+436606050000" class="header__phone-link">+43 660 605 0000</a>
+          <a class="header__phone-link" href="tel:+436606050000" aria-label="Phone call">+43 660 605 0000</a>
         </div>
-        <div class="header__menu-divider"></div>
-
-      </div>
-      <div class="header__wrapper">
         <nav class="header__nav">
           <ul class="header__menu">
             <li class="header__menu-item"><a href="#schedule" class="header__link">Schedule</a></li>
-            <li class="header__menu-divider"></li>
+
             <li class="header__menu-item"><a href="#rooms" class="header__link">Rooms</a></li>
-            <li class="header__menu-divider"></li>
+
             <li class="header__menu-item"><a href="#contacts" class="header__link">Contacts</a></li>
           </ul>
         </nav>
-
-        <div class="header__lang-switcher">
+      </div>
+      <div class="header__lang">
+        <div class="header__lang-container">
           <a class="header__lang-btn header__lang-btn--active" href="#" hreflang="en" aria-label="English language">
             <img class="header__lang-icon" src="assets/icons/united-kingdom.svg" alt="English">
           </a>
           <a class="header__lang-btn" href="#" hreflang="de" aria-label="Germany language">
             <img class="header__lang-icon" src="assets/icons/germany.svg" alt="Germany">
           </a>
-
         </div>
-
-        <button class="header__burger" aria-label="Open menu" type="button">
-          <svg class="header__icon header__icon--width" aria-label="Burger menu icon" width="60" height="20"
-            viewBox="0 0 60 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect width="60" height="2" fill="currentColor" />
-            <rect y="9" width="60" height="2" fill="currentColor" />
-            <rect y="18" width="60" height="2" fill="currentColor" />
-          </svg>
-        </button>
       </div>
+
+      <button class="header__burger" aria-label="Open menu" type="button">
+        <svg class="header__icon header__icon--width" aria-label="Burger menu icon" width="60" height="20"
+          viewBox="0 0 60 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="60" height="2" fill="currentColor" />
+          <rect y="9" width="60" height="2" fill="currentColor" />
+          <rect y="18" width="60" height="2" fill="currentColor" />
+        </svg>
+      </button>
     </div>
-    <!-- Mobile menu container -->
+
+
     <div class="header__mobile-menu">
       <button class="header__mobile-menu-close" aria-label="Close menu" type="button">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -133,7 +130,7 @@
   <main>
 
     <section class="hero">
-      <div class="container">
+      <div class="hero__container container">
         <div class="hero__content">
           <h1 class="hero__title">№1 Escape rooms in Vienna</h1>
           <p class="hero__description">
@@ -615,8 +612,8 @@
 
   </footer>
 
-  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-  <script src="bundle.js"></script>
+  <!-- <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="bundle.js"></script> -->
 
 </body>
 

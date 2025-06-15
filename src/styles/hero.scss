@@ -2,7 +2,7 @@
 
 .hero {
   position: relative;
-  min-height: 999px;
+  height: 100vh;
   background-image: -webkit-image-set(url(../assets/images/hero1@1x.avif) type("image/avif") 1x,
       url(../assets/images/hero1@2x.avif) type("image/avif") 2x,
       url(../assets/images/hero1@3x.avif) type("image/avif") 3x,
@@ -41,28 +41,37 @@
 
   }
 
+  &__container {
+    align-items: center;
+    display: flex;
+    height: 100%;
+    position: relative;
+    z-index: 10;
+  }
 
-  .hero__content {
-    padding-top: 237px;
-    padding-bottom: 301px;
-    max-width: clamp(18.188rem, 12.006rem + 30.91vw, 45rem);
+
+  &__content {
+    width: 100%;
+    ;
 
   }
 
-  .hero__title {
+  &__title {
+    word-wrap: break-word;
     font-weight: 500;
     font-size: clamp(2.875rem, 2.385rem + 2.45vw, 5rem);
     line-height: 1.0625;
     margin-bottom: 21px;
+    max-width: 700px;
   }
 
-  .hero__description {
+  &__description {
     font-size: 24px;
     line-height: 1.41666;
     margin-bottom: 32px;
   }
 
-  .hero__btn {
+  &__btn {
     display: inline-block;
     background-size: cover;
     background-position: center;
