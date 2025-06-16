@@ -70,7 +70,7 @@
     }
 
     &-content {
-      padding: 30px;
+      padding: clamp(0.625rem, 0.337rem + 1.44vw, 1.875rem);
       display: flex;
       flex-direction: column;
       flex-grow: 1;
