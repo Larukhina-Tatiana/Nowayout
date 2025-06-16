@@ -12,11 +12,6 @@
   font-weight: 500;
   @include transition($transition-property: (background, backdrop-filter, border-bottom));
 
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-
   &.is-active {
     background: $color-bg-header; // Фон при прокрутке
     -webkit-backdrop-filter: blur(26px); // Блюр при прокрутке
