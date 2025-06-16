@@ -12,7 +12,7 @@
 </head>
 
 <body>
-  <!-- <div class="wrapper"> -->
+
   <header class="header">
     <div class="header__container container">
       <div class="header__logo">
@@ -144,9 +144,11 @@
     <section class="rooms" id="rooms">
       <div class="container">
         <h2 class="rooms__title">Our games</h2>
-        <div class="rooms__cards swiper">
-          <div class="swiper-wrapper">
-            <div class="rooms__card swiper-slide">
+        <div class="rooms__slider-wrapper">
+          <button class="slider-nav prev">‹</button>
+          <div class="rooms__cards" id="roomsSlider">
+
+            <div class="rooms__card">
               <div class="rooms__card-image">
                 <picture class="rooms__picture">
                   <source
@@ -192,7 +194,7 @@
                 <button class="rooms__card-btn" type="button">Select game</button>
               </div>
             </div>
-            <div class="rooms__card swiper-slide">
+            <div class="rooms__card">
               <div class="rooms__card-image">
                 <picture class="rooms__picture">
                   <source
@@ -237,7 +239,7 @@
                 <button class="rooms__card-btn" type="button">Select game</button>
               </div>
             </div>
-            <div class="rooms__card swiper-slide">
+            <div class="rooms__card">
               <div class="rooms__card-image">
                 <picture class="rooms__picture">
                   <source
@@ -282,7 +284,7 @@
                 <button class="rooms__card-btn" type="button">Select game</button>
               </div>
             </div>
-            <div class="rooms__card swiper-slide">
+            <div class="rooms__card">
               <div class="rooms__card-image">
                 <picture class="rooms__picture">
                   <source
@@ -327,7 +329,7 @@
                 <button class="rooms__card-btn" type="button">Select game</button>
               </div>
             </div>
-            <div class="rooms__card swiper-slide">
+            <div class="rooms__card">
               <div class="rooms__card-image">
                 <picture class="rooms__picture">
                   <source
@@ -372,7 +374,7 @@
                 <button class="rooms__card-btn" type="button">Select game</button>
               </div>
             </div>
-            <div class="rooms__card swiper-slide">
+            <div class="rooms__card">
               <div class="rooms__card-image">
                 <picture class="rooms__picture">
                   <source
@@ -417,7 +419,7 @@
                 <button class="rooms__card-btn" type="button">Select game</button>
               </div>
             </div>
-            <div class="rooms__card swiper-slide">
+            <div class="rooms__card">
               <div class="rooms__card-image">
                 <picture class="rooms__picture">
                   <source
@@ -464,9 +466,9 @@
               </div>
             </div>
           </div>
+          <button class="slider-nav next">›</button>
         </div>
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-button-next"></div>
+
       </div>
     </section>
   </main>
@@ -614,7 +616,7 @@
       </button>
     </div>
   </footer>
-  <!-- </div> -->
+
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
   <script src="bundle.js"></script>
 
