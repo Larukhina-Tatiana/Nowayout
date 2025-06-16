@@ -1,14 +1,20 @@
 @use './utils/vars.scss' as *;
 
 .header {
+  width: 100%;
+  max-width: 100%;
   position: fixed;
   top: 0;
   height: 63px;
   z-index: 1000;
   background: rgba($color-bg-header, .5);
-  width: 100%;
+
   font-weight: 500;
   @include transition($transition-property: (background, backdrop-filter, border-bottom));
+
+  display: flex;
+  align-items: center;
+  // justify-content: space-between;
 
   &.is-active {
     background: $color-bg-header; // Фон при прокрутке
