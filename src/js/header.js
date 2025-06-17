@@ -90,40 +90,4 @@ $(function () {
       }
     });
   });
-
-  function updateRoomsSliderVisibility() {
-    const $slider = $("#roomsSlider");
-    const $wrapper = $slider.parent();
-    const $arrows = $wrapper.find(".slider-nav");
-
-    if ($slider[0].scrollWidth > $wrapper.outerWidth()) {
-      $arrows.show();
-    } else {
-      $arrows.hide();
-      $slider.scrollLeft(0);
-    }
-  }
-
-  $(".slider-nav.next").on("click", function () {
-    $("#roomsSlider").animate(
-      {
-        scrollLeft: $("#roomsSlider").scrollLeft() + 300,
-      },
-      400
-    );
-  });
-
-  $(".slider-nav.prev").on("click", function () {
-    $("#roomsSlider").animate(
-      {
-        scrollLeft: $("#roomsSlider").scrollLeft() - 300,
-      },
-      400
-    );
-  });
-
-  // вызываем после полной загрузки
-  $(window).on("load resize", function () {
-    setTimeout(updateRoomsSliderVisibility, 100); // небольшая задержка — на всякий случай
-  });
 });

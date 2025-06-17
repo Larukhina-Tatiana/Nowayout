@@ -1,11 +1,18 @@
 import $ from "jquery";
 import "../styles/main.scss";
 import "./header.js";
-import "swiper/swiper.min.css";
-import "swiper/modules/navigation.css";
+// import "./slider.js";
+// import "swiper/swiper.min.css";
+// import "swiper/modules/navigation.css";
 
-import Swiper from "swiper";
-import { Navigation } from "swiper/modules/index.mjs";
+// import Swiper from "swiper";
+// import { Navigation } from "swiper/modules/index.mjs";
+
+import { initRoomsSlider } from "./slider.js";
+
+$(function () {
+  initRoomsSlider(); // ← это обязательно
+});
 
 // Импортируем все SVG-иконки из директории sprite-icons для генерации спрайта
 require.context("../assets/icons/sprite-icons/", false, /\.svg$/);
@@ -55,28 +62,28 @@ $(function () {
     }
   });
 
-  // Здесь будут скрипты для взаимодействия с макетом
-  new Swiper(".rooms__cards.swiper", {
-    modules: [Navigation],
-    slidesPerView: 1,
-    spaceBetween: 30,
-    loop: true,
-    navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
-    },
-    breakpoints: {
-      768: {
-        slidesPerView: 2,
-      },
-      1200: {
-        slidesPerView: 3,
-      },
-      1600: {
-        slidesPerView: 4,
-      },
-    },
-  });
+  // // Здесь будут скрипты для взаимодействия с макетом
+  // new Swiper(".rooms__cards.swiper", {
+  //   modules: [Navigation],
+  //   slidesPerView: 1,
+  //   spaceBetween: 30,
+  //   loop: true,
+  //   navigation: {
+  //     nextEl: ".swiper-button-next",
+  //     prevEl: ".swiper-button-prev",
+  //   },
+  //   breakpoints: {
+  //     768: {
+  //       slidesPerView: 2,
+  //     },
+  //     1200: {
+  //       slidesPerView: 3,
+  //     },
+  //     1600: {
+  //       slidesPerView: 4,
+  //     },
+  //   },
+  // });
 
   // Scroll button logic based on provided code
   var scrollButton = $("#scroll-toggle");
