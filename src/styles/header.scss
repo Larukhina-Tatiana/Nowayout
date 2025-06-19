@@ -39,8 +39,8 @@
     }
 
     &-img {
-      padding: 0 clamp(0.625rem, 0.337rem + 1.44vw, 1.875rem) 0 clamp(0.625rem, 0.438rem + 0.94vw, 1.438rem);
-      width: clamp(8rem, 6.963rem + 5.19vw, 12.5rem);
+      padding: 0 clamp(0.625rem, 0.337rem + 1.44vw, 1.875rem) 0 clamp(1.438rem, 1.35rem + 0.44vw, 1.875rem);
+      width: clamp(8rem, 6.35rem + 8.25vw, 16.25rem);
       height: clamp(1.313rem, 1.125rem + 0.94vw, 2.125rem);
     }
   }
@@ -56,7 +56,7 @@
 
   &__location {
     border-right: 1px solid $color-header-border;
-    padding: 0 32px 0 23px;
+    padding: 0 23px 0 20px;
 
     align-items: center;
     cursor: pointer;
@@ -93,7 +93,7 @@
     }
 
     &-current {
-      margin: 0 6px;
+      margin: 0 4px 0 6px;
       font-weight: 500;
       flex-shrink: 0;
     }
@@ -135,9 +135,10 @@
   &__phone {
     display: flex;
     align-items: center;
+    gap: 7px;
     font-weight: 500;
     border-right: 1px solid $color-header-border;
-    padding: 0 31px;
+    padding: 0 27px 0 20px;
     cursor: pointer;
     @include transition($transition-property: color);
 
@@ -244,13 +245,13 @@
         background: $color-header-lang-btn-hover;
 
         .header__lang-icon {
-          opacity: 1;
+          opacity: 0.3;
         }
       }
 
       &:not(.header__lang-btn--active) {
         .header__lang-icon {
-          opacity: 0.3;
+          opacity: 1;
         }
       }
 
@@ -263,7 +264,7 @@
 
     &-icon {
       width: 22px;
-      height: 22px;
+      height: 23px;
     }
   }
 

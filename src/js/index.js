@@ -1,18 +1,16 @@
 import $ from "jquery";
 import "../styles/main.scss";
 import "./header.js";
-// import "./slider.js";
-// import "swiper/swiper.min.css";
-// import "swiper/modules/navigation.css";
+import "./slider.js";
 
-// import Swiper from "swiper";
-// import { Navigation } from "swiper/modules/index.mjs";
+import Swiper from "swiper";
+import { Navigation } from "swiper/modules/index.mjs";
 
-import { initRoomsSlider } from "./slider.js";
+// import { initRoomsSlider } from "./slider.js";
 
-$(function () {
-  initRoomsSlider(); // ← это обязательно
-});
+// $(function () {
+//   initRoomsSlider(); // ← это обязательно
+// });
 
 // Импортируем все SVG-иконки из директории sprite-icons для генерации спрайта
 require.context("../assets/icons/sprite-icons/", false, /\.svg$/);

@@ -96,8 +96,7 @@
   &__lang-btn {
     background-color: transparent;
     border: none;
-    color: rgba($color-text-main, 0.3);
-
+    color: $color-text-main;
     font-weight: 500;
     padding: 8px 4px 8px;
     cursor: pointer;
@@ -106,11 +105,11 @@
 
 
     &.footer__lang-btn--active {
-      color: $color-text-main;
+      color: rgba($color-text-main, 0.3);
     }
 
     &:hover:not(.footer__lang-btn--active) {
-      color: rgba($color-text-main, 0.3);
+      color: $color-accent;
     }
   }
 

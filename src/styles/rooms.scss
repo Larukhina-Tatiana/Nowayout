@@ -15,32 +15,12 @@
     margin-bottom: 34px;
   }
 
-  &__slider-wrapper {
-    width: 100%;
-    max-width: 1678px;
-    margin: 0 auto;
-    overflow: hidden;
-    position: relative;
-  }
-
-
   &__cards {
-
     display: flex;
     gap: 20px;
-    scroll-behavior: smooth;
-    overflow-x: auto;
-    /* скрываем полосу прокрутки */
-    scrollbar-width: none;
-    /* Firefox */
-    -ms-overflow-style: none;
-    /* IE */
   }
 
-  .rooms__cards::-webkit-scrollbar {
-    display: none;
-    /* Chrome, Safari */
-  }
+
 
 
   &__card {
@@ -53,8 +33,7 @@
     @include transition($transition-property: (border-color));
     scroll-behavior: smooth;
     flex: 0 0 auto;
-    width: 327px;
-
+    width: 327px !important;
 
     &:hover {
       border-color: $color-accent;
@@ -66,7 +45,7 @@
 
     &-image {
       position: relative;
-      width: 100%;
+      width: 327px;
       overflow: hidden;
     }
 
@@ -88,76 +67,23 @@
       color: $color-text-main;
       line-height: 1.714;
       backdrop-filter: blur(33px);
-    }
-
-    &-content {
-      padding: clamp(0.625rem, 0.337rem + 1.44vw, 1.875rem);
-      display: flex;
-      flex-direction: column;
-      flex-grow: 1;
-      gap: 24px;
-    }
-
-    &-title {
-      font-weight: 500;
-      font-size: 24px;
-      line-height: 1.256;
-      color: $color-text-main;
-      margin-bottom: 24px;
-    }
-
-    &-info {
-      display: flex;
-      gap: 16px;
-      margin-bottom: 24px;
-    }
-
-    &-detail {
-      display: flex;
+      display: inline-flex;
       align-items: center;
-      gap: 8px;
-      color: $color-text-main;
-      line-height: 1.714;
+      gap: 6px;
 
-      svg {
-        width: 14px;
-        height: 14px;
-        fill: currentColor;
-      }
-    }
+      &--masks {
+        padding: 2px 6px;
 
-    &-description {
-      line-height: 1.714;
-      margin-bottom: 30px;
-      flex-grow: 1;
-      display: -webkit-box;
-      overflow: hidden;
-      -webkit-box-orient: vertical;
-      box-orient: vertical;
-      -webkit-line-clamp: 5;
-      line-clamp: 5;
-      height: 120px;
-    }
+        &::before {
+          content: "";
+          display: inline-block;
+          width: 24px;
+          height: 24px;
+          background-image: url("../assets/icons/masks.svg");
+          background-size: contain;
+          background-repeat: no-repeat;
+        }
 
-    &-btn {
-      display: block;
-      width: 267px;
-      height: 50px;
-      padding: 16px 24px;
-      background-image: url("../assets/images/button-def.png");
-      color: $color-text-main;
-      font-weight: 500;
-      line-height: 1.256;
-      text-align: center;
-      cursor: pointer;
-      @include transition(background-color, border-color);
-      margin-top: auto;
-      margin-left: auto;
-      margin-right: auto;
-
-      &:hover {
-        background-color: color.adjust($color-accent, $lightness: -10%);
-        border-color: color.adjust($color-accent, $lightness: -10%);
       }
     }
   }
