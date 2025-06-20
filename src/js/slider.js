@@ -1,27 +1,94 @@
-import "swiper/swiper.min.css";
-import "swiper/modules/navigation.css";
 import Swiper from "swiper";
-import { Navigation } from "swiper/modules/index.mjs";
+import { Navigation } from "swiper/modules";
 
-// Здесь будут скрипты для взаимодействия с макетом
-new Swiper(".rooms__cards.swiper", {
-  modules: [Navigation],
-  slidesPerView: 1,
-  spaceBetween: 12,
-  loop: true,
-  navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
-  },
-  breakpoints: {
-    768: {
-      slidesPerView: 2,
+import "swiper/css";
+import "swiper/css/navigation";
+
+let swiper;
+
+export function initRoomsSwiper() {
+  if (window.innerWidth <= 435) {
+    // отключаем стрелки и transform
+    document.querySelector(".slider-nav.prev")?.classList.add("hidden");
+    document.querySelector(".slider-nav.next")?.classList.add("hidden");
+    const wrapper = document.querySelector(".rooms__cards .swiper-wrapper");
+    if (wrapper) wrapper.style.transform = "none";
+    return; // слайдер не нужен
+  }
+
+  const container = document.querySelector(".rooms__cards.swiper");
+  const wrapper = container?.querySelector(".swiper-wrapper");
+  const slides = wrapper?.querySelectorAll(".swiper-slide") || [];
+
+  const prev = document.querySelector(".slider-nav.prev");
+  const next = document.querySelector(".slider-nav.next");
+
+  if (swiper) {
+    swiper.destroy(true, true);
+    swiper = null;
+  }
+
+  if (!container || !wrapper || slides.length === 0) return;
+
+  const totalWidth = Array.from(slides).reduce(
+    (acc, slide) => acc + slide.offsetWidth + 20, // 20 = spaceBetween
+    0
+  );
+  const visibleWidth = container.offsetWidth;
+  const fitsWithoutScroll = totalWidth <= visibleWidth + 1;
+
+  if (fitsWithoutScroll) {
+    prev?.classList.add("hidden");
+    next?.classList.add("hidden");
+    wrapper.style.transform = "none";
+    return;
+  } else {
+    prev?.classList.remove("hidden");
+    next?.classList.remove("hidden");
+  }
+
+  swiper = new Swiper(container, {
+    modules: [Navigation],
+    slidesPerView: "auto",
+    spaceBetween: 20,
+    allowTouchMove: window.innerWidth > 480,
+    navigation: {
+      nextEl: next,
+      prevEl: prev,
     },
-    1200: {
-      slidesPerView: 3,
+    on: {
+      afterInit(swiper) {
+        swiper.update();
+        swiper.slideTo(0, 0);
+        updateNavState(swiper);
+      },
+      slideChange: updateNavState,
+      resize: updateNavState,
+      reachBeginning: updateNavState,
+      reachEnd: updateNavState,
+      fromEdge: updateNavState,
     },
-    1600: {
-      slidesPerView: 4,
-    },
-  },
-});
+  });
+  setTimeout(() => {
+    swiper.update(); // обновим Swiper
+    updateNavState(swiper); // обновим состояние кнопок
+  }, 0);
+}
+
+function updateNavState(swiper) {
+  const prev = document.querySelector(".slider-nav.prev");
+  const next = document.querySelector(".slider-nav.next");
+
+  if (!swiper) return;
+
+  swiper.isBeginning
+    ? prev?.classList.add("hidden")
+    : prev?.classList.remove("hidden");
+
+  swiper.isEnd
+    ? next?.classList.add("hidden")
+    : next?.classList.remove("hidden");
+}
+
+window.addEventListener("load", initRoomsSwiper);
+window.addEventListener("resize", () => setTimeout(initRoomsSwiper, 100));

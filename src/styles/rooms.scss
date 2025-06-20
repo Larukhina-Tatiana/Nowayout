@@ -15,9 +15,14 @@
     margin-bottom: 34px;
   }
 
-  &__cards {
-    display: flex;
-    gap: 20px;
+  .rooms__slider-wrapper {
+    position: relative;
+  }
+
+  &__cards.swiper {
+    // display: flex;
+    // gap: 20px;
+    overflow: hidden
   }
 
 
@@ -88,20 +93,20 @@
     }
   }
 
-  @media (max-width: 480px) {
-    .rooms__cards {
-      display: block;
-      overflow-x: visible;
-      scroll-behavior: auto;
-    }
+  // @media (max-width: 480px) {
+  //   .rooms__cards {
+  //     display: block;
+  //     overflow-x: visible;
+  //     scroll-behavior: auto;
+  //   }
 
-    .rooms__card {
-      width: 100%;
-      margin-bottom: 20px;
-    }
+  //   .rooms__card {
+  //     width: 100%;
+  //     margin-bottom: 20px;
+  //   }
 
-    .slider-nav {
-      display: none !important;
-    }
-  }
+  //   .slider-nav {
+  //     display: none !important;
+  //   }
+  // }
 }

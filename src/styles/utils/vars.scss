@@ -15,6 +15,10 @@ $footer-text: rgba(255, 255, 255, 0.5);
 $font-main: 'MADE Outer Sans', Arial, sans-serif;
 
 
+$burger-width: 60px;
+$burger-height: 18px;
+$burger-line-height: 2px;
+
 
 @mixin transition ($transition-property: color, $transition-duration: 300ms, $transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1)) {
   transition-duration: $transition-duration;

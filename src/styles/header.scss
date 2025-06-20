@@ -1,22 +1,28 @@
 @use './utils/vars.scss' as *;
 
 .header {
-  width: 100%;
-  max-width: 100%;
+  border-bottom: 1px solid $color-header-border;
+  height: 53px;
   position: fixed;
-  top: 0;
-  height: 63px;
+  width: 100%;
   z-index: 1000;
+  flex: 0 0 auto;
+  font-weight: 500;
+
+
+
+
+
+  max-width: 100%;
+  top: 0;
   background: rgba($color-bg-header, .5);
 
-  font-weight: 500;
   @include transition($transition-property: (background, backdrop-filter, border-bottom));
 
   &.is-active {
     background: $color-bg-header; // Фон при прокрутке
     -webkit-backdrop-filter: blur(26px); // Блюр при прокрутке
     backdrop-filter: blur(26px); // Блюр при прокрутке
-    border-bottom: 1px solid $color-header-border; // Граница при прокрутке
   }
 
 
@@ -24,6 +30,7 @@
     display: flex;
     height: 100%;
     position: relative;
+    // align-items: center;
   }
 
 
@@ -31,17 +38,19 @@
   &__logo {
     border-right: 1px solid $color-header-border;
 
+
     &-link {
-      flex-shrink: 0;
+      // flex-shrink: 0;
       align-items: center;
       display: flex;
       height: 100%;
+      padding: 0 22px 0 21px;
     }
 
     &-img {
-      padding: 0 clamp(0.625rem, 0.337rem + 1.44vw, 1.875rem) 0 clamp(1.438rem, 1.35rem + 0.44vw, 1.875rem);
-      width: clamp(8rem, 6.35rem + 8.25vw, 16.25rem);
-      height: clamp(1.313rem, 1.125rem + 0.94vw, 2.125rem);
+      flex-shrink: 0;
+      width: clamp(8rem, 6.743rem + 5.36vw, 12.5rem);
+      // height: 21px;
     }
   }
 
@@ -220,7 +229,7 @@
 
   &__lang {
     border-right: 1px solid $color-header-border;
-    padding: 0 clamp(0.625rem, 0.337rem + 1.44vw, 1.875rem);
+    padding: 0 10px;
     align-items: center;
     display: flex;
 
@@ -231,10 +240,10 @@
     }
 
     &-btn {
-      padding: 4px 9px;
+      display: inline-flex;
+      padding: 6px 9px;
       cursor: pointer;
       background: transparent;
-      border: 1px solid $color-header-border;
       @include transition($transition-property: background);
 
       &:first-child {
@@ -245,6 +254,7 @@
         background: $color-header-lang-btn-hover;
 
         .header__lang-icon {
+
           opacity: 0.3;
         }
       }
@@ -263,13 +273,18 @@
     }
 
     &-icon {
+      flex-shrink: 0;
       width: 22px;
       height: 23px;
     }
   }
 
   &__burger {
-    padding: 0 clamp(0.625rem, 0.337rem + 1.44vw, 1.875rem);
+    padding: 0 20px;
+    align-items: center;
+    border: none;
+    cursor: pointer;
+    display: flex;
   }
 
   &__mobile-menu {
@@ -277,10 +292,10 @@
     top: 0;
     right: -100%;
     width: 100%;
-    max-width: 320px;
-    height: 100%;
-    background: $color-header-bg-mobile;
-    z-index: 10000;
+    // max-width: 320px;
+    height: 100vh;
+    background: $color-bg-header;
+    z-index: 999;
     padding: 20px;
     display: flex;
     flex-direction: column;
@@ -290,22 +305,11 @@
     -webkit-overflow-scrolling: touch;
 
 
-    &.is-open {
+    &.active {
       right: 0;
       /* Slide in */
     }
 
-    &-close {
-      background: none;
-      border: none;
-      color: #fff;
-      /* Adjust color as needed */
-      cursor: pointer;
-      align-self: flex-end;
-      /* Push to the right */
-      padding: 0;
-      margin-bottom: 20px;
-    }
 
     .header__nav {
       flex-direction: column;
@@ -374,9 +378,7 @@
 
     &__location,
     &__phone,
-    &__nav-wrapper {
-      display: none;
-    }
+    &__nav-wrapper {}
   }
 }
 

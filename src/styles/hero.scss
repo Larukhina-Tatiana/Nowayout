@@ -3,10 +3,14 @@
 .hero {
   height: 100vh;
 
-  &__image {
-    position: absolute;
-    right: 150px;
-    top: 542px;
+  &__container {
+    align-items: center;
+    display: flex;
+    height: 100%;
+    // padding-top: 63px;
+    position: relative;
+    z-index: 10;
+    flex-direction: column;
   }
 
   &__bg {
@@ -43,33 +47,46 @@
 
   }
 
+  &__image {
+    position: absolute;
+    right: 150px;
+    top: 542px;
+    width: clamp(6.313rem, 4.596rem + 8.58vw, 13.813rem);
+
+    &-pic {
+      animation: spin 6s linear infinite;
+      transform-origin: center;
+      display: block;
+      max-width: 100%;
+    }
+  }
 
   &__content {
-    padding-top: 250px;
     width: 100%;
-    width: clamp(18.438rem, 12.357rem + 30.4vw, 45rem);
-    margin-left: 10px;
-
+    width: clamp(18.438rem, 11.021rem + 31.65vw, 45rem);
   }
 
   &__title {
     word-wrap: break-word;
     font-weight: 500;
     font-size: clamp(2.875rem, 2.385rem + 2.45vw, 5rem);
-    line-height: 1.0625;
-    margin-top: 50px;
-
+    line-height: 103%;
+    margin-top: 59px;
   }
 
   &__description {
-    padding-block-start: 21px;
-    padding-bottom: 32px;
-    font-size: 24px;
+    // padding-block-start: 21px;
+    // padding-block-start: 17px;
+    padding-top: clamp(1.063rem, 0.993rem + 0.3vw, 1.313rem);
+    // padding-bottom: 32px;
+    padding-bottom: clamp(1.875rem, 1.84rem + 0.15vw, 2rem);
+    // font-size: 24px;
+    font-size: clamp(0.875rem, 0.7rem + 0.74vw, 1.5rem);
     line-height: 1.41666;
   }
 
   &__btn {
-    display: inline-block;
+    width: 100%;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -79,10 +96,37 @@
     text-align: center;
     cursor: pointer;
     border: none;
-    @include transition(transform);
+    @include transition($transition-property: transform);
 
-    &:hover {
-      transform: scale(1.3);
+    @media (any-hover: hover) {
+      &:hover {
+        transform: scale(1.3);
+      }
+    }
+  }
+
+  @media (max-width: 935px) {
+    height: auto;
+    padding: 334px 0;
+
+    &__container {
+      height: max-content;
+    }
+
+    &__image {
+      position: absolute;
+      right: 234px;
+      top: 146px;
     }
   }
 }
+
+// @keyframes spin {
+//   from {
+//     transform: rotate(0deg);
+//   }
+
+//   to {
+//     transform: rotate(360deg);
+//   }
+// }

@@ -4,6 +4,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,  initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+
   <!-- <link rel="preload" as="image" href="assets/images/hero1@2x.avif" type="image/avif"> -->
   <!-- <link rel="preload" as="image" href="assets/images/hero1@2x.webp" type="image/webp"> -->
   <!-- <link rel="preload" as="image" href="assets/images/hero1@2x.jpg" type="image/jpeg"> -->
@@ -20,7 +22,7 @@
     <div class="header__container">
       <div class="header__logo">
         <a class="header__logo-link" href="/Nowayout/" aria-label="Home page">
-          <img class="header__logo-img" src="assets/icons/logo.svg" alt="Nowayout logo">
+          <img class="header__logo-img" src="assets/icons/m-logo.svg" alt="Nowayout logo">
         </a>
       </div>
       <div class="header__nav-wrapper">
@@ -100,40 +102,30 @@
       <div class="header__lang">
         <div class="header__lang-container">
           <a class="header__lang-btn" href="#" hreflang="en" aria-label="English language">
-            <img class="header__lang-icon" src="assets/icons/united-kingdom.svg" alt="English" width="24" height="24">
+            <img class="header__lang-icon" src="assets/icons/united-kingdom.svg" alt="English">
           </a>
           <a class="header__lang-btn  header__lang-btn--active" href="#" hreflang="de" aria-label="Germany language">
-            <img class="header__lang-icon" src="assets/icons/germany.svg" alt="Germany" width="24">
+            <img class="header__lang-icon" src="assets/icons/germany.svg" alt="Germany">
           </a>
         </div>
       </div>
-
-      <button class="header__burger" aria-label="Open menu" type="button">
-        <svg class="header__icon header__icon--width" aria-label="Burger menu icon" width="60" height="20"
-          viewBox="0 0 60 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect width="60" height="2" fill="currentColor" />
-          <rect y="9" width="60" height="2" fill="currentColor" />
-          <rect y="18" width="60" height="2" fill="currentColor" />
-        </svg>
-      </button>
+      <div class="header__burger">
+        <button class="burger" aria-label="Open menu" type="button">
+          <span class="burger__line"></span>
+        </button>
+      </div>
     </div>
 
+    </div>
     <div class="header__mobile-menu">
-      <button class="header__mobile-menu-close" aria-label="Close menu" type="button">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path
-            d="M19 6.41L17.59 5L12 10.59L6.41 5L5 6.41L10.59 12L5 17.59L6.41 19L12 13.41L17.59 19L19 17.59L13.41 12L19 6.41Z"
-            fill="white" />
-        </svg>
-      </button>
-    </div>
+
   </header>
   <main>
 
     <section class="hero">
       <div class="hero__container container">
         <div class="hero__image">
-          <img class="hero__image-pic" src="assets/images/travellers-choince.svg" alt="seal">
+          <!-- <img class="hero__image-pic" src="assets/icons/travellers-choince.svg" alt="seal"> -->
         </div>
         <div class="hero__content">
           <h1 class="hero__title">№1 Escape rooms in Vienna</h1>
@@ -144,172 +136,174 @@
           <button class="hero__btn" type="button">Book now</button>
         </div>
       </div>
-      <div class="hero__bg"></div>
+      <!-- <div class="hero__bg"></div> -->
     </section>
 
-    <section class="rooms" id="rooms">
+    <!-- <section class="rooms" id="rooms">
       <div class="container">
         <h2 class="rooms__title">Our games</h2>
-        <div class="rooms__cards swiper">
-          <div class="swiper-wrapper">
-            <div class="rooms__card swiper-slide">
-              <div class="rooms__card-image">
-                <picture class="rooms__picture">
-                  <source
-                    srcset="assets/images/rooms/room2@1x.avif 1x, assets/images/rooms/room2@2x.avif 2x, assets/images/rooms/room2@3x.avif 3x"
-                    type="image/avif">
-                  <source
-                    srcset="assets/images/rooms/room2@1x.webp 1x, assets/images/rooms/room2@2x.webp 2x, assets/images/rooms/room2@3x.webp 3x"
-                    type="image/webp">
-                  <img class="rooms__card-img" src="assets/images/rooms/room2@1x.png"
-                    srcset="assets/images/rooms/room2@2x.png 2x, assets/images/rooms/room2@3x.png 3x"
-                    alt="Mission Belvedere" loading="lazy" width="327">
-                </picture>
-                <div class="rooms__card-label">Adventure/Mystery</div>
-              </div>
-              <div class="rooms__card-content block-info">
-                <h3 class="block-info__title">Mission Belvedere</h3>
-                <div class="block-info__detail">
-                  <p class="block-info__time">60 minin</p>
-                  <p class="block-info__key">Difficult</p>
-                  <p class="block-info__players">2-6</p>
-                </div>
-                <p class="block-info__description">
-                  Nehmt an dem Raub des Jahrhunderts teil! Macht mit und versucht, Gustav Klimts "Der Kuss" aus
-                  Österreichs sicherstem
-                  Museum zu stehlen.
-                </p>
-                <button class="block-info__btn" type="button">Select game</button>
-              </div>
-            </div>
-            <div class="rooms__card swiper-slide">
-              <div class="rooms__card-image">
-                <picture class="rooms__picture">
-                  <source
-                    srcset="assets/images/rooms/room2@1x.avif 1x, assets/images/rooms/room2@2x.avif 2x, assets/images/rooms/room2@3x.avif 3x"
-                    type="image/avif">
-                  <source
-                    srcset="assets/images/rooms/room2@1x.webp 1x, assets/images/rooms/room2@2x.webp 2x, assets/images/rooms/room2@3x.webp 3x"
-                    type="image/webp">
-                  <img class="rooms__card-img" src="assets/images/rooms/room2@1x.png"
-                    srcset="assets/images/rooms/room2@2x.png 2x, assets/images/rooms/room2@3x.png 3x"
-                    alt="Mission Belvedere" loading="lazy" width="327">
-                </picture>
-                <div class="rooms__card-label">Adventure/Fantasy</div>
-              </div>
-              <div class="rooms__card-content block-info">
-                <h3 class="block-info__title">Mission Belvedere</h3>
-                <div class="block-info__detail">
-                  <p class="block-info__time">60 min</p>
-                  <p class="block-info__key">Difficult</p>
-                  <p class="block-info__players">2-6</p>
-                </div>
-                <p class="block-info__description">
-                  Nehmt an dem Raub des Jahrhunderts teil! Macht mit und versucht, Gustav Klimts "Der Kuss" aus
-                  Österreichs sicherstem
-                  Museum zu stehlen.
-                </p>
-                <button class="block-info__btn" type="button">Select game</button>
-              </div>
-            </div>
-            <div class="rooms__card swiper-slide">
-              <div class="rooms__card-image">
-                <picture class="rooms__picture">
-                  <source
-                    srcset="assets/images/rooms/room1@1x.avif 1x, assets/images/rooms/room1@2x.avif 2x, assets/images/rooms/room1@3x.avif 3x"
-                    type="image/avif">
-                  <source
-                    srcset="assets/images/rooms/room1@1x.webp 1x, assets/images/rooms/room1@2x.webp 2x, assets/images/rooms/room1@3x.webp 3x"
-                    type="image/webp">
-                  <img class="rooms__card-img" src="assets/images/rooms/room1@1x.png"
-                    srcset="assets/images/rooms/room1@2x.png 2x, assets/images/rooms/room1@3x.png 3x"
-                    alt="School of Magic" loading="lazy">
-                </picture>
-                <div class="rooms__card-label">Adventure/Fantasy</div>
-              </div>
-              <div class="rooms__card-content block-info">
-                <h3 class="block-info__title">School of Magic</h3>
-                <div class="block-info__detail">
-                  <p class="block-info__time">60 min</p>
-                  <p class="block-info__key">Difficult</p>
-                  <p class="block-info__players">2-6</p>
-                </div>
-                <p class="block-info__description">
-                  Nehmt an dem Raub des Jahrhunderts teil! Macht mit und versucht, Gustav Klimts "Der Kuss" aus
-                  Österreichs sicherstem
-                  Museum zu stehlen.
-                </p>
-                <button class="block-info__btn" type="button">Select game</button>
-              </div>
-            </div>
-            <div class="rooms__card swiper-slide">
-              <div class="rooms__card-image">
-                <picture class="rooms__picture">
-                  <source
-                    srcset="assets/images/rooms/room3@1x.avif 1x, assets/images/rooms/room3@2x.avif 2x, assets/images/rooms/room3@3x.avif 3x"
-                    type="image/avif">
-                  <source
-                    srcset="assets/images/rooms/room3@1x.webp 1x, assets/images/rooms/room3@2x.webp 2x, assets/images/rooms/room3@3x.webp 3x"
-                    type="image/webp">
-                  <img class="rooms__card-img" src="assets/images/rooms/room3@1x.png"
-                    srcset="assets/images/rooms/room3@2x.png 2x, assets/images/rooms/room3@3x.png 3x" alt="The Unknown"
-                    loading="lazy" width="327">
-                </picture>
-                <div class="rooms__card-label rooms__card-label--masks">Horror with live actor</div>
-              </div>
-              <div class="rooms__card-content block-info">
-                <h3 class="block-info__title">The Unknown</h3>
-                <div class="block-info__detail">
-                  <p class="block-info__time">60 min</p>
-                  <p class="block-info__key">Difficult</p>
-                  <p class="block-info__players">2-6</p>
-                </div>
-                <p class="block-info__description">
-                  Rette die kleine Sandy, sie wurde von einem Dämon in die
-                  Kanalisation der Stadt verschleppt. Werdet zum Helden oder
-                  bleibt in der Gewalt des Unbekannten.
-                </p>
-                <button class="block-info__btn" type="button">Select game</button>
-              </div>
-            </div>
 
-            <div class="rooms__card swiper-slide">
-              <div class="rooms__card-image">
-                <picture class="rooms__picture">
-                  <source
-                    srcset="assets/images/rooms/room4@1x.avif 1x, assets/images/rooms/room4@2x.avif 2x, assets/images/rooms/room4@3x.avif 3x"
-                    type="image/avif">
-                  <source
-                    srcset="assets/images/rooms/room4@1x.webp 1x, assets/images/rooms/room4@2x.webp 2x, assets/images/rooms/room4@3x.webp 3x"
-                    type="image/webp">
-                  <img class="rooms__card-img" src="assets/images/rooms/room4@1x.png"
-                    srcset="assets/images/rooms/room4@2x.png 2x, assets/images/rooms/room4@3x.png 3x" alt="The Nun">
-                </picture>
-                <div class="rooms__card-label rooms__card-label--masks">Horror with live actor</div>
-              </div>
-              <div class="rooms__card-content block-info">
-                <h3 class="block-info__title">The Nun</h3>
-                <div class="block-info__detail">
-                  <p class="block-info__time">60 min</p>
-                  <p class="block-info__key">Difficult</p>
-                  <p class="block-info__players">2-6</p>
+
+        <div class="rooms__slider-wrapper">
+          <button class="slider-nav prev" type="button" aria-label="Previous slide"></button>
+          <div class="rooms__cards swiper">
+            <div class="swiper-wrapper">
+              <div class="rooms__card swiper-slide">
+                <div class="rooms__card-image">
+                  <picture class="rooms__picture">
+                    <source
+                      srcset="assets/images/rooms/room2@1x.avif 1x, assets/images/rooms/room2@2x.avif 2x, assets/images/rooms/room2@3x.avif 3x"
+                      type="image/avif">
+                    <source
+                      srcset="assets/images/rooms/room2@1x.webp 1x, assets/images/rooms/room2@2x.webp 2x, assets/images/rooms/room2@3x.webp 3x"
+                      type="image/webp">
+                    <img class="rooms__card-img" src="assets/images/rooms/room2@1x.png"
+                      srcset="assets/images/rooms/room2@2x.png 2x, assets/images/rooms/room2@3x.png 3x"
+                      alt="Mission Belvedere" loading="lazy" width="327">
+                  </picture>
+                  <div class="rooms__card-label">Adventure/Mystery</div>
                 </div>
-                <p class="block-info__description">
-                  Rette die kleine Sandy, sie wurde von einem Dämon in die Kanalisation der Stadt verschleppt. Werdet
-                  zum Helden oder
-                  bleibt in der Gewalt des Unbekannten.
-                </p>
-                <button class="block-info__btn" type="button">Select game</button>
+                <div class="rooms__card-content block-info">
+                  <h3 class="block-info__title">Mission Belvedere</h3>
+                  <div class="block-info__detail">
+                    <p class="block-info__time">60 minin</p>
+                    <p class="block-info__key">Difficult</p>
+                    <p class="block-info__players">2-6</p>
+                  </div>
+                  <p class="block-info__description">
+                    Nehmt an dem Raub des Jahrhunderts teil! Macht mit und versucht, Gustav Klimts "Der Kuss" aus
+                    Österreichs sicherstem
+                    Museum zu stehlen.
+                  </p>
+                  <button class="block-info__btn" type="button">Select game</button>
+                </div>
+              </div>
+              <div class="rooms__card swiper-slide">
+                <div class="rooms__card-image">
+                  <picture class="rooms__picture">
+                    <source
+                      srcset="assets/images/rooms/room2@1x.avif 1x, assets/images/rooms/room2@2x.avif 2x, assets/images/rooms/room2@3x.avif 3x"
+                      type="image/avif">
+                    <source
+                      srcset="assets/images/rooms/room2@1x.webp 1x, assets/images/rooms/room2@2x.webp 2x, assets/images/rooms/room2@3x.webp 3x"
+                      type="image/webp">
+                    <img class="rooms__card-img" src="assets/images/rooms/room2@1x.png"
+                      srcset="assets/images/rooms/room2@2x.png 2x, assets/images/rooms/room2@3x.png 3x"
+                      alt="Mission Belvedere" loading="lazy" width="327">
+                  </picture>
+                  <div class="rooms__card-label">Adventure/Fantasy</div>
+                </div>
+                <div class="rooms__card-content block-info">
+                  <h3 class="block-info__title">Mission Belvedere</h3>
+                  <div class="block-info__detail">
+                    <p class="block-info__time">60 min</p>
+                    <p class="block-info__key">Difficult</p>
+                    <p class="block-info__players">2-6</p>
+                  </div>
+                  <p class="block-info__description">
+                    Nehmt an dem Raub des Jahrhunderts teil! Macht mit und versucht, Gustav Klimts "Der Kuss" aus
+                    Österreichs sicherstem
+                    Museum zu stehlen.
+                  </p>
+                  <button class="block-info__btn" type="button">Select game</button>
+                </div>
+              </div>
+              <div class="rooms__card swiper-slide">
+                <div class="rooms__card-image">
+                  <picture class="rooms__picture">
+                    <source
+                      srcset="assets/images/rooms/room1@1x.avif 1x, assets/images/rooms/room1@2x.avif 2x, assets/images/rooms/room1@3x.avif 3x"
+                      type="image/avif">
+                    <source
+                      srcset="assets/images/rooms/room1@1x.webp 1x, assets/images/rooms/room1@2x.webp 2x, assets/images/rooms/room1@3x.webp 3x"
+                      type="image/webp">
+                    <img class="rooms__card-img" src="assets/images/rooms/room1@1x.png"
+                      srcset="assets/images/rooms/room1@2x.png 2x, assets/images/rooms/room1@3x.png 3x"
+                      alt="School of Magic" loading="lazy">
+                  </picture>
+                  <div class="rooms__card-label">Adventure/Fantasy</div>
+                </div>
+                <div class="rooms__card-content block-info">
+                  <h3 class="block-info__title">School of Magic</h3>
+                  <div class="block-info__detail">
+                    <p class="block-info__time">60 min</p>
+                    <p class="block-info__key">Difficult</p>
+                    <p class="block-info__players">2-6</p>
+                  </div>
+                  <p class="block-info__description">
+                    Nehmt an dem Raub des Jahrhunderts teil! Macht mit und versucht, Gustav Klimts "Der Kuss" aus
+                    Österreichs sicherstem
+                    Museum zu stehlen.
+                  </p>
+                  <button class="block-info__btn" type="button">Select game</button>
+                </div>
+              </div>
+              <div class="rooms__card swiper-slide">
+                <div class="rooms__card-image">
+                  <picture class="rooms__picture">
+                    <source
+                      srcset="assets/images/rooms/room3@1x.avif 1x, assets/images/rooms/room3@2x.avif 2x, assets/images/rooms/room3@3x.avif 3x"
+                      type="image/avif">
+                    <source
+                      srcset="assets/images/rooms/room3@1x.webp 1x, assets/images/rooms/room3@2x.webp 2x, assets/images/rooms/room3@3x.webp 3x"
+                      type="image/webp">
+                    <img class="rooms__card-img" src="assets/images/rooms/room3@1x.png"
+                      srcset="assets/images/rooms/room3@2x.png 2x, assets/images/rooms/room3@3x.png 3x"
+                      alt="The Unknown" loading="lazy" width="327">
+                  </picture>
+                  <div class="rooms__card-label rooms__card-label--masks">Horror with live actor</div>
+                </div>
+                <div class="rooms__card-content block-info">
+                  <h3 class="block-info__title">The Unknown</h3>
+                  <div class="block-info__detail">
+                    <p class="block-info__time">60 min</p>
+                    <p class="block-info__key">Difficult</p>
+                    <p class="block-info__players">2-6</p>
+                  </div>
+                  <p class="block-info__description">
+                    Rette die kleine Sandy, sie wurde von einem Dämon in die
+                    Kanalisation der Stadt verschleppt. Werdet zum Helden oder
+                    bleibt in der Gewalt des Unbekannten.
+                  </p>
+                  <button class="block-info__btn" type="button">Select game</button>
+                </div>
+              </div>
+              <div class="rooms__card swiper-slide">
+                <div class="rooms__card-image">
+                  <picture class="rooms__picture">
+                    <source
+                      srcset="assets/images/rooms/room4@1x.avif 1x, assets/images/rooms/room4@2x.avif 2x, assets/images/rooms/room4@3x.avif 3x"
+                      type="image/avif">
+                    <source
+                      srcset="assets/images/rooms/room4@1x.webp 1x, assets/images/rooms/room4@2x.webp 2x, assets/images/rooms/room4@3x.webp 3x"
+                      type="image/webp">
+                    <img class="rooms__card-img" src="assets/images/rooms/room4@1x.png"
+                      srcset="assets/images/rooms/room4@2x.png 2x, assets/images/rooms/room4@3x.png 3x" alt="The Nun">
+                  </picture>
+                  <div class="rooms__card-label rooms__card-label--masks">Horror with live actor</div>
+                </div>
+                <div class="rooms__card-content block-info">
+                  <h3 class="block-info__title">The Nun</h3>
+                  <div class="block-info__detail">
+                    <p class="block-info__time">60 min</p>
+                    <p class="block-info__key">Difficult</p>
+                    <p class="block-info__players">2-6</p>
+                  </div>
+                  <p class="block-info__description">
+                    Rette die kleine Sandy, sie wurde von einem Dämon in die Kanalisation der Stadt verschleppt. Werdet
+                    zum Helden oder
+                    bleibt in der Gewalt des Unbekannten.
+                  </p>
+                  <button class="block-info__btn" type="button">Select game</button>
+                </div>
               </div>
             </div>
           </div>
+          <button class="slider-nav next" type="button" aria-label="Next slide"></button>
         </div>
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-button-next"></div>
-      </div>
 
       </div>
-    </section>
+    </section> -->
   </main>
 
   <footer class="footer">
@@ -318,7 +312,7 @@
       <div class="footer__main">
         <div class="footer__logo-section">
           <a href="/Nowayout/">
-            <img src="assets/logo/footer-logo.svg" alt="Nowayout logo" class="footer__logo">
+            <img src="assets/icons/footer-logo.svg" alt="Nowayout logo" class="footer__logo">
           </a>
           <p class="footer__impressum">Impressum<br>Elite Experience EC Gmbh,<br>FN
             491623a,<br>Pirchäckerstrasse 34,
@@ -456,8 +450,7 @@
     </div>
   </footer>
 
-  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-  <script src="bundle.js"></script>
+  <!-- <script src="bundle.js"></script> -->
 
 </body>
 

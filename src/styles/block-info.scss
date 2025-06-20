@@ -6,7 +6,7 @@
 
 
   padding: clamp(0.625rem, 0.337rem + 1.44vw, 1.875rem);
-  padding-left: 28px;
+  padding-left: clamp(0.625rem, -2.505rem + 15.65vw, 1.75rem);
   display: flex;
   flex-direction: column;
   flex-grow: 1;
