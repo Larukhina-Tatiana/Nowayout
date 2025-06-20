@@ -4,16 +4,20 @@
   height: 100vh;
 
   &__container {
-    position: relative;
-    align-items: center;
     display: flex;
-    height: 100%;
-    padding-top: 52px;
-
-    z-index: 10;
     flex-direction: column;
+    align-items: flex-start;
+
     height: max-content;
 
+    z-index: 10;
+
+    @media screen and (width <=767px) {
+      position: relative;
+      padding-right: 40px;
+      padding-left: 40px;
+      padding-top: 52px;
+    }
   }
 
   &__bg {
@@ -58,8 +62,7 @@
     position: absolute;
     left: 40px;
     top: 146px;
-    // right: 150px;
-    // top: 542px;
+
     width: clamp(6.313rem, 4.218rem + 8.94vw, 13.813rem);
 
     &-pic {
@@ -73,18 +76,18 @@
   &__content {
     padding-top: 341px;
     width: 100%;
-    width: clamp(18.438rem, 11.021rem + 31.65vw, 45rem);
   }
 
   &__title {
+    max-width: 340px;
     word-wrap: break-word;
     font-weight: 500;
     font-size: clamp(2.875rem, 2.385rem + 2.45vw, 5rem);
     line-height: 103%;
-    // margin-top: 59px;
   }
 
   &__description {
+    max-width: 700px;
     // padding-block-start: 21px;
     // padding-block-start: 17px;
     padding-top: clamp(1.063rem, 0.993rem + 0.3vw, 1.313rem);
@@ -109,8 +112,8 @@
     position: relative;
     z-index: 1;
     animation:
-      fadeInUp 0.8s ease forwards 0.8s,
-      pulse 1.5s ease-in-out infinite 2s;
+      fadeInUp 0.8s ease forwards 0.8s, ;
+    // pulse 1.5s ease-in-out infinite 2s;
     @include transition($transition-property: transform);
 
     @media (any-hover: hover) {
@@ -141,33 +144,83 @@
     animation-delay: 0.8s;
   }
 
-  /*Анимации*/
+  /*
+  
+  Медиа-запросы
+  
+  */
 
-  // @media (max-width: 935px) {
-  //   height: auto;
-  //   padding: 334px 0;
-
-  //   &__container {
-  //     height: max-content;
-  //   }
-
-  //   &__image {
-  //     position: absolute;
-  //     right: 234px;
-  //     top: 146px;
-  //   }
-  // }
-}
-
-@keyframes spin {
-  from {
-    transform: rotate(0deg);
+  @media screen and (min-width: 425px) {
+    &__btn {
+      width: 221px;
+    }
   }
 
-  to {
-    transform: rotate(360deg);
+  @media screen and (min-width: 574px) {
+    &__title {
+      max-width: 476px;
+      line-height: 106%;
+    }
+  }
+
+  @media (min-width: 768px) {
+    &__container {
+      align-items: center;
+    }
+
+    &__content {
+      padding-top: 300px;
+    }
+
+    &__title {
+      max-width: 518px;
+    }
+
+    &__image {
+      left: 80%;
+      top: 542px;
+    }
+  }
+
+  @media screen and (min-width: 930px) {
+    &__title {
+      line-height: 106%;
+    }
   }
 }
+
+
+
+
+
+
+/*Анимации*/
+
+// @media (max-width: 935px) {
+//   height: auto;
+//   padding: 334px 0;
+
+//   &__container {
+//     height: max-content;
+//   }
+
+//   &__image {
+//     position: absolute;
+//     right: 234px;
+//     top: 146px;
+//   }
+// }
+
+
+// @keyframes spin {
+//   from {
+//     transform: rotate(0deg);
+//   }
+
+//   to {
+//     transform: rotate(360deg);
+//   }
+// }
 
 // Анимация появления элементов
 @keyframes fadeInUp {
@@ -177,19 +230,19 @@
   }
 }
 
-@keyframes pulse {
-  0% {
-    transform: scale(1);
-    box-shadow: 0 0 0 0 rgba(255, 98, 0, 0.7);
-  }
+// @keyframes pulse {
+//   0% {
+//     transform: scale(1);
+//     box-shadow: 0 0 0 0 rgba(255, 98, 0, 0.7);
+//   }
 
-  50% {
-    transform: scale(1.05);
-    box-shadow: 0 0 0 10px rgba(255, 98, 0, 0);
-  }
+//   50% {
+//     transform: scale(1.05);
+//     box-shadow: 0 0 0 10px rgba(255, 98, 0, 0);
+//   }
 
-  100% {
-    transform: scale(1);
-    box-shadow: 0 0 0 0 rgba(255, 98, 0, 0);
-  }
-}
+//   100% {
+//     transform: scale(1);
+//     box-shadow: 0 0 0 0 rgba(255, 98, 0, 0);
+//   }
+// }
