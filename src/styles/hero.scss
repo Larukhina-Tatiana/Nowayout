@@ -108,7 +108,9 @@
     border: none;
     position: relative;
     z-index: 1;
-    animation: pulse 1.5s ease-in-out infinite;
+    animation:
+      fadeInUp 0.8s ease forwards 0.8s,
+      pulse 1.5s ease-in-out infinite 2s;
     @include transition($transition-property: transform);
 
     @media (any-hover: hover) {
@@ -117,6 +119,29 @@
       }
     }
   }
+
+
+  /* относиться к анимации */
+  &__title,
+  &__description {
+    opacity: 0;
+    transform: translateX(-20px);
+    animation: fadeInUp 0.8s ease forwards;
+  }
+
+  &__title {
+    animation-delay: 0.2s;
+  }
+
+  &__description {
+    animation-delay: 0.5s;
+  }
+
+  &__btn {
+    animation-delay: 0.8s;
+  }
+
+  /*Анимации*/
 
   // @media (max-width: 935px) {
   //   height: auto;
@@ -141,6 +166,14 @@
 
   to {
     transform: rotate(360deg);
+  }
+}
+
+// Анимация появления элементов
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateX(0);
   }
 }
 
