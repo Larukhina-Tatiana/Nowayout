@@ -112,8 +112,8 @@
     position: relative;
     z-index: 1;
     animation:
-      fadeInUp 0.8s ease forwards 0.8s, ;
-    // pulse 1.5s ease-in-out infinite 2s;
+      fadeInUp 0.8s ease forwards 0.8s,
+      pulse 1.5s ease-in-out infinite 2s;
     @include transition($transition-property: transform);
 
     @media (any-hover: hover) {
@@ -196,31 +196,18 @@
 
 /*Анимации*/
 
-// @media (max-width: 935px) {
-//   height: auto;
-//   padding: 334px 0;
-
-//   &__container {
-//     height: max-content;
-//   }
-
-//   &__image {
-//     position: absolute;
-//     right: 234px;
-//     top: 146px;
-//   }
-// }
 
 
-// @keyframes spin {
-//   from {
-//     transform: rotate(0deg);
-//   }
 
-//   to {
-//     transform: rotate(360deg);
-//   }
-// }
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
 
 // Анимация появления элементов
 @keyframes fadeInUp {
@@ -230,19 +217,19 @@
   }
 }
 
-// @keyframes pulse {
-//   0% {
-//     transform: scale(1);
-//     box-shadow: 0 0 0 0 rgba(255, 98, 0, 0.7);
-//   }
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(255, 98, 0, 0.7);
+  }
 
-//   50% {
-//     transform: scale(1.05);
-//     box-shadow: 0 0 0 10px rgba(255, 98, 0, 0);
-//   }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 0 0 10px rgba(255, 98, 0, 0);
+  }
 
-//   100% {
-//     transform: scale(1);
-//     box-shadow: 0 0 0 0 rgba(255, 98, 0, 0);
-//   }
-// }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(255, 98, 0, 0);
+  }
+}
