@@ -27,9 +27,6 @@
     background-color: currentColor;
     @include transition ($transition-property: (color, transform, top));
 
-    @media (any-hover: hover) {
-      &:hover {}
-    }
   }
 
   &::before {
@@ -44,7 +41,7 @@
     height: $burger-line-height;
     background-color: currentColor;
     transform: translateY(-50%);
-    @include transition ($transition-property: (transform, color));
+    @include transition ($transition-property: (transform, background-color));
   }
 
   &::after {
