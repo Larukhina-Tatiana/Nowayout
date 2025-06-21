@@ -89,7 +89,8 @@
     width: 267px;
     height: 50px;
     padding: 16px 24px;
-    // background-image: url("../assets/images/button-def.png");
+    background-image: url("../assets/images/button-def.png");
+    background-repeat: no-repeat;
     color: $color-text-main;
     font-weight: 500;
     line-height: 1.256;
