@@ -69,8 +69,12 @@
 
     &-label {
       position: absolute;
-      top: 30px;
+      width: 295px;
+      height: 55px;
+      overflow: hidden;
 
+      top: 30px;
+      text-wrap: balance;
       left: 10px;
       background-color: rgba($color-text-main, 0.05);
       border: 1px solid $color-text-main;
@@ -80,27 +84,28 @@
       line-height: 1.714;
       backdrop-filter: blur(33px);
       display: inline-flex;
-      align-items: center;
+      align-items: flex-start;
       gap: 6px;
+    }
 
-      // max-height: 30px;
+    // max-height: 30px;
+    &-icon {
+      flex-shrink: 0;
+      width: 24px;
+      height: 24px;
+      background: url("../assets/icons/masks.svg") center/cover no-repeat;
+      margin-top: 2px;
+    }
 
-      &--masks {
-        padding: 2px 6px;
-
-        &::before {
-          content: "";
-          display: inline-block;
-          width: 24px;
-          height: 24px;
-          background-image: url("../assets/icons/masks.svg");
-          background-size: contain;
-          background-repeat: no-repeat;
-        }
-
-      }
+    &-text {
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 2;
+      overflow: hidden;
     }
   }
+
+
 
   // @media (max-width: 480px) {
   //   .rooms__cards {
