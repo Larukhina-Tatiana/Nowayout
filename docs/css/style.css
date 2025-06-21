@@ -458,20 +458,27 @@ section {
   border-left: 1px solid rgba(255, 255, 255, 0.15);
 }
 .header__link {
+  position: relative;
   padding: 23px 30px;
-  transition: color 0.2s;
   display: flex;
   align-items: center;
   height: 100%;
   transition-duration: 300ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
+.header__link::before {
+  content: "";
+  position: absolute;
+  bottom: 0.5em;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #E50012;
+  transition: background-color 0.3s ease 0s, width 0.3s ease 0s, left 0.3s ease 0s;
+}
 @media (any-hover: hover) {
-  .header__link:hover {
-    color: #E50012;
-  }
-  .header__link:hover .header__icon {
-    fill: #E50012;
+  .header__link:hover::before {
+    width: 100%;
   }
 }
 .header__icon {
@@ -563,7 +570,6 @@ section {
 }
 .header__mobile-menu.active {
   right: 0;
-  /* Slide in */
 }
 .header__mobile-menu .header__nav {
   flex-direction: column;
@@ -590,7 +596,6 @@ section {
   width: 100%;
   padding: 10px 0;
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-  /* Using rgba(255, 255, 255, 0.2) as placeholder for $color-text-main combined with opacity */
 }
 .header__mobile-menu .header__location .header__location-btn {
   width: 100%;
@@ -629,6 +634,11 @@ section {
   cursor: pointer;
   z-index: 1000;
 }
+@media (any-hover: hover) {
+  .burger:hover {
+    color: #E50012;
+  }
+}
 .burger::after, .burger::before {
   content: "";
   position: absolute;
@@ -636,7 +646,8 @@ section {
   width: 100%;
   height: 2px;
   background-color: currentColor;
-  transition: transform 0.3s ease-in-out, top 0.3s ease-in-out;
+  transition-duration: 300ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .burger::before {
   top: 0;
@@ -649,7 +660,8 @@ section {
   height: 2px;
   background-color: currentColor;
   transform: translateY(-50%);
-  transition: transform 0.3s ease-in-out;
+  transition-duration: 300ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .burger::after {
   top: calc(100% - 2px);

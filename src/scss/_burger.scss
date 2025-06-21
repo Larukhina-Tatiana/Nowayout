@@ -11,6 +11,12 @@
   cursor: pointer;
   z-index: 1000;
 
+  @media (any-hover: hover) {
+    &:hover {
+      color: $color-accent;
+    }
+  }
+
   &::after,
   &::before {
     content: "";
@@ -19,7 +25,11 @@
     width: 100%;
     height: $burger-line-height;
     background-color: currentColor;
-    transition: transform .3s ease-in-out, top .3s ease-in-out;
+    @include transition ($transition-property: (color, transform, top));
+
+    @media (any-hover: hover) {
+      &:hover {}
+    }
   }
 
   &::before {
@@ -34,7 +44,7 @@
     height: $burger-line-height;
     background-color: currentColor;
     transform: translateY(-50%);
-    transition: transform .3s ease-in-out;
+    @include transition ($transition-property: (transform, color));
   }
 
   &::after {

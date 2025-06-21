@@ -178,20 +178,37 @@
   }
 
   &__link {
+    position: relative;
     padding: 23px 30px;
-    transition: color 0.2s;
+
     display: flex;
     align-items: center;
     height: 100%;
     @include transition($transition-property: color);
 
-    @media (any-hover: hover) {
-      &:hover {
-        color: $color-accent;
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: .5em;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background-color: $color-accent;
+      -webkit-transition: background-color .3s ease 0s, width .3s ease 0s, left .3s ease 0s;
+      -o-transition: background-color .3s ease 0s, width .3s ease 0s, left .3s ease 0s;
+      transition: background-color .3s ease 0s, width .3s ease 0s, left .3s ease 0s;
+    }
 
-        .header__icon {
-          fill: $color-accent;
-        }
+    @media (any-hover: hover) {
+
+      &:hover::before {
+        width: 100%;
+        //   &:hover {
+        //     color: $color-accent;
+
+        //     .header__icon {
+        //       fill: $color-accent;
+        //     }
       }
     }
   }
@@ -304,7 +321,6 @@
 
     &.active {
       right: 0;
-      /* Slide in */
     }
 
 
@@ -338,7 +354,7 @@
       width: 100%;
       padding: 10px 0;
       border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-      /* Using rgba(255, 255, 255, 0.2) as placeholder for $color-text-main combined with opacity */
+
     }
 
     .header__location {
