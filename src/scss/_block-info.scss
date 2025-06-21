@@ -1,0 +1,107 @@
+@use "./utils/vars.scss" as *;
+@use "sass:color";
+
+.block-info {
+
+
+
+  padding: clamp(0.625rem, 0.337rem + 1.44vw, 1.875rem);
+  padding-left: clamp(0.625rem, -2.505rem + 15.65vw, 1.75rem);
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  margin-top: -72px;
+
+  &__title {
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 1.256;
+    color: $color-text-main;
+    padding-bottom: 20px;
+  }
+
+  &__detail {
+    // align-items: center;
+    border-top: 1px solid hsla(0, 0%, 100%, .15);
+    display: flex;
+    // flex-wrap: wrap;
+    margin-bottom: 14px;
+    padding: 14px 0;
+    line-height: 1.714;
+    gap: 18px;
+  }
+
+  &__time,
+  &__key,
+  &__players {
+    display: inline-flex;
+    align-items: center;
+  }
+
+  &__time::before,
+  &__key::before,
+  &__players::before {
+    content: "";
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
+  &__time::before {
+    margin-right: 7px;
+    background-image: url("../images/icons/clock.svg");
+  }
+
+
+
+  &__key::before {
+    margin-right: 10px;
+    background-image: url("../images/icons/key.svg");
+  }
+
+
+  &__players::before {
+    margin-right: 10px;
+    background-image: url("../images/icons/players.svg");
+  }
+
+
+
+  &__description {
+    line-height: 1.714;
+    flex-grow: 1;
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    box-orient: vertical;
+    -webkit-line-clamp: 5;
+    line-clamp: 5;
+    height: 120px;
+    margin-bottom: 24px;
+  }
+
+  &__btn {
+    display: block;
+    width: 267px;
+    height: 50px;
+    padding: 16px 24px;
+    background-image: url("../images/btn/button-def.webp");
+    background-repeat: no-repeat;
+    color: $color-text-main;
+    font-weight: 500;
+    line-height: 1.256;
+    text-align: center;
+    cursor: pointer;
+    @include transition(background-color, border-color);
+    margin-top: auto;
+    margin-left: auto;
+    margin-right: auto;
+
+    &:hover {
+      background-color: color.adjust($color-accent, $lightness: -10%);
+      border-color: color.adjust($color-accent, $lightness: -10%);
+    }
+  }
+}

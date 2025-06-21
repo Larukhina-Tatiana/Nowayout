@@ -1,0 +1,16 @@
+@use "./utils/modern-normalize.min";
+@use "./utils/vars";
+@use "./utils/fonts";
+@use "./utils/global";
+@use "./header";
+@use "./burger";
+@use "./hero";
+@use "./footer";
+@use "./rooms";
+@use "./block-info";
+@use "./slider";
+
+
+main {
+  flex-grow: 1;
+}

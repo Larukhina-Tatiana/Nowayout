@@ -1,0 +1,157 @@
+@use 'sass:color';
+@use './vars.scss' as *;
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+a {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+
+a:visited {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+address {
+  font-style: normal;
+}
+
+button {
+  border: none;
+  background-color: transparent;
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  cursor: pointer;
+}
+
+html {
+  scroll-behavior: smooth;
+  height: 100%;
+}
+
+body {
+  background-color: $color-bg;
+  color: $color-text-main;
+  font-family: $font-main;
+  font-size: 14px;
+  font-weight: 300;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: visible;
+  overflow-x: hidden;
+}
+
+.container {
+  max-width: 1718px;
+  margin: 0 auto;
+  padding: 0 20px;
+
+  @media (max-width: 435px) {
+    padding: 0;
+  }
+
+}
+
+section {
+  border-bottom: 1px solid $color-header-border;
+}
+
+.scroll-button {
+  position: fixed;
+  bottom: 43%;
+  right: 0;
+  z-index: 999;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border: none;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(100%);
+  /* Start off-screen to the right for smooth appearance */
+  @include transition($transition-property: (visibility, opacity, transform)); // For overall button visibility and position
+
+  &__inner {
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    @include transition($transition-property: transform);
+  }
+
+  &__border-svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    @include transition($transition-property: transform); // For smooth scaling of border
+  }
+
+  &__arrow-svg {
+    width: 24px;
+    height: 24px;
+    fill: white;
+    /* Ensure the arrow is white */
+    @include transition($transition-property: transform); // For smooth scaling and rotation of arrow
+  }
+
+  &.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+    /* Move to original position */
+  }
+
+  &.down-arrow {
+    .scroll-button__arrow-svg {
+      transform: rotate(180deg);
+    }
+  }
+
+  @media (any-hover: hover) {
+    &:hover {
+      .scroll-button__border-svg {
+        transform: scale(1.3);
+      }
+
+      // Default hover for arrow (when not in 'down-arrow' state)
+      // This will ensure scale 1.3 when arrow is pointing UP (0deg rotation)
+      .scroll-button__arrow-svg {
+        transform: scale(1.3);
+      }
+    }
+
+    // Hover for arrow when in 'down-arrow' state
+    &.down-arrow:hover {
+      .scroll-button__arrow-svg {
+        transform: rotate(180deg) scale(1.3);
+      }
+    }
+  }
+}

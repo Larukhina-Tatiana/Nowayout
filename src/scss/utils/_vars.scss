@@ -1,0 +1,26 @@
+// Цвета
+$color-bg: #000;
+$color-bg-header: #121212;
+$color-header-bg-mobile: #2b2b2b;
+$white: #F7F5F9;
+$color-text-main: #F7F5F9;
+$color-accent: #E50012;
+
+$color-header-lang-btn-hover: rgba(255, 255, 255, 0.08);
+$color-header-border: rgba(255, 255, 255, 0.15);
+
+$footer-text: rgba(255, 255, 255, 0.5);
+
+// Шрифты
+$font-main: 'MADE Outer Sans', Arial, sans-serif;
+
+
+$burger-width: 60px;
+$burger-height: 18px;
+$burger-line-height: 2px;
+
+
+@mixin transition ($transition-property: color, $transition-duration: 300ms, $transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1)) {
+  transition-duration: $transition-duration;
+  transition-timing-function: $transition-timing-function;
+}
