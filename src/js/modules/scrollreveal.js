@@ -2,6 +2,7 @@ import ScrollReveal, { reveal } from "scrollreveal";
 ScrollReveal({
   distance: "60px",
   duration: 2800,
+  reset: true,
 });
 
 document.querySelectorAll(".rooms__card").forEach((card, index) => {
@@ -9,9 +10,24 @@ document.querySelectorAll(".rooms__card").forEach((card, index) => {
 });
 
 function ScrollRevealFunc() {
-  ScrollReveal().reveal(".rooms", {
+  ScrollReveal().reveal(".hero__title, .gift__title", {
+    origin: "left",
+  });
+
+  ScrollReveal().reveal(".hero__description, .gift__info-text", {
+    origin: "right",
+    duration: 3800,
+  });
+
+  // ScrollReveal().reveal(".hero__btn, .gift__btn", {
+  //   origin: "top",
+  //   duration: 6800,
+  // });
+
+  ScrollReveal().reveal(".rooms,", {
     origin: "top",
   });
+
   ScrollReveal().reveal(".rooms__title", {
     origin: "right",
   });
@@ -22,6 +38,7 @@ function ScrollRevealFunc() {
   ScrollReveal().reveal(".hero", {
     origin: "bottom",
   });
+
   const cards = document.querySelectorAll(".rooms__card");
 
   cards.forEach((card, index) => {
@@ -37,9 +54,5 @@ function ScrollRevealFunc() {
       cleanup: true, // чтобы не пересоздавал каждый раз
     });
   });
-
-  // ScrollReveal().reveal(".rooms__card", {
-  //   origin: "left",
-  // });
 }
 export default ScrollRevealFunc;

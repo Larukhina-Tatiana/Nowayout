@@ -2,6 +2,9 @@
 @use "./utils/vars";
 @use "./utils/fonts";
 @use "./utils/global";
+@use "./blocks/animations";
+@use "./blocks/buttons";
+@use "./blocks/titles";
 @use "./header";
 @use "./burger";
 @use "./hero";
@@ -9,8 +12,4 @@
 @use "./rooms";
 @use "./block-info";
 @use "./slider";
-
-
-main {
-  flex-grow: 1;
-}
+@use "./gift";

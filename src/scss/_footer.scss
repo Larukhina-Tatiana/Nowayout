@@ -47,7 +47,7 @@
 
   &__impressum {
     line-height: 1.714;
-    color: $footer-text;
+    color: $secondary-text;
     max-width: 257px; // From Figma: Impressum text block width
   }
 
@@ -71,7 +71,7 @@
 
     &-text {
       line-height: 1.714;
-      color: $footer-text;
+      color: $secondary-text;
     }
   }
 
@@ -130,7 +130,7 @@
 
     &-text {
       line-height: 1.714;
-      color: $footer-text;
+      color: $secondary-text;
     }
 
     &-list {
@@ -158,7 +158,7 @@
 
   &__copyright-bottom {
     line-height: 1.714;
-    color: $footer-text;
+    color: $secondary-text;
   }
 
   &__legal-links {

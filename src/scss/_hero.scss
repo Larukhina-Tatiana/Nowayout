@@ -66,7 +66,6 @@
     width: clamp(6.313rem, 4.218rem + 8.94vw, 13.813rem);
 
     &-pic {
-      animation: spin 6s linear infinite;
       transform-origin: center;
       display: block;
       max-width: 100%;
@@ -98,51 +97,9 @@
     line-height: 1.41666;
   }
 
-  &__btn {
-    padding: 21px 27px;
-    width: 100%;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-image: url("../images/icons/red-btn.svg");
-    font-weight: 500;
-    text-align: center;
-    cursor: pointer;
-    border: none;
-    position: relative;
-    z-index: 1;
-    animation:
-      fadeInUp 0.8s ease forwards 0.8s,
-      pulse 1.5s ease-in-out infinite 2s;
-    @include transition($transition-property: transform);
-
-    @media (any-hover: hover) {
-      &:hover {
-        transform: scale(1.3);
-      }
-    }
-  }
-
-
-  /* относиться к анимации */
-  &__title,
-  &__description {
-    opacity: 0;
-    transform: translateX(-20px);
-    animation: fadeInUp 0.8s ease forwards;
-  }
-
-  &__title {
-    animation-delay: 0.2s;
-  }
-
-  &__description {
-    animation-delay: 0.5s;
-  }
-
-  &__btn {
-    animation-delay: 0.8s;
-  }
+  // &__btn {
+  //   animation-delay: 0.8s;
+  // }
 
   /*
   
@@ -150,11 +107,7 @@
   
   */
 
-  @media screen and (min-width: 425px) {
-    &__btn {
-      width: 221px;
-    }
-  }
+
 
   @media screen and (min-width: 574px) {
     &__title {
@@ -195,41 +148,3 @@
 
 
 /*Анимации*/
-
-
-
-
-@keyframes spin {
-  from {
-    transform: rotate(0deg);
-  }
-
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-// Анимация появления элементов
-@keyframes fadeInUp {
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes pulse {
-  0% {
-    transform: scale(1);
-    box-shadow: 0 0 0 0 rgba(255, 98, 0, 0.7);
-  }
-
-  50% {
-    transform: scale(1.05);
-    box-shadow: 0 0 0 10px rgba(255, 98, 0, 0);
-  }
-
-  100% {
-    transform: scale(1);
-    box-shadow: 0 0 0 0 rgba(255, 98, 0, 0);
-  }
-}

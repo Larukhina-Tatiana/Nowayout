@@ -4,5 +4,6 @@ import "./modules/header.js";
 import "./modules/burger.js";
 import "./modules/scroll-button.js";
 import "./modules/slider.js";
+import "./modules/animations.js";
 import ScrollReveal from "./modules/scrollreveal.js";
 ScrollReveal();

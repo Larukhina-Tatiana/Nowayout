@@ -1,0 +1,16 @@
+@use "./utils/vars.scss" as *;
+
+.title-h2 {
+  font-weight: 500;
+  font-size: clamp(2.25rem, 1.761rem + 2.08vw, 4rem);
+  line-height: 1.25;
+  margin-bottom: 34px;
+}
+
+.section-subtitle {
+  color: $secondary-text;
+  font-size: 18px;
+  font-weight: 250;
+  line-height: 28px;
+  margin-bottom: 40px;
+}

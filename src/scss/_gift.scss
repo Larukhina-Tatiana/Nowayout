@@ -1,0 +1,23 @@
+@use "./utils/vars.scss" as *;
+
+.gift {
+  padding-top: 60px;
+
+  &__content {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: center;
+    gap: 60px;
+  }
+
+  &__img-pic {
+    will-change: transform;
+  }
+
+  @media screen and (width >=1435px) {
+    &__content {
+      flex-direction: row;
+    }
+  }
+}
