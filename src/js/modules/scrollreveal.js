@@ -2,7 +2,7 @@ import ScrollReveal, { reveal } from "scrollreveal";
 ScrollReveal({
   distance: "60px",
   duration: 2800,
-  reset: true,
+  // reset: true,
 });
 
 document.querySelectorAll(".rooms__card").forEach((card, index) => {
@@ -10,6 +10,10 @@ document.querySelectorAll(".rooms__card").forEach((card, index) => {
 });
 
 function ScrollRevealFunc() {
+  ScrollReveal().reveal(".hero", {
+    origin: "bottom",
+  });
+
   ScrollReveal().reveal(".hero__title, .gift__title", {
     origin: "left",
   });
@@ -32,12 +36,23 @@ function ScrollRevealFunc() {
     origin: "right",
   });
 
+  ScrollReveal().reveal(".reveal-rotate", {
+    origin: "right",
+    // distance: "550px",
+    duration: 500,
+    delay: 200,
+    easing: "ease-in-out",
+    // reset: false,
+    rotate: {
+      x: 500,
+      y: 500,
+    },
+    scale: 0.5,
+  });
+
   // ScrollReveal().reveal(".satisfied, .hero__product", {
   //   origin: "left",
   // });
-  ScrollReveal().reveal(".hero", {
-    origin: "bottom",
-  });
 
   const cards = document.querySelectorAll(".rooms__card");
 
