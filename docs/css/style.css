@@ -320,12 +320,12 @@ section {
 }
 .animate-on-scroll.fadeInUp.pulse.in-view {
   animation: fadeInUp 0.2s ease-out forwards, pulse 1.5s ease-out infinite;
-  animation-delay: 6s, 0.5s;
+  animation-delay: 0s, 0.5s;
 }
-.animate-on-scroll.gift__img-pic.in-view {
+.animate-on-scroll.shake.in-view {
   animation: gift-nudge 1.2s ease-out;
 }
-.animate-on-scroll.gift__img-pic.shake-loop {
+.animate-on-scroll.shake.shake-loop {
   animation: shake 0.6s infinite ease-in-out;
 }
 

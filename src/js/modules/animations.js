@@ -2,7 +2,7 @@ const observer = new IntersectionObserver(
   (entries) => {
     entries.forEach((entry) => {
       const el = entry.target;
-      const isTarget = entry.target.classList.contains("gift__img-pic");
+      const isTarget = entry.target.classList.contains("shake");
 
       if (entry.isIntersecting) {
         entry.target.classList.add("in-view");
@@ -12,8 +12,8 @@ const observer = new IntersectionObserver(
           clearShakeLoop(entry.target);
         }
 
-        observer.unobserve(entry.target); // если нужно только один раз
-        // console.log("✅ Элемент в зоне видимости:", entry.target);
+        // observer.unobserve(entry.target); // если нужно только один раз
+        // // console.log("✅ Элемент в зоне видимости:", entry.target);
       } else {
         entry.target.classList.remove("in-view");
         if (isTarget) {
@@ -49,5 +49,4 @@ function clearShakeLoop(el) {
 
 document.querySelectorAll(".animate-on-scroll").forEach((el) => {
   observer.observe(el);
-  console.log("🔍 Наблюдаю:", el);
 });
