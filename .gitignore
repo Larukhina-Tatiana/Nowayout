@@ -2,3 +2,4 @@ node_modules
 libs
 src/fonts
 src/images
+gulp/version.json

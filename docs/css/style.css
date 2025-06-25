@@ -301,7 +301,6 @@ section {
 }
 .container--footer {
   padding: 0 36px;
-  outline: 1px solid red;
 }
 @media screen and (width > 1023px) {
   .container--footer {
@@ -416,7 +415,7 @@ section {
 
 .title-h2 {
   font-weight: 500;
-  font-size: clamp(2.25rem, 1.761rem + 2.08vw, 4rem);
+  font-size: clamp(1.563rem, 0.882rem + 2.9vw, 4rem);
   line-height: 1.25;
   margin-bottom: 34px;
 }
@@ -1382,6 +1381,7 @@ section {
 }
 .gift {
   padding-top: 60px;
+  padding-bottom: 60px;
 }
 .gift__content {
   display: flex;
@@ -1393,7 +1393,7 @@ section {
 .gift__img-pic {
   will-change: transform;
 }
-@media screen and (width >= 1435px) {
+@media screen and (width > 767px) {
   .gift__content {
     flex-direction: row;
   }
