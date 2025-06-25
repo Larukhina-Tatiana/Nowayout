@@ -14,7 +14,8 @@ export const path = {
     svgsprite: `${buildFolder}/images/svgsprite/`,
     icons: `${buildFolder}/images/icons/`,
     files: `${buildFolder}/files/`,
-    copy: `${buildFolder}/images/favicon/`,
+    copyfavicon: `${buildFolder}/images/favicon/`,
+    // copy: `${buildFolder}/images/favicon/`,
     js: `${buildFolder}/js/`,
   },
   src: {
@@ -24,10 +25,11 @@ export const path = {
     avif: `${srcFolder}/images/**/*.{jpg,jpeg,gif,png}`,
     svgsprite: `${srcFolder}/svgsprite/**/*`,
     icons: `${srcFolder}/images/icons/**/*`,
+    copyfavicon: `${srcFolder}/images/favicon/**/*.*`,
     js: `${srcFolder}/js/main.js`,
     fonts: `${srcFolder}/fonts/*.*`,
     files: `${srcFolder}/files/**/*.*`,
-    copy: `${srcFolder}/images/favicon/**/*.*`,
+    // copy: `${srcFolder}/images/favicon/**/*.*`,
   },
   watch: {
     html: `${srcFolder}/**/*.*`,

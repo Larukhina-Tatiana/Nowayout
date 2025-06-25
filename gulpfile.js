@@ -1,5 +1,7 @@
 // Основной модуль
 import gulp from "gulp";
+// Импорт плагинов
+import { plugins } from "./gulp/config/plugins.js";
 
 // Импорт путей
 import { path } from "./gulp/config/path.js";
@@ -22,12 +24,10 @@ import { html } from "./gulp/tasks/html.js";
 import { server } from "./gulp/tasks/server.js";
 import { scss } from "./gulp/tasks/scss.js";
 import { js } from "./gulp/tasks/js.js";
-import { imgAvif, imgWebp, imgImage } from "./gulp/tasks/images.js";
+import { copyfavicon } from "./gulp/tasks/copyFavicon.js";
+import { imgAvif, imgWebp, imgImage, imgPng } from "./gulp/tasks/images.js";
 // import { svgStack, svgSymbol } from "./gulp/tasks/svg.js";
 // import { OtfToTtf, ttfToWoff, fontStyle } from "./gulp/tasks/fonts.js";
-
-// Импорт плагинов
-import { plugins } from "./gulp/config/plugins.js";
 
 function watcher() {
   gulp.watch(path.watch.files, copy);
@@ -39,11 +39,21 @@ function watcher() {
   // gulp.watch(path.watch.sprite, gulp.series("svgStack", "svgSymbol"));
 }
 // Последовательная обработка шрифтов
-const images = gulp.series(imgAvif, imgWebp, imgImage);
+const images = gulp.series(imgAvif, imgWebp, imgImage, imgPng);
 // const sprite = gulp.series(svgStack, svgSymbol);
 // Основные задачи
 const mainTasks = gulp.series(
-  gulp.parallel(copy, copysprite, copyicons, copyfonts, html, scss, js, images)
+  gulp.parallel(
+    copy,
+    copyfavicon,
+    copysprite,
+    copyicons,
+    copyfonts,
+    html,
+    scss,
+    js,
+    images
+  )
 );
 // Построение сценариев
 const dev = gulp.series(reset, mainTasks, gulp.parallel(watcher, server));
