@@ -16,52 +16,6 @@ export const imgPng = () => {
     .pipe(app.gulp.dest(app.path.build.images));
 };
 
-// export const imgAvif = () => {
-//   return (
-//     app.gulp
-//       .src(
-//         [
-//           app.path.src.avif,
-//           app.path.src.images + "/**/*.png",
-//           app.path.src.images + "/**/*.jpg",
-//           app.path.src.images + "/**/*.jpeg",
-//         ],
-//         { encoding: false }
-//       )
-//       .pipe(
-//         app.plugins.newer(app.path.build.images)
-//         // app.plugins.newer({
-//         //   dest: app.path.build.images,
-//         //   map: function (relativePath) {
-//         //     return relativePath.replace(/\.(jpg|jpeg)$/i, ".avif");
-//         //   },
-//         // })
-//       )
-//       .pipe(debug({ title: "AVIF input:" }))
-//       .pipe(imagemin([avif({ quality: 50 })]))
-//       // .pipe(avif({ quality: 50 }))
-//       .on("data", (file) => {
-//         console.log("📦 AVIF создан:", file.relative);
-//       })
-//       .pipe(app.gulp.dest(app.path.build.images))
-//       .pipe(app.plugins.browserSync.stream())
-//   );
-// };
-
-// export const imgWebp = () => {
-//   return (
-//     app.gulp
-//       .src(app.path.src.images, { encoding: false })
-//       .pipe(app.plugins.newer(app.path.build.images))
-//       .pipe(webp({ quality: 85 }))
-//       // .pipe(avif({ quality: 50 }))
-//       .on("data", (file) => {
-//         console.log("📦 Webp создан:", file.relative);
-//       })
-//       .pipe(app.gulp.dest(app.path.build.images))
-//       .pipe(app.plugins.browserSync.stream())
-//   );
-// };
 export const imgImage = () => {
   return app.gulp
     .src(app.path.src.images, { encoding: false })
