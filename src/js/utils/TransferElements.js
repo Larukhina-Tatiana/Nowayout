@@ -1,13 +1,19 @@
 class TransferElements {
   constructor(...configs) {
-    this.configs = configs.map((config) => ({
-      ...config,
-      originalParent: config.sourceElement.parentNode,
-      originalNextSibling: config.sourceElement.nextElementSibling,
-    }));
+    this.configs = configs.map((config) => {
+      const parent = config.sourceElement.parentNode;
+      const placeholder = document.createComment("transfer-placeholder");
+      parent.insertBefore(placeholder, config.sourceElement);
+
+      return {
+        ...config,
+        originalParent: parent,
+        placeholder,
+      };
+    });
+
     this.handleResize = this.handleResize.bind(this);
     window.addEventListener("resize", this.handleResize);
-    // Initial call to set state
     this.handleResize();
   }
 
@@ -15,42 +21,33 @@ class TransferElements {
     const currentWidth = window.innerWidth;
 
     this.configs.forEach((config) => {
-      const {
-        sourceElement,
-        breakpoints,
-        originalParent,
-        originalNextSibling,
-      } = config;
+      const { sourceElement, breakpoints, originalParent, placeholder } =
+        config;
 
-      // Find the breakpoint that matches the current width
       const activeBreakpoint = Object.keys(breakpoints)
-        .sort((a, b) => parseInt(b) - parseInt(a)) // Sort in descending order
-        .find((bp) => currentWidth <= parseInt(bp));
+        .sort((a, b) => parseInt(b) - parseInt(a))
+        .find((bp) => {
+          const cond = breakpoints[bp].condition || "max";
+          return cond === "min"
+            ? currentWidth >= parseInt(bp)
+            : currentWidth <= parseInt(bp);
+        });
 
       if (activeBreakpoint) {
         const { targetElement, targetPosition } = breakpoints[activeBreakpoint];
-        // Move element to target if it's not already there
         if (sourceElement.parentNode !== targetElement) {
-          if (targetElement.children[targetPosition]) {
-            targetElement.insertBefore(
-              sourceElement,
-              targetElement.children[targetPosition]
-            );
-          } else {
-            targetElement.appendChild(sourceElement);
-          }
+          const children = Array.from(targetElement.children);
+          targetElement.insertBefore(
+            sourceElement,
+            children[targetPosition] || null
+          );
         }
       } else {
-        // If no breakpoint is active, move element back to its original position
-        if (sourceElement.parentNode !== originalParent) {
-          if (
-            originalNextSibling &&
-            originalNextSibling.parentNode === originalParent
-          ) {
-            originalParent.insertBefore(sourceElement, originalNextSibling);
-          } else {
-            originalParent.appendChild(sourceElement);
-          }
+        if (
+          placeholder.parentNode === originalParent &&
+          sourceElement.parentNode !== originalParent
+        ) {
+          originalParent.insertBefore(sourceElement, placeholder);
         }
       }
     });

@@ -26,6 +26,7 @@
     display: flex;
     height: 100%;
     position: relative;
+    justify-content: space-between;
     // align-items: center;
   }
 
@@ -354,7 +355,7 @@
       width: 100%;
       padding: 10px 0;
       border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-
+      /* Using rgba(255, 255, 255, 0.2) as placeholder for $color-text-main combined with opacity */
     }
 
     .header__location {

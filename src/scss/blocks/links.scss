@@ -3,16 +3,17 @@
 .link {
   position: relative;
   // padding: 23px 30px;
-
-  display: flex;
-  align-items: center;
-  height: 100%;
+  display: inline-block;
+  // display: flex;
+  // align-items: center;
+  // height: 100%;
   @include transition($transition-property: color);
 
   &::before {
     content: "";
     position: absolute;
-    bottom: .5em;
+    // bottom: .5em;
+    bottom: 0;
     left: 0;
     width: 0;
     height: 2px;

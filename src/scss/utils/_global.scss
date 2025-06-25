@@ -63,11 +63,6 @@ body {
   overflow-x: hidden;
 }
 
-.container {
-  max-width: 1718px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
 
 main {
   flex-grow: 1;
@@ -79,7 +74,7 @@ section {
 
 .scroll-button {
   position: fixed;
-  bottom: 43%;
+  top: 35px;
   right: 0;
   z-index: 999;
   width: 60px;

@@ -342,131 +342,158 @@
   </main>
   <footer class="footer">
   <div class="footer__light-bg"></div>
-  <div class="container">
+  <div class="container container--footer">
     <div class="footer__main">
-      <div class="footer__logo-section">
-        <a href="/Nowayout/">
-          <img src="./images/icons/footer-logo.svg" alt="Nowayout logo" class="footer__logo reveal-rotate">
-        </a>
-        <p class="footer__impressum">Impressum<br>Elite Experience EC&#160;Gmbh,<br>FN
-          491623a,<br>Pirch&#228;ckerstrasse 34,
-          1120 Vienna</p>
+      <div class="footer__identity">
+        <div class="footer__logo">
+          <a class="footer__logo-link" href="/Nowayout/" aria-label="Home page">
+            <img class="footer__logo-img reveal-rotate" src="./images/icons/footer-logo.svg" alt="Nowayout logo">
+          </a>
+        </div>
       </div>
 
       <div class="footer__nav">
-        <div class="footer__nav-column">
-          <h4 class="footer__nav-title">Rooms</h4>
-          <ul class="footer__nav-list">
-            <li class="footer__nav-item"><a href="#" class="link footer__link">Rooms</a></li>
-            <li class="footer__nav-item"><a href="#" class="link footer__link">Gift card</a></li>
-            <li class="footer__nav-item"><a href="#" class="link footer__link">How to&#160;play</a></li>
-            <li class="footer__nav-item"><a href="#" class="link footer__link">Blog</a></li>
-          </ul>
-        </div>
-        <div class="footer__nav-column">
-          <h4 class="footer__nav-title">About us</h4>
-          <ul class="footer__nav-list">
-            <li class="footer__nav-item"><a href="#" class="footer__link">About us</a></li>
-            <li class="footer__nav-item"><a href="#" class="footer__link">Career</a></li>
-            <li class="footer__nav-item"><a href="#" class="footer__link">Contact us</a></li>
-          </ul>
-        </div>
-        <div class="footer__nav-column">
-          <h4 class="footer__nav-title">Corporate</h4>
-          <ul class="footer__nav-list">
-            <li class="footer__nav-item"><a href="#" class="footer__link">Corporate</a></li>
-            <li class="footer__nav-item"><a href="#" class="footer__link">Birthday parties</a></li>
-            <li class="footer__nav-item"><a href="#" class="footer__link">Special offer</a></li>
-            <li class="footer__nav-item"><a href="#" class="footer__link">Bundle</a></li>
-          </ul>
-        </div>
-      </div>
+        <ul class="footer__nav-list">
+          <li class="footer__nav-item">
+            <a href="#" class="link footer__link">Rooms</a>
+          </li>
+          <li class="footer__nav-item">
+            <a href="#" class="link footer__link">Gift card</a>
+          </li>
+          <li class="footer__nav-item">
+            <a href="#" class="link footer__link">How to&#160;play</a>
+          </li>
+          <li class="footer__nav-item">
+            <a href="#" class="link footer__link">Blog</a>
+          </li>
+        </ul>
+        <!-- <div class="footer__nav-column"> -->
+        <ul class="footer__nav-list">
+          <li class="footer__nav-item">
+            <a href="#" class="link footer__link">Corporate</a>
+          </li>
+          <li class="footer__nav-item">
+            <a href="#" class="link footer__link">Birthday parties</a>
+          </li>
+          <li class="footer__nav-item">
+            <a href="#" class="link footer__link">Special offer</a>
+          </li>
+          <li class="footer__nav-item">
+            <a href="#" class="link footer__link">Bundle</a>
+          </li>
+        </ul>
 
-      <div class="footer__lang-switcher">
-        <a class="footer__lang-btn  footer__lang-btn--active" href="#" hreflang="de" aria-label="Germany language">
-          DE
-        </a>
-        <a class="footer__lang-btn" href="#" hreflang="en" aria-label="English language">
-          EN
-        </a>
-
+        <ul class="footer__nav-list">
+          <li class="footer__nav-item">
+            <a href="#" class="link footer__link">Contact us</a>
+          </li>
+          <li class="footer__nav-item">
+            <a href="#" class="link footer__link">About us</a>
+          </li>
+          <li class="footer__nav-item">
+            <a href="#" class="link footer__link">Career</a>
+          </li>
+        </ul>
       </div>
     </div>
-    <div class="footer__payment">
-      <p class="footer__payment-text">We&#160;accept:</p>
-      <ul class="footer__payment-list">
-        <li class="footer__payment-item">
-          <a class="footer__payment-link" href="#" aria-label="Visa payment method">
-            <img class="footer__payment-icon" src="./images/icons/visa.svg" alt="Visa icon">
+
+    <div class="footer__lang">
+      <a class="footer__lang-btn  footer__lang-btn--active" href="#" hreflang="de" aria-label="Germany language">
+        DE
+      </a>
+      <a class="footer__lang-btn" href="#" hreflang="en" aria-label="English language">
+        EN
+      </a>
+    </div>
+
+    <address class="footer__social">
+      <ul class="footer__social-list">
+        <li class="footer__social-item">
+          <a href="#" class="footer__social-link">
+            <svg class="footer__social-icon" aria-label="Facebook icon" width="24" height="24">
+              <use href="./images/icons/sprite.svg#facebook"></use>
+            </svg>
           </a>
         </li>
-        <li class="footer__payment-item">
-          <a class="footer__payment-link" href="#" aria-label="mastercard payment method">
-            <img class="footer__payment-icon" src="./images/icons/mastercard.svg" alt="Mastercard icon">
+        <li class="footer__social-item">
+          <a class="footer__social-link" href="#" target="_blank" rel="nofollow" aria-label="Instagram">
+            <svg class="footer__social-icon" width="24" height="24">
+              <use href="./images/icons/sprite.svg#instagram"></use>
+            </svg>
           </a>
         </li>
-        <li class="footer__payment-item">
-          <a class="footer__payment-link" href="#" aria-label="Apple Pay payment method">
-            <img class="footer__payment-icon" src="./images/icons/union.svg" alt="Union icon">
+        <li class="footer__social-item">
+          <a class="footer__social-link" href="#" target="_blank" rel="nofollow" aria-label="Pinterest">
+            <svg class="footer__social-icon" width="24" height="24">
+              <use href="./images/icons/sprite.svg#pinterest"></use>
+            </svg>
           </a>
         </li>
-        <li class="footer__payment-item">
-          <a class="footer__payment-link" href="#" aria-label="american express payment method">
-            <img class="footer__payment-icon" src="./images/icons/american-express.svg" alt="American express icon">
+        <li class="footer__social-item">
+          <a class="footer__social-link" href="#" target="_blank" rel="nofollow" aria-label="YouTube">
+            <svg class="footer__social-icon" width="24" height="24">
+              <use href="./images/icons/sprite.svg#youtube"></use>
+            </svg>
           </a>
         </li>
-        <li class="footer__payment-item">
-          <a class="footer__payment-link" href="#" aria-label="PayPal payment method">
-            <img class="footer__payment-icon" src="./images/icons/paypal.svg" alt="PayPal icon">
+        <li class="footer__social-item">
+          <a class="footer__social-link" href="#" target="_blank" rel="nofollow" aria-label="LinkedIn">
+            <svg class="footer__social-icon" width="24" height="24">
+              <use href="./images/icons/sprite.svg#linkedin"></use>
+            </svg>
           </a>
         </li>
       </ul>
+    </address>
+
+    <div class="footer__legal">
+      <a href="#" class="footer__legal-link">Privacy Policy</a>
+      <a href="#" class="footer__legal-link">Terms Of&#160;Use</a>
     </div>
-    <div class="footer__bottom">
-      <p class="footer__copyright-bottom">&#169; 2020 NoWayOut All Rights Reserved</p>
-      <div class="footer__legal-links">
-        <a href="#" class="footer__legal-link">Privacy Policy</a>
-        <a href="#" class="footer__legal-link">Terms Of&#160;Use</a>
-      </div>
-      <address class="footer__social-media">
-        <ul class="footer__social-list">
-          <li class="footer__social-item">
-            <a href="#" class="footer__social-link">
-              <svg class="footer__social-icon" aria-label="Facebook icon" width="24" height="24">
-                <use href="./images/icons/sprite.svg#facebook"></use>
-              </svg>
+
+    <p class="footer__impressum">
+      Impressum<br>
+      Elite Experience EC&#160;Gmbh,<br>
+      FN&#160;491623a,<br>
+      Pirch&#228;ckerstrasse 34, 8053 Graz
+    </p>
+    <div class="footer__wrapper">
+      <div class="footer__payment">
+        <p class="footer__payment-text">We&#160;accept:</p>
+        <ul class="footer__payment-list">
+          <li class="footer__payment-item">
+            <a class="footer__payment-link" href="#" aria-label="Visa payment method">
+              <img class="footer__payment-icon" src="./images/icons/visa.svg" alt="Visa icon" width="42" height="14">
             </a>
           </li>
-          <li class="footer__social-item">
-            <a href="#" class="footer__social-link">
-              <svg class="footer__social-icon" aria-label="Instagram icon" width="24" height="24">
-                <use href="./images/icons/sprite.svg#instagram"></use>
-              </svg>
+          <li class="footer__payment-item">
+            <a class="footer__payment-link" href="#" aria-label="mastercard payment method">
+              <img class="footer__payment-icon" src="./images/icons/mastercard.svg" alt="Mastercard icon">
             </a>
           </li>
-          <li class="footer__social-item">
-            <a href="#" class="footer__social-link">
-              <svg class="footer__social-icon" aria-label="Pinterest icon" width="24" height="24">
-                <use href="./images/icons/sprite.svg#pinterest"></use>
-              </svg>
+          <li class="footer__payment-item">
+            <a class="footer__payment-link" href="#" aria-label="Apple Pay payment method">
+              <img class="footer__payment-icon" src="./images/icons/union.svg" alt="Union icon">
             </a>
           </li>
-          <li class="footer__social-item">
-            <a href="#" class="footer__social-link">
-              <svg class="footer__social-icon" aria-label="YouTube icon" width="24" height="24">
-                <use href="./images/icons/sprite.svg#youtube"></use>
-              </svg>
+          <li class="footer__payment-item">
+            <a class="footer__payment-link" href="#" aria-label="american express payment method">
+              <img class="footer__payment-icon" src="./images/icons/american-express.svg" alt="American express icon">
             </a>
           </li>
-          <li class="footer__social-item">
-            <a href="#" class="footer__social-link">
-              <svg class="footer__social-icon" aria-label="LinkedIn icon" width="24" height="24">
-                <use href="./images/icons/sprite.svg#linkedin"></use>
-              </svg>
+          <li class="footer__payment-item">
+            <a class="footer__payment-link" href="#" aria-label="PayPal payment method">
+              <img class="footer__payment-icon" src="./images/icons/paypal.svg" alt="PayPal icon">
             </a>
           </li>
         </ul>
-      </address>
+      </div>
+
+    </div>
+
+    <div class="footer__bottom">
+      <p class="footer__copyright-bottom">&#169; 2020 NoWayOut All Rights Reserved</p>
+
     </div>
     <button class="scroll-button" id="scroll-toggle" title="Scroll the page" aria-label="Scroll the page" type="button">
       <svg class="scroll-button__border-svg" width="60" height="60" viewBox="0 0 60 60" fill="none"
