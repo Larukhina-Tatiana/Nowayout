@@ -4,6 +4,8 @@ import typograf from "gulp-typograf";
 import versionNumber from "gulp-version-number";
 import htmlclean from "gulp-htmlclean";
 
+import cheerio from "cheerio";
+
 // export const plumberNotify = (title) => {
 //   return {
 //     errorHandler: notify.onError({
@@ -76,6 +78,20 @@ export const html = () => {
       )
     )
     .pipe(app.plugins.if(app.isBuild, htmlclean()))
+    .pipe(
+      through2.obj(function (file, _, cb) {
+        if (file.isBuffer()) {
+          const $ = cheerio.load(file.contents.toString());
+
+          $("head").append(`
+              <link rel="preload" as="image" href="images/hero/hero1@1x.avif" fetchpriority="high" type="image/avif">
+            `);
+
+          file.contents = Buffer.from($.html());
+        }
+        cb(null, file);
+      })
+    )
     .pipe(app.gulp.dest(app.path.build.html))
     .pipe(app.plugins.browserSync.stream());
 };
