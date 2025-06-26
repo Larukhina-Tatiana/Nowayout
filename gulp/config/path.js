@@ -7,6 +7,7 @@ const srcFolder = `./src`;
 
 export const path = {
   build: {
+    root: buildFolder,
     html: `${buildFolder}/`,
     css: `${buildFolder}/css/`,
     images: `${buildFolder}/images/`,
@@ -21,8 +22,14 @@ export const path = {
   src: {
     html: `${srcFolder}/*.html`,
     scss: `${srcFolder}/scss/style.scss`,
-    images: `${srcFolder}/images/**/*.{jpg,jpeg,png,gif}`,
-    avif: `${srcFolder}/images/**/*.{jpg,jpeg,gif,png}`,
+    images: [
+      `${srcFolder}/images/**/*.{jpg,jpeg,png,gif}`,
+      `!${srcFolder}/images/favicon/**/*`,
+    ],
+    avif: [
+      `${srcFolder}/images/**/*.{jpg,jpeg,png,gif}`,
+      `!${srcFolder}/images/favicon/**/*`,
+    ],
     svgsprite: `${srcFolder}/svgsprite/**/*`,
     icons: `${srcFolder}/images/icons/**/*`,
     copyfavicon: `${srcFolder}/images/favicon/**/*.*`,

@@ -20,7 +20,7 @@ export const html = () => {
       app.plugins.plumber(
         app.plugins.notify.onError({
           title: "HTML",
-          massage: "Error <%= error.message %>",
+          message: "Error <%= error.message %>",
         })
       )
     )
@@ -33,7 +33,7 @@ export const html = () => {
           1: "@1x",
           2: "@2x",
           3: "@3x",
-          4: "@4x",
+          // 4: "@4x",
         },
         // checkExists: true,
         noAvif: false,

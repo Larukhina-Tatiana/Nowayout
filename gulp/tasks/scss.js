@@ -8,13 +8,13 @@ import webpCss from "gulp-webpcss";
 import autoPrefixer from "gulp-autoprefixer";
 import groupCssMediaQueries from "gulp-group-css-media-queries";
 import sourceMaps from "gulp-sourcemaps";
+import through2 from "through2";
 
 const sass = gulpSass(dartSass);
 
 export const scss = () => {
   return (
     app.gulp
-      // .src(app.path.src.scss, { sourcemaps: true })
       .src(app.path.src.scss, { sourcemaps: app.isDev })
       .pipe(sourceMaps.init())
       // Плюмбер
@@ -22,12 +22,31 @@ export const scss = () => {
         app.plugins.plumber(
           app.plugins.notify.onError({
             title: "SCSS",
-            massage: "Error <%= error.message %>",
+            message: "Error <%= error.message %>",
           })
         )
       )
       .pipe(sassGlob())
       .pipe(sass({ outputStyle: "expanded" }))
+
+      .pipe(
+        through2.obj(function (file, _, cb) {
+          if (file.contents.length < 1000) {
+            notify.onError({
+              title: "SCSS ⚠️",
+              message:
+                "Скомпилированный CSS подозрительно мал — проверь импорт/переменные!",
+            })(file);
+          }
+          cb(null, file);
+        })
+      )
+
+      .on("error", function (err) {
+        console.error("❌ Ошибка SCSS:", err.message);
+        this.emit("end");
+      })
+
       .pipe(app.plugins.replace(/@img\//g, "../images/"))
       .pipe(
         app.plugins.replace(
