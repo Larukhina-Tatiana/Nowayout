@@ -5,7 +5,8 @@ import { plugins } from "./gulp/config/plugins.js";
 
 // Импорт путей
 import { path } from "./gulp/config/path.js";
-import { purgeCss } from "./gulp/tasks/purgeCss.js";
+import { cleanEmpty } from "./gulp/tasks/cleanEmpty.js";
+import { scanAndClean } from "./gulp/tasks/scanAndClean.js";
 
 global.app = {
   isBuild: process.argv.includes("--build"),
@@ -44,9 +45,7 @@ function watcher() {
 const images = gulp.series(imgAvif, imgWebp, imgImage, imgPng);
 // const sprite = gulp.series(svgStack, svgSymbol);
 // Основные задачи
-const cssPipeline = gulp.series(scss, purgeCss);
 
-// const cssPipeline = gulp.series(scss, purgeCss);
 const mainTasks = gulp.series(
   gulp.parallel(
     copy,
@@ -55,16 +54,21 @@ const mainTasks = gulp.series(
     copyicons,
     copyfonts,
     html,
-    // scss,
+    scss,
     js,
     images
-  ),
-  cssPipeline
+  )
 );
+
 // Построение сценариев
-const dev = gulp.series(reset, mainTasks, gulp.parallel(watcher, server));
+// const dev = gulp.series(reset, mainTasks, gulp.parallel(watcher, server));
+
+const dev = gulp.series(mainTasks, gulp.parallel(watcher, server));
+
 const build = gulp.series(reset, mainTasks);
 
+export { cleanEmpty }; //gulp cleanEmpty
+export { scanAndClean }; //gulp scanAndClean
 export { dev };
 export { build };
 

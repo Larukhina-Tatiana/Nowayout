@@ -1,0 +1,65 @@
+@use 'sass:color';
+@use './utils/vars.scss' as *;
+
+.form {
+  position: relative;
+
+  &__group {
+    position: relative;
+    margin-bottom: 1.5rem;
+    line-height: 1;
+  }
+
+  &__input {
+    width: 100%;
+    padding: 20px 0 6px; // добавим верхний padding, чтобы label помещался
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid $color-bg-header;
+    // font-weight: ;
+    line-height: 1.2;
+    @include transition ($transition-property: (transform, font-size));
+    color: $color-text-main;
+    caret-color: $color-text-main;
+
+    &::placeholder {
+      color: transparent;
+
+    }
+
+    &:focus {
+      outline: none;
+    }
+
+    &:focus + .form__label,
+    &:valid + .form__label {
+      transform: translateY(-1.2rem);
+      font-size: 12px;
+    }
+
+  }
+
+  &__label {
+    position: absolute;
+    background-color: transparent;
+    left: 0;
+    top: 1.2rem;
+    font-weight: 200;
+    line-height: 1;
+    pointer-events: none;
+    transition: all .7s ease 0s;
+    color: $color-text-main;
+
+    // @include transition ($transition-property: (transform, font-size));
+  }
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  caret-color: $color-text-main !important;
+  -webkit-box-shadow: 0 0 0 1000px transparent inset !important;
+  -webkit-text-fill-color: $color-text-main !important; // или твой цвет текста
+  transition: background-color 5000s ease-in-out 0s;
+}

@@ -4,8 +4,8 @@ import typograf from "gulp-typograf";
 import versionNumber from "gulp-version-number";
 import htmlclean from "gulp-htmlclean";
 
-import cheerio from "cheerio";
-
+import * as cheerio from "cheerio";
+import * as through2 from "through2";
 // export const plumberNotify = (title) => {
 //   return {
 //     errorHandler: notify.onError({

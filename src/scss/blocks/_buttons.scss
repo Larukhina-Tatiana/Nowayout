@@ -1,12 +1,19 @@
 @use "./utils/vars.scss" as *;
 
-.btn-red {
+.title-h5 {
+  font-weight: 500;
+  font-size: clamp(1.563rem, 0.882rem + 2.9vw, 4rem);
+  line-height: 1.25;
+  margin-bottom: 34px;
+}
+
+.btn {
   padding: 21px 27px;
   width: 100%;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  background-image: url("../images/icons/red-btn.svg");
+
   font-weight: 500;
   text-align: center;
   cursor: pointer;
@@ -26,8 +33,14 @@
   }
 
   @media screen and (min-width: 425px) {
-
     width: 221px;
+  }
 
+  &--red {
+    background-image: url("../images/icons/btn-red.svg");
+  }
+
+  &--white {
+    background-image: url("../images/icons/btn-white.svg");
   }
 }
