@@ -6,17 +6,17 @@
 
   &__group {
     position: relative;
-    margin-bottom: 1.5rem;
+    margin-bottom: 24px;
     line-height: 1;
   }
 
   &__input {
     width: 100%;
-    padding: 20px 0 6px; // добавим верхний padding, чтобы label помещался
+    padding: 20px 0 6px;
     background-color: transparent;
     border: none;
-    border-bottom: 1px solid $color-bg-header;
-    // font-weight: ;
+    border-bottom: 1px solid $white;
+
     line-height: 1.2;
     @include transition ($transition-property: (transform, font-size));
     color: $color-text-main;
@@ -24,15 +24,16 @@
 
     &::placeholder {
       color: transparent;
-
     }
 
     &:focus {
+      border-bottom: 1px solid $color-bg-header;
       outline: none;
+
     }
 
     &:focus + .form__label,
-    &:valid + .form__label {
+    &.has-value + .form__label {
       transform: translateY(-1.2rem);
       font-size: 12px;
     }
@@ -49,8 +50,15 @@
     pointer-events: none;
     transition: all .7s ease 0s;
     color: $color-text-main;
+  }
 
-    // @include transition ($transition-property: (transform, font-size));
+  &__bottom {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 32px;
+    margin-bottom: 32px;
+
   }
 }
 
@@ -62,4 +70,36 @@ input:-webkit-autofill:active {
   -webkit-box-shadow: 0 0 0 1000px transparent inset !important;
   -webkit-text-fill-color: $color-text-main !important; // или твой цвет текста
   transition: background-color 5000s ease-in-out 0s;
+}
+
+.error {
+  @include transition ($transition-property: opacity);
+  opacity: 0;
+  color: $color-bg;
+
+  &::before {
+    content: url('../images/icons/warning-black.svg');
+    display: inline-block;
+    margin-right: 10px;
+    vertical-align: middle;
+  }
+}
+
+.js-alert {
+  position: absolute;
+  min-width: 290px;
+  text-align: center;
+  bottom: -22%;
+  left: 0;
+  transform: translateX(100vw);
+  color: $white;
+  background-color: transparent;
+  @include transition ($transition-property: transform);
+  z-index: 5;
+
+  &::before {
+    content: url('../images/icons/ok1.webp');
+    // display: inline-block;
+    vertical-align: middle;
+  }
 }

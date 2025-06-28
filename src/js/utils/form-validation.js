@@ -1,10 +1,10 @@
 document.addEventListener("DOMContentLoaded", () => {
   const forms = document.querySelectorAll("form");
-  // console.log("forms", forms);
-  const regExpEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  const regExpEmail = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
   forms.forEach((form) => {
     form.addEventListener("submit", handleFormSubmit);
+    form.addEventListener("change", handleFormInput);
     form.addEventListener("input", handleFormInput);
 
     // Восстанавливаем данные из LocalStorage
@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (isValid && !isNull) {
       const formData = new FormData(form);
-      console.log("✅ Отправка данных:", Object.fromEntries(formData));
+      // console.log("✅ Отправка данных:", Object.fromEntries(formData));
 
       form.reset();
       localStorage.removeItem(form.id);
@@ -39,31 +39,13 @@ document.addEventListener("DOMContentLoaded", () => {
     requiredFields.forEach((field) => {
       const parentElem = field.parentNode;
       const errorElem = parentElem.querySelector(`.error`);
-      const errorInput = parentElem.querySelector(`input`);
-
-      if (field.name === "username") {
-        const regExpName = /^[a-zA-ZА-Яа-яёЁЇїІіЄєҐґ]{2,16}$/;
-        if (!regExpName.test(field.value.trim())) {
-          isValid = false;
-          if (errorElem) {
-            errorElem.style.opacity = 1;
-            errorInput.style.boxShadow = "rgb(255 6 6) 0px 0px 4px";
-
-            // Добавляем обработчик события input для скрытия сообщения об ошибке
-            field.addEventListener("input", function onErrorsInput() {
-              errorElem.style.opacity = 0;
-              errorInput.style.boxShadow = "none";
-
-              // Удаляем обработчик после первого ввода
-              field.removeEventListener("input", onErrorsInput);
-            });
-          } else {
-            console.warn("❌Нет елемента .error");
-          }
-        }
-      }
+      const errorInput = field;
 
       if (field.type === "email" && !regExpEmail.test(field.value.trim())) {
+        // console.log( "🧪 Проверка email:",field.value.trim(),
+        //   regExpEmail.test(field.value.trim())
+        // );
+
         isValid = false;
         if (errorElem) {
           errorElem.style.opacity = 1;
@@ -73,41 +55,6 @@ document.addEventListener("DOMContentLoaded", () => {
             errorInput.style.boxShadow = "none";
             field.removeEventListener("input", onErrorsInput);
           });
-        }
-      }
-
-      if (field.type === "tel") {
-        const telSelector = document.querySelector('input[type="tel"]');
-        const phone = telSelector.inputmask.unmaskedvalue();
-
-        if (phone.length !== 9) {
-          isValid = false;
-          if (errorElem) {
-            errorElem.style.opacity = 1;
-            errorInput.style.boxShadow = "rgb(255 6 6) 0px 0px 4px";
-            field.addEventListener("input", function onErrorsInput() {
-              errorElem.style.opacity = 0;
-              errorInput.style.boxShadow = "none";
-              field.removeEventListener("input", onErrorsInput);
-            });
-          }
-        }
-      }
-
-      // Проверка textarea через RegExp
-      if (field.tagName === "TEXTAREA") {
-        const textPattern = /^[a-zA-Z\s]+$/;
-        if (!textPattern.test(field.value.trim())) {
-          isValid = false;
-          if (errorElem) {
-            errorElem.style.opacity = 1;
-            errorInput.style.boxShadow = "rgb(255 6 6) 0px 0px 4px";
-            field.addEventListener("input", function onErrorsInput() {
-              errorElem.style.opacity = 0;
-              errorInput.style.boxShadow = "none";
-              field.removeEventListener("input", onErrorsInput);
-            });
-          }
         }
       }
     });
@@ -147,6 +94,7 @@ document.addEventListener("DOMContentLoaded", () => {
     new FormData(form).forEach((value, key) => {
       formData[key] = value;
     });
+    // console.log("💾 Сохраняем:", form.id, formData);
     localStorage.setItem(form.id, JSON.stringify(formData));
   }
 
@@ -157,6 +105,10 @@ document.addEventListener("DOMContentLoaded", () => {
       Object.entries(formData).forEach(([key, value]) => {
         const field = form.elements[key];
         if (field) field.value = value;
+        // ⬇️ Добавляем класс, чтобы label поднялся
+        if (value.trim() !== "") {
+          field.classList.add("has-value");
+        }
       });
     }
   }
@@ -177,7 +129,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function shouNotification() {
-    timeoutId = notification.style.transform = "translate(-50%, -50%)";
+    timeoutId = notification.style.transform = "translate(0%, 0%)";
     setTimeout(() => {
       hideNotification();
     }, NOTIFICATION_DELAY);

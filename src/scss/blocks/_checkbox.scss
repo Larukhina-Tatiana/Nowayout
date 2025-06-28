@@ -1,0 +1,51 @@
+@use 'sass:color';
+@use './utils/vars.scss' as *;
+
+.checkbox {
+  position: absolute;
+  opacity: 0;
+  z-index: -1;
+
+  &__label {
+    user-select: none;
+    line-height: 1.28;
+  }
+
+  &__castom-icon {
+    position: relative;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 2px solid $color-bg;
+    margin-right: 7px;
+
+    background-color: #fcf8ef;
+    line-height: 1;
+    font-size: 16px;
+    @include transition ($transition-property: border);
+
+    &:before {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: red;
+      content: "✔";
+      font-size: 16px;
+      opacity: 0;
+      @include transition ($transition-property: opacity);
+    }
+  }
+
+  &__link {
+    display: inline-block;
+    text-decoration: underline;
+  }
+}
+
+.checkbox:checked + .checkbox__label .checkbox__castom-icon {
+  border: 2px solid transparent;
+}
+
+.checkbox:checked + .checkbox__label .checkbox__castom-icon:before {
+  opacity: 1;
+}
