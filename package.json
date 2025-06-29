@@ -60,5 +60,8 @@
     "webp-converter": "2.2.3",
     "webpack": "^5.95.0",
     "webpack-stream": "^7.0.0"
+  },
+  "dependencies": {
+    "postcss-safe-parser": "^7.0.1"
   }
 }
