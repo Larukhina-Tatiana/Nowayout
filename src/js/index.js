@@ -1,4 +1,5 @@
 // import $ from "jquery";
+// import "./utils/scroll-body.js";
 import "./modules/header.js";
 import "./modules/transfer.js";
 import "./modules/burger.js";
@@ -6,6 +7,6 @@ import "./modules/scroll-button.js";
 import "./modules/slider.js";
 import "./modules/label.js";
 import "./utils/form-validation.js";
-// import "./modules/animations.js";
+import "./modules/animations.js";
 import ScrollReveal from "./modules/scrollreveal.js";
 ScrollReveal();
