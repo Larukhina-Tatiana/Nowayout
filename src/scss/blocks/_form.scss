@@ -60,6 +60,25 @@
     margin-bottom: 32px;
 
   }
+
+  @media screen and (width > 772px) {
+    &__bottom {
+      flex-direction: row;
+      gap: 32px;
+
+    }
+
+    &__btn {
+      display: flex;
+      height: 60px;
+      text-align: center;
+      align-items: center;
+      width: fit-content;
+      flex-shrink: 0;
+      text-wrap: nowrap;
+    }
+
+  }
 }
 
 input:-webkit-autofill,
@@ -91,7 +110,7 @@ input:-webkit-autofill:active {
   text-align: center;
   bottom: -22%;
   left: 0;
-  transform: translateX(100vw);
+  transform: translateX(-100vw);
   color: $white;
   background-color: transparent;
   @include transition ($transition-property: transform);
@@ -101,5 +120,17 @@ input:-webkit-autofill:active {
     content: url('../images/icons/ok1.webp');
     // display: inline-block;
     vertical-align: middle;
+  }
+
+  @media screen and (width > 515px) {
+    bottom: -34%;
+  }
+
+  @media screen and (width > 939px) {
+    bottom: -55%;
+  }
+
+  @media screen and (width > 1290px) {
+    bottom: -40%;
   }
 }

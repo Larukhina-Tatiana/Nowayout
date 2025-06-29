@@ -1,8 +1,8 @@
 @use "./utils/vars.scss" as *;
 
 .subscription {
-  padding: 24px;
-
+  padding: clamp(1.5rem, -0.175rem + 7.15vw, 7.5rem);
+  // padding: 24px;
 
   &__container {
     background: linear-gradient(90deg, #e50012 0, #e50012);
@@ -13,14 +13,63 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 40px;
   }
 
   &__block {
-    padding: 32px 16px;
+    padding: 32px 16px 0;
   }
 
+  &__img {
+    // width: 290px;
+    width: clamp(18.125rem, 0.65rem + 74.56vw, 36.625rem);
+    // height: 206px;
+    height: clamp(12.875rem, -5.544rem + 78.59vw, 32.375rem);
+    background-image: -webkit-image-set(url(../images/subscription/bg1.avif) type("image/avif"),
+        url(../images/subscription/bg1.webp) type("image/webp"),
+        url(../images/subscription/bg1.png) type("image/jpeg"),
+      );
+    background-image: image-set(url(../images/subscription/bg1.avif) type("image/avif"),
+        url(../images/subscription/bg1.webp) type("image/webp"),
+        url(../images/subscription/bg1.png) type("image/jpeg"),
+      );
+    flex-shrink: 0;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
 
+  @media screen and (width > 772px) {
+    &__block {
+      padding: 64px 32px 0;
+    }
 
+    &__img {
+      // width: 586px;
+      // height: 518px;
+      width: clamp(36.625rem, -7.834rem + 92.14vw, 44.688rem);
+      height: clamp(32.375rem, -8.293rem + 84.29vw, 39.75rem);
+    }
+  }
 
+  @media screen and (width > 1023px) {
+    &__block {
+      padding: 80px 64px 0;
+    }
+  }
+
+  @media screen and (width > 1290px) {
+
+    &__content {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    &__block {
+      padding: 140px 80px;
+    }
+
+    &__img {
+      background-position: center;
+      width: 415px;
+    }
+  }
 }

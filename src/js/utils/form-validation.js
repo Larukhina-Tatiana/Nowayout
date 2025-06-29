@@ -142,7 +142,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // }
 
   function hideNotification() {
-    timeoutId = notification.style.transform = "translateX(100vw)";
+    timeoutId = notification.style.transform = "translateX(-100vw)";
   }
   // function hideNotification() {
   //   notification.classList.add("is-hidden");

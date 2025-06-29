@@ -1,0 +1,50 @@
+@use "./utils/vars.scss" as *;
+
+.scroll-wrapper {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+
+  .scroll-content {
+    height: 100%;
+    overflow-y: scroll;
+    padding-right: 10px;
+    scrollbar-width: none;
+    /* Firefox */
+    -ms-overflow-style: none;
+    /* IE 10+ */
+  }
+
+  .scroll-content::-webkit-scrollbar {
+    display: none;
+    /* Chrome, Safari */
+  }
+
+  .scrollbar {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 5px;
+    height: 100%;
+    background: transparent;
+    // background: $color-bg;
+
+    .thumb {
+      position: absolute;
+      box-sizing: content-box; // или явно контролируй padding
+      padding: 0;
+      top: 0;
+      width: 100%;
+      max-height: 90px !important;
+      background: $color-accent !important;
+      border-radius: 4px;
+      transition: transform 0.1s ease;
+      pointer-events: auto; // обязательно!
+      z-index: 10;
+    }
+  }
+}
+
+.scrollbar .thumb {
+  pointer-events: none;
+}
