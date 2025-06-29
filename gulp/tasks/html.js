@@ -77,6 +77,7 @@ export const html = () => {
         })
       )
     )
+
     .pipe(app.plugins.if(app.isBuild, htmlclean()))
     .pipe(
       through2.obj(function (file, _, cb) {
