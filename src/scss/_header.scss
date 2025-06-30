@@ -154,10 +154,6 @@
         color: $color-accent;
       }
     }
-
-    .header__icon {
-      @include transition($transition-property: fill);
-    }
   }
 
   &__nav {
@@ -185,7 +181,6 @@
     display: flex;
     align-items: center;
     height: 100%;
-    @include transition($transition-property: color);
 
     &::before {
       content: "";
@@ -219,21 +214,12 @@
     fill: currentColor;
     vertical-align: middle;
     flex-shrink: 0;
-
-    &--width {
-      width: 60px;
-      height: 18px;
-    }
-  }
-
-  &__city {
-    font-weight: 500;
   }
 
   &__phone-link {
-    text-decoration: none;
+    color: inherit;
     font-weight: 500;
-    transition: color 0.2s;
+    // @include transition($transition-property: color);
 
     @media (any-hover: hover) {
       &:hover {
