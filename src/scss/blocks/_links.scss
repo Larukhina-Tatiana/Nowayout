@@ -1,0 +1,38 @@
+@use "./utils/vars.scss" as *;
+
+.link {
+  position: relative;
+  // padding: 23px 30px;
+  display: inline-block;
+  // display: flex;
+  // align-items: center;
+  // height: 100%;
+  @include transition($transition-property: color);
+
+  &::before {
+    content: "";
+    position: absolute;
+    // bottom: .5em;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: $color-accent;
+    -webkit-transition: background-color .3s ease 0s, width .3s ease 0s, left .3s ease 0s;
+    -o-transition: background-color .3s ease 0s, width .3s ease 0s, left .3s ease 0s;
+    transition: background-color .3s ease 0s, width .3s ease 0s, left .3s ease 0s;
+  }
+
+  @media (any-hover: hover) {
+
+    &:hover::before {
+      width: 100%;
+      //   &:hover {
+      //     color: $color-accent;
+
+      //     .header__icon {
+      //       fill: $color-accent;
+      //     }
+    }
+  }
+}
