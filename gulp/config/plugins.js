@@ -5,6 +5,9 @@ import browserSync from "browser-sync";
 import newer from "gulp-newer";
 
 import ifPlugin from "gulp-if";
+ import debug from "gulp-debug";
+ import size from "gulp-size";
+ import rename from "gulp-rename";
 
 export const plugins = {
   replace: replace,
@@ -13,4 +16,7 @@ export const plugins = {
   browserSync: browserSync,
   newer: newer,
   if: ifPlugin,
+  debug: debug,
+  size: size,
+  rename: rename,
 };

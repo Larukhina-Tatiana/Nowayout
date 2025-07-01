@@ -8,6 +8,7 @@ import { path } from "./gulp/config/path.js";
 import { cleanEmpty } from "./gulp/tasks/cleanEmpty.js";
 import { scanAndClean } from "./gulp/tasks/scanAndClean.js";
 
+
 global.app = {
   isBuild: process.argv.includes("--build"),
   isDev: !process.argv.includes("--build"),
@@ -29,6 +30,7 @@ import { critical } from "./gulp/tasks/critical.js";
 import { js } from "./gulp/tasks/js.js";
 import { copyfavicon } from "./gulp/tasks/copyFavicon.js";
 import { imgAvif, imgWebp, imgImage, imgPng } from "./gulp/tasks/images.js";
+
 // import { svgStack, svgSymbol } from "./gulp/tasks/svg.js";
 // import { OtfToTtf, ttfToWoff, fontStyle } from "./gulp/tasks/fonts.js";
 
@@ -55,10 +57,12 @@ const mainTasks = gulp.series(
     copyicons,
     copyfonts,
     html,
-    critical,
-    scss,
-    js,
     images
+  ),
+  critical, // Запускаем critical последовательно
+  gulp.parallel(
+    scss,
+    js
   )
 );
 
@@ -71,8 +75,10 @@ const build = gulp.series(reset, mainTasks);
 
 export { cleanEmpty }; //gulp cleanEmpty
 export { scanAndClean }; //gulp scanAndClean
+export { critical }; //gulp critical
 export { dev };
 export { build };
+
 
 gulp.task("default", dev);
 
