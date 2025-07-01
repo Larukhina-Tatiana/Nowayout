@@ -210,18 +210,6 @@
       flex-shrink: 0;
     }
 
-
-    &-link {
-      @include transition($transition-property: transform);
-
-      @media (any-hover: hover) {
-
-        &:hover {
-          transform: scale(1.3);
-        }
-      }
-    }
-
     &-icon {
       fill: currentColor;
     }

@@ -31,7 +31,7 @@ export function initRoomsSwiper() {
   if (!container || !wrapper || slides.length === 0) return;
 
   const totalWidth = Array.from(slides).reduce(
-    (acc, slide) => acc + slide.offsetWidth + 20, // 20 = spaceBetween
+    (acc, slide) => acc + slide.offsetWidth + 12, // 12 = spaceBetween
     0
   );
   const visibleWidth = container.offsetWidth;
@@ -50,7 +50,7 @@ export function initRoomsSwiper() {
   swiper = new Swiper(container, {
     modules: [Navigation],
     slidesPerView: "auto",
-    spaceBetween: 20,
+    spaceBetween: 12,
     allowTouchMove: window.innerWidth > 480,
     navigation: {
       nextEl: next,

@@ -1,0 +1,72 @@
+@use 'sass:color';
+@use './utils/vars.scss' as *;
+
+.scroll-button {
+  position: fixed;
+  top: 35px;
+  right: 0;
+  z-index: 999;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border: none;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(100%);
+  /* Start off-screen to the right for smooth appearance */
+  @include transition($transition-property: (visibility, opacity, transform)); // For overall button visibility and position
+
+  &__border-svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    @include transition($transition-property: transform); // For smooth scaling of border
+  }
+
+  &__arrow-svg {
+    width: 24px;
+    height: 24px;
+    fill: $white;
+    /* Ensure the arrow is white */
+    @include transition($transition-property: transform); // For smooth scaling and rotation of arrow
+  }
+
+  &.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+    /* Move to original position */
+  }
+
+  &.down-arrow {
+    .scroll-button__arrow-svg {
+      transform: rotate(180deg);
+    }
+  }
+
+  @media (any-hover: hover) {
+    &:hover {
+      .scroll-button__border-svg {
+        transform: scale(1.3);
+      }
+
+      // Default hover for arrow (when not in 'down-arrow' state)
+      // This will ensure scale 1.3 when arrow is pointing UP (0deg rotation)
+      .scroll-button__arrow-svg {
+        transform: scale(1.3);
+      }
+    }
+
+    // Hover for arrow when in 'down-arrow' state
+    &.down-arrow:hover {
+      .scroll-button__arrow-svg {
+        transform: rotate(180deg) scale(1.3);
+      }
+    }
+  }
+}

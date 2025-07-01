@@ -1,5 +1,4 @@
 import fs from "fs";
-import path from "path";
 import postcss from "postcss";
 import safeParser from "postcss-safe-parser";
 import * as cheerio from "cheerio";
@@ -16,9 +15,12 @@ const css = fs.readFileSync(cssPath, "utf-8");
 const html = fs.readFileSync(htmlPath, "utf-8");
 const $ = cheerio.load(html);
 
+const likelyUsed = [];
+const definitelyUnused = [];
+
 const usedSelectors = new Set();
 
-// Собираем все классы, теги и id из HTML
+// Получаем все теги, классы и id из HTML
 $("*").each((_, el) => {
   usedSelectors.add(el.tagName.toLowerCase());
 
@@ -31,25 +33,43 @@ $("*").each((_, el) => {
   });
 });
 
+// Убираем псевдоклассы и псевдоэлементы
+const cleanSelector = (selector) =>
+  selector
+    .replace(/::?[a-zA-Z0-9_-]+/g, "") // удаляет :hover, ::before и т.п.
+    .replace(/:not\([^)]+\)/g, "") // удаляет :not(...) блоки
+    .trim();
+
 const root = postcss.parse(css, { parser: safeParser });
 const unused = [];
 
 root.walkRules((rule) => {
-  const selectors = rule.selector.split(",").map((s) => s.trim());
+  const selectors = rule.selector?.split(",").map((s) => s.trim());
 
-  const allUnused = selectors.every((sel) => {
-    // Упрощённая проверка: только одиночные селекторы
-    return !usedSelectors.has(sel);
-  });
+  if (!selectors) return;
+
+  const cleaned = selectors.map(cleanSelector);
+
+  const allUnused = cleaned.every((sel) => !usedSelectors.has(sel));
 
   if (allUnused) {
-    unused.push(rule.selector);
+    // Если есть псевдокласс/элемент — считаем "возможно нужным"
+    if (selectors.some((sel) => /::?|:not\(/.test(sel))) {
+      likelyUsed.push(rule.selector);
+    } else {
+      definitelyUnused.push(rule.selector);
+    }
   }
 });
 
-if (unused.length) {
-  console.log(`🔍 Найдено неиспользуемых селекторов: ${unused.length}`);
-  unused.forEach((sel) => console.log("⛔️", sel));
+if (definitelyUnused.length || likelyUsed.length) {
+  console.log(`🔍 Неиспользуемых: ${definitelyUnused.length}`);
+  definitelyUnused.forEach((sel) => console.log("⛔️", sel));
+
+  console.log(
+    `\n⚠️  Вероятно используемые (динамические): ${likelyUsed.length}`
+  );
+  likelyUsed.forEach((sel) => console.log("⚠️", sel));
 } else {
   console.log("✅ Все селекторы используются 🎉");
 }

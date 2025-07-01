@@ -1,4 +1,4 @@
-import TransferElements from "../utils/TransferElements.js";
+import $ from "jquery";
 $(function () {
   const $burger = $(".burger");
   const $mobileMenu = $(".header__mobile-menu");

@@ -16,6 +16,7 @@ function ScrollRevealFunc() {
 
   ScrollReveal().reveal(".hero__title, .gift__title", {
     origin: "left",
+    duration: 2800,
   });
 
   ScrollReveal().reveal(".hero__description, .gift__info-text", {

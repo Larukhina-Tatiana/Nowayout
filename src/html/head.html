@@ -3,18 +3,36 @@
   <!-- <meta name="viewport" content="width=device-width,  initial-scale=1.0"> -->
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
 
-  <!-- <link rel="preload" as="image" href="assets/images/hero1@2x.avif" type="image/avif"> -->
-  <!-- <link rel="preload" as="image" href="assets/images/hero1@2x.webp" type="image/webp"> -->
-  <!-- <link rel="preload" as="image" href="assets/images/hero1@2x.jpg" type="image/jpeg"> -->
   <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
 
-  <!-- <link rel="preload" as="image" href="images/hero/hero1@1x.avif" fetchpriority="high" type="image/avif"> -->
+  <!-- Mobile background -->
+  <link rel="preload" as="image" href="images/hero/hero-m@1x.avif" imagesrcset="
+    images/hero/hero-m@1x.avif 1x,
+    images/hero/hero-m@2x.avif 2x,
+    images/hero/hero-m@3x.avif 3x" imagesizes="100vw" type="image/avif" fetchpriority="high">
+
+  <!-- Desktop background -->
+  <link rel="preload" as="image" href="images/hero/hero1@1x.avif" imagesrcset="
+    images/hero/hero1@1x.avif 1x,
+    images/hero/hero1@2x.avif 2x,
+    images/hero/hero1@3x.avif 3x" imagesizes="100vw" type="image/avif" fetchpriority="high">
+
+
+  <link rel="preload" as="image" href="images/icons/btn-red.svg" type="image/svg+xml">
+
 
 
   <title>@title</title>
 
+  <!-- Критические стили -->
+  <link rel="stylesheet" href="css/critical.min.css">
+
+  <!-- Предзагрузка основного шрифта -->
+  <link rel="preload" href="fonts/MADEOuterSans-Medium.woff2" as="font" type="font/woff2" crossorigin>
+
+  <!-- Асинхронная загрузка основных стилей -->
   <link rel="stylesheet" href="css/style.min.css" media="print" onload="this.media='all'">
   <noscript>
     <link rel="stylesheet" href="css/style.min.css">

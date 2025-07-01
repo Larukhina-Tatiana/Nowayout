@@ -12,8 +12,34 @@
     gap: 60px;
   }
 
-  &__img-pic {
-    will-change: transform;
+
+  &__img {
+    position: relative;
+    display: block;
+
+    // Контроль адаптивности:
+    width: 100%;
+    max-width: 960px;
+    margin-inline: auto;
+
+    // Стабильная пропорция (если вдруг забыли размеры)
+    aspect-ratio: 712 / 466;
+
+    // Можно добавить overflow, если уходит за границы:
+    overflow: hidden;
+
+    &-pic {
+      height: auto;
+      object-fit: cover;
+      object-position: center;
+
+      // GPU-ускорение:
+      will-change: transform, opacity;
+      backface-visibility: hidden;
+      // Анимации типа `.shake`, `.reveal-rotate`:
+      transform-origin: center;
+      pointer-events: none; // если не интерактивно
+    }
   }
 
   @media screen and (width > 767px) {
