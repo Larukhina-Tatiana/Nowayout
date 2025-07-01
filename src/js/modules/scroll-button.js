@@ -1,3 +1,4 @@
+import $ from "jquery";
 $(function () {
   // Отключаем автоматическое восстановление скролла браузером
   if ("scrollRestoration" in history) {

@@ -1,3 +1,4 @@
+import $ from "jquery";
 import TransferElements from "../utils/TransferElements.js";
 window.addEventListener("DOMContentLoaded", () => {
   // Перемещение элементов в мобильное меню

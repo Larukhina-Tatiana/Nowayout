@@ -49,6 +49,7 @@
     "imagemin-avif": "^0.1.6",
     "imagemin-pngquant": "^10.0.0",
     "inquirer": "^12.6.3",
+    "jquery": "^3.7.1",
     "postcss-discard-empty": "^7.0.1",
     "readable-stream": "^4.7.0",
     "sass": "^1.89.2",

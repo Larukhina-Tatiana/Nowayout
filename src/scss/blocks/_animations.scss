@@ -1,8 +1,8 @@
 .animate-on-scroll {
   opacity: 0;
   transform: translateX(-50px);
-  // transition: none;
   animation: none;
+  will-change: opacity, transform;
 
   &.in-view {
     opacity: 1;
