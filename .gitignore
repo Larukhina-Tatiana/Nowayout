@@ -5,3 +5,4 @@ src/images
 gulp/version.json
 purge-report.html
 *.rar
+docs/css/*.min.css
