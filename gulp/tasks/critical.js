@@ -14,5 +14,6 @@ export const critical = () => {
 
 
      .pipe(plugins.size({ showFiles: true, showTotal: false }))
+     .pipe(plugins.debug({title: "critical.js dest"}))
       .pipe(app.gulp.dest(app.path.build.css));
 };
