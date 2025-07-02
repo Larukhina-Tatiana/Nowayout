@@ -30,7 +30,12 @@
   contain: layout style paint;
   will-change: transform, opacity;
   width: 100%;
+  background-image: url("../images/hero/hero-m@1x.avif");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
+
 
 .hero__title {
   word-wrap: break-word;
