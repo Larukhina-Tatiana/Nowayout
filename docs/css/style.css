@@ -5,6 +5,7 @@
   min-height: 100dvh;
   padding: 100px 0;
 }
+
 .hero__container {
   position: relative;
   display: flex;
@@ -15,6 +16,7 @@
   z-index: 1;
   justify-content: center;
 }
+
 .hero__bg {
   position: absolute;
   z-index: 0;
@@ -25,12 +27,14 @@
   will-change: transform, opacity;
   width: 100%;
 }
+
 .hero__title {
   word-wrap: break-word;
   font-weight: 500;
   font-size: 46px;
   line-height: 103%;
 }
+
 @media screen and (min-width: 574px) {
   .hero__title {
     line-height: 106%;
@@ -49,7 +53,6 @@
     line-height: 106%;
   }
 }
-
 /*! modern-normalize v1.1.0 | MIT License | https://github.com/sindresorhus/modern-normalize */
 *, ::after, ::before {
   box-sizing: border-box;
