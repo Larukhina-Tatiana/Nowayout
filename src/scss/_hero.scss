@@ -6,6 +6,8 @@
   // height: auto;
   min-height: 100dvh; // Используем “динамическую” высоту
   padding: 100px 0;
+  display: flex;
+  align-items: flex-end;
 
   &__container {
     position: relative;
@@ -15,9 +17,15 @@
     height: max-content;
     z-index: 1;
     justify-content: center;
+
+    @media (orientation: landscape) {
+      max-width: none;
+      width: 100%;
+      margin: 0;
+    }
   }
 
-  .hero__bg {
+  &__bg {
     position: absolute;
     top: -40px;
     left: 0;
@@ -26,14 +34,38 @@
     z-index: 0;
     contain: layout paint;
 
-    .hero__bg-img {
-      display: block;
+    @media (orientation: landscape) {
+      top: 0;
+      height: 100dvh;
+
+      &::after {
+        inset: 0 0 auto 0; // только снизу
+      }
+    }
+
+
+    &::after {
+      background: $linear-gradient;
+      bottom: 0;
+      content: "";
+      height: 100%;
+      left: 0;
+      position: absolute;
+      width: 100%;
+      pointer-events: none;
+    }
+
+    &-img {
       position: absolute;
       inset: 0;
       width: 100%;
       height: 100%;
       object-fit: cover;
       z-index: -1;
+
+      @media (orientation: landscape) {
+        position: relative; // 💥 меняем на relative
+      }
     }
   }
 
@@ -41,6 +73,11 @@
     width: clamp(6.313rem, 1.245rem + 21.62vw, 13.813rem);
     aspect-ratio: 1 / 1;
     align-self: flex-end;
+
+    @media (orientation: landscape) {
+      width: 101px;
+      height: 101px;
+    }
 
     &-pic {
       width: 100%;
@@ -98,6 +135,13 @@
       position: absolute;
       right: 20px;
       top: 80px;
+    }
+  }
+
+  @media screen and (width > 1718px) {
+    &__container {
+      max-width: 1718px;
+      margin: 0 auto;
     }
   }
 }

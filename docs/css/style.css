@@ -23,6 +23,19 @@
   justify-content: center;
 }
 
+@media (orientation: landscape) {
+  .hero__container {
+    max-width: none;
+    width: 100%;
+    margin: 0;
+  }
+}
+@media (orientation: landscape) {
+  .hero__image {
+    width: 101px;
+    height: 101px;
+  }
+}
 .hero__bg {
   position: absolute;
   top: -40px;
@@ -33,6 +46,12 @@
   contain: layout paint;
 }
 
+@media (orientation: landscape) {
+  .hero__bg {
+    top: 0;
+    height: 100dvh;
+  }
+}
 .hero__bg-img {
   display: block;
   position: absolute;
@@ -44,6 +63,17 @@
   z-index: -1;
 }
 
+@media (orientation: landscape) {
+  .hero__bg-img {
+    position: relative;
+  }
+}
+@media (orientation: landscape) {
+  .hero__bg::after {
+    inset: 0 0 auto 0;
+    pointer-events: none;
+  }
+}
 .hero__title {
   word-wrap: break-word;
   font-weight: 500;
@@ -355,6 +385,7 @@ section {
   max-width: 1718px;
   margin: 0 auto;
   padding: 0 20px;
+  width: 100%;
 }
 .container--footer {
   padding: 0 36px;
@@ -362,6 +393,11 @@ section {
 @media screen and (width > 1023px) {
   .container--footer {
     padding: 0 20px;
+  }
+}
+@media screen and (width > 1718px) {
+  .container--footer {
+    width: none;
   }
 }
 
@@ -890,6 +926,8 @@ section {
   isolation: isolate;
   min-height: 100dvh;
   padding: 100px 0;
+  display: flex;
+  align-items: flex-end;
 }
 .hero__container {
   position: relative;
@@ -901,7 +939,14 @@ section {
   z-index: 1;
   justify-content: center;
 }
-.hero .hero__bg {
+@media (orientation: landscape) {
+  .hero__container {
+    max-width: none;
+    width: 100%;
+    margin: 0;
+  }
+}
+.hero__bg {
   position: absolute;
   top: -40px;
   left: 0;
@@ -910,8 +955,26 @@ section {
   z-index: 0;
   contain: layout paint;
 }
-.hero .hero__bg .hero__bg-img {
-  display: block;
+@media (orientation: landscape) {
+  .hero__bg {
+    top: 0;
+    height: 100dvh;
+  }
+  .hero__bg::after {
+    inset: 0 0 auto 0;
+  }
+}
+.hero__bg::after {
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.4), transparent 27.6%), linear-gradient(270deg, transparent 66.79%, rgba(0, 0, 0, 0.5)), linear-gradient(180deg, transparent 60.77%, #000);
+  bottom: 0;
+  content: "";
+  height: 100%;
+  left: 0;
+  position: absolute;
+  width: 100%;
+  pointer-events: none;
+}
+.hero__bg-img {
   position: absolute;
   inset: 0;
   width: 100%;
@@ -920,10 +983,21 @@ section {
      object-fit: cover;
   z-index: -1;
 }
+@media (orientation: landscape) {
+  .hero__bg-img {
+    position: relative;
+  }
+}
 .hero__image {
   width: clamp(6.313rem, 1.245rem + 21.62vw, 13.813rem);
   aspect-ratio: 1/1;
   align-self: flex-end;
+}
+@media (orientation: landscape) {
+  .hero__image {
+    width: 101px;
+    height: 101px;
+  }
 }
 .hero__image-pic {
   width: 100%;
@@ -972,6 +1046,12 @@ section {
     position: absolute;
     right: 20px;
     top: 80px;
+  }
+}
+@media screen and (width > 1718px) {
+  .hero__container {
+    max-width: 1718px;
+    margin: 0 auto;
   }
 }
 

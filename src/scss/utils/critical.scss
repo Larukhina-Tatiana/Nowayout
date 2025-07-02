@@ -21,6 +21,21 @@
   justify-content: center;
 }
 
+@media (orientation: landscape) {
+  .hero__container {
+    max-width: none;
+    width: 100%;
+    margin: 0;
+  }
+}
+
+@media (orientation: landscape) {
+  .hero__image {
+    width: 101px;
+    height: 101px;
+  }
+}
+
 .hero__bg {
   position: absolute;
   top: -40px;
@@ -31,6 +46,13 @@
   contain: layout paint;
 }
 
+@media (orientation: landscape) {
+  .hero__bg {
+    top: 0;
+    height: 100dvh;
+  }
+}
+
 .hero__bg-img {
   display: block;
   position: absolute;
@@ -39,6 +61,19 @@
   height: 100%;
   object-fit: cover;
   z-index: -1;
+}
+
+@media (orientation: landscape) {
+  .hero__bg-img {
+    position: relative; // 💥 меняем на relative
+  }
+}
+
+@media (orientation: landscape) {
+  .hero__bg::after {
+    inset: 0 0 auto 0; // только снизу
+    pointer-events: none;
+  }
 }
 
 

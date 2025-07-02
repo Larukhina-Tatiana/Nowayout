@@ -77,7 +77,7 @@ export { cleanEmpty }; //gulp cleanEmpty
 export { scanAndClean }; //gulp scanAndClean
 export { critical }; //gulp critical
 export { dev };
-export { build };
+export { build, reset };
 
 
 gulp.task("default", dev);
