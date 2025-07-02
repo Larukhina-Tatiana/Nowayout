@@ -30,10 +30,10 @@
   height: calc(100vh + 40px);
   z-index: 0;
   contain: layout paint;
-  will-change: transform;
 }
 
 .hero__bg-img {
+  display: block;
   position: absolute;
   top: 0;
   right: 0;

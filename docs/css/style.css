@@ -31,10 +31,10 @@
   height: calc(100vh + 40px);
   z-index: 0;
   contain: layout paint;
-  will-change: transform;
 }
 
 .hero__bg-img {
+  display: block;
   position: absolute;
   inset: 0;
   width: 100%;
@@ -909,9 +909,9 @@ section {
   height: calc(100vh + 40px);
   z-index: 0;
   contain: layout paint;
-  will-change: transform;
 }
 .hero .hero__bg .hero__bg-img {
+  display: block;
   position: absolute;
   inset: 0;
   width: 100%;
