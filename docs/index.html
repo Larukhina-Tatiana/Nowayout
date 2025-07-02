@@ -162,10 +162,36 @@
     </div>
   </div>
   <div class="hero__bg">
-    <img src="./images/hero/hero-m@1x.avif" alt="" width="1920" height="1080"
-      style="position: absolute; opacity: 0; width: 1px; height: 1px; pointer-events: none;" aria-hidden="true"
-      fetchpriority="high" decoding="sync" />
+    <picture>
+      <!-- Десктопные источники -->
+      <source media="(min-width: 768px)" srcset="
+            images/hero/hero1@1x.avif 1x,
+            images/hero/hero1@2x.avif 2x,
+            images/hero/hero1@3x.avif 3x" type="image/avif" />
+      <source media="(min-width: 768px)" srcset="
+            images/hero/hero1@1x.webp 1x,
+            images/hero/hero1@2x.webp 2x,
+            images/hero/hero1@3x.webp 3x" type="image/webp" />
+
+      <!-- Мобильные источники -->
+      <source srcset="
+            images/hero/hero-m@1x.avif 1x,
+            images/hero/hero-m@2x.avif 2x,
+            images/hero/hero-m@3x.avif 3x" type="image/avif" />
+      <source srcset="
+            images/hero/hero-m@1x.webp 1x,
+            images/hero/hero-m@2x.webp 2x,
+            images/hero/hero-m@3x.webp 3x" type="image/webp" />
+
+      <!-- Fallback: JPEG -->
+      <img src="./images/hero/hero-m@1x.jpg" srcset="
+            images/hero/hero-m@1x.jpg 1x,
+            images/hero/hero-m@2x.jpg 2x,
+            images/hero/hero-m@3x.jpg 3x" alt="" aria-hidden="true" class="hero__bg-img" width="1920" height="1080"
+        loading="eager" decoding="sync" fetchpriority="high" />
+    </picture>
   </div>
+
 </section>
     <section class="rooms" id="rooms">
   <div class="container rooms__container">
