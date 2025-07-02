@@ -912,7 +912,7 @@ section {
   height: calc(100vh + 40px);
   left: 0;
   contain: layout style paint;
-  will-change: transform, opacity;
+  will-change: transform;
   width: 100%;
   background-color: transparent;
   background-image: -webkit-image-set(url("../images/hero/hero-m@1x.avif") type("image/avif") 1x, url("../images/hero/hero-m@2x.avif") type("image/avif") 2x, url("../images/hero/hero-m@3x.avif") type("image/avif") 3x, url("../images/hero/hero-m@1x.webp") type("image/webp") 1x, url("../images/hero/hero-m@2x.webp") type("image/webp") 2x, url("../images/hero/hero-m@3x.webp") type("image/webp") 3x, url("../images/hero/hero-m@1x.jpg") 1x, url("../images/hero/hero-m@2x.jpg") 2x, url("../images/hero/hero-m@3x.jpg") 3x);

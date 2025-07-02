@@ -25,7 +25,8 @@
     left: 0;
 
     contain: layout style paint;
-    will-change: transform, opacity;
+    // will-change: transform, opacity;
+    will-change: transform;
     width: 100%;
 
     background-color: transparent;
