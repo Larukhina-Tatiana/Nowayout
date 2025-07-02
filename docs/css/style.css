@@ -1,4 +1,10 @@
 @charset "UTF-8";
+.header__logo-img {
+  width: 128px;
+  height: auto;
+  display: block;
+}
+
 .hero {
   position: relative;
   isolation: isolate;
