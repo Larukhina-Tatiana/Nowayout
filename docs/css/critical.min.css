@@ -31,29 +31,22 @@
   contain: layout style paint;
   will-change: transform, opacity;
   width: 100%;
-
   background-image: url("../images/hero/hero-m@1x.jpg");
-}
-
-@supports (background-image: url("image.avif")) {
-
-.hero__bg {
-    background-image: url("../images/hero/hero-m@1x.avif");
-}
-  }
-
-@supports (background-image: url("image.webp")) {
-
-.hero__bg {
-    background-image: url("../images/hero/hero-m@1x.webp");
-}
-  }
-
-.hero__bg {
-
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+}
+
+@supports (background-image: url("image/avif")) {
+  .hero__bg {
+    background-image: url("../images/hero/hero-m@1x.avif");
+  }
+}
+
+@supports (background-image: url("image/webp")) {
+  .hero__bg {
+    background-image: url("../images/hero/hero-m@1x.webp");
+  }
 }
 
 

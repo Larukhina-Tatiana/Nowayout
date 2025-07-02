@@ -37,17 +37,17 @@
   background-position: center;
   background-repeat: no-repeat;
 }
-@supports (background-image: url("image.avif")) {
+
+@supports (background-image: url("image/avif")) {
   .hero__bg {
     background-image: url("../images/hero/hero-m@1x.avif");
   }
 }
-@supports (background-image: url("image.webp")) {
+@supports (background-image: url("image/webp")) {
   .hero__bg {
     background-image: url("../images/hero/hero-m@1x.webp");
   }
 }
-
 .hero__title {
   word-wrap: break-word;
   font-weight: 500;
