@@ -395,11 +395,6 @@ section {
     padding: 0 20px;
   }
 }
-@media screen and (width > 1718px) {
-  .container--footer {
-    width: none;
-  }
-}
 
 .animate-on-scroll {
   opacity: 0;
@@ -924,10 +919,11 @@ section {
 .hero {
   position: relative;
   isolation: isolate;
-  min-height: 100dvh;
   padding: 100px 0;
   display: flex;
   align-items: flex-end;
+  flex-direction: column;
+  height: 100dvh;
 }
 .hero__container {
   position: relative;
@@ -938,13 +934,7 @@ section {
   height: max-content;
   z-index: 1;
   justify-content: center;
-}
-@media (orientation: landscape) {
-  .hero__container {
-    max-width: none;
-    width: 100%;
-    margin: 0;
-  }
+  height: 100dvh;
 }
 .hero__bg {
   position: absolute;
@@ -954,15 +944,6 @@ section {
   height: calc(100vh + 40px);
   z-index: 0;
   contain: layout paint;
-}
-@media (orientation: landscape) {
-  .hero__bg {
-    top: 0;
-    height: 100dvh;
-  }
-  .hero__bg::after {
-    inset: 0 0 auto 0;
-  }
 }
 .hero__bg::after {
   background: linear-gradient(180deg, rgba(0, 0, 0, 0.4), transparent 27.6%), linear-gradient(270deg, transparent 66.79%, rgba(0, 0, 0, 0.5)), linear-gradient(180deg, transparent 60.77%, #000);
@@ -983,21 +964,11 @@ section {
      object-fit: cover;
   z-index: -1;
 }
-@media (orientation: landscape) {
-  .hero__bg-img {
-    position: relative;
-  }
-}
 .hero__image {
-  width: clamp(6.313rem, 1.245rem + 21.62vw, 13.813rem);
+  width: 101px;
+  height: 101px;
   aspect-ratio: 1/1;
   align-self: flex-end;
-}
-@media (orientation: landscape) {
-  .hero__image {
-    width: 101px;
-    height: 101px;
-  }
 }
 .hero__image-pic {
   width: 100%;
@@ -1009,6 +980,7 @@ section {
 .hero__content {
   padding-top: 43px;
   width: 100%;
+  margin-top: auto;
 }
 .hero__title {
   word-wrap: break-word;
@@ -1024,6 +996,28 @@ section {
 }
 .hero__btn {
   margin-top: 10px;
+}
+@media screen and (max-width: 768px) and (orientation: landscape) {
+  .hero {
+    min-height: 100dvh;
+    height: -moz-max-content;
+    height: max-content;
+  }
+  .hero__container {
+    max-width: none;
+    width: 100%;
+    margin: 0;
+  }
+  .hero__bg {
+    top: 0;
+    height: 100dvh;
+  }
+  .hero__bg::after {
+    inset: 0 0 auto 0;
+  }
+  .hero__bg-img {
+    position: relative;
+  }
 }
 @media screen and (min-width: 574px) {
   .hero__title {
@@ -1044,14 +1038,10 @@ section {
   }
   .hero__image {
     position: absolute;
+    width: 222px;
+    height: 222px;
     right: 20px;
     top: 80px;
-  }
-}
-@media screen and (width > 1718px) {
-  .hero__container {
-    max-width: 1718px;
-    margin: 0 auto;
   }
 }
 

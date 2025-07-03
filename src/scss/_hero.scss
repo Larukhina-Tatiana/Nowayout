@@ -4,10 +4,13 @@
   position: relative; // создаём контекст для абсолютного позиционирования
   isolation: isolate; // чтобы z-index не конфликтовал
   // height: auto;
-  min-height: 100dvh; // Используем “динамическую” высоту
+  // min-height: 100dvh; // Используем “динамическую” высоту
   padding: 100px 0;
   display: flex;
   align-items: flex-end;
+
+  flex-direction: column;
+  height: 100dvh;
 
   &__container {
     position: relative;
@@ -18,11 +21,7 @@
     z-index: 1;
     justify-content: center;
 
-    @media (orientation: landscape) {
-      max-width: none;
-      width: 100%;
-      margin: 0;
-    }
+    height: 100dvh;
   }
 
   &__bg {
@@ -33,16 +32,6 @@
     height: calc(100vh + 40px);
     z-index: 0;
     contain: layout paint;
-
-    @media (orientation: landscape) {
-      top: 0;
-      height: 100dvh;
-
-      &::after {
-        inset: 0 0 auto 0; // только снизу
-      }
-    }
-
 
     &::after {
       background: $linear-gradient;
@@ -62,22 +51,14 @@
       height: 100%;
       object-fit: cover;
       z-index: -1;
-
-      @media (orientation: landscape) {
-        position: relative; // 💥 меняем на relative
-      }
     }
   }
 
   &__image {
-    width: clamp(6.313rem, 1.245rem + 21.62vw, 13.813rem);
+    width: 101px;
+    height: 101px;
     aspect-ratio: 1 / 1;
     align-self: flex-end;
-
-    @media (orientation: landscape) {
-      width: 101px;
-      height: 101px;
-    }
 
     &-pic {
       width: 100%;
@@ -90,6 +71,8 @@
   &__content {
     padding-top: 43px;
     width: 100%;
+
+    margin-top: auto;
   }
 
   &__title {
@@ -108,6 +91,30 @@
 
   &__btn {
     margin-top: 10px;
+  }
+
+  @media screen and (max-width: 768px) and (orientation: landscape) {
+    min-height: 100dvh; // Используем “динамическую” высоту
+    height: max-content;
+
+    &__container {
+      max-width: none;
+      width: 100%;
+      margin: 0;
+    }
+
+    &__bg {
+      top: 0;
+      height: 100dvh;
+
+      &::after {
+        inset: 0 0 auto 0; // только снизу
+      }
+
+      &-img {
+        position: relative; // 💥 меняем на relative
+      }
+    }
   }
 
   @media screen and (min-width: 574px) {
@@ -133,15 +140,10 @@
 
     &__image {
       position: absolute;
+      width: 222px;
+      height: 222px;
       right: 20px;
       top: 80px;
-    }
-  }
-
-  @media screen and (width > 1718px) {
-    &__container {
-      max-width: 1718px;
-      margin: 0 auto;
     }
   }
 }

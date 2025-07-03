@@ -55,20 +55,20 @@ function ScrollRevealFunc() {
   //   origin: "left",
   // });
 
-  const cards = document.querySelectorAll(".rooms__card");
+  // const cards = document.querySelectorAll(".rooms__card");
 
-  cards.forEach((card, index) => {
-    const isEven = index % 2 === 0;
+  // cards.forEach((card, index) => {
+  //   const isEven = index % 2 === 0;
 
-    ScrollReveal().reveal(card, {
-      origin: isEven ? "top" : "bottom",
-      distance: "60px",
-      duration: 400,
-      opacity: 0,
-      delay: index * 350, // поочерёдный эффект
-      easing: "ease-in-out",
-      cleanup: true, // чтобы не пересоздавал каждый раз
-    });
-  });
+  //   ScrollReveal().reveal(card, {
+  //     origin: isEven ? "top" : "bottom",
+  //     distance: "60px",
+  //     duration: 400,
+  //     opacity: 0,
+  //     delay: index * 350, // поочерёдный эффект
+  //     easing: "ease-in-out",
+  //     cleanup: true, // чтобы не пересоздавал каждый раз
+  //   });
+  // });
 }
 export default ScrollRevealFunc;
