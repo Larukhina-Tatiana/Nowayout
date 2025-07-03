@@ -2,7 +2,6 @@
 .header__logo-img {
   width: 128px;
   height: auto;
-  display: block;
 }
 
 .hero {
@@ -17,25 +16,13 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  justify-content: center;
   height: -moz-max-content;
   height: max-content;
   z-index: 1;
-  justify-content: center;
+  width: 100%;
 }
 
-@media (orientation: landscape) {
-  .hero__container {
-    max-width: none;
-    width: 100%;
-    margin: 0;
-  }
-}
-@media (orientation: landscape) {
-  .hero__image {
-    width: 101px;
-    height: 101px;
-  }
-}
 .hero__bg {
   position: absolute;
   top: -40px;
@@ -46,14 +33,7 @@
   contain: layout paint;
 }
 
-@media (orientation: landscape) {
-  .hero__bg {
-    top: 0;
-    height: 100dvh;
-  }
-}
 .hero__bg-img {
-  display: block;
   position: absolute;
   inset: 0;
   width: 100%;
@@ -63,42 +43,13 @@
   z-index: -1;
 }
 
-@media (orientation: landscape) {
-  .hero__bg-img {
-    position: relative;
-  }
-}
-@media (orientation: landscape) {
-  .hero__bg::after {
-    inset: 0 0 auto 0;
-    pointer-events: none;
-  }
-}
 .hero__title {
-  word-wrap: break-word;
   font-weight: 500;
+  word-wrap: break-word;
   font-size: 46px;
-  line-height: 103%;
+  line-height: 1.03;
 }
 
-@media screen and (min-width: 574px) {
-  .hero__title {
-    line-height: 106%;
-    font-size: 60px;
-  }
-}
-@media screen and (min-width: 936px) {
-  .hero__container {
-    flex-direction: row;
-    height: 100dvh;
-    padding-top: 63px;
-    align-items: center;
-  }
-  .hero__title {
-    font-size: 80px;
-    line-height: 106%;
-  }
-}
 /*! modern-normalize v1.1.0 | MIT License | https://github.com/sindresorhus/modern-normalize */
 *, ::after, ::before {
   box-sizing: border-box;
@@ -986,7 +937,7 @@ section {
   word-wrap: break-word;
   font-weight: 500;
   font-size: 46px;
-  line-height: 103%;
+  line-height: 1.03;
 }
 .hero__description {
   padding-top: clamp(1.688rem, 1.139rem + 2.34vw, 2.5rem);
