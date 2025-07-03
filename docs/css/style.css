@@ -34,6 +34,7 @@
 }
 
 .hero__bg-img {
+  display: block;
   position: absolute;
   inset: 0;
   width: 100%;
@@ -907,6 +908,7 @@ section {
   pointer-events: none;
 }
 .hero__bg-img {
+  display: block;
   position: absolute;
   inset: 0;
   width: 100%;
