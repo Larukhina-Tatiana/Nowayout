@@ -1,3 +1,4 @@
+@use "./utils/vars.scss" as *;
 .header__logo-img {
   width: 128px;
   height: auto
@@ -5,7 +6,7 @@
 .hero {
   position: relative;
   isolation: isolate;
-  min-height: 100dvh;
+  height: 100dvh;
   padding: 100px 0
 }
 .hero__container {
@@ -18,6 +19,27 @@
   height: max-content;
   z-index: 1;
   width: 100%
+}
+.hero__bg {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  width: 100%;
+  height: calc(100vh + 40px);
+  z-index: 0;
+  contain: layout paint
+}
+.hero__bg-img {
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 100dvh;
+  z-index: -1;
+  @include bg-cover-ratio(523, 816);
+  
 }
 .hero__title {
   font-weight: 500;

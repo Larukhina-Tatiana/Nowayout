@@ -7,21 +7,15 @@
   <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
 
-  <!-- Mobile background -->
-  <link rel="preload" as="image" href="images/hero/hero-m@1x.avif" imagesrcset="
-    images/hero/hero-m@1x.avif 1x,
-    images/hero/hero-m@2x.avif 2x,
-    images/hero/hero-m@3x.avif 3x" imagesizes="100vw" type="image/avif" fetchpriority="high">
-
-  <!-- Desktop background -->
-  <link rel="preload" as="image" href="images/hero/hero1@1x.avif" imagesrcset="
-    images/hero/hero1@1x.avif 1x,
-    images/hero/hero1@2x.avif 2x,
-    images/hero/hero1@3x.avif 3x" imagesizes="100vw" type="image/avif" fetchpriority="high">
-
-
   <link rel="preload" as="image" href="images/icons/btn-red.svg" type="image/svg+xml">
 
+  <!-- Мобайл -->
+  <link rel="preload" as="image" href="images/hero/hero-m@2x.avif" type="image/avif" media="(max-width: 767px)"
+    fetchpriority="high">
+
+  <!-- Десктоп -->
+  <link rel="preload" as="image" href="images/hero/hero1@2x.avif" type="image/avif" media="(min-width: 768px)"
+    fetchpriority="high">
 
 
   <title>@title</title>
@@ -37,5 +31,4 @@
   <noscript>
     <link rel="stylesheet" href="css/style.min.css">
   </noscript>
-
 </head>

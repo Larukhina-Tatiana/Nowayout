@@ -8,9 +8,10 @@
   padding: 100px 0;
   display: flex;
   align-items: flex-end;
-
+  justify-content: flex-end;
   flex-direction: column;
   height: 100dvh;
+  // height: auto;
 
   &__container {
     position: relative;
@@ -21,7 +22,7 @@
     z-index: 1;
     justify-content: center;
 
-    height: 100dvh;
+    // height: 100dvh;
   }
 
   &__bg {
@@ -45,19 +46,17 @@
     }
 
     &-img {
-      display: block;
       position: absolute;
       inset: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
+      height: 100dvh;
+      @include bg-cover-ratio(523, 816);
       z-index: -1;
     }
   }
 
   &__image {
-    width: 101px;
-    height: 101px;
+    width: 125px;
+    height: 125px;
     aspect-ratio: 1 / 1;
     align-self: flex-end;
 
@@ -72,8 +71,6 @@
   &__content {
     padding-top: 43px;
     width: 100%;
-
-    margin-top: auto;
   }
 
   &__title {
@@ -94,7 +91,7 @@
     margin-top: 10px;
   }
 
-  @media screen and (max-width: 768px) and (orientation: landscape) {
+  @media screen and (max-width: 1024px) and (orientation: landscape) {
     min-height: 100dvh; // Используем “динамическую” высоту
     height: max-content;
 
@@ -111,10 +108,6 @@
       &::after {
         inset: 0 0 auto 0; // только снизу
       }
-
-      &-img {
-        position: relative; // 💥 меняем на relative
-      }
     }
   }
 
@@ -124,6 +117,7 @@
       font-size: 60px;
     }
   }
+
 
   @media screen and (min-width: 936px) {
 

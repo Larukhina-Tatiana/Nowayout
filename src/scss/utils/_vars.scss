@@ -28,3 +28,9 @@ $burger-line-height: 2px;
   transition-duration: $transition-duration;
   transition-timing-function: $transition-timing-function;
 }
+
+@mixin bg-cover-ratio($width, $height) {
+  aspect-ratio: #{$width} / #{$height};
+  object-fit: cover;
+  width: 100%;
+}
