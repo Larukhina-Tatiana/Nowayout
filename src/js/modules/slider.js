@@ -109,11 +109,13 @@ window.addEventListener("load", () => {
   observer.observe(target);
 });
 
-window.addEventListener("resize", () => setTimeout(initRoomsSwiper, 100));
+let resizeTimeout;
+window.addEventListener("resize", () => {
+  clearTimeout(resizeTimeout);
+  resizeTimeout = setTimeout(initRoomsSwiper, 100);
+});
 
 window.addEventListener("orientationchange", () => {
-  // Добавляем проверку ширины экрана при изменении ориентации
-  if (window.innerWidth > 435) {
-    setTimeout(initRoomsSwiper, 100);
-  }
+  clearTimeout(resizeTimeout);
+  resizeTimeout = setTimeout(initRoomsSwiper, 100);
 });
