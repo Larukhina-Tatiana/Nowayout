@@ -66,14 +66,16 @@
     }
 
     .swiper-wrapper {
-      display: block !important;
+      display: flex !important;
+      flex-direction: column;
+      gap: 15px;
       transform: none !important;
     }
 
     .swiper-slide {
-      max-width: 100% !important;
-      margin-bottom: 20px;
-      margin: 0 auto 15px auto;
+      width: 100% !important;
+      margin-bottom: 0;
+      margin-right: 0;
     }
   }
 

@@ -121,6 +121,12 @@ window.addEventListener("resize", () => {
 window.addEventListener("orientationchange", () => {
   clearTimeout(resizeTimeout);
   resizeTimeout = setTimeout(() => {
+    // Принудительно уничтожаем слайдер перед повторной инициализацией
+    if (swiper) {
+      swiper.destroy(true, true);
+      swiper = null;
+    }
+
     // Добавляем проверку на завершение анимации изменения ориентации
     const checkOrientation = () => {
       if (window.orientation !== undefined) {
