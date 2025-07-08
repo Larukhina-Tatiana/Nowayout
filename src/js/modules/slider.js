@@ -112,5 +112,8 @@ window.addEventListener("load", () => {
 window.addEventListener("resize", () => setTimeout(initRoomsSwiper, 100));
 
 window.addEventListener("orientationchange", () => {
-  setTimeout(initRoomsSwiper, 100);
+  // Добавляем проверку ширины экрана при изменении ориентации
+  if (window.innerWidth > 435) {
+    setTimeout(initRoomsSwiper, 100);
+  }
 });
