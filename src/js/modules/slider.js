@@ -110,3 +110,7 @@ window.addEventListener("load", () => {
 });
 
 window.addEventListener("resize", () => setTimeout(initRoomsSwiper, 100));
+
+window.addEventListener("orientationchange", () => {
+  setTimeout(initRoomsSwiper, 100);
+});
