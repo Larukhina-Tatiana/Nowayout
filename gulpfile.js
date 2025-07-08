@@ -31,6 +31,9 @@ import { copyfavicon } from "./gulp/tasks/copyFavicon.js";
 import { imgAvif, imgWebp, imgImage, imgPng } from "./gulp/tasks/images.js";
 import { version } from "./gulp/tasks/version.js";
 
+import { cdnAssets, updateLinks } from "./gulp/tasks/cdn.js";
+
+import { uploadAssetsToCDN } from "./gulp/tasks/cdnUpload.js";
 // import { svgStack, svgSymbol } from "./gulp/tasks/svg.js";
 // import { OtfToTtf, ttfToWoff, fontStyle } from "./gulp/tasks/fonts.js";
 
@@ -69,6 +72,8 @@ const mainTasks = gulp.series(
 const dev = gulp.series(mainTasks, gulp.parallel(watcher, server));
 
 const build = gulp.series(reset, mainTasks, version);
+export const cdn = gulp.series(cdnAssets, updateLinks);
+export const cdnPush = uploadAssetsToCDN;
 
 export { cleanEmpty }; //gulp cleanEmpty
 export { scanAndClean }; //gulp scanAndClean
