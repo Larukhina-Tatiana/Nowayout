@@ -1,32 +1,34 @@
 import $ from "jquery";
-$(function () {
-  // Обработка выбора города
-  $(".header__location-btn")
-    .off("click")
-    .on("click", function (e) {
-      e.stopPropagation();
-      $(this).closest(".header__location").addClass("is-open");
-    });
 
-  $(".header__location-item").on("click", function () {
+$(function () {
+  const $header = $(".header");
+  const $location = $(".header__location");
+  const $locationBtn = $(".header__location-btn");
+  const $locationItems = $(".header__location-item");
+  const $locationCurrent = $(".header__location-current");
+
+  // Открытие выбора города
+  $locationBtn.off("click").on("click", function (e) {
+    e.stopPropagation();
+    $location.addClass("is-open");
+  });
+
+  // Выбор города
+  $locationItems.each(function () {
     const location = $(this).data("location");
-    $(this)
-      .closest(".header__location")
-      .find(".header__location-current")
-      .text(location);
-    $(this).closest(".header__location").removeClass("is-open");
+    $locationCurrent.text(location);
+    $location.removeClass("is-open");
   });
 
   // Клик вне области — закрываем выбор города
-  $(document).on("click", function (e) {
-    if (!$(e.target).closest(".header__location").length) {
-      $(".header__location").removeClass("is-open");
+  document.addEventListener("pointerdown", (e) => {
+    if (!e.target.closest(".header__location")) {
+      $location.removeClass("is-open");
     }
   });
 
-  // Поведение при скролле: добавление класса к шапке
-  const header = $(".header");
+  // Добавление класса к шапке при скролле
   $(window).on("scroll", function () {
-    header.toggleClass("is-active", $(window).scrollTop() > 0);
+    $header.toggleClass("is-active", window.scrollY > 0);
   });
 });

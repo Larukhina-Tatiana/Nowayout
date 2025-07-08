@@ -90,5 +90,18 @@ function updateNavState(swiper) {
     : next?.classList.remove("hidden");
 }
 
-window.addEventListener("load", initRoomsSwiper);
+window.addEventListener("load", () => {
+  const target = document.querySelector(".rooms");
+  if (!target) return;
+
+  const observer = new IntersectionObserver((entries, obs) => {
+    if (entries[0].isIntersecting) {
+      initRoomsSwiper(); // запускаем слайдер
+      obs.disconnect(); // отключаем слежение
+    }
+  });
+
+  observer.observe(target);
+});
+
 window.addEventListener("resize", () => setTimeout(initRoomsSwiper, 100));

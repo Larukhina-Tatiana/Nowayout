@@ -599,7 +599,6 @@ section {
   border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: 4px;
   z-index: 10;
-  margin: 4px 0 0 0;
   padding: 0;
   -webkit-user-select: none;
      -moz-user-select: none;

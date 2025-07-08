@@ -2,7 +2,7 @@
 import "./modules/header.js";
 import "./modules/transfer.js";
 import "./modules/burger.js";
-import "./modules/scroll-button.js";
+import "./components/scrollToggle.js";
 import "./modules/slider.js";
 import "./modules/label.js";
 import "./utils/form-validation.js";
