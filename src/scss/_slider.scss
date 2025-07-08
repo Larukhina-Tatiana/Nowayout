@@ -76,6 +76,21 @@
       margin: 0 auto 15px auto;
     }
   }
+
+  @media (orientation: portrait) {
+    .rooms__cards.swiper {
+      overflow: hidden;
+    }
+
+    .swiper-wrapper {
+      display: flex !important;
+    }
+
+    .slider-nav {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
 }
 
 @keyframes pulse {

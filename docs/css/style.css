@@ -1417,6 +1417,18 @@ section {
     margin: 0 auto 15px auto;
   }
 }
+@media (orientation: portrait) {
+  .rooms .rooms__cards.swiper {
+    overflow: hidden;
+  }
+  .rooms .swiper-wrapper {
+    display: flex !important;
+  }
+  .rooms .slider-nav {
+    opacity: 1;
+    visibility: visible;
+  }
+}
 
 @keyframes pulse {
   0% {

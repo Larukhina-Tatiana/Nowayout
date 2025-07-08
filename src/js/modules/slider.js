@@ -112,10 +112,24 @@ window.addEventListener("load", () => {
 let resizeTimeout;
 window.addEventListener("resize", () => {
   clearTimeout(resizeTimeout);
-  resizeTimeout = setTimeout(initRoomsSwiper, 100);
+  resizeTimeout = setTimeout(() => {
+    initRoomsSwiper();
+    setTimeout(initRoomsSwiper, 300); // Дополнительная проверка после ресайза
+  }, 100);
 });
 
 window.addEventListener("orientationchange", () => {
   clearTimeout(resizeTimeout);
-  resizeTimeout = setTimeout(initRoomsSwiper, 100);
+  resizeTimeout = setTimeout(() => {
+    // Добавляем проверку на завершение анимации изменения ориентации
+    const checkOrientation = () => {
+      if (window.orientation !== undefined) {
+        initRoomsSwiper();
+        setTimeout(initRoomsSwiper, 300);
+      } else {
+        setTimeout(checkOrientation, 100);
+      }
+    };
+    checkOrientation();
+  }, 300); // Увеличиваем задержку для надежности
 });
