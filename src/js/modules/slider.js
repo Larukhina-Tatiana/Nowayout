@@ -6,21 +6,28 @@ import "swiper/css/navigation";
 
 let swiper;
 
-export function initRoomsSwiper() {
-  if (
-    window.innerWidth <= 435 ||
-    /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
-      navigator.userAgent
-    )
-  ) {
-    // отключаем стрелки и transform на мобильных устройствах
-    document.querySelector(".slider-nav.prev")?.classList.add("hidden");
-    document.querySelector(".slider-nav.next")?.classList.add("hidden");
-    const wrapper = document.querySelector(".rooms__cards .swiper-wrapper");
-    if (wrapper) wrapper.style.transform = "none";
-    return; // слайдер не нужен
-  }
+function shouldInitSlider() {
+  const isWideScreen = window.innerWidth > 425;
+  const isLandscape = window.matchMedia("(orientation: landscape)").matches;
+  return isWideScreen || isLandscape;
+}
 
+function updateNavState(swiper) {
+  const prev = document.querySelector(".slider-nav.prev");
+  const next = document.querySelector(".slider-nav.next");
+
+  if (!swiper) return;
+
+  swiper.isBeginning
+    ? prev?.classList.add("hidden")
+    : prev?.classList.remove("hidden");
+
+  swiper.isEnd
+    ? next?.classList.add("hidden")
+    : next?.classList.remove("hidden");
+}
+
+export function initRoomsSwiper() {
   const container = document.querySelector(".rooms__cards.swiper");
   const wrapper = container?.querySelector(".swiper-wrapper");
   const slides = wrapper?.querySelectorAll(".swiper-slide") || [];
@@ -33,10 +40,17 @@ export function initRoomsSwiper() {
     swiper = null;
   }
 
+  if (!shouldInitSlider()) {
+    prev?.classList.add("hidden");
+    next?.classList.add("hidden");
+    if (wrapper) wrapper.style.transform = "none";
+    return;
+  }
+
   if (!container || !wrapper || slides.length === 0) return;
 
   const totalWidth = Array.from(slides).reduce(
-    (acc, slide) => acc + slide.offsetWidth + 12, // 12 = spaceBetween
+    (acc, slide) => acc + slide.offsetWidth + 12,
     0
   );
   const visibleWidth = container.offsetWidth;
@@ -74,68 +88,47 @@ export function initRoomsSwiper() {
       fromEdge: updateNavState,
     },
   });
+
   setTimeout(() => {
-    swiper.update(); // обновим Swiper
-    updateNavState(swiper); // обновим состояние кнопок
+    swiper.update();
+    updateNavState(swiper);
   }, 0);
 }
 
-function updateNavState(swiper) {
-  const prev = document.querySelector(".slider-nav.prev");
-  const next = document.querySelector(".slider-nav.next");
-
-  if (!swiper) return;
-
-  swiper.isBeginning
-    ? prev?.classList.add("hidden")
-    : prev?.classList.remove("hidden");
-
-  swiper.isEnd
-    ? next?.classList.add("hidden")
-    : next?.classList.remove("hidden");
-}
-
+// 📦 Lazy-init через IntersectionObserver
 window.addEventListener("load", () => {
   const target = document.querySelector(".rooms");
   if (!target) return;
 
   const observer = new IntersectionObserver((entries, obs) => {
     if (entries[0].isIntersecting) {
-      initRoomsSwiper(); // запускаем слайдер
-      obs.disconnect(); // отключаем слежение
+      initRoomsSwiper();
+      obs.disconnect();
     }
   });
 
   observer.observe(target);
 });
 
+// 🧭 Слушаем resize
 let resizeTimeout;
 window.addEventListener("resize", () => {
   clearTimeout(resizeTimeout);
   resizeTimeout = setTimeout(() => {
     initRoomsSwiper();
-    setTimeout(initRoomsSwiper, 300); // Дополнительная проверка после ресайза
+    setTimeout(initRoomsSwiper, 300); // запасной перезапуск
   }, 100);
 });
 
+// 📲 И ориентацию
 window.addEventListener("orientationchange", () => {
   clearTimeout(resizeTimeout);
-  resizeTimeout = setTimeout(() => {
-    // Принудительно уничтожаем слайдер перед повторной инициализацией
-    if (swiper) {
-      swiper.destroy(true, true);
-      swiper = null;
-    }
+  if (swiper) {
+    swiper.destroy(true, true);
+    swiper = null;
+  }
 
-    // Добавляем проверку на завершение анимации изменения ориентации
-    const checkOrientation = () => {
-      if (window.orientation !== undefined) {
-        initRoomsSwiper();
-        setTimeout(initRoomsSwiper, 300);
-      } else {
-        setTimeout(checkOrientation, 100);
-      }
-    };
-    checkOrientation();
-  }, 300); // Увеличиваем задержку для надежности
+  resizeTimeout = setTimeout(() => {
+    initRoomsSwiper();
+  }, 150);
 });

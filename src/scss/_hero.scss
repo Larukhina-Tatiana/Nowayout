@@ -1,6 +1,7 @@
 @use "./utils/vars.scss" as *;
 
 .hero {
+  outline: 1px solid mediumpurple;
   position: relative; // создаём контекст для абсолютного позиционирования
   isolation: isolate; // чтобы z-index не конфликтовал
   // height: auto;

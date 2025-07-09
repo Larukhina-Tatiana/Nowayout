@@ -3,111 +3,75 @@
 
 .rooms {
 
-  .swiper-slide {
-    width: auto;
+  .swiper-wrapper {
+    flex-direction: column;
+    gap: 12px;
   }
 
-  .slider-nav {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 10;
-    width: 44px;
-    height: 44px;
-    border-radius: 50%;
-    background-color: #d60000;
-    color: white;
-    border: none;
-    font-size: 24px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    border: 4px solid $color-bg;
-    opacity: 1;
-    visibility: visible;
-    animation: pulse 1.8s ease-in-out infinite;
-    transition: opacity 0.3s ease, visibility 0.3s ease;
-    pointer-events: auto;
-
-
-  }
-
-  .slider-nav.prev {
-    left: 10px;
-
-    &::before {
-      content: url("../images/icons/arrow-prev.svg");
+  @media (min-width: 426px),
+  (orientation: landscape) {
+    .swiper-wrapper {
+      flex-direction: row;
     }
-  }
 
-  .slider-nav.next {
-    right: 10px;
+    .slider-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 10;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background-color: #d60000;
+      color: white;
+      border: none;
+      font-size: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      border: 4px solid $color-bg;
+      opacity: 1;
+      visibility: visible;
+      animation: pulse 1.8s ease-in-out infinite;
+      transition: opacity 0.3s ease, visibility 0.3s ease;
+      pointer-events: auto;
 
-    &::before {
-      content: url("../images/icons/arrow-next.svg");
+
+      &.prev {
+        left: 10px;
+
+        &::before {
+          content: url("../images/icons/arrow-prev.svg");
+        }
+      }
+
+      &.next {
+        right: 0;
+
+        &::before {
+          content: url("../images/icons/arrow-next.svg");
+        }
+      }
+
+      &.is-disabled {
+        opacity: 0.4;
+        pointer-events: none;
+      }
+
+      &.hidden {
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+      }
     }
-  }
 
-  .slider-nav.is-disabled {
-    opacity: 0.4;
-    pointer-events: none;
-  }
-
-  .slider-nav.hidden {
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-  }
-
-  @media (max-width: 435px) {
     .rooms__cards.swiper {
       overflow: visible;
     }
 
-    .swiper-wrapper {
-      display: flex !important;
-      flex-direction: column;
-      gap: 15px;
-      transform: none !important;
+    .rooms__card.swiper-slide {
+      width: 327px;
     }
-
-    .swiper-slide {
-      width: 100% !important;
-      margin-bottom: 0;
-      margin-right: 0;
-    }
-  }
-
-  @media (orientation: portrait) {
-    .rooms__cards.swiper {
-      overflow: hidden;
-    }
-
-    .swiper-wrapper {
-      display: flex !important;
-    }
-
-    .slider-nav {
-      opacity: 1;
-      visibility: visible;
-    }
-  }
-}
-
-@keyframes pulse {
-  0% {
-    transform: scale(1);
-    opacity: 1;
-  }
-
-  50% {
-    transform: scale(1.08);
-    opacity: 0.8;
-  }
-
-  100% {
-    transform: scale(1);
-    opacity: 1;
   }
 }

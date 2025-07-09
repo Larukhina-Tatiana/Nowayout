@@ -7,43 +7,17 @@
   padding-bottom: 107px;
   min-height: 800px;
 
-  .rooms__slider-wrapper {
-    position: relative;
-  }
-
-  &__cards.swiper {
-    // display: flex;
-    // gap: 20px;
-    overflow: hidden
-  }
-
-  @media (max-width: 768px) {
-    &__card {
-      width: 100% !important;
-      margin-bottom: 20px;
-    }
-  }
-
-
   &__picture {
     display: block;
-    width: 327px;
     height: 492px;
   }
-
-
 
   &__card {
     background-color: rgba($color-text-main, 0.05);
     border: 1px solid rgba($color-text-main, 0.05);
     overflow: hidden;
     height: 100%;
-    display: flex;
-    flex-direction: column;
     @include transition($transition-property: (border-color));
-    // scroll-behavior: smooth;
-    flex: 0 0 auto;
-    width: 327px !important;
 
     &:hover {
       border-color: $color-accent;
@@ -53,11 +27,11 @@
       }
     }
 
-
     &-image {
       position: relative;
-      width: 327px;
       overflow: hidden;
+      display: flex;
+      justify-content: center;
     }
 
     &-img {
@@ -71,13 +45,13 @@
 
     &-label {
       position: absolute;
-      width: 295px;
       height: 55px;
       overflow: hidden;
 
       top: 30px;
       text-wrap: balance;
-      left: 10px;
+      // left: 10px;
+
       background-color: rgba($color-text-main, 0.05);
       border: 1px solid $color-text-main;
       border-radius: 100px;
@@ -90,7 +64,6 @@
       gap: 6px;
     }
 
-    // max-height: 30px;
     &-icon {
       flex-shrink: 0;
       width: 24px;
@@ -104,6 +77,14 @@
       -webkit-box-orient: vertical;
       -webkit-line-clamp: 2;
       overflow: hidden;
+    }
+  }
+
+  @media (min-width: 426px),
+  (orientation: landscape) {
+
+    &__slider-wrapper {
+      position: relative;
     }
   }
 }
