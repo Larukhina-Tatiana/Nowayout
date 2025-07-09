@@ -1202,6 +1202,12 @@ section {
 .rooms__cards.swiper {
   overflow: hidden;
 }
+@media (max-width: 768px) {
+  .rooms__card {
+    width: 100% !important;
+    margin-bottom: 20px;
+  }
+}
 .rooms__picture {
   display: block;
   width: 327px;
@@ -1408,13 +1414,27 @@ section {
     overflow: visible;
   }
   .rooms .swiper-wrapper {
-    display: block !important;
+    display: flex !important;
+    flex-direction: column;
+    gap: 15px;
     transform: none !important;
   }
   .rooms .swiper-slide {
-    max-width: 100% !important;
-    margin-bottom: 20px;
-    margin: 0 auto 15px auto;
+    width: 100% !important;
+    margin-bottom: 0;
+    margin-right: 0;
+  }
+}
+@media (orientation: portrait) {
+  .rooms .rooms__cards.swiper {
+    overflow: hidden;
+  }
+  .rooms .swiper-wrapper {
+    display: flex !important;
+  }
+  .rooms .slider-nav {
+    opacity: 1;
+    visibility: visible;
   }
 }
 

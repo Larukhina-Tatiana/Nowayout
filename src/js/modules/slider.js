@@ -7,8 +7,13 @@ import "swiper/css/navigation";
 let swiper;
 
 export function initRoomsSwiper() {
-  if (window.innerWidth <= 435) {
-    // отключаем стрелки и transform
+  if (
+    window.innerWidth <= 435 ||
+    /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+      navigator.userAgent
+    )
+  ) {
+    // отключаем стрелки и transform на мобильных устройствах
     document.querySelector(".slider-nav.prev")?.classList.add("hidden");
     document.querySelector(".slider-nav.next")?.classList.add("hidden");
     const wrapper = document.querySelector(".rooms__cards .swiper-wrapper");
@@ -104,4 +109,33 @@ window.addEventListener("load", () => {
   observer.observe(target);
 });
 
-window.addEventListener("resize", () => setTimeout(initRoomsSwiper, 100));
+let resizeTimeout;
+window.addEventListener("resize", () => {
+  clearTimeout(resizeTimeout);
+  resizeTimeout = setTimeout(() => {
+    initRoomsSwiper();
+    setTimeout(initRoomsSwiper, 300); // Дополнительная проверка после ресайза
+  }, 100);
+});
+
+window.addEventListener("orientationchange", () => {
+  clearTimeout(resizeTimeout);
+  resizeTimeout = setTimeout(() => {
+    // Принудительно уничтожаем слайдер перед повторной инициализацией
+    if (swiper) {
+      swiper.destroy(true, true);
+      swiper = null;
+    }
+
+    // Добавляем проверку на завершение анимации изменения ориентации
+    const checkOrientation = () => {
+      if (window.orientation !== undefined) {
+        initRoomsSwiper();
+        setTimeout(initRoomsSwiper, 300);
+      } else {
+        setTimeout(checkOrientation, 100);
+      }
+    };
+    checkOrientation();
+  }, 300); // Увеличиваем задержку для надежности
+});
