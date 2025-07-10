@@ -57,25 +57,84 @@
     </div>
   </div>
   <div class="hero__bg">
-    <picture> <!-- Десктоп -->
-      <source media="(min-width: 768px)" srcset=" images/hero/hero-d-840.avif 840w,
-        images/hero/hero-d-1300.avif 1300w,
-        images/hero/hero-d-1380.avif 1380w,
-        images/hero/hero-d-1920.avif 1920w " sizes="(min-width: 1280px) 1380px, 100vw" type="image/avif">
-      <source media="(min-width: 768px)" srcset=" images/hero/hero-d-840.webp 840w,
-        images/hero/hero-d-1300.webp 1300w,
-        images/hero/hero-d-1380.webp 1380w,
-        images/hero/hero-d-1920.webp 1920w " sizes="(min-width: 1280px) 1380px, 100vw" type="image/webp">
-      <!-- Мобильные -->
-      <source srcset=" images/hero/hero-m-320.avif 320w,
-        images/hero/hero-m-480.avif 480w,
-        images/hero/hero-m-750.avif 750w " sizes="100vw" type="image/avif">
-      <source
-        srcset=" images/hero/hero-m-320.webp 320w, images/hero/hero-m-480.webp 480w, images/hero/hero-m-750.webp 750w "
-        sizes="100vw" type="image/webp">
-      <img class="hero__bg-img" aria-hidden="true" src="./images/hero/hero-m-750.jpg" alt="Images hero" width="750"
-        height="1334" loading="eager" decoding="sync" fetchpriority="high">
+    <picture>
+      <!-- 📺 Десктопные AVIF -->
+      <source media="(min-width: 768px)" srcset="
+              images/hero/hero-d-840.avif 840w,
+              images/hero/hero-d-1300.avif 1300w,
+              images/hero/hero-d-1380.avif 1380w,
+              images/hero/hero-d-1440.avif 1440w,
+              images/hero/hero-d-1640.avif 1640w,
+              images/hero/hero-d-1760.avif 1760w,
+              images/hero/hero-d-1920.avif 1920w,
+              images/hero/hero-d-2076.avif 2076w
+            " sizes="
+            (min-width: 1920px) 2076px,
+            (min-width: 1760px) 1760px,
+            (min-width: 1640px) 1640px,
+            (min-width: 1440px) 1557px,
+            (min-width: 1280px) 1386px,
+            (min-width: 1000px) 1081px,
+            (min-width: 780px)  108.2vw,
+            100vw" type="image/avif" />
+
+      <!-- 📺 Десктопные WebP -->
+      <source media="(min-width: 768px)" srcset="
+              images/hero/hero-d-840.webp 840w,
+              images/hero/hero-d-1300.webp 1300w,
+              images/hero/hero-d-1380.webp 1380w,
+              images/hero/hero-d-1440.webp 1440w,
+              images/hero/hero-d-1640.webp 1640w,
+              images/hero/hero-d-1760.webp 1760w,
+              images/hero/hero-d-1920.webp 1920w,
+              images/hero/hero-d-2076.webp 2076w
+            " sizes="
+            (min-width: 1920px) 2076px,
+            (min-width: 1760px) 1760px,
+            (min-width: 1640px) 1640px,
+            (min-width: 1440px) 1557px,
+            (min-width: 1280px) 1386px,
+            (min-width: 1000px) 1081px,
+            (min-width: 780px)  108.2vw, 
+            100vw" type="image/webp" />
+
+      <!-- 📱 Мобильные AVIF -->
+      <source media="(max-width: 767px)" srcset="
+              images/hero/hero-m-320.avif 320w,
+              images/hero/hero-m-480.avif 480w,
+              images/hero/hero-m-750.avif 750w,
+              images/hero/hero-m-930.avif 930w,
+              images/hero/hero-m-1080.avif 1080w,
+              images/hero/hero-m-1400.avif 1400w
+            " sizes="100vw" type="image/avif" />
+
+      <!-- 📱 Мобильные WebP -->
+      <source media="(max-width: 767px)" srcset="
+              images/hero/hero-m-320.webp 320w,
+              images/hero/hero-m-480.webp 480w,
+              images/hero/hero-m-750.webp 750w,
+              images/hero/hero-m-930.webp 930w,
+              images/hero/hero-m-1080.webp 1080w,
+              images/hero/hero-m-1400.webp 1400w,
+              images/hero/hero-m-1530.webp 1530w,
+              images/hero/hero-m-1660.webp 1660w,
+              images/hero/hero-m-1770.webp 1770w,
+              images/hero/hero-m-1880.webp 1880w
+            " sizes="100vw" type="image/webp" />
+
+      <!-- 🧱 Fallback JPEG -->
+      <img class="hero__bg-img" src="./images/hero/hero-m-750.jpg" srcset="
+              images/hero/hero-m-750.jpg 750w,
+              images/hero/hero-m-1080.jpg 1080w,
+              images/hero/hero-m-1400.jpg 1400w,
+              images/hero/hero-m-1530.jpg 1530w,
+              images/hero/hero-m-1660.jpg 1660w,
+              images/hero/hero-m-1770.jpg 1770w,
+              images/hero/hero-m-1880.jpg 1880w
+            " sizes="100vw" type="image/jpeg" width="750" height="1334" alt="Image Hero" loading="eager"
+        decoding="sync" fetchpriority="high" />
     </picture>
+
     <!-- <picture>
       <source media="(min-width: 768px)" srcset="
             images/hero/hero1@1x.avif 1x,
