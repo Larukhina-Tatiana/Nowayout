@@ -69,6 +69,11 @@ body {
   // -moz-text-size-adjust: 100%;
 }
 
+body.is-landscape-narrow .rooms__cards {
+  overflow-x: auto;
+  // Или другие стили для адаптации
+}
+
 // ::-webkit-scrollbar {
 //   width: 5px;
 // }

@@ -326,6 +326,10 @@ body {
   overflow-x: hidden;
 }
 
+body.is-landscape-narrow .rooms__cards {
+  overflow-x: auto;
+}
+
 main {
   flex-grow: 1;
 }
