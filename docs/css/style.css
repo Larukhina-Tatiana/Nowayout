@@ -330,6 +330,16 @@ body.is-landscape-narrow .rooms__cards {
   overflow-x: auto;
 }
 
+body.is-landscape-narrow .rooms .slider-nav {
+  display: none;
+}
+body.is-landscape-narrow .rooms .swiper-slide {
+  width: 100%;
+}
+body.is-landscape-narrow .rooms .rooms__cards.swiper {
+  overflow: visible;
+}
+
 main {
   flex-grow: 1;
 }

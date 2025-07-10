@@ -74,6 +74,23 @@ body.is-landscape-narrow .rooms__cards {
   // Или другие стили для адаптации
 }
 
+body.is-landscape-narrow {
+  .rooms {
+    .slider-nav {
+      display: none;
+    }
+
+    .swiper-slide {
+      width: 100%;
+    }
+
+    // или override на overflow
+    .rooms__cards.swiper {
+      overflow: visible;
+    }
+  }
+}
+
 // ::-webkit-scrollbar {
 //   width: 5px;
 // }
