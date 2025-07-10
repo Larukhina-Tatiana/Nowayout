@@ -24,9 +24,6 @@
   }
 
 
-
-
-
   &__wrapper {
     position: relative;
     padding: clamp(1.875rem, 1.526rem + 1.49vw, 3.125rem) 0;
@@ -36,7 +33,7 @@
       background: $color-header-border;
       content: " ";
       height: 1px;
-      left: -50%;
+      left: -20px;
       position: absolute;
       width: 200%;
     }

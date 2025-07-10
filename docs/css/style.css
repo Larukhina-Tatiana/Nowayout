@@ -1030,7 +1030,7 @@ section {
   background: rgba(255, 255, 255, 0.15);
   content: " ";
   height: 1px;
-  left: -50%;
+  left: -20px;
   position: absolute;
   width: 200%;
 }
