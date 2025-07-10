@@ -14,8 +14,26 @@
     </div>
   </div>
   <div class="hero__bg">
-    <picture>
-      <!-- Десктопные источники -->
+    <picture> <!-- Десктоп -->
+      <source media="(min-width: 768px)" srcset=" images/hero/hero-d-840.avif 840w,
+        images/hero/hero-d-1300.avif 1300w,
+        images/hero/hero-d-1380.avif 1380w,
+        images/hero/hero-d-1920.avif 1920w " sizes="(min-width: 1280px) 1380px, 100vw" type="image/avif">
+      <source media="(min-width: 768px)" srcset=" images/hero/hero-d-840.webp 840w,
+        images/hero/hero-d-1300.webp 1300w,
+        images/hero/hero-d-1380.webp 1380w,
+        images/hero/hero-d-1920.webp 1920w " sizes="(min-width: 1280px) 1380px, 100vw" type="image/webp">
+      <!-- Мобильные -->
+      <source srcset=" images/hero/hero-m-320.avif 320w,
+        images/hero/hero-m-480.avif 480w,
+        images/hero/hero-m-750.avif 750w " sizes="100vw" type="image/avif">
+      <source
+        srcset=" images/hero/hero-m-320.webp 320w, images/hero/hero-m-480.webp 480w, images/hero/hero-m-750.webp 750w "
+        sizes="100vw" type="image/webp">
+      <img class="hero__bg-img" aria-hidden="true" src="images/hero/hero-m-750.jpg" alt="Images hero" width="750"
+        height="1334" loading="eager" decoding="sync" fetchpriority="high">
+    </picture>
+    <!-- <picture>
       <source media="(min-width: 768px)" srcset="
             images/hero/hero1@1x.avif 1x,
             images/hero/hero1@2x.avif 2x,
@@ -25,7 +43,7 @@
             images/hero/hero1@2x.webp 2x,
             images/hero/hero1@3x.webp 3x" type="image/webp" />
 
-      <!-- Мобильные источники -->
+
       <source srcset="
             images/hero/hero-m@1x.avif 1x,
             images/hero/hero-m@2x.avif 2x,
@@ -35,12 +53,12 @@
             images/hero/hero-m@2x.webp 2x,
             images/hero/hero-m@3x.webp 3x" type="image/webp" />
 
-      <!-- Fallback: JPEG -->
+
       <img src="images/hero/hero-m@1x.jpg" srcset="
             images/hero/hero-m@1x.jpg 1x, images/hero/hero-m@2x.jpg 2x,
             images/hero/hero-m@3x.jpg 3x " alt="" aria-hidden="true" class="hero__bg-img" width="750" height="1334"
         loading="eager" decoding="sync" fetchpriority="high" />
-    </picture>
+    </picture> -->
   </div>
 
 </section>
