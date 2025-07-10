@@ -5,7 +5,18 @@ import "swiper/css";
 import "swiper/css/navigation";
 
 let swiper;
-let resizeTimeout;
+// 🕰 Debounce функция
+function debounce(func, wait) {
+  let timeout;
+  return function executedFunction(...args) {
+    const later = () => {
+      clearTimeout(timeout);
+      func.apply(this, args);
+    };
+    clearTimeout(timeout);
+    timeout = setTimeout(later, wait);
+  };
+}
 
 // 📐 Контекст экрана
 function getScreenProfile() {
@@ -48,34 +59,6 @@ export function initRoomsSwiper() {
   const profile = getScreenProfile();
 
   if (!profile.canInitSwiper) {
-    prev?.classList.add("hidden");
-    next?.classList.add("hidden");
-    if (wrapper) {
-      wrapper.style.transform = "none";
-    }
-    return;
-  }
-
-  if (!container || !wrapper || slides.length === 0) return;
-
-  if (swiper) {
-    swiper.destroy(true, true);
-    swiper = null;
-  }
-
-  const totalWidth = Array.from(slides).reduce(
-    (acc, slide) => acc + slide.offsetWidth + 12, // spaceBetween
-    0
-  );
-  const visibleWidth = container.offsetWidth;
-  const fitsWithoutScroll = totalWidth <= visibleWidth + 1;
-
-  if (fitsWithoutScroll) {
-    prev?.classList.add("hidden");
-    next?.classList.add("hidden");
-    wrapper.style.transform = "none";
-    return;
-  } else {
     prev?.classList.remove("hidden");
     next?.classList.remove("hidden");
   }
@@ -133,37 +116,33 @@ window.addEventListener("load", () => {
 });
 
 // 🔁 Обработка resize
-window.addEventListener("resize", () => {
-  clearTimeout(resizeTimeout);
-  resizeTimeout = setTimeout(() => {
-    initRoomsSwiper();
-  }, 150);
-});
+const debouncedResize = debounce(() => {
+  initRoomsSwiper();
+}, 150);
+window.addEventListener("resize", debouncedResize);
 
 // 📲 Реакция на поворот экрана
-window.addEventListener("orientationchange", () => {
-  clearTimeout(resizeTimeout);
-  resizeTimeout = setTimeout(() => {
-    const profile = getScreenProfile();
+const debouncedOrientationChange = debounce(() => {
+  const profile = getScreenProfile();
 
-    if (profile.isMobileLandscape) {
-      document.body.classList.add("is-landscape-narrow");
-    } else {
-      document.body.classList.remove("is-landscape-narrow");
-    }
+  if (profile.isMobileLandscape) {
+    document.body.classList.add("is-landscape-narrow");
+  } else {
+    document.body.classList.remove("is-landscape-narrow");
+  }
 
-    if (swiper) {
-      swiper.destroy(true, true);
-      swiper = null;
-    }
+  if (swiper) {
+    swiper.destroy(true, true);
+    swiper = null;
+  }
 
-    if (profile.canInitSwiper) {
-      initRoomsSwiper();
-    } else {
-      const wrapper = document.querySelector(".rooms__cards .swiper-wrapper");
-      document.querySelector(".slider-nav.prev")?.classList.add("hidden");
-      document.querySelector(".slider-nav.next")?.classList.add("hidden");
-      if (wrapper) wrapper.style.transform = "none";
-    }
-  }, 150);
-});
+  if (profile.canInitSwiper) {
+    initRoomsSwiper();
+  } else {
+    const wrapper = document.querySelector(".rooms__cards .swiper-wrapper");
+    document.querySelector(".slider-nav.prev")?.classList.add("hidden");
+    document.querySelector(".slider-nav.next")?.classList.add("hidden");
+    if (wrapper) wrapper.style.transform = "none";
+  }
+}, 150);
+window.addEventListener("orientationchange", debouncedOrientationChange);
