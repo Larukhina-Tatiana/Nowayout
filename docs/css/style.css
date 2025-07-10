@@ -1672,3 +1672,69 @@ input:-webkit-autofill:active {
 .checkbox:checked + .checkbox__label .checkbox__castom-icon:before {
   opacity: 1;
 }
+
+.contacts {
+  background-color: #000;
+  color: #fff;
+  padding: 2rem 1rem;
+}
+.contacts__container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.contacts__title {
+  margin-bottom: 1.5rem;
+}
+.contacts__info {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.contacts__location-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+.contacts__address {
+  font-size: 0.95rem;
+  margin-bottom: 0.5rem;
+}
+.contacts__address--red {
+  color: #e50914;
+}
+.contacts__phone, .contacts__email {
+  font-size: 0.95rem;
+  margin-bottom: 0.5rem;
+}
+.contacts__schedule {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 0.9rem;
+}
+.contacts__schedule li {
+  margin-bottom: 0.3rem;
+}
+.contacts__map {
+  width: 100%;
+}
+.contacts__map-img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+@media (min-width: 768px) {
+  .contacts__container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: flex-start;
+  }
+  .contacts__title {
+    font-size: 2.2rem;
+  }
+  .contacts__location-title {
+    font-size: 1.4rem;
+  }
+}

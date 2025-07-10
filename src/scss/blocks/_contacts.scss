@@ -1,0 +1,81 @@
+.contacts {
+  background-color: #000;
+  color: #fff;
+  padding: 2rem 1rem;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  &__title {
+    margin-bottom: 1.5rem;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  &__location-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+
+  &__address {
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+
+    &--red {
+      color: #e50914;
+    }
+  }
+
+  &__phone,
+  &__email {
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+  }
+
+  &__schedule {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 0.9rem;
+
+    li {
+      margin-bottom: 0.3rem;
+    }
+  }
+
+  &__map {
+    width: 100%;
+
+    &-img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+  }
+
+  // 💻 Desktop styles
+  @media (min-width: 768px) {
+    &__container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: flex-start;
+    }
+
+    &__title {
+      font-size: 2.2rem;
+    }
+
+    &__location-title {
+      font-size: 1.4rem;
+    }
+  }
+}
