@@ -1403,7 +1403,7 @@ section {
     content: url("../images/icons/arrow-prev.svg");
   }
   .rooms .slider-nav.next {
-    right: 0;
+    right: 10px;
   }
   .rooms .slider-nav.next::before {
     content: url("../images/icons/arrow-next.svg");
@@ -1416,9 +1416,6 @@ section {
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
-  }
-  .rooms .rooms__cards.swiper {
-    overflow: visible;
   }
   .rooms .rooms__card.swiper-slide {
     width: 327px;
