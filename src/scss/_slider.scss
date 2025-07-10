@@ -72,6 +72,8 @@
 
     .rooms__card.swiper-slide {
       width: 327px;
+      max-width: 100%;
+      flex-shrink: 0;
     }
   }
 }

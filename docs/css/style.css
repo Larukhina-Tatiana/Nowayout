@@ -1260,6 +1260,7 @@ section {
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
+  line-clamp: 2;
   overflow: hidden;
 }
 @media (min-width: 426px), (orientation: landscape) {
@@ -1407,6 +1408,8 @@ section {
   }
   .rooms .rooms__card.swiper-slide {
     width: 327px;
+    max-width: 100%;
+    flex-shrink: 0;
   }
 }
 

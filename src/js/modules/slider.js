@@ -5,13 +5,22 @@ import "swiper/css";
 import "swiper/css/navigation";
 
 let swiper;
+let resizeTimeout;
 
-function shouldInitSlider() {
-  const isWideScreen = window.innerWidth > 425;
+// 📐 Контекст экрана
+function getScreenProfile() {
   const isLandscape = window.matchMedia("(orientation: landscape)").matches;
-  return isWideScreen || isLandscape;
+  const width = window.innerWidth;
+
+  return {
+    isLandscape,
+    width,
+    isMobileLandscape: width <= 425 && isLandscape,
+    canInitSwiper: width > 425 || (isLandscape && width > 375),
+  };
 }
 
+// ⏯ Обновление состояния кнопок
 function updateNavState(swiper) {
   const prev = document.querySelector(".slider-nav.prev");
   const next = document.querySelector(".slider-nav.next");
@@ -27,6 +36,7 @@ function updateNavState(swiper) {
     : next?.classList.remove("hidden");
 }
 
+// 🚀 Запуск Swiper
 export function initRoomsSwiper() {
   const container = document.querySelector(".rooms__cards.swiper");
   const wrapper = container?.querySelector(".swiper-wrapper");
@@ -35,22 +45,26 @@ export function initRoomsSwiper() {
   const prev = document.querySelector(".slider-nav.prev");
   const next = document.querySelector(".slider-nav.next");
 
-  if (swiper) {
-    swiper.destroy(true, true);
-    swiper = null;
-  }
+  const profile = getScreenProfile();
 
-  if (!shouldInitSlider()) {
+  if (!profile.canInitSwiper) {
     prev?.classList.add("hidden");
     next?.classList.add("hidden");
-    if (wrapper) wrapper.style.transform = "none";
+    if (wrapper) {
+      wrapper.style.transform = "none";
+    }
     return;
   }
 
   if (!container || !wrapper || slides.length === 0) return;
 
+  if (swiper) {
+    swiper.destroy(true, true);
+    swiper = null;
+  }
+
   const totalWidth = Array.from(slides).reduce(
-    (acc, slide) => acc + slide.offsetWidth + 12,
+    (acc, slide) => acc + slide.offsetWidth + 12, // spaceBetween
     0
   );
   const visibleWidth = container.offsetWidth;
@@ -95,8 +109,16 @@ export function initRoomsSwiper() {
   }, 0);
 }
 
-// 📦 Lazy-init через IntersectionObserver
+// 🕵️ Проверка при загрузке
 window.addEventListener("load", () => {
+  const profile = getScreenProfile();
+
+  if (profile.isMobileLandscape) {
+    document.body.classList.add("is-landscape-narrow");
+  } else {
+    document.body.classList.remove("is-landscape-narrow");
+  }
+
   const target = document.querySelector(".rooms");
   if (!target) return;
 
@@ -110,25 +132,38 @@ window.addEventListener("load", () => {
   observer.observe(target);
 });
 
-// 🧭 Слушаем resize
-let resizeTimeout;
+// 🔁 Обработка resize
 window.addEventListener("resize", () => {
   clearTimeout(resizeTimeout);
   resizeTimeout = setTimeout(() => {
     initRoomsSwiper();
-    setTimeout(initRoomsSwiper, 300); // запасной перезапуск
-  }, 100);
+  }, 150);
 });
 
-// 📲 И ориентацию
+// 📲 Реакция на поворот экрана
 window.addEventListener("orientationchange", () => {
   clearTimeout(resizeTimeout);
-  if (swiper) {
-    swiper.destroy(true, true);
-    swiper = null;
-  }
-
   resizeTimeout = setTimeout(() => {
-    initRoomsSwiper();
+    const profile = getScreenProfile();
+
+    if (profile.isMobileLandscape) {
+      document.body.classList.add("is-landscape-narrow");
+    } else {
+      document.body.classList.remove("is-landscape-narrow");
+    }
+
+    if (swiper) {
+      swiper.destroy(true, true);
+      swiper = null;
+    }
+
+    if (profile.canInitSwiper) {
+      initRoomsSwiper();
+    } else {
+      const wrapper = document.querySelector(".rooms__cards .swiper-wrapper");
+      document.querySelector(".slider-nav.prev")?.classList.add("hidden");
+      document.querySelector(".slider-nav.next")?.classList.add("hidden");
+      if (wrapper) wrapper.style.transform = "none";
+    }
   }, 150);
 });
