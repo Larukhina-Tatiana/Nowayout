@@ -70,7 +70,7 @@ body {
 }
 
 body.is-landscape-narrow .rooms__cards {
-  overflow-x: auto;
+  // overflow-x: auto;
   // Или другие стили для адаптации
 }
 
@@ -86,7 +86,7 @@ body.is-landscape-narrow {
 
     // или override на overflow
     .rooms__cards.swiper {
-      overflow: visible;
+      // overflow: visible;
     }
   }
 }
