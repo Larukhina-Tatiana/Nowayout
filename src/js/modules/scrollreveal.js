@@ -10,29 +10,25 @@ document.querySelectorAll(".rooms__card").forEach((card, index) => {
 });
 
 function ScrollRevealFunc() {
-  // ScrollReveal().reveal(".hero", {
-  //   origin: "bottom",
-  //   delay: 0,
-  //   viewOffset: { top: -100 },
-  // });
-
-  ScrollReveal().reveal(".gift__title", {
-    origin: "top",
-    // duration: 2800,
+  ScrollReveal().reveal(".hero", {
+    origin: "bottom",
+    delay: 0,
+    viewOffset: { top: -100 },
   });
-  // ScrollReveal().reveal(".hero__title, .gift__title", {
-  //   origin: "left",
-  //   duration: 2800,
-  // });
+
+  ScrollReveal().reveal(".hero__title, .gift__title", {
+    origin: "top",
+  });
+
+  ScrollReveal().reveal(".hero__description", {
+    origin: "bottom",
+    // duration: 2000,
+  });
 
   ScrollReveal().reveal(".gift__info-text", {
     origin: "bottom",
-    duration: 2800,
+    // duration: 2000,
   });
-  // ScrollReveal().reveal(".hero__description, .gift__info-text", {
-  //   origin: "right",
-  //   duration: 3800,
-  // });
 
   // ScrollReveal().reveal(".hero__btn, .gift__btn", {
   //   origin: "top",
@@ -50,7 +46,7 @@ function ScrollRevealFunc() {
   ScrollReveal().reveal(".reveal-rotate", {
     origin: "right",
     // distance: "550px",
-    duration: 500,
+    duration: 300,
     delay: 200,
     easing: "ease-in-out",
     // reset: false,
