@@ -1,7 +1,7 @@
 import ScrollReveal, { reveal } from "scrollreveal";
 ScrollReveal({
   distance: "60px",
-  duration: 2800,
+  duration: 1800,
   // reset: true,
 });
 
@@ -17,8 +17,8 @@ function ScrollRevealFunc() {
   // });
 
   ScrollReveal().reveal(".gift__title", {
-    origin: "left",
-    duration: 2800,
+    origin: "top",
+    // duration: 2800,
   });
   // ScrollReveal().reveal(".hero__title, .gift__title", {
   //   origin: "left",
@@ -26,8 +26,8 @@ function ScrollRevealFunc() {
   // });
 
   ScrollReveal().reveal(".gift__info-text", {
-    origin: "right",
-    duration: 3800,
+    origin: "bottom",
+    duration: 2800,
   });
   // ScrollReveal().reveal(".hero__description, .gift__info-text", {
   //   origin: "right",
@@ -44,7 +44,7 @@ function ScrollRevealFunc() {
   });
 
   ScrollReveal().reveal(".rooms__title", {
-    origin: "right",
+    origin: "bottom",
   });
 
   ScrollReveal().reveal(".reveal-rotate", {
