@@ -312,7 +312,6 @@ html {
 }
 
 body {
-  position: relative;
   background-color: #000;
   color: #F7F5F9;
   font-family: "MADE Outer Sans", Arial, sans-serif;
@@ -324,7 +323,6 @@ body {
   display: flex;
   flex-direction: column;
   overflow-x: hidden;
-  overflow: clip;
 }
 
 body.is-landscape-narrow .rooms .slider-nav {

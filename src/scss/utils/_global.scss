@@ -51,7 +51,6 @@ html {
 }
 
 body {
-  position: relative;
   background-color: $color-bg;
   color: $color-text-main;
   font-family: $font-main;
@@ -63,7 +62,6 @@ body {
   display: flex;
   flex-direction: column;
   overflow-x: hidden;
-  overflow: clip;
   // scroll-behavior: smooth;
   // -webkit-text-size-adjust: 100%;
   // -ms-text-size-adjust: 100%;
