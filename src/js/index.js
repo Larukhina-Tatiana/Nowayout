@@ -6,7 +6,7 @@ import "./components/scrollToggle.js";
 import { initRoomsSwiper } from "./modules/slider.js";
 import "./modules/label.js";
 import "./utils/form-validation.js";
-import "./modules/animations.js";
+// import "./modules/animations.js";
 import ScrollRevealFunc from "./modules/scrollreveal.js";
 ScrollRevealFunc();
 document.addEventListener("DOMContentLoaded", initRoomsSwiper);
