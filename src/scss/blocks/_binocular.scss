@@ -1,0 +1,24 @@
+  .binocular {
+    display: inline-block;
+    margin-top: 24px;
+    width: 140px;
+    height: 140px;
+    background-image:
+      -webkit-image-set(url(../images/quide/binocular.avif) type("image/avif"),
+        url(../images/quide/binocular.webp) type("image/webp"),
+        url(../images/quide/binocular.png) type("image/jpeg"),
+      );
+    background-image: image-set(url(../images/quide/binocular.avif) type("image/avif"),
+        url(../images/quide/binocular.webp) type("image/webp"),
+        url(../images/quide/binocular.png) type("image/jpeg"),
+      );
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: left;
+
+    @media (min-width: 768px) {
+      margin-top: 0;
+      flex-shrink: 0;
+    }
+
+  }

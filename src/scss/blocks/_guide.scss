@@ -1,0 +1,54 @@
+@use 'sass:color';
+@use './utils/vars.scss' as *;
+
+.guide {
+  background-color: rgba(242, 153, 74, .08);
+  border: 1px dashed $color-guide;
+  border-radius: 12px;
+  padding: 16px;
+  color: $color-guide;
+
+
+
+  &__icon {
+    color: inherit;
+    fill: currentColor;
+    width: 80px;
+    height: 29px;
+  }
+
+  &__content {
+    margin-top: 24px;
+  }
+
+  &__title {
+    font-size: 16px;
+    line-height: 1.36;
+  }
+
+  &__list {
+    margin-top: 16px;
+    padding-left: 16px;
+    line-height: 1.4;
+  }
+
+  &__item {
+    &:not(:first-child) {
+      margin-top: 8px;
+    }
+  }
+
+  @media (min-width: 768px) {
+    display: flex;
+    gap: 24px;
+
+    &__content {
+      margin-top: 0;
+    }
+
+    &__icon {
+      flex-shrink: 0;
+    }
+
+  }
+}

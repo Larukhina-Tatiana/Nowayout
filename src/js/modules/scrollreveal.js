@@ -25,7 +25,7 @@ function ScrollRevealFunc() {
     // duration: 2000,
   });
 
-  ScrollReveal().reveal(".gift__info-text", {
+  ScrollReveal().reveal(".gift__info-text, .contacts__map", {
     origin: "bottom",
     // duration: 2000,
   });
@@ -35,7 +35,7 @@ function ScrollRevealFunc() {
   //   duration: 6800,
   // });
 
-  ScrollReveal().reveal(".rooms,", {
+  ScrollReveal().reveal(".rooms, .contacts__info", {
     origin: "top",
   });
 
