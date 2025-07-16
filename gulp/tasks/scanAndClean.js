@@ -55,7 +55,7 @@ export const scanAndClean = async () => {
   <html>
     <head><meta charset="UTF-8"><title>Удалённые селекторы</title></head>
     <body style="font-family:sans-serif;padding:2rem;">
-      <h1>Отчёт purgeCss</h1>
+      <p>Отчёт purgeCss</p>
       <p><strong>Дата:</strong> ${new Date().toLocaleString()}</p>
       <p><strong>Всего CSS-селекторов:</strong> ${totalSelectors}</p>
       <p><strong>Удалено селекторов:</strong> ${unique.length}</p>

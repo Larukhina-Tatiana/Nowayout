@@ -46,14 +46,12 @@
         <img class="header__logo-img" src="./images/icons/m-logo.svg" alt="Nowayout logo" width="128" height="21">
       </a>
     </div>
-    <div class="header__nav-wrapper">
+
+    <div class="header__navbar">
       <div class="header__location">
         <button class="header__location-btn" type="button">
-          <svg class="header__icon" aria-label="Location icon" width="24" height="24" viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg">
-            <path
-              d="M12 23.7279L5.636 17.3639C4.37734 16.1052 3.52019 14.5016 3.17293 12.7558C2.82567 11.0099 3.00391 9.20035 3.6851 7.55582C4.36629 5.91129 5.51984 4.50569 6.99988 3.51677C8.47992 2.52784 10.22 2 12 2C13.78 2 15.5201 2.52784 17.0001 3.51677C18.4802 4.50569 19.6337 5.91129 20.3149 7.55582C20.9961 9.20035 21.1743 11.0099 20.8271 12.7558C20.4798 14.5016 19.6227 16.1052 18.364 17.3639L12 23.7279ZM16.95 15.9499C17.9289 14.9709 18.5955 13.7236 18.8656 12.3658C19.1356 11.0079 18.9969 9.60052 18.4671 8.32148C17.9373 7.04244 17.04 5.94923 15.8889 5.18009C14.7378 4.41095 13.3844 4.00043 12 4.00043C10.6156 4.00043 9.26222 4.41095 8.11109 5.18009C6.95996 5.94923 6.06275 7.04244 5.53292 8.32148C5.00308 9.60052 4.86442 11.0079 5.13445 12.3658C5.40449 13.7236 6.07111 14.9709 7.05 15.9499L12 20.8999L16.95 15.9499ZM12 12.9999C11.4696 12.9999 10.9609 12.7892 10.5858 12.4141C10.2107 12.0391 10 11.5304 10 10.9999C10 10.4695 10.2107 9.96078 10.5858 9.58571C10.9609 9.21064 11.4696 8.99992 12 8.99992C12.5304 8.99992 13.0391 9.21064 13.4142 9.58571C13.7893 9.96078 14 10.4695 14 10.9999C14 11.5304 13.7893 12.0391 13.4142 12.4141C13.0391 12.7892 12.5304 12.9999 12 12.9999Z"
-              fill="currentColor" />
+          <svg class="header__icon" aria-label="Location icon" width="24" height="24">
+            <use href="./images/icons/location.svg" fill="currentColor"></use>
           </svg>
 
           <span class="header__location-current">Vienna</span>
@@ -65,29 +63,20 @@
         </button>
         <ul class="header__location-list">
           <li class="header__location-item" data-location="Vienna">
-            <svg class="header__icon" aria-label="Location icon" width="24" height="24" viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg">
-              <path
-                d="M12 23.7279L5.636 17.3639C4.37734 16.1052 3.52019 14.5016 3.17293 12.7558C2.82567 11.0099 3.00391 9.20035 3.6851 7.55582C4.36629 5.91129 5.51984 4.50569 6.99988 3.51677C8.47992 2.52784 10.22 2 12 2C13.78 2 15.5201 2.52784 17.0001 3.51677C18.4802 4.50569 19.6337 5.91129 20.3149 7.55582C20.9961 9.20035 21.1743 11.0099 20.8271 12.7558C20.4798 14.5016 19.6227 16.1052 18.364 17.3639L12 23.7279ZM16.95 15.9499C17.9289 14.9709 18.5955 13.7236 18.8656 12.3658C19.1356 11.0079 18.9969 9.60052 18.4671 8.32148C17.9373 7.04244 17.04 5.94923 15.8889 5.18009C14.7378 4.41095 13.3844 4.00043 12 4.00043C10.6156 4.00043 9.26222 4.41095 8.11109 5.18009C6.95996 5.94923 6.06275 7.04244 5.53292 8.32148C5.00308 9.60052 4.86442 11.0079 5.13445 12.3658C5.40449 13.7236 6.07111 14.9709 7.05 15.9499L12 20.8999L16.95 15.9499ZM12 12.9999C11.4696 12.9999 10.9609 12.7892 10.5858 12.4141C10.2107 12.0391 10 11.5304 10 10.9999C10 10.4695 10.2107 9.96078 10.5858 9.58571C10.9609 9.21064 11.4696 8.99992 12 8.99992C12.5304 8.99992 13.0391 9.21064 13.4142 9.58571C13.7893 9.96078 14 10.4695 14 10.9999C14 11.5304 13.7893 12.0391 13.4142 12.4141C13.0391 12.7892 12.5304 12.9999 12 12.9999Z"
-                fill="currentColor" />
+            <svg class="header__icon" aria-label="Location icon" width="24" height="24">
+              <use href="./images/icons/location.svg" fill="currentColor"></use>
             </svg>
             Vienna
           </li>
           <li class="header__location-item" data-location="Linz">
-            <svg class="header__icon" aria-label="Location icon" width="24" height="24" viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg">
-              <path
-                d="M12 23.7279L5.636 17.3639C4.37734 16.1052 3.52019 14.5016 3.17293 12.7558C2.82567 11.0099 3.00391 9.20035 3.6851 7.55582C4.36629 5.91129 5.51984 4.50569 6.99988 3.51677C8.47992 2.52784 10.22 2 12 2C13.78 2 15.5201 2.52784 17.0001 3.51677C18.4802 4.50569 19.6337 5.91129 20.3149 7.55582C20.9961 9.20035 21.1743 11.0099 20.8271 12.7558C20.4798 14.5016 19.6227 16.1052 18.364 17.3639L12 23.7279ZM16.95 15.9499C17.9289 14.9709 18.5955 13.7236 18.8656 12.3658C19.1356 11.0079 18.9969 9.60052 18.4671 8.32148C17.9373 7.04244 17.04 5.94923 15.8889 5.18009C14.7378 4.41095 13.3844 4.00043 12 4.00043C10.6156 4.00043 9.26222 4.41095 8.11109 5.18009C6.95996 5.94923 6.06275 7.04244 5.53292 8.32148C5.00308 9.60052 4.86442 11.0079 5.13445 12.3658C5.40449 13.7236 6.07111 14.9709 7.05 15.9499L12 20.8999L16.95 15.9499ZM12 12.9999C11.4696 12.9999 10.9609 12.7892 10.5858 12.4141C10.2107 12.0391 10 11.5304 10 10.9999C10 10.4695 10.2107 9.96078 10.5858 9.58571C10.9609 9.21064 11.4696 8.99992 12 8.99992C12.5304 8.99992 13.0391 9.21064 13.4142 9.58571C13.7893 9.96078 14 10.4695 14 10.9999C14 11.5304 13.7893 12.0391 13.4142 12.4141C13.0391 12.7892 12.5304 12.9999 12 12.9999Z"
-                fill="currentColor" />
+            <svg class="header__icon" aria-label="Location icon" width="24" height="24">
+              <use href="./images/icons/location.svg" fill="currentColor"></use>
             </svg>
             Linz
           </li>
           <li class="header__location-item" data-location="Innsbruck">
-            <svg class="header__icon" aria-label="Location icon" width="24" height="24" viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg">
-              <path
-                d="M12 23.7279L5.636 17.3639C4.37734 16.1052 3.52019 14.5016 3.17293 12.7558C2.82567 11.0099 3.00391 9.20035 3.6851 7.55582C4.36629 5.91129 5.51984 4.50569 6.99988 3.51677C8.47992 2.52784 10.22 2 12 2C13.78 2 15.5201 2.52784 17.0001 3.51677C18.4802 4.50569 19.6337 5.91129 20.3149 7.55582C20.9961 9.20035 21.1743 11.0099 20.8271 12.7558C20.4798 14.5016 19.6227 16.1052 18.364 17.3639L12 23.7279ZM16.95 15.9499C17.9289 14.9709 18.5955 13.7236 18.8656 12.3658C19.1356 11.0079 18.9969 9.60052 18.4671 8.32148C17.9373 7.04244 17.04 5.94923 15.8889 5.18009C14.7378 4.41095 13.3844 4.00043 12 4.00043C10.6156 4.00043 9.26222 4.41095 8.11109 5.18009C6.95996 5.94923 6.06275 7.04244 5.53292 8.32148C5.00308 9.60052 4.86442 11.0079 5.13445 12.3658C5.40449 13.7236 6.07111 14.9709 7.05 15.9499L12 20.8999L16.95 15.9499ZM12 12.9999C11.4696 12.9999 10.9609 12.7892 10.5858 12.4141C10.2107 12.0391 10 11.5304 10 10.9999C10 10.4695 10.2107 9.96078 10.5858 9.58571C10.9609 9.21064 11.4696 8.99992 12 8.99992C12.5304 8.99992 13.0391 9.21064 13.4142 9.58571C13.7893 9.96078 14 10.4695 14 10.9999C14 11.5304 13.7893 12.0391 13.4142 12.4141C13.0391 12.7892 12.5304 12.9999 12 12.9999Z"
-                fill="currentColor" />
+            <svg class="header__icon" aria-label="Location icon" width="24" height="24">
+              <use href="./images/icons/location.svg" fill="currentColor"></use>
             </svg>
             Innsbruck
           </li>
@@ -110,7 +99,7 @@
 
         <a class="header__phone-link" href="tel:+436606050000" aria-label="Phone call">+43 660 605 0000</a>
       </div>
-      <nav class="header__nav">
+      <!-- <nav class="header__nav">
         <ul class="header__menu">
           <li class="header__menu-item"><a href="#schedule" class="header__link">Schedule</a></li>
 
@@ -118,8 +107,54 @@
 
           <li class="header__menu-item"><a href="#contacts" class="header__link">Contacts</a></li>
         </ul>
+      </nav> -->
+      <nav class="header__menu">
+        <ul class="header__menu-list">
+          <li class="header__menu-item menu__dropdown-btn">
+            <button class="header__menu-link header__navbar-child red-hover" id="menu-button" aria-haspopup="true"
+              aria-expanded="false" aria-controls="roomMenu">
+              R&#228;ume
+            </button>
+
+            <div class="header__menu-dropdown menu-dropdown" id="roomMenu" role="menu" aria-labelledby="menu-button"
+              hidden>
+              <ul class="menu-dropdown__list">
+                <li class="menu-dropdown__item">
+                  <a class="menu-dropdown__link red-hover" href="#" role="menuitem" tabindex="-1">Da&#160;Vinci</a>
+                </li>
+                <li class="menu-dropdown__item">
+                  <a class="menu-dropdown__link red-hover" href="#" role="menuitem" tabindex="-1">School of&#160;Magic</a>
+                </li>
+                <li class="menu-dropdown__item">
+                  <a class="menu-dropdown__link red-hover" href="#" role="menuitem" tabindex="-1">Mission Belvedere</a>
+                </li>
+                <li class="menu-dropdown__item">
+                  <a class="menu-dropdown__link red-hover" href="#" role="menuitem" tabindex="-1">The Nun</a>
+                </li>
+                <li class="menu-dropdown__item">
+                  <a class="menu-dropdown__link red-hover" href="#" role="menuitem" tabindex="-1">The Unknown</a>
+                </li>
+                <li class="menu-dropdown__item">
+                  <a class="menu-dropdown__link red-hover" href="#" role="menuitem" tabindex="-1">Alle R&#228;ume</a>
+                </li>
+              </ul>
+            </div>
+          </li>
+
+          <li class="header__menu-item">
+            <a class="header__menu-link header__navbar-child red-hover" href="#" aria-label="Open Zeitplan">
+              Zeitplan
+            </a>
+          </li>
+          <li class="header__menu-item">
+            <a class="header__menu-link header__navbar-child red-hover" href="#contacts" aria-label="Open Kontakt">
+              Kontakt
+            </a>
+          </li>
+        </ul>
       </nav>
     </div>
+
     <div class="header__lang">
       <div class="header__lang-container">
         <a class="header__lang-btn" href="#" hreflang="en" aria-label="English language">
@@ -135,9 +170,355 @@
         <span class="burger__line"></span>
       </button>
     </div>
+    <!-- <div class="header__burger-menu burger">
+      <div class="burger__container">
+        <div class="burger__block">
+          <div class="burger__rooms">
+            <p class="burger__rooms-title">Räume</p>
+            <div class="burger__rooms-list">
+              <ul class="burger__rooms-body">
+                <li class="burger__rooms-item">
+                  <a href="https://www.nowayout-escape.at/de/da-vinci/" aria-label="Open Da Vinci room"
+                    class="burger__rooms-link red-hover">Da Vinci</a>
+                </li>
+                <li class="burger__rooms-item">
+                  <a href="https://www.nowayout-escape.at/de/school-of-magic/" aria-label="Open School of Magic room"
+                    class="burger__rooms-link red-hover">School of Magic</a>
+                </li>
+                <li class="burger__rooms-item">
+                  <a href="https://www.nowayout-escape.at/de/mission-belvedere/"
+                    aria-label="Open Mission Belvedere room" class="burger__rooms-link red-hover"
+                   >Mission Belvedere</a>
+                </li>
+                <li class="burger__rooms-item">
+                  <a href="https://www.nowayout-escape.at/de/the-nun/" aria-label="Open The Nun room"
+                    class="burger__rooms-link red-hover">The Nun</a>
+                </li>
+                <li class="burger__rooms-item">
+                  <a href="https://www.nowayout-escape.at/de/the-unknown/" aria-label="Open The Unknown room"
+                    class="burger__rooms-link red-hover">The Unknown</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="burger__menu">
+            <ul class="burger__menu-list">
+              <li class="burger__menu-item">
+                <a href="/de/schedule/" aria-label="Open Zeitplan page" class="burger__menu-link red-hover"
+                 >
+                  Zeitplan
+                </a>
+              </li>
+              <li class="burger__menu-item">
+                <a href="/de/rooms/" aria-label="Open Räume page" class="burger__menu-link red-hover"
+                 >
+                  Räume
+                </a>
+              </li>
+              <li class="burger__menu-item">
+                <a href="/de/buy-gift-card/" aria-label="Open Gutscheine page" class="burger__menu-link red-hover"
+                 >
+                  Gutscheine
+                </a>
+              </li>
+              <li class="burger__menu-item">
+                <a href="/de/bundles/" aria-label="Open Kombipakete page" class="burger__menu-link red-hover"
+                 >
+                  Kombipakete
+                </a>
+              </li>
+              <li class="burger__menu-item">
+                <a href="/de/how-to-play/" aria-label="Open Erklärung page" class="burger__menu-link red-hover"
+                 >
+                  Erklärung
+                </a>
+              </li>
+              <li class="burger__menu-item">
+                <a href="/de/special-offers/" aria-label="Open Spezialangebote page" class="burger__menu-link red-hover"
+                 >
+                  Spezialangebote
+                </a>
+              </li>
+              <li class="burger__menu-item">
+                <a href="/de/school-parties/" aria-label="Open Schulparty page" class="burger__menu-link red-hover"
+                 >
+                  Schulparty
+                </a>
+              </li>
+              <li class="burger__menu-item">
+                <a href="/de/birthday-parties/" aria-label="Open Geburtstags Escape page"
+                  class="burger__menu-link red-hover">
+                  Geburtstags Escape
+                </a>
+              </li>
+              <li class="burger__menu-item">
+                <a href="/de/wedding-proposal/" aria-label="Open Heiratsantrag page" class="burger__menu-link red-hover"
+                 >
+                  Heiratsantrag
+                </a>
+              </li>
+              <li class="burger__menu-item">
+                <a href="/de/horror-escape-rooms/" aria-label="Open Horror Escape Rooms page"
+                  class="burger__menu-link red-hover">
+                  Horror Escape Rooms
+                </a>
+              </li>
+              <li class="burger__menu-item">
+                <a href="/de/kids-escape-rooms/" aria-label="Open Kinder Escape Room page"
+                  class="burger__menu-link red-hover">
+                  Kinder Escape Room
+                </a>
+              </li>
+              <li class="burger__menu-item">
+                <a href="/de/polterabend/" aria-label="Open Polterabend page" class="burger__menu-link red-hover"
+                 >
+                  Polterabend
+                </a>
+              </li>
+              <li class="burger__menu-item">
+                <a href="/de/corporate/" aria-label="Open Firmen page" class="burger__menu-link red-hover"
+                 >
+                  Firmen
+                </a>
+              </li>
+              <li class="burger__menu-item">
+                <a href="/de/blog/" aria-label="Open Blog page" class="burger__menu-link red-hover"
+                 >
+                  Blog
+                </a>
+              </li>
+              <li class="burger__menu-item">
+                <a href="/de/faq/" aria-label="Open Faq page" class="burger__menu-link red-hover">
+                  Faq
+                </a>
+              </li>
+              <li class="burger__menu-item">
+                <a href="/de/about-us/" aria-label="Open Über uns page" class="burger__menu-link red-hover"
+                 >
+                  Über uns
+                </a>
+              </li>
+              <li class="burger__menu-item">
+                <a href="/de/career/" aria-label="Open Karriere page" class="burger__menu-link red-hover"
+                 >
+                  Karriere
+                </a>
+              </li>
+              <li class="burger__menu-item">
+                <a href="/de/contact/" aria-label="Open Kontakt page" class="burger__menu-link red-hover"
+                 >
+                  Kontakt
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="burger__block">
+          <div class="burger__row">
+            <div class="burger__city red-hover">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
+                class="burger__city-img">
+                <path
+                  d="M12 23.7279L5.636 17.3639C4.37734 16.1052 3.52019 14.5016 3.17293 12.7558C2.82567 11.0099 3.00391 9.20035 3.6851 7.55582C4.36629 5.91129 5.51984 4.50569 6.99988 3.51677C8.47992 2.52784 10.22 2 12 2C13.78 2 15.5201 2.52784 17.0001 3.51677C18.4802 4.50569 19.6337 5.91129 20.3149 7.55582C20.9961 9.20035 21.1743 11.0099 20.8271 12.7558C20.4798 14.5016 19.6227 16.1052 18.364 17.3639L12 23.7279ZM16.95 15.9499C17.9289 14.9709 18.5955 13.7236 18.8656 12.3658C19.1356 11.0079 18.9969 9.60052 18.4671 8.32148C17.9373 7.04244 17.04 5.94923 15.8889 5.18009C14.7378 4.41095 13.3844 4.00043 12 4.00043C10.6156 4.00043 9.26222 4.41095 8.11109 5.18009C6.95996 5.94923 6.06275 7.04244 5.53292 8.32148C5.00308 9.60052 4.86442 11.0079 5.13445 12.3658C5.40449 13.7236 6.07111 14.9709 7.05 15.9499L12 20.8999L16.95 15.9499ZM12 12.9999C11.4696 12.9999 10.9609 12.7892 10.5858 12.4141C10.2107 12.0391 10 11.5304 10 10.9999C10 10.4695 10.2107 9.96078 10.5858 9.58571C10.9609 9.21064 11.4696 8.99992 12 8.99992C12.5304 8.99992 13.0391 9.21064 13.4142 9.58571C13.7893 9.96078 14 10.4695 14 10.9999C14 11.5304 13.7893 12.0391 13.4142 12.4141C13.0391 12.7892 12.5304 12.9999 12 12.9999Z"
+                  fill="#F7F5F9"></path>
+              </svg>
+              <p class="burger__city-name red-hover">Wien</p>
+              <div class="burger__city-dropdown city-dropdown">
+                <ul class="city-dropdown__list">
+                  <li class="city-dropdown__item">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M12 23.7279L5.636 17.3639C4.37734 16.1052 3.52019 14.5016 3.17293 12.7558C2.82567 11.0099 3.00391 9.20035 3.6851 7.55582C4.36629 5.91129 5.51984 4.50569 6.99988 3.51677C8.47992 2.52784 10.22 2 12 2C13.78 2 15.5201 2.52784 17.0001 3.51677C18.4802 4.50569 19.6337 5.91129 20.3149 7.55582C20.9961 9.20035 21.1743 11.0099 20.8271 12.7558C20.4798 14.5016 19.6227 16.1052 18.364 17.3639L12 23.7279ZM16.95 15.9499C17.9289 14.9709 18.5955 13.7236 18.8656 12.3658C19.1356 11.0079 18.9969 9.60052 18.4671 8.32148C17.9373 7.04244 17.04 5.94923 15.8889 5.18009C14.7378 4.41095 13.3844 4.00043 12 4.00043C10.6156 4.00043 9.26222 4.41095 8.11109 5.18009C6.95996 5.94923 6.06275 7.04244 5.53292 8.32148C5.00308 9.60052 4.86442 11.0079 5.13445 12.3658C5.40449 13.7236 6.07111 14.9709 7.05 15.9499L12 20.8999L16.95 15.9499ZM12 12.9999C11.4696 12.9999 10.9609 12.7892 10.5858 12.4141C10.2107 12.0391 10 11.5304 10 10.9999C10 10.4695 10.2107 9.96078 10.5858 9.58571C10.9609 9.21064 11.4696 8.99992 12 8.99992C12.5304 8.99992 13.0391 9.21064 13.4142 9.58571C13.7893 9.96078 14 10.4695 14 10.9999C14 11.5304 13.7893 12.0391 13.4142 12.4141C13.0391 12.7892 12.5304 12.9999 12 12.9999Z"
+                        fill="#F7F5F9"></path>
+                    </svg>
+                    <a href="https://www.nowayout-escape.at/" aria-label="Choose Wien"
+                      class="city-dropdown__link red-hover">Wien</a>
+                  </li>
+                  <li class="city-dropdown__item">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M12 23.7279L5.636 17.3639C4.37734 16.1052 3.52019 14.5016 3.17293 12.7558C2.82567 11.0099 3.00391 9.20035 3.6851 7.55582C4.36629 5.91129 5.51984 4.50569 6.99988 3.51677C8.47992 2.52784 10.22 2 12 2C13.78 2 15.5201 2.52784 17.0001 3.51677C18.4802 4.50569 19.6337 5.91129 20.3149 7.55582C20.9961 9.20035 21.1743 11.0099 20.8271 12.7558C20.4798 14.5016 19.6227 16.1052 18.364 17.3639L12 23.7279ZM16.95 15.9499C17.9289 14.9709 18.5955 13.7236 18.8656 12.3658C19.1356 11.0079 18.9969 9.60052 18.4671 8.32148C17.9373 7.04244 17.04 5.94923 15.8889 5.18009C14.7378 4.41095 13.3844 4.00043 12 4.00043C10.6156 4.00043 9.26222 4.41095 8.11109 5.18009C6.95996 5.94923 6.06275 7.04244 5.53292 8.32148C5.00308 9.60052 4.86442 11.0079 5.13445 12.3658C5.40449 13.7236 6.07111 14.9709 7.05 15.9499L12 20.8999L16.95 15.9499ZM12 12.9999C11.4696 12.9999 10.9609 12.7892 10.5858 12.4141C10.2107 12.0391 10 11.5304 10 10.9999C10 10.4695 10.2107 9.96078 10.5858 9.58571C10.9609 9.21064 11.4696 8.99992 12 8.99992C12.5304 8.99992 13.0391 9.21064 13.4142 9.58571C13.7893 9.96078 14 10.4695 14 10.9999C14 11.5304 13.7893 12.0391 13.4142 12.4141C13.0391 12.7892 12.5304 12.9999 12 12.9999Z"
+                        fill="#F7F5F9"></path>
+                    </svg>
+                    <a href="https://linz.nowayout-escape.at/" aria-label="Choose Linz"
+                      class="city-dropdown__link red-hover">Linz</a>
+                  </li>
+                  <li class="city-dropdown__item">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M12 23.7279L5.636 17.3639C4.37734 16.1052 3.52019 14.5016 3.17293 12.7558C2.82567 11.0099 3.00391 9.20035 3.6851 7.55582C4.36629 5.91129 5.51984 4.50569 6.99988 3.51677C8.47992 2.52784 10.22 2 12 2C13.78 2 15.5201 2.52784 17.0001 3.51677C18.4802 4.50569 19.6337 5.91129 20.3149 7.55582C20.9961 9.20035 21.1743 11.0099 20.8271 12.7558C20.4798 14.5016 19.6227 16.1052 18.364 17.3639L12 23.7279ZM16.95 15.9499C17.9289 14.9709 18.5955 13.7236 18.8656 12.3658C19.1356 11.0079 18.9969 9.60052 18.4671 8.32148C17.9373 7.04244 17.04 5.94923 15.8889 5.18009C14.7378 4.41095 13.3844 4.00043 12 4.00043C10.6156 4.00043 9.26222 4.41095 8.11109 5.18009C6.95996 5.94923 6.06275 7.04244 5.53292 8.32148C5.00308 9.60052 4.86442 11.0079 5.13445 12.3658C5.40449 13.7236 6.07111 14.9709 7.05 15.9499L12 20.8999L16.95 15.9499ZM12 12.9999C11.4696 12.9999 10.9609 12.7892 10.5858 12.4141C10.2107 12.0391 10 11.5304 10 10.9999C10 10.4695 10.2107 9.96078 10.5858 9.58571C10.9609 9.21064 11.4696 8.99992 12 8.99992C12.5304 8.99992 13.0391 9.21064 13.4142 9.58571C13.7893 9.96078 14 10.4695 14 10.9999C14 11.5304 13.7893 12.0391 13.4142 12.4141C13.0391 12.7892 12.5304 12.9999 12 12.9999Z"
+                        fill="#F7F5F9"></path>
+                    </svg>
+                    <a href="https://innsbruck.nowayout-escape.at/" aria-label="Choose Innsbruck"
+                      class="city-dropdown__link red-hover">Innsbruck</a>
+                  </li>
+                  <li class="city-dropdown__item">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M12 23.7279L5.636 17.3639C4.37734 16.1052 3.52019 14.5016 3.17293 12.7558C2.82567 11.0099 3.00391 9.20035 3.6851 7.55582C4.36629 5.91129 5.51984 4.50569 6.99988 3.51677C8.47992 2.52784 10.22 2 12 2C13.78 2 15.5201 2.52784 17.0001 3.51677C18.4802 4.50569 19.6337 5.91129 20.3149 7.55582C20.9961 9.20035 21.1743 11.0099 20.8271 12.7558C20.4798 14.5016 19.6227 16.1052 18.364 17.3639L12 23.7279ZM16.95 15.9499C17.9289 14.9709 18.5955 13.7236 18.8656 12.3658C19.1356 11.0079 18.9969 9.60052 18.4671 8.32148C17.9373 7.04244 17.04 5.94923 15.8889 5.18009C14.7378 4.41095 13.3844 4.00043 12 4.00043C10.6156 4.00043 9.26222 4.41095 8.11109 5.18009C6.95996 5.94923 6.06275 7.04244 5.53292 8.32148C5.00308 9.60052 4.86442 11.0079 5.13445 12.3658C5.40449 13.7236 6.07111 14.9709 7.05 15.9499L12 20.8999L16.95 15.9499ZM12 12.9999C11.4696 12.9999 10.9609 12.7892 10.5858 12.4141C10.2107 12.0391 10 11.5304 10 10.9999C10 10.4695 10.2107 9.96078 10.5858 9.58571C10.9609 9.21064 11.4696 8.99992 12 8.99992C12.5304 8.99992 13.0391 9.21064 13.4142 9.58571C13.7893 9.96078 14 10.4695 14 10.9999C14 11.5304 13.7893 12.0391 13.4142 12.4141C13.0391 12.7892 12.5304 12.9999 12 12.9999Z"
+                        fill="#F7F5F9"></path>
+                    </svg>
+                    <a href="https://graz.nowayout-escape.at/" aria-label="Choose Graz"
+                      class="city-dropdown__link red-hover">Graz</a>
+                  </li>
+                  <li class="city-dropdown__item">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M12 23.7279L5.636 17.3639C4.37734 16.1052 3.52019 14.5016 3.17293 12.7558C2.82567 11.0099 3.00391 9.20035 3.6851 7.55582C4.36629 5.91129 5.51984 4.50569 6.99988 3.51677C8.47992 2.52784 10.22 2 12 2C13.78 2 15.5201 2.52784 17.0001 3.51677C18.4802 4.50569 19.6337 5.91129 20.3149 7.55582C20.9961 9.20035 21.1743 11.0099 20.8271 12.7558C20.4798 14.5016 19.6227 16.1052 18.364 17.3639L12 23.7279ZM16.95 15.9499C17.9289 14.9709 18.5955 13.7236 18.8656 12.3658C19.1356 11.0079 18.9969 9.60052 18.4671 8.32148C17.9373 7.04244 17.04 5.94923 15.8889 5.18009C14.7378 4.41095 13.3844 4.00043 12 4.00043C10.6156 4.00043 9.26222 4.41095 8.11109 5.18009C6.95996 5.94923 6.06275 7.04244 5.53292 8.32148C5.00308 9.60052 4.86442 11.0079 5.13445 12.3658C5.40449 13.7236 6.07111 14.9709 7.05 15.9499L12 20.8999L16.95 15.9499ZM12 12.9999C11.4696 12.9999 10.9609 12.7892 10.5858 12.4141C10.2107 12.0391 10 11.5304 10 10.9999C10 10.4695 10.2107 9.96078 10.5858 9.58571C10.9609 9.21064 11.4696 8.99992 12 8.99992C12.5304 8.99992 13.0391 9.21064 13.4142 9.58571C13.7893 9.96078 14 10.4695 14 10.9999C14 11.5304 13.7893 12.0391 13.4142 12.4141C13.0391 12.7892 12.5304 12.9999 12 12.9999Z"
+                        fill="#F7F5F9"></path>
+                    </svg>
+                    <a href="https://scs.nowayout-escape.at/" aria-label="Choose SCS"
+                      class="city-dropdown__link red-hover">SCS</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="burger__language">
+              <div class="burger__language-container">
+                <a aria-label="Deutsch language" href="https://www.nowayout-escape.at/" class="burger__language-btn "
+                 >
+                  <img src="https://assets.nowayout-escape.at/assets/img/united-kingdom.svg" alt="English"
+                    class="burger__language-icon">
+                </a>
+                <a aria-label="Deutsch language" href="https://www.nowayout-escape.at/de/"
+                  class="burger__language-btn active">
+                  <img src="https://assets.nowayout-escape.at/assets/img/germany.svg" alt="German"
+                    class="burger__language-icon">
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="burger__contact">
+            <p class="burger__contact-title">Telefon:</p>
+            <a href="tel:+43 144 200 08" aria-label="Phone call" class="burger__contact-info red-hover"
+             >+43 144 200 08</a>
+          </div>
+          <div class="burger__contact">
+            <p class="burger__contact-title">Adresse:</p>
+            <a href="https://www.google.com/maps/place/Escape+Room+No+Way+Out/@48.2059256,16.3704925,17z/data=!3m1!4b1!4m5!3m4!1s0x476d0762e198b3a1:0x92fb704e3f92ad8f!8m2!3d48.205922!4d16.3726812"
+              aria-label="Google map" target="_blank" class="burger__contact-info red-hover">
+              Rauhensteingasse 7, 1010 Wien, Österreich
+            </a>
+          </div>
+          <div class="burger__contact">
+            <p class="burger__contact-title">Email:</p>
+            <a href="mailto:office@nowayout-escape.at" aria-label="Send email" class="burger__contact-info red-hover"
+             >
+              office@nowayout-escape.at
+            </a>
+          </div>
+          <div class="burger__contact">
+            <p class="burger__contact-title">Folgen Sie uns:</p>
+            <ul class="burger__contact-list">
+              <li class="contact__info-item">
+                <a href="https://www.facebook.com/nowayoutaustria/" target="_blank" rel="nofollow"
+                  class="burger__contact-link" aria-label="Facebook">
+                  <svg width="11" height="21" viewBox="0 0 11 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M7 12.207H9.5L10.5 8.20703H7V6.20703C7 5.17703 7 4.20703 9 4.20703H10.5V0.847031C10.174 0.804031 8.943 0.707031 7.643 0.707031C4.928 0.707031 3 2.36403 3 5.40703V8.20703H0V12.207H3V20.707H7V12.207Z"
+                      fill="#F7F5F9"></path>
+                  </svg>
+                </a>
+              </li>
+              <li class="contact__info-item">
+                <a href="https://www.instagram.com/nowayout_austria/" target="_blank" rel="nofollow"
+                  class="burger__contact-link" aria-label="Instagram">
+                  <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M12 2.70703C14.717 2.70703 15.056 2.71703 16.122 2.76703C17.187 2.81703 17.912 2.98403 18.55 3.23203C19.21 3.48603 19.766 3.83003 20.322 4.38503C20.8305 4.88493 21.224 5.48962 21.475 6.15703C21.722 6.79403 21.89 7.52003 21.94 8.58503C21.987 9.65103 22 9.99003 22 12.707C22 15.424 21.99 15.763 21.94 16.829C21.89 17.894 21.722 18.619 21.475 19.257C21.2247 19.9248 20.8311 20.5296 20.322 21.029C19.822 21.5374 19.2173 21.9308 18.55 22.182C17.913 22.429 17.187 22.597 16.122 22.647C15.056 22.694 14.717 22.707 12 22.707C9.283 22.707 8.944 22.697 7.878 22.647C6.813 22.597 6.088 22.429 5.45 22.182C4.78233 21.9315 4.17753 21.538 3.678 21.029C3.16941 20.5292 2.77593 19.9245 2.525 19.257C2.277 18.62 2.11 17.894 2.06 16.829C2.013 15.763 2 15.424 2 12.707C2 9.99003 2.01 9.65103 2.06 8.58503C2.11 7.51903 2.277 6.79503 2.525 6.15703C2.77524 5.48921 3.1688 4.88435 3.678 4.38503C4.17767 3.87626 4.78243 3.48276 5.45 3.23203C6.088 2.98403 6.812 2.81703 7.878 2.76703C8.944 2.72003 9.283 2.70703 12 2.70703ZM12 7.70703C10.6739 7.70703 9.40215 8.23382 8.46447 9.1715C7.52678 10.1092 7 11.3809 7 12.707C7 14.0331 7.52678 15.3049 8.46447 16.2426C9.40215 17.1802 10.6739 17.707 12 17.707C13.3261 17.707 14.5979 17.1802 15.5355 16.2426C16.4732 15.3049 17 14.0331 17 12.707C17 11.3809 16.4732 10.1092 15.5355 9.1715C14.5979 8.23382 13.3261 7.70703 12 7.70703ZM18.5 7.45703C18.5 7.12551 18.3683 6.80757 18.1339 6.57315C17.8995 6.33873 17.5815 6.20703 17.25 6.20703C16.9185 6.20703 16.6005 6.33873 16.3661 6.57315C16.1317 6.80757 16 7.12551 16 7.45703C16 7.78855 16.1317 8.10649 16.3661 8.34091C16.6005 8.57534 16.9185 8.70703 17.25 8.70703C17.5815 8.70703 17.8995 8.57534 18.1339 8.34091C18.3683 8.10649 18.5 7.78855 18.5 7.45703ZM12 9.70703C12.7956 9.70703 13.5587 10.0231 14.1213 10.5857C14.6839 11.1483 15 11.9114 15 12.707C15 13.5027 14.6839 14.2657 14.1213 14.8284C13.5587 15.391 12.7956 15.707 12 15.707C11.2044 15.707 10.4413 15.391 9.87868 14.8284C9.31607 14.2657 9 13.5027 9 12.707C9 11.9114 9.31607 11.1483 9.87868 10.5857C10.4413 10.0231 11.2044 9.70703 12 9.70703Z"
+                      fill="#F7F5F9"></path>
+                  </svg>
+                </a>
+              </li>
+              <li class="contact__info-item">
+                <a href="https://www.pinterest.com/NoWayOut_Vienna/" target="_blank" rel="nofollow"
+                  class="burger__contact-link" aria-label="Pinterest">
+                  <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M13.3701 2.80038C10.9774 2.47123 8.54634 3.01893 6.52592 4.34233C4.5055 5.66574 3.03214 7.67548 2.3779 10.0004C1.72365 12.3254 1.9327 14.8086 2.96646 16.9914C4.00021 19.1743 5.78885 20.9094 8.0021 21.8764C7.94224 21.1082 7.99718 20.3354 8.1651 19.5834C8.3501 18.7444 9.4611 14.1204 9.4611 14.1204C9.23986 13.6245 9.1293 13.0863 9.1371 12.5434C9.1371 11.0584 9.9941 9.95038 11.0601 9.95038C11.2516 9.94759 11.4415 9.98607 11.6168 10.0632C11.7921 10.1403 11.9487 10.2543 12.076 10.3974C12.2034 10.5405 12.2984 10.7093 12.3547 10.8924C12.4109 11.0754 12.4271 11.2685 12.4021 11.4584C12.4021 12.3584 11.8241 13.7204 11.5221 14.9984C11.4624 15.2328 11.4586 15.4779 11.511 15.714C11.5635 15.9501 11.6706 16.1706 11.8239 16.3577C11.9771 16.5448 12.1722 16.6933 12.3933 16.7912C12.6145 16.8891 12.8555 16.9337 13.0971 16.9214C14.9951 16.9214 16.2671 14.4904 16.2671 11.6204C16.2671 9.42038 14.8101 7.77238 12.1241 7.77238C11.4815 7.7474 10.8405 7.8533 10.24 8.08363C9.63958 8.31396 9.09221 8.66392 8.63115 9.11226C8.17008 9.56061 7.80495 10.098 7.55792 10.6918C7.31089 11.2855 7.18711 11.9233 7.1941 12.5664C7.16546 13.2797 7.3956 13.9793 7.8421 14.5364C7.92553 14.5987 7.98645 14.6864 8.01567 14.7863C8.04489 14.8862 8.04083 14.993 8.0041 15.0904C7.9581 15.2744 7.8421 15.7134 7.7961 15.8744C7.78653 15.929 7.76427 15.9806 7.73112 16.025C7.69797 16.0694 7.65484 16.1054 7.60523 16.1301C7.55561 16.1549 7.50088 16.1676 7.44545 16.1673C7.39002 16.167 7.33544 16.1536 7.2861 16.1284C5.9021 15.5744 5.2501 14.0514 5.2501 12.3124C5.2501 9.46538 7.6341 6.05738 12.4041 6.05738C16.2001 6.05738 18.7241 8.83438 18.7241 11.8044C18.7241 15.7134 16.5471 18.6524 13.3301 18.6524C12.8493 18.6677 12.3724 18.5616 11.9434 18.3438C11.5145 18.1261 11.1474 17.8036 10.8761 17.4064C10.8761 17.4064 10.2981 19.7224 10.1841 20.1604C9.95139 20.9171 9.608 21.6352 9.1651 22.2914C10.0881 22.5714 11.0471 22.7114 12.0111 22.7074C13.3247 22.7084 14.6256 22.4504 15.8393 21.948C17.053 21.4455 18.1556 20.7087 19.0842 19.7795C20.0127 18.8503 20.7488 17.7471 21.2504 16.5331C21.7519 15.319 22.0091 14.018 22.0071 12.7044C22.0059 10.2894 21.1309 7.95637 19.5437 6.13615C17.9566 4.31594 15.7644 3.13144 13.3721 2.80138L13.3701 2.80038Z"
+                      fill="#F7F5F9"></path>
+                  </svg>
+                </a>
+              </li>
+              <li class="contact__info-item">
+                <a href="https://www.youtube.com/channel/UCVY1N7t6nyLZZgCD5gGuS-w" rel="nofollow" target="_blank"
+                  class="burger__contact-link" aria-label="Youtube">
+                  <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M21.5879 7.8982C21.3575 7.04138 20.6819 6.36597 19.8252 6.13525C18.2602 5.70703 11.9998 5.70703 11.9998 5.70703C11.9998 5.70703 5.73963 5.70703 4.17456 6.11902C3.33435 6.34949 2.64234 7.04151 2.41187 7.8982C2 9.46314 2 12.7086 2 12.7086C2 12.7086 2 15.9705 2.41187 17.5191C2.64258 18.3758 3.31787 19.0512 4.17469 19.2819C5.75611 19.7102 12 19.7102 12 19.7102C12 19.7102 18.2602 19.7102 19.8252 19.2982C20.682 19.0677 21.3575 18.3922 21.5882 17.5355C21.9999 15.9705 21.9999 12.7251 21.9999 12.7251C21.9999 12.7251 22.0164 9.46314 21.5879 7.8982ZM10.0066 15.7069V9.71034L15.2124 12.7086L10.0066 15.7069Z"
+                      fill="#F7F5F9"></path>
+                  </svg>
+                </a>
+              </li>
+              <li class="contact__info-item">
+                <a href="https://www.linkedin.com/company/nowayout-austria/" target="_blank" rel="nofollow"
+                  class="burger__contact-link" aria-label="Linkedin">
+                  <svg width="20" height="19" viewBox="0 0 20 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M4.93994 2.70608C4.93968 3.23651 4.72871 3.74511 4.35345 4.12C3.97819 4.49488 3.46937 4.70534 2.93894 4.70508C2.40851 4.70481 1.89991 4.49385 1.52502 4.11858C1.15014 3.74332 0.939676 3.23451 0.939942 2.70408C0.940207 2.17365 1.15117 1.66504 1.52644 1.29016C1.9017 0.915272 2.41051 0.704813 2.94094 0.705078C3.47137 0.705344 3.97998 0.916312 4.35486 1.29157C4.72975 1.66683 4.94021 2.17565 4.93994 2.70608ZM4.99994 6.18608H0.999942V18.7061H4.99994V6.18608ZM11.3199 6.18608H7.33994V18.7061H11.2799V12.1361C11.2799 8.47608 16.0499 8.13608 16.0499 12.1361V18.7061H19.9999V10.7761C19.9999 4.60608 12.9399 4.83608 11.2799 7.86608L11.3199 6.18608Z"
+                      fill="#F7F5F9"></path>
+                  </svg>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="burger__close"></div>
+      <div class="burger__bg"></div>
+    </div> -->
+    <!-- <div class="header__place">
+      <p class="header__place-title">Standort Wien?</p>
+      <div class="header__place-wrapper">
+        <button id="change-location-button" data-location="1" type="button"
+          class="header__place-btn btn-yes">Ja</button>
+        <button type="button" class="header__place-btn btn-no">Andere</button>
+      </div>
+    </div>
+    <div class="header__location location">
+      <div class="location__window">
+        <div class="location__group">
+          <h4 class="location__group-title">Wähle deine Stadt:</h4>
+          <button class="location__group-close"></button>
+        </div>
+        <div class="location__block active">
+          <a href="https://www.nowayout-escape.at/de" class="location__block-link">
+            <p class="location__block-city">Vienna</p>
+            <p class="location__block-adress">Rauhensteingasse 7, 1010 Wien, Österreich</p>
+          </a>
+        </div>
+        <div class="location__block ">
+          <a href="https://linz.nowayout-escape.at/de" class="location__block-link">
+            <p class="location__block-city">Linz</p>
+            <p class="location__block-adress">Prinz-Eugen-Straße 22, 4020 Linz, Österreich</p>
+          </a>
+        </div>
+        <div class="location__block ">
+          <a href="https://innsbruck.nowayout-escape.at/de" class="location__block-link">
+            <p class="location__block-city">Innsbruck</p>
+            <p class="location__block-adress">Grabenweg 12, 6020 Innsbruck, Österreich</p>
+          </a>
+        </div>
+        <div class="location__block ">
+          <a href="https://graz.nowayout-escape.at/de" class="location__block-link">
+            <p class="location__block-city">Graz</p>
+            <p class="location__block-adress">Alte Poststraße 470, 8055 Graz, Österreich</p>
+          </a>
+        </div>
+        <div class="location__block ">
+          <a href="https://scs.nowayout-escape.at/de" class="location__block-link">
+            <p class="location__block-city">SCS</p>
+            <p class="location__block-adress">Westfield Shopping City Süd-SCS, Multiplex, Top Allee 465 + Galerie 465,
+              2334
+              Vösendorf, Österreich</p>
+          </a>
+        </div>
+      </div>
+    </div> -->
   </div>
 
-  <div class="header__mobile-menu"></div>
+  <!-- <div class="header__mobile-menu"></div> -->
 
 </header>
   <main>
@@ -158,8 +539,7 @@
   </div>
   <div class="hero__bg">
     <picture>
-      <!-- 📺 Десктопные AVIF -->
-      <source media="(min-width: 768px)" srcset="
+      <source media="(min-width: 769px)" srcset="
               images/hero/hero-d-840.avif 840w,
               images/hero/hero-d-1300.avif 1300w,
               images/hero/hero-d-1380.avif 1380w,
@@ -178,8 +558,7 @@
             (min-width: 780px)  108.2vw,
             100vw" type="image/avif" />
 
-      <!-- 📺 Десктопные WebP -->
-      <source media="(min-width: 768px)" srcset="
+      <source media="(min-width: 769px)" srcset="
               images/hero/hero-d-840.webp 840w,
               images/hero/hero-d-1300.webp 1300w,
               images/hero/hero-d-1380.webp 1380w,
@@ -198,8 +577,7 @@
             (min-width: 780px)  108.2vw, 
             100vw" type="image/webp" />
 
-      <!-- 📱 Мобильные AVIF -->
-      <source media="(max-width: 767px)" srcset="
+      <source media="(max-width: 768px)" srcset="
               images/hero/hero-m-320.avif 320w,
               images/hero/hero-m-480.avif 480w,
               images/hero/hero-m-750.avif 750w,
@@ -208,8 +586,7 @@
               images/hero/hero-m-1400.avif 1400w
             " sizes="100vw" type="image/avif" />
 
-      <!-- 📱 Мобильные WebP -->
-      <source media="(max-width: 767px)" srcset="
+      <source media="(max-width: 768px)" srcset="
               images/hero/hero-m-320.webp 320w,
               images/hero/hero-m-480.webp 480w,
               images/hero/hero-m-750.webp 750w,
@@ -222,7 +599,6 @@
               images/hero/hero-m-1880.webp 1880w
             " sizes="100vw" type="image/webp" />
 
-      <!-- 🧱 Fallback JPEG -->
       <img class="hero__bg-img" src="./images/hero/hero-m-750.jpg" srcset="
               images/hero/hero-m-750.jpg 750w,
               images/hero/hero-m-1080.jpg 1080w,
@@ -264,365 +640,7 @@
   </div>
 
 </section>
-    <section class="rooms" id="rooms">
-  <div class="container rooms__container">
-    <h2 class="title-h2 rooms__title">Our games</h2>
 
-    <div class="rooms__slider-wrapper">
-      <button class="slider-nav prev" type="button" aria-label="Previous slide"></button>
-      <div class="rooms__cards swiper">
-        <div class="swiper-wrapper">
-          <div class="rooms__card swiper-slide">
-            <div class="rooms__card-image">
-              <picture class="rooms__picture">
-                <source
-                  srcset="./images/rooms/room5@1x.avif 1x, ./images/rooms/room5@2x.avif 2x, ./images/rooms/room5@3x.avif 3x"
-                  type="image/avif">
-                <source
-                  srcset="./images/rooms/room5@1x.webp 1x, ./images/rooms/room5@2x.webp 2x, ./images/rooms/room5@3x.webp 3x"
-                  type="image/webp">
-                <img class="rooms__card-img" src="./images/rooms/room5@1x.png"
-                  srcset="./images/rooms/room5@2x.png 2x, ./images/rooms/room5@3x.png 3x" alt="Mission Belvedere"
-                  loading="eager" width="327" height="492">
-              </picture>
-              <div class="rooms__card-label" title="Adventure/Mystery">Adventure/Mystery</div>
-            </div>
-            <div class="rooms__card-content block-info">
-              <h3 class="block-info__title">Mission Belvedere</h3>
-              <div class="block-info__detail">
-                <p class="block-info__time">60 minin</p>
-                <p class="block-info__key">Difficult</p>
-                <p class="block-info__players">2-6</p>
-              </div>
-              <p class="block-info__description" title="Nehmt an dem Raub des Jahrhunderts teil! Macht mit und versucht, Gustav Klimts Der Kuss
-                    aus Österreichs sicherstem Museum zu stehlen.">
-                Nehmt an&#160;dem Raub des Jahrhunderts teil! Macht mit und versucht, Gustav Klimts &#171;Der Kuss&#187; aus
-                &#214;sterreichs sicherstem
-                Museum zu&#160;stehlen.
-              </p>
-              <button class="block-info__btn animate-on-scroll pulse" type="button">Select game</button>
-            </div>
-          </div>
-          <div class="rooms__card swiper-slide">
-            <div class="rooms__card-image">
-              <picture class="rooms__picture">
-                <source
-                  srcset="./images/rooms/room2@1x.avif 1x, images/rooms/room2@2x.avif 2x, images/rooms/room2@3x.avif 3x"
-                  type="image/avif">
-                <source
-                  srcset="./images/rooms/room2@1x.webp 1x, images/rooms/room2@2x.webp 2x, images/rooms/room2@3x.webp 3x"
-                  type="image/webp">
-                <img class="rooms__card-img" src="./images/rooms/room2@1x.png"
-                  srcset="./images/rooms/room2@2x.png 2x, images/rooms/room2@3x.png 3x" alt="Mission Belvedere"
-                  loading="lazy" width="327" height="492">
-              </picture>
-              <div class="rooms__card-label" title="Adventure/Fantasy">Adventure/Fantasy</div>
-            </div>
-            <div class="rooms__card-content block-info">
-              <h3 class="block-info__title">Mission Belvedere</h3>
-              <div class="block-info__detail">
-                <p class="block-info__time">60 min</p>
-                <p class="block-info__key">Difficult</p>
-                <p class="block-info__players">2-6</p>
-              </div>
-              <p class="block-info__description">
-                Nehmt an&#160;dem Raub des Jahrhunderts teil! Macht mit und versucht, Gustav Klimts &#171;Der Kuss&#187; aus
-                &#214;sterreichs sicherstem
-                Museum zu&#160;stehlen.
-              </p>
-              <button class="block-info__btn animate-on-scroll pulse" type="button">Select game</button>
-            </div>
-          </div>
-          <div class="rooms__card swiper-slide">
-            <div class="rooms__card-image">
-              <picture class="rooms__picture">
-                <source
-                  srcset="./images/rooms/room1@1x.avif 1x, ./images/rooms/room1@2x.avif 2x, ./images/rooms/room1@3x.avif 3x"
-                  type="image/avif">
-                <source
-                  srcset="./images/rooms/room1@1x.webp 1x, ./images/rooms/room1@2x.webp 2x, ./images/rooms/room1@3x.webp 3x"
-                  type="image/webp">
-                <img class="rooms__card-img" src="./images/rooms/room1@1x.png"
-                  srcset="./images/rooms/room1@2x.png 2x, ./images/rooms/room1@3x.png 3x" alt="School of Magic"
-                  loading="lazy" width="327" height="492">
-              </picture>
-              <div class="rooms__card-label" title="Adventure/Fantasy">Adventure/Fantasy</div>
-            </div>
-            <div class="rooms__card-content block-info">
-              <h3 class="block-info__title">School of&#160;Magic</h3>
-              <div class="block-info__detail">
-                <p class="block-info__time">60 min</p>
-                <p class="block-info__key">Difficult</p>
-                <p class="block-info__players">2-6</p>
-              </div>
-              <p class="block-info__description" title="Nehmt an dem Raub des Jahrhunderts teil! Macht mit und versucht, Gustav Klimts 'Der Kuss'
-                    aus Österreichs sicherstem Museum zu stehlen.">
-                Nehmt an&#160;dem Raub des Jahrhunderts teil! Macht mit und versucht, Gustav Klimts &#171;Der Kuss&#187; aus
-                &#214;sterreichs sicherstem
-                Museum zu&#160;stehlen.
-              </p>
-              <button class="block-info__btn animate-on-scroll pulse" type="button">Select game</button>
-            </div>
-          </div>
-          <div class="rooms__card swiper-slide">
-            <div class="rooms__card-image">
-              <picture class="rooms__picture">
-                <source
-                  srcset="./images/rooms/room3@1x.avif 1x, images/rooms/room3@2x.avif 2x, images/rooms/room3@3x.avif 3x"
-                  type="image/avif">
-                <source
-                  srcset="./images/rooms/room3@1x.webp 1x, images/rooms/room3@2x.webp 2x, images/rooms/room3@3x.webp 3x"
-                  type="image/webp">
-                <img class="rooms__card-img" src="./images/rooms/room3@1x.png"
-                  srcset="./images/rooms/room3@2x.png 2x, images/rooms/room3@3x.png 3x" alt="The Unknown" loading="lazy"
-                  width="327" height="492">
-              </picture>
-              <div class="rooms__card-label" title="größtes Horror Escape Game optionaler live
-                  Schauspieler">
-                <span class="rooms__card-icon"></span>
-                <span class="rooms__card-text">
-                  gr&#246;&#223;tes Horror Escape Game optionaler live Schauspieler</span>
-              </div>
-            </div>
-            <div class="rooms__card-content block-info">
-              <h3 class="block-info__title">The Unknown</h3>
-              <div class="block-info__detail">
-                <p class="block-info__time">60 min</p>
-                <p class="block-info__key">Difficult</p>
-                <p class="block-info__players">2-6</p>
-              </div>
-              <p class="block-info__description"
-                title="Something evil lives in the dungeons of Vienna. People keep disappearing there and citizens hear ominous growling from the sewage.">
-                Something evil lives in&#160;the dungeons of&#160;Vienna. People keep disappearing there and citizens hear
-                ominous growling from
-                the sewage.
-              </p>
-              <button class="block-info__btn animate-on-scroll pulse" type="button">Select game</button>
-            </div>
-          </div>
-          <div class="rooms__card swiper-slide">
-            <div class="rooms__card-image">
-              <picture class="rooms__picture">
-                <source
-                  srcset="./images/rooms/room4@1x.avif 1x, images/rooms/room4@2x.avif 2x, images/rooms/room4@3x.avif 3x"
-                  type="image/avif">
-                <source
-                  srcset="./images/rooms/room4@1x.webp 1x, images/rooms/room4@2x.webp 2x, images/rooms/room4@3x.webp 3x"
-                  type="image/webp">
-                <img class="rooms__card-img" src="./images/rooms/room4@1x.png"
-                  srcset="./images/rooms/room4@2x.png 2x, images/rooms/room4@3x.png 3x" alt="The Nun" loading="lazy">
-              </picture>
-              <div class="rooms__card-label" title="Horror with live actor">
-                <span class="rooms__card-icon"></span>
-                <span class="rooms__card-text">Horror with
-                  live actor</span>
-              </div>
-            </div>
-            <div class="rooms__card-content block-info">
-              <h3 class="block-info__title">The Nun</h3>
-              <div class="block-info__detail">
-                <p class="block-info__time">60 min</p>
-                <p class="block-info__key">Difficult</p>
-                <p class="block-info__players">2-6</p>
-              </div>
-              <p class="block-info__description"
-                title="Rette die kleine Sandy, sie wurde von einem Dämon in die Kanalisation der Stadt verschleppt. Werdet zum Helden oder bleibt in der Gewalt des Unbekannten.">
-                Rette die kleine Sandy, sie wurde von einem D&#228;mon in&#160;die Kanalisation der Stadt verschleppt. Werdet
-                zum Helden oder
-                bleibt in&#160;der Gewalt des Unbekannten.
-              </p>
-              <button class="block-info__btn animate-on-scroll pulse" type="button">Select game</button>
-            </div>
-          </div>
-        </div>
-      </div>
-      <button class="slider-nav next" type="button" aria-label="Next slide"></button>
-    </div>
-
-  </div>
-</section>
-    <section class="gift">
-  <div class="gift__container container">
-    <div class="gift__content">
-      <div class="gift__img">
-        <picture>
-          <source srcset="
-                      images/gift/gift-cards-320.avif 320w,
-                      images/gift/gift-cards-640.avif 640w,
-                      images/gift/gift-cards-712.avif 712w,
-                      images/gift/gift-cards-960.avif 960w" type="image/avif"
-            sizes="(min-width: 1400px) 711px, (min-width: 780px) calc(65.67vw - 193px), calc(98.7vw - 36px)" />
-          <source srcset="
-                      images/gift/gift-cards-320.webp 320w,
-                      images/gift/gift-cards-640.webp 640w,
-                      images/gift/gift-cards-712.webp 712w,
-                      images/gift/gift-cards-960.webp 960w" type="image/webp"
-            sizes="(min-width: 1400px) 711px, (min-width: 780px) calc(65.67vw - 193px), calc(98.7vw - 36px)" />
-
-          <img class="gift__img-pic shake shake-loop animate-on-scroll reveal-rotate"
-            src="./images/gift/gift-cards-712.png " width="712" height="466" alt="NoWayOut Gift Card - photo"
-            loading="lazy" decoding="async" />
-        </picture>
-      </div>
-      <div class="gift__info">
-        <h2 class="gift__title  title-h2">Gutscheinkarten f&#252;r jeden Anlass</h2>
-        <p class="gift__info-text section-subtitle">
-          Du&#160;suchst das passende Geschenk? Etwas Besonderes? Wir haben das Richtige f&#252;r Dich!
-        </p>
-        <a href="#" class="btn btn--red animate-on-scroll pulse fadeInUp gift__btn">Geschenkkarte
-          kaufen</a>
-      </div>
-    </div>
-  </div>
-</section>
-    <section class="subscription">
-  <div class="container subscription__container">
-    <div class="subscription__content">
-      <div class="subscription__block">
-        <h3 class="subscription__title title-h3">Abonniere den Newsletter und erhalte 10% Rabatte</h3>
-        <!-- <div class="subscription__wrapper"> -->
-        <form action="#" class="subscription-form form" id="contact-form" novalidate>
-          <div class="subscription-form__inner">
-            <div class="form__group">
-              <input class="form__input" type="email" name="email" id="email" placeholder=" " required
-                autocomplete="email" title="Geben Sie im Format: user@example.com">
-
-              <label class="form__label" for="email">Gib deine E-Mail-Adresse ein</label>
-              <span class="error">Einwilligung ist erforderlich</span>
-            </div>
-            <div class="form__bottom">
-              <div class="form__checkbox">
-                <input class="checkbox" type="checkbox" name="policy" id="policy" checked>
-                <label class="checkbox__label" for="policy">
-                  <span class="checkbox__castom-icon"></span>
-                  <span class="checkbox__text">Hiermit akzeptiere ich die
-                    <a class="checkbox__link" href="#" target="_blank">Datenschutzerkl&#228;rung</a> und bin damit
-                    einverstanden, den Newsletter
-                    regelm&#228;&#223;ig
-                    zu
-                    erhalten. Meine Einwilligung kann ich jederzeit gegen&#252;ber der Elite Experience EC&#160;GmbH
-                    widerrufen.</span>
-                </label>
-              </div>
-              <button class="btn btn--white form__btn pulse animate-on-scroll" type="submit" id="js-submit">
-                Abonnieren &amp; 10% erhalten
-              </button>
-              <p class="js-alert alert" role="alert">Abonnement abgeschlossen!</p>
-            </div>
-          </div>
-        </form>
-      </div>
-
-      <div class="subscription__img shake animate-on-scroll"></div>
-    </div>
-  </div>
-</section>
-    <section class="contacts" id="contacts">
-  <div class="contacts__container container">
-    <div class="contacts__info">
-      <h2 class="contacts__title title-h2">Kontaktiere uns</h2>
-
-      <div class="contacts__location">
-        <h3 class="contacts__location-title title-h3">Wien, Stephansplatz</h3>
-        <a class="contacts__address contacts__address--red"
-          href="https://www.google.com/maps/place/Escape+Room+No+Way+Out/@48.2059256,16.3704925,17z/data=!3m1!4b1!4m5!3m4!1s0x476d0762e198b3a1:0x92fb704e3f92ad8f!8m2!3d48.205922!4d16.3726812"
-          target="_blank">
-          <svg class="contacts__address-svg" width="15" height="14" viewBox="0 0 15 14" fill="none"
-            xmlns="http://www.w3.org/2000/svg">
-            <path
-              d="M7.5 13.8406L3.78767 10.1283C3.05345 9.39407 2.55344 8.45861 2.35087 7.44022C2.14831 6.42182 2.25228 5.36622 2.64964 4.40691C3.047 3.4476 3.71991 2.62767 4.58327 2.0508C5.44662 1.47392 6.46165 1.16602 7.5 1.16602C8.53835 1.16602 9.55338 1.47392 10.4167 2.0508C11.2801 2.62767 11.953 3.4476 12.3504 4.40691C12.7477 5.36622 12.8517 6.42182 12.6491 7.44022C12.4466 8.45861 11.9466 9.39407 11.2123 10.1283L7.5 13.8406ZM10.3875 9.30347C10.9585 8.73239 11.3474 8.00481 11.5049 7.21273C11.6624 6.42065 11.5815 5.59965 11.2725 4.85354C10.9634 4.10744 10.44 3.46973 9.76854 3.02107C9.09705 2.5724 8.30759 2.33293 7.5 2.33293C6.69241 2.33293 5.90296 2.5724 5.23147 3.02107C4.55998 3.46973 4.0366 4.10744 3.72753 4.85354C3.41846 5.59965 3.33758 6.42065 3.4951 7.21273C3.65262 8.00481 4.04148 8.73239 4.6125 9.30347L7.5 12.191L10.3875 9.30347V9.30347ZM7.5 7.58264C7.19058 7.58264 6.89384 7.45972 6.67504 7.24093C6.45625 7.02214 6.33334 6.72539 6.33334 6.41597C6.33334 6.10655 6.45625 5.8098 6.67504 5.59101C6.89384 5.37222 7.19058 5.2493 7.5 5.2493C7.80942 5.2493 8.10617 5.37222 8.32496 5.59101C8.54375 5.8098 8.66667 6.10655 8.66667 6.41597C8.66667 6.72539 8.54375 7.02214 8.32496 7.24093C8.10617 7.45972 7.80942 7.58264 7.5 7.58264Z"
-              fill="#E50012"></path>
-          </svg>
-          <p>
-            Rauhensteingasse 7, 1010 Vienna, Austria
-          </p>
-        </a>
-        <div class="contacts__location-contact">
-          <a class="contacts__phone" href="tel:+4314420008" aria-label="Phone call">+43 144 200 08</a>
-          <a class="contacts__email" href="mailto:office@nowayout-escape.at"
-            aria-label="Send email">office@nowayout-escape.at</a>
-        </div>
-        <ul class="contacts__schedule">
-          <li class="contacts__schedule-item">
-            <span>Mo-Do:&#160;</span>&#160;10:00&#160;&#8212; 21:30 Uhr
-          </li>
-          <li class="contacts__schedule-item">
-            <span>Fre:&#160;</span>&#160;10:00&#160;&#8212; 23:00 Uhr
-          </li>
-          <li class="contacts__schedule-item">
-            <span>Samt:&#160;</span>&#160; 9:00&#160;&#8212; 23:00 Uhr
-          </li>
-          <li class="contacts__schedule-item">
-            <span>Sont:&#160;</span>&#160; 9:00&#160;&#8212; 21:30 Uhr
-          </li>
-        </ul>
-      </div>
-
-      <div class="contacts__location contacts__location--last">
-        <h3 class="contacts__location-title  title-h3">Westfield SCS</h3>
-        <a class="contacts__address contacts__address--red"
-          href="https://www.google.com/maps/place/NoWayOut+Escape+Rooms+Westfield+SCS+(inside+DSTRCT)/@48.1037244,16.319032,17z/data=!3m1!4b1!4m6!3m5!1s0x476dafe2a50ba03b:0x9041a0daf32e7b88!8m2!3d48.1037244!4d16.319032!16s%2Fg%2F11vz63k1c7?entry=ttu"
-          target="_blank">
-          <svg class="contacts__address-svg" width="15" height="14" viewBox="0 0 15 14" fill="none"
-            xmlns="http://www.w3.org/2000/svg">
-            <path
-              d="M7.5 13.8406L3.78767 10.1283C3.05345 9.39407 2.55344 8.45861 2.35087 7.44022C2.14831 6.42182 2.25228 5.36622 2.64964 4.40691C3.047 3.4476 3.71991 2.62767 4.58327 2.0508C5.44662 1.47392 6.46165 1.16602 7.5 1.16602C8.53835 1.16602 9.55338 1.47392 10.4167 2.0508C11.2801 2.62767 11.953 3.4476 12.3504 4.40691C12.7477 5.36622 12.8517 6.42182 12.6491 7.44022C12.4466 8.45861 11.9466 9.39407 11.2123 10.1283L7.5 13.8406ZM10.3875 9.30347C10.9585 8.73239 11.3474 8.00481 11.5049 7.21273C11.6624 6.42065 11.5815 5.59965 11.2725 4.85354C10.9634 4.10744 10.44 3.46973 9.76854 3.02107C9.09705 2.5724 8.30759 2.33293 7.5 2.33293C6.69241 2.33293 5.90296 2.5724 5.23147 3.02107C4.55998 3.46973 4.0366 4.10744 3.72753 4.85354C3.41846 5.59965 3.33758 6.42065 3.4951 7.21273C3.65262 8.00481 4.04148 8.73239 4.6125 9.30347L7.5 12.191L10.3875 9.30347V9.30347ZM7.5 7.58264C7.19058 7.58264 6.89384 7.45972 6.67504 7.24093C6.45625 7.02214 6.33334 6.72539 6.33334 6.41597C6.33334 6.10655 6.45625 5.8098 6.67504 5.59101C6.89384 5.37222 7.19058 5.2493 7.5 5.2493C7.80942 5.2493 8.10617 5.37222 8.32496 5.59101C8.54375 5.8098 8.66667 6.10655 8.66667 6.41597C8.66667 6.72539 8.54375 7.02214 8.32496 7.24093C8.10617 7.45972 7.80942 7.58264 7.5 7.58264Z"
-              fill="#E50012"></path>
-          </svg>
-          <p>
-            Westfield Shopping City S&#252;d-SCS, Multiplex, Top Allee 465 + Galerie 465, 2334 V&#246;sendorf, &#214;sterreich
-          </p>
-        </a>
-        <div class="contacts__location-contact">
-          <a class="contacts__phone" href="tel:+436601616000" aria-label="Phone call">+43 660 161 6000</a>
-          <a class="contacts__email" href="mailto:scs@nowayout-escape.at"
-            aria-label="Send email">scs@nowayout-escape.at</a>
-        </div>
-        <ul class="contacts__schedule">
-          <li class="contacts__schedule-item"><span>Mo-Do:&#160;</span>&#160;11:30&#160;&#8212; 21:30 Uhr</li>
-          <li class="contacts__schedule-item"><span>Fre:&#160;</span>&#160;10:00&#160;&#8212; 23:00 Uhr</li>
-          <li class="contacts__schedule-item"><span>Samt:&#160;</span>&#160; 9:00&#160;&#8212; 23:00 Uhr</li>
-          <li class="contacts__schedule-item"><span>Sont:&#160;</span>&#160; 9:00&#160;&#8212; 21:30 Uhr</li>
-        </ul>
-      </div>
-      <div class="contacts__guide">
-        <div class="guide">
-          <svg class="guide__icon">
-            <use href="./images/icons/dstrct.svg" fill="currentColor"></use>
-          </svg>
-          <div class="guide__content">
-            <h3 class="guide__title">
-              So&#160;finden Sie uns
-            </h3>
-            <ol class="guide__list">
-              <li class="guide__item">
-                Parken Sie in&#160;der N&#228;he des Blue Lagoon/Citywave Eingang&#160;1.
-              </li>
-              <li class="guide__item">
-                Sie finden uns direkt auf der rechten Seite bei Eingang 1, etwa 50 Meter rechts vom Cineplexx.
-              </li>
-              <li class="guide__item">
-                Alle Aktivit&#228;ten befinden sich direkt im&#160;DSTRCT Entertainment Center. Wir freuen uns darauf, Sie
-                willkommen zu
-                hei&#223;en!
-              </li>
-            </ol>
-          </div>
-          <div class="binocular animate-on-scroll shake"></div>
-        </div>
-      </div>
-    </div>
-
-    <div class="contacts__map">
-      <picture>
-        <source srcset="./images/contacts/double-map.avif" type="image/avif">
-        <source srcset="./images/contacts/double-map.webp" type="image/webp">
-        <img class="contacts__map-img" src="./images/contacts/double-map.png" alt="Map with locations" loading="lazy"
-          width="275" height="232">
-      </picture>
-    </div>
-
-</section>
   </main>
   <footer class="footer">
   <div class="footer__light-bg"></div>

@@ -1,0 +1,57 @@
+@use './utils/vars.scss' as *;
+
+.menu-dropdown {
+  -webkit-backdrop-filter: blur(80px);
+  backdrop-filter: blur(80px);
+  background-color: $color-bg;
+  border: 1px solid $color-header-border;
+  -o-border-image: initial;
+  border-image: initial;
+  cursor: pointer;
+  display: none;
+  left: 0;
+  margin-left: -1px;
+  position: absolute;
+  top: 61px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  width: calc(100% + 2px);
+  z-index: 120;
+
+  &.is-open {
+    display: block;
+  }
+
+  &__item {
+    align-items: center;
+    display: flex;
+    height: 61px;
+    position: relative;
+
+
+    &:not(:first-child)::after {
+      background: url(../images/icons/border-bottom.svg) 50% no-repeat;
+      content: " ";
+      height: 2px;
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: 100%;
+    }
+  }
+
+  &__link {
+    justify-content: center;
+    padding: 15px 0;
+    align-items: center;
+    color: inherit;
+    display: flex;
+
+    height: 100%;
+    line-height: 22px;
+    position: relative;
+    width: 100%;
+  }
+
+}
