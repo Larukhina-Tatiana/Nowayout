@@ -1,14 +1,21 @@
 @use './utils/vars.scss' as *;
 
 .menu-dropdown {
-  -webkit-backdrop-filter: blur(80px);
-  backdrop-filter: blur(80px);
-  background-color: $color-bg;
+  transform-origin: top;
+  transform: scaleY(0);
+  clip-path: polygon(0 0, 100% 0, 100% 0, 0 0); // 👈 скрыто
+  opacity: 0;
+  visibility: hidden;
+  will-change: transform, clip-path;
+  // @include transition($transition-property: (opacity, transform, visibility, clip-path));
+  transition: visibility 0.3s ease;
+
+  background-color: $color-bg-header;
   border: 1px solid $color-header-border;
   -o-border-image: initial;
   border-image: initial;
   cursor: pointer;
-  display: none;
+  // display: none;
   left: 0;
   margin-left: -1px;
   position: absolute;
@@ -20,8 +27,15 @@
   z-index: 120;
 
   &.is-open {
-    display: block;
+    visibility: visible;
+    animation: dropdownReveal 0.3s ease forwards;
   }
+
+  &.is-closing {
+    animation: dropdownHide 0.3s ease forwards;
+  }
+
+
 
   &__item {
     align-items: center;
@@ -54,4 +68,97 @@
     width: 100%;
   }
 
+  @media (prefers-reduced-motion: reduce) {
+    animation: none !important;
+    transition: none !important;
+    transform: none !important;
+    clip-path: none !important;
+    opacity: 1 !important;
+
+
+    &.is-open {
+      visibility: visible;
+    }
+
+    &.is-closing {
+      visibility: hidden;
+    }
+  }
+}
+
+
+@keyframes dropdownReveal {
+  0% {
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0); // верхняя линия
+    opacity: 0;
+    transform: scaleY(0.95);
+  }
+
+  100% {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); // прямоугольник
+    opacity: 1;
+    transform: scaleY(1);
+  }
+}
+
+
+
+@keyframes dropdownHide {
+  0% {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    opacity: 1;
+    transform: scaleY(1);
+  }
+
+  100% {
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    opacity: 0;
+    transform: scaleY(0.95);
+  }
+}
+
+.dropdown-toggle {
+  position: relative;
+  padding-right: 2.5rem; // чтобы стрелке было место
+  @include transition($transition-property: (color));
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid currentColor;
+    opacity: 0.6;
+    @include transition($transition-property: (color, transform));
+    pointer-events: none;
+  }
+
+  &[aria-expanded="true"]::after {
+    transform: translateY(-50%) rotate(180deg);
+  }
+
+  &:hover,
+  &:focus-visible {
+    color: $color-accent; // меняет цвет текста
+
+    &::after {
+      border-top-color: $color-accent; // меняет цвет стрелки
+    }
+  }
+
+  // Акцент, если открыт дропдаун
+  .dropdown-wrapper.active &,
+  .dropdown-wrapper.is-open & {
+    color: $color-accent;
+
+    &::after {
+      transform: translateY(-50%) rotate(180deg);
+      border-top-color: $color-accent;
+    }
+  }
 }

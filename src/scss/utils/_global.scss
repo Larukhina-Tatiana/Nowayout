@@ -94,6 +94,18 @@ body.is-landscape-narrow {
 //   background: #000;
 // }
 
+.visually-hidden {
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  margin: -1px;
+}
 
 main {
   flex-grow: 1;
@@ -101,4 +113,14 @@ main {
 
 section {
   border-bottom: 1px solid $color-header-border;
+}
+
+.red-hover {
+  @include transition($transition-property: color);
+
+  @media (any-hover: hover) {
+    &:hover {
+      color: $color-accent;
+    }
+  }
 }

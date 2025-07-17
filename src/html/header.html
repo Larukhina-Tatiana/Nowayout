@@ -9,107 +9,101 @@
 
 
     <div class="header__navbar">
-      <div class="header__location">
-        <button class="header__location-btn" type="button">
-          <svg class="header__icon" aria-label="Location icon" width="24" height="24">
+      <div class="dropdown-wrapper header__location">
+        <button class="dropdown-toggle header__menu-link header__location-btn" type="button" aria-haspopup="true"
+          aria-expanded="false" aria-controls="locationMenu" id="location-button">
+          <svg class="header__icon" aria-hidden="true" width="24" height="24">
             <use href="./images/icons/location.svg" fill="currentColor"></use>
           </svg>
-
-          <span class="header__location-current">Vienna</span>
-
-          <svg class="header__icon header__location-arrow" aria-label="Arrow icon" width="10" height="5"
-            viewBox="0 0 10 5">
-            <path d="M0 0L10 0L5 5Z" fill="currentColor" />
-          </svg>
+          <span class="dropdown-current header__location-current" aria-live="polite" data-current-target>Wien</span>
+          <span class="visually-hidden">Choose location</span>
         </button>
-        <ul class="header__location-list">
-          <li class="header__location-item" data-location="Vienna">
-            <svg class="header__icon" aria-label="Location icon" width="24" height="24">
-              <use href="./images/icons/location.svg" fill="currentColor"></use>
-            </svg>
-            Vienna
+
+        <ul class="menu-dropdown header__location-list" id="locationMenu" role="menu" hidden
+          aria-labelledby="location-button">
+
+          <li class="menu-dropdown__item header__location-item" data-location="Wien">
+            <a class="header__location-link red-hover" href="#" role="menuitem" tabindex="-1">
+              <svg class="header__icon" aria-hidden="true" width="24" height="24">
+                <use href="./images/icons/location.svg" fill="currentColor"></use>
+              </svg>
+              Wien
+            </a>
           </li>
-          <li class="header__location-item" data-location="Linz">
-            <svg class="header__icon" aria-label="Location icon" width="24" height="24">
-              <use href="./images/icons/location.svg" fill="currentColor"></use>
-            </svg>
-            Linz
+          <li class="menu-dropdown__item header__location-item" data-location="Linz">
+            <a class="header__location-link red-hover" href="#" role="menuitem" tabindex="-1">
+              <svg class="header__icon" aria-hidden="true" width="24" height="24">
+                <use href="./images/icons/location.svg" fill="currentColor"></use>
+              </svg>
+              Linz
+
+            </a>
           </li>
-          <li class="header__location-item" data-location="Innsbruck">
-            <svg class="header__icon" aria-label="Location icon" width="24" height="24">
-              <use href="./images/icons/location.svg" fill="currentColor"></use>
-            </svg>
-            Innsbruck
+          <li class="menu-dropdown__item header__location-item" data-location="Innsbruck">
+            <a class="header__location-link red-hover" href="#" role="menuitem" tabindex="-1">
+              <svg class="header__icon" aria-hidden="true" width="24" height="24">
+                <use href="./images/icons/location.svg" fill="currentColor"></use>
+              </svg>
+              Innsbruck
+            </a>
           </li>
         </ul>
+
       </div>
       <div class="header__phone">
-        <svg class="header__icon" aria-label="Phone icon" width="24" height="24" viewBox="0 0 24 24"
-          xmlns="http://www.w3.org/2000/svg">
-          <g clip-path="url(#clip0_2_2113)">
-            <path
-              d="M6.54 5C6.6 5.89 6.75 6.76 6.99 7.59L5.79 8.79C5.38 7.59 5.12 6.32 5.03 5H6.54ZM16.4 17.02C17.25 17.26 18.12 17.41 19 17.47V18.96C17.68 18.87 16.41 18.61 15.2 18.21L16.4 17.02ZM7.5 3H4C3.45 3 3 3.45 3 4C3 13.39 10.61 21 20 21C20.55 21 21 20.55 21 20V16.51C21 15.96 20.55 15.51 20 15.51C18.76 15.51 17.55 15.31 16.43 14.94C16.33 14.9 16.22 14.89 16.12 14.89C15.86 14.89 15.61 14.99 15.41 15.18L13.21 17.38C10.38 15.93 8.06 13.62 6.62 10.79L8.82 8.59C9.1 8.31 9.18 7.92 9.07 7.57C8.7 6.45 8.5 5.25 8.5 4C8.5 3.45 8.05 3 7.5 3Z"
-              fill="currentColor" />
-          </g>
-          <defs>
-            <clipPath id="clip0_2_2113">
-              <rect width="24" height="24" fill="white" />
-            </clipPath>
-          </defs>
+        <svg class="header__icon" aria-hidden="true" width="24" height="24">
+          <use href="./images/icons/phone.svg" fill="currentColor"></use>
         </svg>
-
-        <a class="header__phone-link" href="tel:+436606050000" aria-label="Phone call">+43 660 605 0000</a>
+        <a class="header__phone-link red-hover" href="tel:+436606050000" aria-label="Phone call">+43 660 605 0000</a>
       </div>
-      <!-- <nav class="header__nav">
-        <ul class="header__menu">
-          <li class="header__menu-item"><a href="#schedule" class="header__link">Schedule</a></li>
 
-          <li class="header__menu-item"><a href="#rooms" class="header__link">Rooms</a></li>
-
-          <li class="header__menu-item"><a href="#contacts" class="header__link">Contacts</a></li>
-        </ul>
-      </nav> -->
       <nav class="header__menu">
         <ul class="header__menu-list">
-          <li class="header__menu-item menu__dropdown-btn">
-            <button class="header__menu-link header__navbar-child red-hover" id="menu-button" aria-haspopup="true"
-              aria-expanded="false" aria-controls="roomMenu">
+          <li class="dropdown-wrapper header__menu-item">
+            <button class="dropdown-toggle header__menu-link red-hover" type="button" id="roomMenu-button"
+              aria-haspopup="true" aria-expanded="false" aria-controls="roomMenu">
               Räume
             </button>
-
-            <div class="header__menu-dropdown menu-dropdown" id="roomMenu" role="menu" aria-labelledby="menu-button"
-              hidden>
-              <ul class="menu-dropdown__list">
-                <li class="menu-dropdown__item">
-                  <a class="menu-dropdown__link red-hover" href="#" role="menuitem" tabindex="-1">Da Vinci</a>
-                </li>
-                <li class="menu-dropdown__item">
-                  <a class="menu-dropdown__link red-hover" href="#" role="menuitem" tabindex="-1">School of Magic</a>
-                </li>
-                <li class="menu-dropdown__item">
-                  <a class="menu-dropdown__link red-hover" href="#" role="menuitem" tabindex="-1">Mission Belvedere</a>
-                </li>
-                <li class="menu-dropdown__item">
-                  <a class="menu-dropdown__link red-hover" href="#" role="menuitem" tabindex="-1">The Nun</a>
-                </li>
-                <li class="menu-dropdown__item">
-                  <a class="menu-dropdown__link red-hover" href="#" role="menuitem" tabindex="-1">The Unknown</a>
-                </li>
-                <li class="menu-dropdown__item">
-                  <a class="menu-dropdown__link red-hover" href="#" role="menuitem" tabindex="-1">Alle Räume</a>
-                </li>
-              </ul>
-            </div>
+            <ul class="menu-dropdown" id="roomMenu" role="menu" aria-labelledby="roomMenu-button" hidden>
+              <li class="menu-dropdown__item">
+                <a class="menu-dropdown__link red-hover" href="#" role="menuitem" tabindex="-1">
+                  Da Vinci
+                </a>
+              </li>
+              <li class="menu-dropdown__item">
+                <a class="menu-dropdown__link red-hover" href="#" role="menuitem" tabindex="-1">
+                  School of Magic
+                </a>
+              </li>
+              <li class="menu-dropdown__item">
+                <a class="menu-dropdown__link red-hover" href="#" role="menuitem" tabindex="-1">
+                  Mission Belvedere
+                </a>
+              </li>
+              <li class="menu-dropdown__item">
+                <a class="menu-dropdown__link red-hover" href="#" role="menuitem" tabindex="-1">
+                  The Nun
+                </a>
+              </li>
+              <li class="menu-dropdown__item">
+                <a class="menu-dropdown__link red-hover" href="#" role="menuitem" tabindex="-1">
+                  The Unknown
+                </a>
+              </li>
+              <li class="menu-dropdown__item">
+                <a class="menu-dropdown__link red-hover" href="#" role="menuitem" tabindex="-1">
+                  Alle Räume
+                </a>
+              </li>
+            </ul>
           </li>
-
-
           <li class="header__menu-item">
-            <a class="header__menu-link header__navbar-child red-hover" href="#" aria-label="Open Zeitplan">
+            <a class="header__menu-link  red-hover" href="#" aria-label="Open Zeitplan">
               Zeitplan
             </a>
           </li>
           <li class="header__menu-item">
-            <a class="header__menu-link header__navbar-child red-hover" href="#contacts" aria-label="Open Kontakt">
+            <a class="header__menu-link  red-hover" href="#contacts" aria-label="Open Kontakt">
               Kontakt
             </a>
           </li>
@@ -132,7 +126,7 @@
         <span class="burger__line"></span>
       </button>
     </div>
-    <!-- <div class="header__burger-menu burger">
+    <div class="header__burger-menu burger">
       <div class="burger__container">
         <div class="burger__block">
           <div class="burger__rooms">
@@ -149,8 +143,7 @@
                 </li>
                 <li class="burger__rooms-item">
                   <a href="https://www.nowayout-escape.at/de/mission-belvedere/"
-                    aria-label="Open Mission Belvedere room" class="burger__rooms-link red-hover"
-                   >Mission Belvedere</a>
+                    aria-label="Open Mission Belvedere room" class="burger__rooms-link red-hover">Mission Belvedere</a>
                 </li>
                 <li class="burger__rooms-item">
                   <a href="https://www.nowayout-escape.at/de/the-nun/" aria-label="Open The Nun room"
@@ -166,44 +159,38 @@
           <div class="burger__menu">
             <ul class="burger__menu-list">
               <li class="burger__menu-item">
-                <a href="/de/schedule/" aria-label="Open Zeitplan page" class="burger__menu-link red-hover"
-                 >
+                <a href="/de/schedule/" aria-label="Open Zeitplan page" class="burger__menu-link red-hover">
                   Zeitplan
                 </a>
               </li>
               <li class="burger__menu-item">
-                <a href="/de/rooms/" aria-label="Open Räume page" class="burger__menu-link red-hover"
-                 >
+                <a href="/de/rooms/" aria-label="Open Räume page" class="burger__menu-link red-hover">
                   Räume
                 </a>
               </li>
               <li class="burger__menu-item">
-                <a href="/de/buy-gift-card/" aria-label="Open Gutscheine page" class="burger__menu-link red-hover"
-                 >
+                <a href="/de/buy-gift-card/" aria-label="Open Gutscheine page" class="burger__menu-link red-hover">
                   Gutscheine
                 </a>
               </li>
               <li class="burger__menu-item">
-                <a href="/de/bundles/" aria-label="Open Kombipakete page" class="burger__menu-link red-hover"
-                 >
+                <a href="/de/bundles/" aria-label="Open Kombipakete page" class="burger__menu-link red-hover">
                   Kombipakete
                 </a>
               </li>
               <li class="burger__menu-item">
-                <a href="/de/how-to-play/" aria-label="Open Erklärung page" class="burger__menu-link red-hover"
-                 >
+                <a href="/de/how-to-play/" aria-label="Open Erklärung page" class="burger__menu-link red-hover">
                   Erklärung
                 </a>
               </li>
               <li class="burger__menu-item">
-                <a href="/de/special-offers/" aria-label="Open Spezialangebote page" class="burger__menu-link red-hover"
-                 >
+                <a href="/de/special-offers/" aria-label="Open Spezialangebote page"
+                  class="burger__menu-link red-hover">
                   Spezialangebote
                 </a>
               </li>
               <li class="burger__menu-item">
-                <a href="/de/school-parties/" aria-label="Open Schulparty page" class="burger__menu-link red-hover"
-                 >
+                <a href="/de/school-parties/" aria-label="Open Schulparty page" class="burger__menu-link red-hover">
                   Schulparty
                 </a>
               </li>
@@ -214,8 +201,8 @@
                 </a>
               </li>
               <li class="burger__menu-item">
-                <a href="/de/wedding-proposal/" aria-label="Open Heiratsantrag page" class="burger__menu-link red-hover"
-                 >
+                <a href="/de/wedding-proposal/" aria-label="Open Heiratsantrag page"
+                  class="burger__menu-link red-hover">
                   Heiratsantrag
                 </a>
               </li>
@@ -232,20 +219,17 @@
                 </a>
               </li>
               <li class="burger__menu-item">
-                <a href="/de/polterabend/" aria-label="Open Polterabend page" class="burger__menu-link red-hover"
-                 >
+                <a href="/de/polterabend/" aria-label="Open Polterabend page" class="burger__menu-link red-hover">
                   Polterabend
                 </a>
               </li>
               <li class="burger__menu-item">
-                <a href="/de/corporate/" aria-label="Open Firmen page" class="burger__menu-link red-hover"
-                 >
+                <a href="/de/corporate/" aria-label="Open Firmen page" class="burger__menu-link red-hover">
                   Firmen
                 </a>
               </li>
               <li class="burger__menu-item">
-                <a href="/de/blog/" aria-label="Open Blog page" class="burger__menu-link red-hover"
-                 >
+                <a href="/de/blog/" aria-label="Open Blog page" class="burger__menu-link red-hover">
                   Blog
                 </a>
               </li>
@@ -255,20 +239,17 @@
                 </a>
               </li>
               <li class="burger__menu-item">
-                <a href="/de/about-us/" aria-label="Open Über uns page" class="burger__menu-link red-hover"
-                 >
+                <a href="/de/about-us/" aria-label="Open Über uns page" class="burger__menu-link red-hover">
                   Über uns
                 </a>
               </li>
               <li class="burger__menu-item">
-                <a href="/de/career/" aria-label="Open Karriere page" class="burger__menu-link red-hover"
-                 >
+                <a href="/de/career/" aria-label="Open Karriere page" class="burger__menu-link red-hover">
                   Karriere
                 </a>
               </li>
               <li class="burger__menu-item">
-                <a href="/de/contact/" aria-label="Open Kontakt page" class="burger__menu-link red-hover"
-                 >
+                <a href="/de/contact/" aria-label="Open Kontakt page" class="burger__menu-link red-hover">
                   Kontakt
                 </a>
               </li>
@@ -338,8 +319,7 @@
 
             <div class="burger__language">
               <div class="burger__language-container">
-                <a aria-label="Deutsch language" href="https://www.nowayout-escape.at/" class="burger__language-btn "
-                 >
+                <a aria-label="Deutsch language" href="https://www.nowayout-escape.at/" class="burger__language-btn ">
                   <img src="https://assets.nowayout-escape.at/assets/img/united-kingdom.svg" alt="English"
                     class="burger__language-icon">
                 </a>
@@ -353,8 +333,8 @@
           </div>
           <div class="burger__contact">
             <p class="burger__contact-title">Telefon:</p>
-            <a href="tel:+43 144 200 08" aria-label="Phone call" class="burger__contact-info red-hover"
-             >+43 144 200 08</a>
+            <a href="tel:+43 144 200 08" aria-label="Phone call" class="burger__contact-info red-hover">+43 144 200
+              08</a>
           </div>
           <div class="burger__contact">
             <p class="burger__contact-title">Adresse:</p>
@@ -365,8 +345,7 @@
           </div>
           <div class="burger__contact">
             <p class="burger__contact-title">Email:</p>
-            <a href="mailto:office@nowayout-escape.at" aria-label="Send email" class="burger__contact-info red-hover"
-             >
+            <a href="mailto:office@nowayout-escape.at" aria-label="Send email" class="burger__contact-info red-hover">
               office@nowayout-escape.at
             </a>
           </div>
@@ -429,7 +408,7 @@
       </div>
       <div class="burger__close"></div>
       <div class="burger__bg"></div>
-    </div> -->
+    </div>
     <!-- <div class="header__place">
       <p class="header__place-title">Standort Wien?</p>
       <div class="header__place-wrapper">
@@ -479,7 +458,5 @@
       </div>
     </div> -->
   </div>
-
-  <!-- <div class="header__mobile-menu"></div> -->
 
 </header>
