@@ -1,0 +1,21 @@
+.burger-contacts {
+  margin-bottom: 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 37px;
+  font-size: 14px;
+  line-height: calc(24px / 14px);
+
+  &__item {
+    max-width: 370px;
+  }
+
+  &__title {
+    display: inline-block;
+    margin-bottom: 8px;
+  }
+
+  &__link {
+    font-weight: 250;
+  }
+}

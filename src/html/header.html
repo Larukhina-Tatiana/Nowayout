@@ -1,7 +1,7 @@
 <header class="header">
   <div class="header__container">
     <div class="header__logo">
-      <a class="header__logo-link" href="/Nowayout/" aria-label="Home page">
+      <a href="/Nowayout/" class="header__logo-link" aria-label="Home page">
         <img class="header__logo-img" src="images/icons/m-logo.svg" alt="Nowayout logo" width="128" height="21">
       </a>
     </div>
@@ -9,52 +9,13 @@
 
 
     <div class="header__navbar">
-      <div class="dropdown-wrapper header__location">
-        <button class="dropdown-toggle header__menu-link header__location-btn" type="button" aria-haspopup="true"
-          aria-expanded="false" aria-controls="locationMenu" id="location-button">
-          <svg class="header__icon" aria-hidden="true" width="24" height="24">
-            <use href="./images/icons/location.svg" fill="currentColor"></use>
-          </svg>
-          <span class="dropdown-current header__location-current" aria-live="polite" data-current-target>Wien</span>
-          <span class="visually-hidden">Choose location</span>
-        </button>
+      @include('blocks/location.html', {})
 
-        <ul class="menu-dropdown header__location-list" id="locationMenu" role="menu" hidden
-          aria-labelledby="location-button">
-
-          <li class="menu-dropdown__item header__location-item" data-location="Wien">
-            <a class="header__location-link red-hover" href="#" role="menuitem" tabindex="-1">
-              <svg class="header__icon" aria-hidden="true" width="24" height="24">
-                <use href="./images/icons/location.svg" fill="currentColor"></use>
-              </svg>
-              Wien
-            </a>
-          </li>
-          <li class="menu-dropdown__item header__location-item" data-location="Linz">
-            <a class="header__location-link red-hover" href="#" role="menuitem" tabindex="-1">
-              <svg class="header__icon" aria-hidden="true" width="24" height="24">
-                <use href="./images/icons/location.svg" fill="currentColor"></use>
-              </svg>
-              Linz
-
-            </a>
-          </li>
-          <li class="menu-dropdown__item header__location-item" data-location="Innsbruck">
-            <a class="header__location-link red-hover" href="#" role="menuitem" tabindex="-1">
-              <svg class="header__icon" aria-hidden="true" width="24" height="24">
-                <use href="./images/icons/location.svg" fill="currentColor"></use>
-              </svg>
-              Innsbruck
-            </a>
-          </li>
-        </ul>
-
-      </div>
       <div class="header__phone">
         <svg class="header__icon" aria-hidden="true" width="24" height="24">
           <use href="./images/icons/phone.svg" fill="currentColor"></use>
         </svg>
-        <a class="header__phone-link red-hover" href="tel:+436606050000" aria-label="Phone call">+43 660 605 0000</a>
+        <a href="tel:+436606050000" class="header__phone-link" aria-label="Phone call">+43 660 605 0000</a>
       </div>
 
       <nav class="header__menu">
@@ -64,7 +25,8 @@
               aria-haspopup="true" aria-expanded="false" aria-controls="roomMenu">
               Räume
             </button>
-            <ul class="menu-dropdown" id="roomMenu" role="menu" aria-labelledby="roomMenu-button" hidden>
+            <ul class="menu-dropdown rooms-menu__list" id="roomMenu" role="menu" aria-labelledby="roomMenu-button"
+              hidden>
               <li class="menu-dropdown__item">
                 <a class="menu-dropdown__link red-hover" href="#" role="menuitem" tabindex="-1">
                   Da Vinci
@@ -98,32 +60,23 @@
             </ul>
           </li>
           <li class="header__menu-item">
-            <a class="header__menu-link  red-hover" href="#" aria-label="Open Zeitplan">
+            <a href="#" class="header__menu-link  red-hover" aria-label="Open Zeitplan">
               Zeitplan
             </a>
           </li>
           <li class="header__menu-item">
-            <a class="header__menu-link  red-hover" href="#contacts" aria-label="Open Kontakt">
+            <a href="#contacts" class="header__menu-link  red-hover" aria-label="Open Kontakt">
               Kontakt
             </a>
           </li>
         </ul>
       </nav>
     </div>
+    @include('blocks/lang.html', {})
 
-    <div class="header__lang">
-      <div class="header__lang-container">
-        <a class="header__lang-btn" href="#" hreflang="en" aria-label="English language">
-          <img class="header__lang-icon" src="images/icons/united-kingdom.svg" alt="English">
-        </a>
-        <a class="header__lang-btn  header__lang-btn--active" href="#" hreflang="de" aria-label="Germany language">
-          <img class="header__lang-icon" src="images/icons/germany.svg" alt="Germany">
-        </a>
-      </div>
-    </div>
     <div class="header__burger">
-      <button class="burger" aria-label="Open menu" type="button">
-        <span class="burger__line"></span>
+      <button class="burger-btn" aria-label="Open menu" type="button">
+        <span class="burger-btn__line"></span>
       </button>
     </div>
     <div class="header__burger-menu burger">
@@ -131,224 +84,99 @@
         <div class="burger__block">
           <div class="burger__rooms">
             <p class="burger__rooms-title">Räume</p>
-            <div class="burger__rooms-list">
-              <ul class="burger__rooms-body">
-                <li class="burger__rooms-item">
-                  <a href="https://www.nowayout-escape.at/de/da-vinci/" aria-label="Open Da Vinci room"
-                    class="burger__rooms-link red-hover">Da Vinci</a>
-                </li>
-                <li class="burger__rooms-item">
-                  <a href="https://www.nowayout-escape.at/de/school-of-magic/" aria-label="Open School of Magic room"
-                    class="burger__rooms-link red-hover">School of Magic</a>
-                </li>
-                <li class="burger__rooms-item">
-                  <a href="https://www.nowayout-escape.at/de/mission-belvedere/"
-                    aria-label="Open Mission Belvedere room" class="burger__rooms-link red-hover">Mission Belvedere</a>
-                </li>
-                <li class="burger__rooms-item">
-                  <a href="https://www.nowayout-escape.at/de/the-nun/" aria-label="Open The Nun room"
-                    class="burger__rooms-link red-hover">The Nun</a>
-                </li>
-                <li class="burger__rooms-item">
-                  <a href="https://www.nowayout-escape.at/de/the-unknown/" aria-label="Open The Unknown room"
-                    class="burger__rooms-link red-hover">The Unknown</a>
-                </li>
-              </ul>
-            </div>
+            <ul class="burger__rooms-list">
+              <li class="burger__rooms-item">
+                <a class="burger__rooms-link red-hover" href="#" aria-label="Open Da Vinci room">Da Vinci</a>
+              </li>
+              <li class="burger__rooms-item">
+                <a class="burger__rooms-link red-hover" href="#" aria-label="Open School of Magic room">School of
+                  Magic</a>
+              </li>
+              <li class="burger__rooms-item">
+                <a class="burger__rooms-link red-hover" href="#" aria-label="Open Mission Belvedere room">Mission
+                  Belvedere</a>
+              </li>
+              <li class="burger__rooms-item">
+                <a class="burger__rooms-link red-hover" href="" aria-label="Open The Nun room">The Nun</a>
+              </li>
+              <li class="burger__rooms-item">
+                <a class="burger__rooms-link red-hover" href="" aria-label="Open The Unknown room">The Unknown</a>
+              </li>
+            </ul>
           </div>
+
           <div class="burger__menu">
             <ul class="burger__menu-list">
               <li class="burger__menu-item">
-                <a href="/de/schedule/" aria-label="Open Zeitplan page" class="burger__menu-link red-hover">
-                  Zeitplan
-                </a>
+                <a class="burger__menu-link red-hover" href="" aria-label="Open Zeitplan page">Zeitplan</a>
               </li>
               <li class="burger__menu-item">
-                <a href="/de/rooms/" aria-label="Open Räume page" class="burger__menu-link red-hover">
-                  Räume
-                </a>
+                <a class="burger__menu-link red-hover" href="" aria-label="Open Räume page">Räume</a>
               </li>
               <li class="burger__menu-item">
-                <a href="/de/buy-gift-card/" aria-label="Open Gutscheine page" class="burger__menu-link red-hover">
-                  Gutscheine
-                </a>
+                <a class="burger__menu-link red-hover" href="" aria-label="Open Gutscheine page">Gutscheine</a>
               </li>
               <li class="burger__menu-item">
-                <a href="/de/bundles/" aria-label="Open Kombipakete page" class="burger__menu-link red-hover">
-                  Kombipakete
-                </a>
+                <a class="burger__menu-link red-hover" href="" aria-label="Open Kombipakete page">Kombipakete</a>
               </li>
               <li class="burger__menu-item">
-                <a href="/de/how-to-play/" aria-label="Open Erklärung page" class="burger__menu-link red-hover">
-                  Erklärung
-                </a>
+                <a class="burger__menu-link red-hover" href="" aria-label="Open Erklärung page">Erklärung</a>
               </li>
               <li class="burger__menu-item">
-                <a href="/de/special-offers/" aria-label="Open Spezialangebote page"
-                  class="burger__menu-link red-hover">
-                  Spezialangebote
-                </a>
+                <a class="burger__menu-link red-hover" href=""
+                  aria-label="Open Spezialangebote page">Spezialangebote</a>
               </li>
               <li class="burger__menu-item">
-                <a href="/de/school-parties/" aria-label="Open Schulparty page" class="burger__menu-link red-hover">
-                  Schulparty
-                </a>
+                <a class="burger__menu-link red-hover" href="" aria-label="Open Schulparty page">Schulparty</a>
               </li>
               <li class="burger__menu-item">
-                <a href="/de/birthday-parties/" aria-label="Open Geburtstags Escape page"
-                  class="burger__menu-link red-hover">
-                  Geburtstags Escape
-                </a>
+                <a class="burger__menu-link red-hover" href="" aria-label="Open Geburtstags Escape page">Geburtstags
+                  Escape</a>
               </li>
               <li class="burger__menu-item">
-                <a href="/de/wedding-proposal/" aria-label="Open Heiratsantrag page"
-                  class="burger__menu-link red-hover">
-                  Heiratsantrag
-                </a>
+                <a class="burger__menu-link red-hover" href="" aria-label="Open Heiratsantrag page">Heiratsantrag</a>
               </li>
               <li class="burger__menu-item">
-                <a href="/de/horror-escape-rooms/" aria-label="Open Horror Escape Rooms page"
-                  class="burger__menu-link red-hover">
-                  Horror Escape Rooms
-                </a>
+                <a class="burger__menu-link red-hover" href="" aria-label="Open Horror Escape Rooms page">Horror Escape
+                  Rooms</a>
               </li>
               <li class="burger__menu-item">
-                <a href="/de/kids-escape-rooms/" aria-label="Open Kinder Escape Room page"
-                  class="burger__menu-link red-hover">
-                  Kinder Escape Room
-                </a>
+                <a class="burger__menu-link red-hover" href="" aria-label="Open Kinder Escape Room page">Kinder Escape
+                  Room</a>
               </li>
               <li class="burger__menu-item">
-                <a href="/de/polterabend/" aria-label="Open Polterabend page" class="burger__menu-link red-hover">
-                  Polterabend
-                </a>
+                <a class="burger__menu-link red-hover" href="" aria-label="Open Polterabend page">Polterabend</a>
               </li>
               <li class="burger__menu-item">
-                <a href="/de/corporate/" aria-label="Open Firmen page" class="burger__menu-link red-hover">
-                  Firmen
-                </a>
+                <a class="burger__menu-link red-hover" href="" aria-label="Open Firmen page">Firmen</a>
               </li>
               <li class="burger__menu-item">
-                <a href="/de/blog/" aria-label="Open Blog page" class="burger__menu-link red-hover">
-                  Blog
-                </a>
+                <a class="burger__menu-link red-hover" href="" aria-label="Open Blog page">Blog</a>
               </li>
               <li class="burger__menu-item">
-                <a href="/de/faq/" aria-label="Open Faq page" class="burger__menu-link red-hover">
-                  Faq
-                </a>
+                <a class="burger__menu-link red-hover" href="" aria-label="Open Faq page">Faq</a>
               </li>
               <li class="burger__menu-item">
-                <a href="/de/about-us/" aria-label="Open Über uns page" class="burger__menu-link red-hover">
-                  Über uns
-                </a>
+                <a class="burger__menu-link red-hover" href="" aria-label="Open Über uns page">Über uns</a>
               </li>
               <li class="burger__menu-item">
-                <a href="/de/career/" aria-label="Open Karriere page" class="burger__menu-link red-hover">
-                  Karriere
-                </a>
+                <a class="burger__menu-link red-hover" href="" aria-label="Open Karriere page">Karriere</a>
               </li>
               <li class="burger__menu-item">
-                <a href="/de/contact/" aria-label="Open Kontakt page" class="burger__menu-link red-hover">
-                  Kontakt
-                </a>
+                <a class="burger__menu-link red-hover" href="" aria-label="Open Kontakt page">Kontakt</a>
               </li>
             </ul>
           </div>
         </div>
         <div class="burger__block">
           <div class="burger__row">
-            <div class="burger__city red-hover">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
-                class="burger__city-img">
-                <path
-                  d="M12 23.7279L5.636 17.3639C4.37734 16.1052 3.52019 14.5016 3.17293 12.7558C2.82567 11.0099 3.00391 9.20035 3.6851 7.55582C4.36629 5.91129 5.51984 4.50569 6.99988 3.51677C8.47992 2.52784 10.22 2 12 2C13.78 2 15.5201 2.52784 17.0001 3.51677C18.4802 4.50569 19.6337 5.91129 20.3149 7.55582C20.9961 9.20035 21.1743 11.0099 20.8271 12.7558C20.4798 14.5016 19.6227 16.1052 18.364 17.3639L12 23.7279ZM16.95 15.9499C17.9289 14.9709 18.5955 13.7236 18.8656 12.3658C19.1356 11.0079 18.9969 9.60052 18.4671 8.32148C17.9373 7.04244 17.04 5.94923 15.8889 5.18009C14.7378 4.41095 13.3844 4.00043 12 4.00043C10.6156 4.00043 9.26222 4.41095 8.11109 5.18009C6.95996 5.94923 6.06275 7.04244 5.53292 8.32148C5.00308 9.60052 4.86442 11.0079 5.13445 12.3658C5.40449 13.7236 6.07111 14.9709 7.05 15.9499L12 20.8999L16.95 15.9499ZM12 12.9999C11.4696 12.9999 10.9609 12.7892 10.5858 12.4141C10.2107 12.0391 10 11.5304 10 10.9999C10 10.4695 10.2107 9.96078 10.5858 9.58571C10.9609 9.21064 11.4696 8.99992 12 8.99992C12.5304 8.99992 13.0391 9.21064 13.4142 9.58571C13.7893 9.96078 14 10.4695 14 10.9999C14 11.5304 13.7893 12.0391 13.4142 12.4141C13.0391 12.7892 12.5304 12.9999 12 12.9999Z"
-                  fill="#F7F5F9"></path>
-              </svg>
-              <p class="burger__city-name red-hover">Wien</p>
-              <div class="burger__city-dropdown city-dropdown">
-                <ul class="city-dropdown__list">
-                  <li class="city-dropdown__item">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path
-                        d="M12 23.7279L5.636 17.3639C4.37734 16.1052 3.52019 14.5016 3.17293 12.7558C2.82567 11.0099 3.00391 9.20035 3.6851 7.55582C4.36629 5.91129 5.51984 4.50569 6.99988 3.51677C8.47992 2.52784 10.22 2 12 2C13.78 2 15.5201 2.52784 17.0001 3.51677C18.4802 4.50569 19.6337 5.91129 20.3149 7.55582C20.9961 9.20035 21.1743 11.0099 20.8271 12.7558C20.4798 14.5016 19.6227 16.1052 18.364 17.3639L12 23.7279ZM16.95 15.9499C17.9289 14.9709 18.5955 13.7236 18.8656 12.3658C19.1356 11.0079 18.9969 9.60052 18.4671 8.32148C17.9373 7.04244 17.04 5.94923 15.8889 5.18009C14.7378 4.41095 13.3844 4.00043 12 4.00043C10.6156 4.00043 9.26222 4.41095 8.11109 5.18009C6.95996 5.94923 6.06275 7.04244 5.53292 8.32148C5.00308 9.60052 4.86442 11.0079 5.13445 12.3658C5.40449 13.7236 6.07111 14.9709 7.05 15.9499L12 20.8999L16.95 15.9499ZM12 12.9999C11.4696 12.9999 10.9609 12.7892 10.5858 12.4141C10.2107 12.0391 10 11.5304 10 10.9999C10 10.4695 10.2107 9.96078 10.5858 9.58571C10.9609 9.21064 11.4696 8.99992 12 8.99992C12.5304 8.99992 13.0391 9.21064 13.4142 9.58571C13.7893 9.96078 14 10.4695 14 10.9999C14 11.5304 13.7893 12.0391 13.4142 12.4141C13.0391 12.7892 12.5304 12.9999 12 12.9999Z"
-                        fill="#F7F5F9"></path>
-                    </svg>
-                    <a href="https://www.nowayout-escape.at/" aria-label="Choose Wien"
-                      class="city-dropdown__link red-hover">Wien</a>
-                  </li>
-                  <li class="city-dropdown__item">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path
-                        d="M12 23.7279L5.636 17.3639C4.37734 16.1052 3.52019 14.5016 3.17293 12.7558C2.82567 11.0099 3.00391 9.20035 3.6851 7.55582C4.36629 5.91129 5.51984 4.50569 6.99988 3.51677C8.47992 2.52784 10.22 2 12 2C13.78 2 15.5201 2.52784 17.0001 3.51677C18.4802 4.50569 19.6337 5.91129 20.3149 7.55582C20.9961 9.20035 21.1743 11.0099 20.8271 12.7558C20.4798 14.5016 19.6227 16.1052 18.364 17.3639L12 23.7279ZM16.95 15.9499C17.9289 14.9709 18.5955 13.7236 18.8656 12.3658C19.1356 11.0079 18.9969 9.60052 18.4671 8.32148C17.9373 7.04244 17.04 5.94923 15.8889 5.18009C14.7378 4.41095 13.3844 4.00043 12 4.00043C10.6156 4.00043 9.26222 4.41095 8.11109 5.18009C6.95996 5.94923 6.06275 7.04244 5.53292 8.32148C5.00308 9.60052 4.86442 11.0079 5.13445 12.3658C5.40449 13.7236 6.07111 14.9709 7.05 15.9499L12 20.8999L16.95 15.9499ZM12 12.9999C11.4696 12.9999 10.9609 12.7892 10.5858 12.4141C10.2107 12.0391 10 11.5304 10 10.9999C10 10.4695 10.2107 9.96078 10.5858 9.58571C10.9609 9.21064 11.4696 8.99992 12 8.99992C12.5304 8.99992 13.0391 9.21064 13.4142 9.58571C13.7893 9.96078 14 10.4695 14 10.9999C14 11.5304 13.7893 12.0391 13.4142 12.4141C13.0391 12.7892 12.5304 12.9999 12 12.9999Z"
-                        fill="#F7F5F9"></path>
-                    </svg>
-                    <a href="https://linz.nowayout-escape.at/" aria-label="Choose Linz"
-                      class="city-dropdown__link red-hover">Linz</a>
-                  </li>
-                  <li class="city-dropdown__item">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path
-                        d="M12 23.7279L5.636 17.3639C4.37734 16.1052 3.52019 14.5016 3.17293 12.7558C2.82567 11.0099 3.00391 9.20035 3.6851 7.55582C4.36629 5.91129 5.51984 4.50569 6.99988 3.51677C8.47992 2.52784 10.22 2 12 2C13.78 2 15.5201 2.52784 17.0001 3.51677C18.4802 4.50569 19.6337 5.91129 20.3149 7.55582C20.9961 9.20035 21.1743 11.0099 20.8271 12.7558C20.4798 14.5016 19.6227 16.1052 18.364 17.3639L12 23.7279ZM16.95 15.9499C17.9289 14.9709 18.5955 13.7236 18.8656 12.3658C19.1356 11.0079 18.9969 9.60052 18.4671 8.32148C17.9373 7.04244 17.04 5.94923 15.8889 5.18009C14.7378 4.41095 13.3844 4.00043 12 4.00043C10.6156 4.00043 9.26222 4.41095 8.11109 5.18009C6.95996 5.94923 6.06275 7.04244 5.53292 8.32148C5.00308 9.60052 4.86442 11.0079 5.13445 12.3658C5.40449 13.7236 6.07111 14.9709 7.05 15.9499L12 20.8999L16.95 15.9499ZM12 12.9999C11.4696 12.9999 10.9609 12.7892 10.5858 12.4141C10.2107 12.0391 10 11.5304 10 10.9999C10 10.4695 10.2107 9.96078 10.5858 9.58571C10.9609 9.21064 11.4696 8.99992 12 8.99992C12.5304 8.99992 13.0391 9.21064 13.4142 9.58571C13.7893 9.96078 14 10.4695 14 10.9999C14 11.5304 13.7893 12.0391 13.4142 12.4141C13.0391 12.7892 12.5304 12.9999 12 12.9999Z"
-                        fill="#F7F5F9"></path>
-                    </svg>
-                    <a href="https://innsbruck.nowayout-escape.at/" aria-label="Choose Innsbruck"
-                      class="city-dropdown__link red-hover">Innsbruck</a>
-                  </li>
-                  <li class="city-dropdown__item">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path
-                        d="M12 23.7279L5.636 17.3639C4.37734 16.1052 3.52019 14.5016 3.17293 12.7558C2.82567 11.0099 3.00391 9.20035 3.6851 7.55582C4.36629 5.91129 5.51984 4.50569 6.99988 3.51677C8.47992 2.52784 10.22 2 12 2C13.78 2 15.5201 2.52784 17.0001 3.51677C18.4802 4.50569 19.6337 5.91129 20.3149 7.55582C20.9961 9.20035 21.1743 11.0099 20.8271 12.7558C20.4798 14.5016 19.6227 16.1052 18.364 17.3639L12 23.7279ZM16.95 15.9499C17.9289 14.9709 18.5955 13.7236 18.8656 12.3658C19.1356 11.0079 18.9969 9.60052 18.4671 8.32148C17.9373 7.04244 17.04 5.94923 15.8889 5.18009C14.7378 4.41095 13.3844 4.00043 12 4.00043C10.6156 4.00043 9.26222 4.41095 8.11109 5.18009C6.95996 5.94923 6.06275 7.04244 5.53292 8.32148C5.00308 9.60052 4.86442 11.0079 5.13445 12.3658C5.40449 13.7236 6.07111 14.9709 7.05 15.9499L12 20.8999L16.95 15.9499ZM12 12.9999C11.4696 12.9999 10.9609 12.7892 10.5858 12.4141C10.2107 12.0391 10 11.5304 10 10.9999C10 10.4695 10.2107 9.96078 10.5858 9.58571C10.9609 9.21064 11.4696 8.99992 12 8.99992C12.5304 8.99992 13.0391 9.21064 13.4142 9.58571C13.7893 9.96078 14 10.4695 14 10.9999C14 11.5304 13.7893 12.0391 13.4142 12.4141C13.0391 12.7892 12.5304 12.9999 12 12.9999Z"
-                        fill="#F7F5F9"></path>
-                    </svg>
-                    <a href="https://graz.nowayout-escape.at/" aria-label="Choose Graz"
-                      class="city-dropdown__link red-hover">Graz</a>
-                  </li>
-                  <li class="city-dropdown__item">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path
-                        d="M12 23.7279L5.636 17.3639C4.37734 16.1052 3.52019 14.5016 3.17293 12.7558C2.82567 11.0099 3.00391 9.20035 3.6851 7.55582C4.36629 5.91129 5.51984 4.50569 6.99988 3.51677C8.47992 2.52784 10.22 2 12 2C13.78 2 15.5201 2.52784 17.0001 3.51677C18.4802 4.50569 19.6337 5.91129 20.3149 7.55582C20.9961 9.20035 21.1743 11.0099 20.8271 12.7558C20.4798 14.5016 19.6227 16.1052 18.364 17.3639L12 23.7279ZM16.95 15.9499C17.9289 14.9709 18.5955 13.7236 18.8656 12.3658C19.1356 11.0079 18.9969 9.60052 18.4671 8.32148C17.9373 7.04244 17.04 5.94923 15.8889 5.18009C14.7378 4.41095 13.3844 4.00043 12 4.00043C10.6156 4.00043 9.26222 4.41095 8.11109 5.18009C6.95996 5.94923 6.06275 7.04244 5.53292 8.32148C5.00308 9.60052 4.86442 11.0079 5.13445 12.3658C5.40449 13.7236 6.07111 14.9709 7.05 15.9499L12 20.8999L16.95 15.9499ZM12 12.9999C11.4696 12.9999 10.9609 12.7892 10.5858 12.4141C10.2107 12.0391 10 11.5304 10 10.9999C10 10.4695 10.2107 9.96078 10.5858 9.58571C10.9609 9.21064 11.4696 8.99992 12 8.99992C12.5304 8.99992 13.0391 9.21064 13.4142 9.58571C13.7893 9.96078 14 10.4695 14 10.9999C14 11.5304 13.7893 12.0391 13.4142 12.4141C13.0391 12.7892 12.5304 12.9999 12 12.9999Z"
-                        fill="#F7F5F9"></path>
-                    </svg>
-                    <a href="https://scs.nowayout-escape.at/" aria-label="Choose SCS"
-                      class="city-dropdown__link red-hover">SCS</a>
-                  </li>
-                </ul>
-              </div>
-            </div>
 
-            <div class="burger__language">
-              <div class="burger__language-container">
-                <a aria-label="Deutsch language" href="https://www.nowayout-escape.at/" class="burger__language-btn ">
-                  <img src="https://assets.nowayout-escape.at/assets/img/united-kingdom.svg" alt="English"
-                    class="burger__language-icon">
-                </a>
-                <a aria-label="Deutsch language" href="https://www.nowayout-escape.at/de/"
-                  class="burger__language-btn active">
-                  <img src="https://assets.nowayout-escape.at/assets/img/germany.svg" alt="German"
-                    class="burger__language-icon">
-                </a>
-              </div>
-            </div>
+            @include('blocks/location.html', {})
+            @include('blocks/lang.html', {})
           </div>
-          <div class="burger__contact">
-            <p class="burger__contact-title">Telefon:</p>
-            <a href="tel:+43 144 200 08" aria-label="Phone call" class="burger__contact-info red-hover">+43 144 200
-              08</a>
-          </div>
-          <div class="burger__contact">
-            <p class="burger__contact-title">Adresse:</p>
-            <a href="https://www.google.com/maps/place/Escape+Room+No+Way+Out/@48.2059256,16.3704925,17z/data=!3m1!4b1!4m5!3m4!1s0x476d0762e198b3a1:0x92fb704e3f92ad8f!8m2!3d48.205922!4d16.3726812"
-              aria-label="Google map" target="_blank" class="burger__contact-info red-hover">
-              Rauhensteingasse 7, 1010 Wien, Österreich
-            </a>
-          </div>
-          <div class="burger__contact">
-            <p class="burger__contact-title">Email:</p>
-            <a href="mailto:office@nowayout-escape.at" aria-label="Send email" class="burger__contact-info red-hover">
-              office@nowayout-escape.at
-            </a>
-          </div>
+          @include('blocks/burger-contacts.html', {})
+
+
           <div class="burger__contact">
             <p class="burger__contact-title">Folgen Sie uns:</p>
             <ul class="burger__contact-list">
@@ -406,8 +234,6 @@
           </div>
         </div>
       </div>
-      <div class="burger__close"></div>
-      <div class="burger__bg"></div>
     </div>
     <!-- <div class="header__place">
       <p class="header__place-title">Standort Wien?</p>

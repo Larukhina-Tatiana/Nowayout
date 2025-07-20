@@ -1,0 +1,162 @@
+@use './utils/vars.scss' as *;
+
+
+
+.burger {
+  align-items: center;
+  background-color: $color-bg;
+  display: flex;
+  height: 100vh;
+  // justify-content: center;
+  left: 0;
+  overflow: hidden;
+  padding: 0 240px;
+  position: fixed;
+  top: -100vh;
+  width: 100%;
+  z-index: 200;
+  @include transition ($transition-property: (top));
+
+  &.active {
+    top: 0;
+    padding: 0 30px;
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 70vh;
+    overflow-y: scroll;
+  }
+
+  &__block {
+    margin-right: 50px;
+  }
+
+  &__rooms {
+    margin-bottom: 70px;
+
+    &-title {
+      color: $color-text-main;
+      font-size: 36px;
+      line-height: 36px;
+      margin-bottom: 10px;
+    }
+
+    &-list {
+      color: $burger-menu;
+      font-size: 18px;
+      font-weight: 250;
+      line-height: 24px;
+    }
+
+    &-item:not(:last-child) {
+      margin-bottom: 15px;
+    }
+
+    &-link {
+      color: inherit;
+    }
+  }
+
+  &__menu {
+    color: $burger-menu;
+    font-size: 26px;
+    font-weight: 400;
+    line-height: 30px;
+
+    &-list {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+  }
+
+  &__row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-top: 70px;
+    margin-bottom: 70px;
+  }
+
+
+  .menu-dropdown {
+    top: 100%;
+    width: fit-content;
+  }
+
+  .lang {
+    padding: 0;
+    border-right: none;
+  }
+}
+
+.burger-btn {
+  position: relative;
+  border: none;
+  padding: 0;
+  width: $burger-width;
+  height: $burger-height;
+  color: $white;
+  background-color: transparent;
+  cursor: pointer;
+  z-index: 1000;
+
+  @media (any-hover: hover) {
+    &:hover {
+      color: $color-accent;
+    }
+  }
+
+  &::after,
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: $burger-line-height;
+    background-color: currentColor;
+    @include transition ($transition-property: (color, transform, top));
+
+  }
+
+  &::before {
+    top: 0;
+  }
+
+  &__line {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 100%;
+    height: $burger-line-height;
+    background-color: currentColor;
+    transform: translateY(-50%);
+    @include transition ($transition-property: (transform, background-color));
+  }
+
+  &::after {
+    top: calc(100% - #{$burger-line-height});
+  }
+
+  &.active {
+
+    /* временно видно точно */
+    &::before {
+      top: 50%;
+      transform: rotate(45deg);
+    }
+
+    &::after {
+      top: 50%;
+      transform: rotate(-45deg);
+    }
+
+    .burger-btn__line {
+      transform: scaleX(0);
+      opacity: 0;
+    }
+  }
+}

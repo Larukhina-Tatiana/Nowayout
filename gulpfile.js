@@ -2,6 +2,7 @@
 import gulp from "gulp";
 // Импорт плагинов
 import { plugins } from "./gulp/config/plugins.js";
+import { generateSprite } from "./gulp/tasks/generateSprite.js";
 
 // Импорт путей
 import { path } from "./gulp/config/path.js";
@@ -17,6 +18,7 @@ global.app = {
 };
 
 // Импорт задач
+import { svgStack, svgSymbol } from "./gulp/tasks/svg.js";
 import { copysprite } from "./gulp/tasks/copysprite.js";
 import { copyicons } from "./gulp/tasks/copyicons.js";
 import { copyfonts } from "./gulp/tasks/copyfonts.js";
@@ -38,12 +40,15 @@ import { uploadAssetsToCDN } from "./gulp/tasks/cdnUpload.js";
 // import { OtfToTtf, ttfToWoff, fontStyle } from "./gulp/tasks/fonts.js";
 
 function watcher() {
+  gulp.watch(path.src.icons, generateSprite);
   gulp.watch(path.watch.files, copy);
   gulp.watch(path.watch.html, html);
   gulp.watch(path.watch.scss, scss);
   gulp.watch(path.watch.js, js);
   gulp.watch(path.watch.images, images);
   gulp.watch(path.watch.icons, copyicons);
+  gulp.watch(path.watch.svgsprite, gulp.series(svgStack, svgSymbol));
+
   // gulp.watch(path.watch.sprite, gulp.series("svgStack", "svgSymbol"));
 }
 
@@ -54,6 +59,9 @@ const images = gulp.series(imgAvif, imgWebp, imgImage, imgPng);
 
 const mainTasks = gulp.series(
   gulp.parallel(
+    svgStack,
+    svgSymbol,
+    // generateSprite,
     copy,
     copyfavicon,
     copysprite,
@@ -75,6 +83,7 @@ const build = gulp.series(reset, mainTasks, version);
 export const cdn = gulp.series(cdnAssets, updateLinks);
 export const cdnPush = uploadAssetsToCDN;
 
+export { generateSprite }; //gulp generateSprite
 export { cleanEmpty }; //gulp cleanEmpty
 export { scanAndClean }; //gulp scanAndClean
 export { critical }; //gulp critical

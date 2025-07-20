@@ -1,0 +1,50 @@
+@use './utils/vars.scss' as *;
+
+.location {
+  border-right: 1px solid $color-header-border;
+  padding: 0 32px 0 23px;
+
+  align-items: center;
+  cursor: pointer;
+  display: flex;
+  position: relative;
+
+  &__btn {
+    background: none;
+    border: none;
+    color: inherit;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    cursor: pointer;
+    padding: 0 36px 0 0;
+  }
+
+  &__current {
+    margin: 0 4px 0 6px;
+    flex-shrink: 0;
+  }
+
+  &__list {
+    &.is-open {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  &__item {
+    padding: 8px 16px;
+    cursor: pointer;
+    color: $color-text-main;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    height: 61px;
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+}

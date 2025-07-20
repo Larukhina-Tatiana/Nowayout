@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><style>:root>svg{display:none}:root>svg:target{display:block}</style><svg fill="none" viewBox="0 0 15 14" id="clock" xmlns="http://www.w3.org/2000/svg">
+    <g clip-path="url(#aa)">
+        <path d="M7.5 12.833a5.833 5.833 0 1 1 0-11.666 5.833 5.833 0 0 1 0 11.666Zm0-1.166a4.666 4.666 0 1 0 0-9.333 4.666 4.666 0 0 0 0 9.333ZM8.083 7h2.334v1.167h-3.5V4.083h1.166V7Z" fill="#F7F5F9"/>
+    </g>
+    <defs>
+        <clipPath id="aa">
+            <path fill="#fff" transform="translate(.5)" d="M0 0h14v14H0z"/>
+        </clipPath>
+    </defs>
+</svg><svg fill="none" viewBox="0 0 24 24" id="location" xmlns="http://www.w3.org/2000/svg">
+    <path d="m12 23.728-6.364-6.364a9 9 0 1 1 12.728 0L12 23.728Zm4.95-7.778a7 7 0 1 0-9.9 0L12 20.9l4.95-4.95ZM12 13a2 2 0 1 1 0-4 2 2 0 0 1 0 4Z" fill="#F7F5F9"/>
+</svg><svg viewBox="0 0 10 10" id="test">
+    <path d="M0 0h10v10H0Z"/>
+</svg></svg>

@@ -1,0 +1,52 @@
+@use './utils/vars.scss' as *;
+
+.lang {
+  border-right: 1px solid $color-header-border;
+  padding: 0 clamp(0.625rem, 0.276rem + 1.49vw, 1.875rem);
+  align-items: center;
+  display: flex;
+
+  &__container {
+    display: flex;
+    align-items: center;
+    border: 1px solid $color-header-border;
+  }
+
+  &__btn {
+    display: inline-flex;
+    padding: 6px 9px;
+    cursor: pointer;
+    background: transparent;
+    @include transition($transition-property: background);
+
+    &:first-child {
+      border-right: 1px solid $color-header-border;
+    }
+
+    &--active {
+      background: $color-lang-btn-hover ;
+
+      &__icon {
+        opacity: 0.3;
+      }
+    }
+
+    &:not(.lang__btn--active) {
+      .lang__icon {
+        opacity: 1;
+      }
+    }
+
+    @media (any-hover: hover) {
+      &:hover {
+        background: $color-lang-btn-hover ;
+      }
+    }
+  }
+
+  &__icon {
+    flex-shrink: 0;
+    width: 22px;
+    height: 23px;
+  }
+}

@@ -1,7 +1,7 @@
 import $ from "jquery";
 $(function () {
-  const $burger = $(".burger");
-  const $mobileMenu = $(".header__mobile-menu");
+  const $burger = $(".burger-btn");
+  const $mobileMenu = $(".burger");
   let busy = false;
 
   function openMenu() {
