@@ -67,35 +67,24 @@ const debugLog = () =>
     console.log("Обрабатывается иконка:", file.relative);
     cb(null, file);
   });
-// 📦 Генерация stack-спрайта
-export const svgStack = () => {
-  return gulp
-    .src(path.src.svgsprite)
-    .pipe(plumber(plumberNotify("SVG Stack")))
-    .pipe(debugLog())
-    .pipe(svgSprite(svgStackConfig))
-
-    .pipe(gulp.dest(path.build.svgsprite))
-
-    .pipe(gulp.dest(path.build.svgsprite));
-};
-
-// 📦 Генерация symbol-спрайта
-export const svgSymbol = () => {
+// 📦 Общая функция для генерации спрайтов
+const createSprite = (config, type) => {
   return gulp
     .src(path.src.svgsprite, { allowEmpty: true })
+    .pipe(plumber(plumberNotify(`SVG ${type}`)))
+    .pipe(type === "Stack" ? debugLog() : through2.obj())
+    .pipe(svgSprite(config))
     .on("data", (file) => {
-      console.log("Файл в потоке:", file.path);
+      if (type === "Symbol") console.log("Файл в потоке:", file.path);
     })
-    .pipe(plumber(plumberNotify("SVG Symbol")))
-    .pipe(svgSprite(svgSymbolConfig))
     .on("end", () => {
-      console.log("✅ sprite.symbol.svg успешно создан");
+      if (type === "Symbol") console.log("✅ sprite.symbol.svg успешно создан");
     })
     .pipe(gulp.dest(path.build.svgsprite));
 };
 
-gulp
-  .src("src/images/svgsprite/**/*.svg")
-  .pipe(svgsprite(svgSymbolConfig))
-  .pipe(gulp.dest("docs/images/svgsprite"));
+// 📦 Генерация stack-спрайта
+export const svgStack = () => createSprite(svgStackConfig, "Stack");
+
+// 📦 Генерация symbol-спрайта
+export const svgSymbol = () => createSprite(svgSymbolConfig, "Symbol");

@@ -23,6 +23,7 @@
   &__current {
     margin: 0 4px 0 6px;
     flex-shrink: 0;
+    @include transition($transition-property: color);
   }
 
   &__list {
@@ -46,5 +47,16 @@
     display: flex;
     align-items: center;
     gap: 20px;
+    @include transition($transition-property: color);
+
+    @media (any-hover: hover) {
+      &:hover {
+        color: $color-accent;
+
+        .icon--locationcon {
+          color: $color-accent;
+        }
+      }
+    }
   }
 }

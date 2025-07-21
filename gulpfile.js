@@ -18,7 +18,7 @@ global.app = {
 };
 
 // Импорт задач
-import { svgStack, svgSymbol } from "./gulp/tasks/svg.js";
+import { svgStack, svgSymbol } from "./gulp/tasks/svgsprite.js";
 import { copysprite } from "./gulp/tasks/copysprite.js";
 import { copyicons } from "./gulp/tasks/copyicons.js";
 import { copyfonts } from "./gulp/tasks/copyfonts.js";
@@ -36,7 +36,7 @@ import { version } from "./gulp/tasks/version.js";
 import { cdnAssets, updateLinks } from "./gulp/tasks/cdn.js";
 
 import { uploadAssetsToCDN } from "./gulp/tasks/cdnUpload.js";
-// import { svgStack, svgSymbol } from "./gulp/tasks/svg.js";
+// import { svgStack, svgSymbol } from "./gulp/tasks/svgsprite.js";
 // import { OtfToTtf, ttfToWoff, fontStyle } from "./gulp/tasks/fonts.js";
 
 function watcher() {
@@ -46,7 +46,7 @@ function watcher() {
   gulp.watch(path.watch.scss, scss);
   gulp.watch(path.watch.js, js);
   gulp.watch(path.watch.images, images);
-  gulp.watch(path.watch.icons, copyicons);
+  gulp.watch(path.watch.icons, gulp.series(copyicons, svgStack, svgSymbol));
   gulp.watch(path.watch.svgsprite, gulp.series(svgStack, svgSymbol));
 
   // gulp.watch(path.watch.sprite, gulp.series("svgStack", "svgSymbol"));
@@ -61,7 +61,6 @@ const mainTasks = gulp.series(
   gulp.parallel(
     svgStack,
     svgSymbol,
-    // generateSprite,
     copy,
     copyfavicon,
     copysprite,
@@ -89,6 +88,7 @@ export { scanAndClean }; //gulp scanAndClean
 export { critical }; //gulp critical
 export { dev };
 export { build, reset };
+export { svgStack, svgSymbol };
 
 gulp.task("default", dev);
 

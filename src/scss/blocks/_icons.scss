@@ -5,15 +5,13 @@
 	display: block;
 	fill: transparent;
 	stroke: transparent;
-	width: 62px;
-	height: 62px;
+	// width: 62px;
+	// height: 62px;
 }
 
 
 .icon--location {
-	left: 14px;
-	fill: $color-accent;
+	fill: currentColor;
 	width: 24px;
 	height: 24px;
-	@include transition ($transition-property: (fill));
 }

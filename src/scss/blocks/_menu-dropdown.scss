@@ -149,6 +149,14 @@
     &::after {
       border-top-color: $color-accent; // меняет цвет стрелки
     }
+
+    .icon--location:first-child {
+      color: $color-accent; // меняет цвет стрелки
+    }
+
+    .dropdown-current {
+      color: $color-accent; // меняет цвет стрелки
+    }
   }
 
   // Акцент, если открыт дропдаун

@@ -489,17 +489,12 @@ section {
   display: block;
   fill: transparent;
   stroke: transparent;
-  width: 62px;
-  height: 62px;
 }
 
 .icon--location {
-  left: 14px;
-  fill: #E50012;
+  fill: currentColor;
   width: 24px;
   height: 24px;
-  transition-duration: 300ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .title-h2 {
@@ -671,6 +666,12 @@ section {
 }
 .dropdown-toggle:hover::after, .dropdown-toggle:focus-visible::after {
   border-top-color: #E50012;
+}
+.dropdown-toggle:hover .icon--location:first-child, .dropdown-toggle:focus-visible .icon--location:first-child {
+  color: #E50012;
+}
+.dropdown-toggle:hover .dropdown-current, .dropdown-toggle:focus-visible .dropdown-current {
+  color: #E50012;
 }
 .dropdown-wrapper.active .dropdown-toggle, .dropdown-wrapper.is-open .dropdown-toggle {
   color: #E50012;
@@ -943,7 +944,6 @@ section {
   color: inherit;
 }
 .header__icon {
-  display: inline-block;
   fill: currentColor;
   vertical-align: middle;
   flex-shrink: 0;
@@ -1068,6 +1068,8 @@ section {
 .location__current {
   margin: 0 4px 0 6px;
   flex-shrink: 0;
+  transition-duration: 300ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .location__list.is-open {
   display: flex;
@@ -1086,6 +1088,16 @@ section {
   display: flex;
   align-items: center;
   gap: 20px;
+  transition-duration: 300ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+@media (any-hover: hover) {
+  .location__link:hover {
+    color: #E50012;
+  }
+  .location__link:hover .icon--locationcon {
+    color: #E50012;
+  }
 }
 
 .hero {
