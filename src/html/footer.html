@@ -65,45 +65,10 @@
       </a>
     </div>
 
-    <address class="footer__social">
-      <ul class="footer__social-list">
-        <li class="footer__social-item">
-          <a href="#" class="footer__social-link">
-            <svg class="footer__social-icon" aria-label="Facebook icon" width="24" height="24">
-              <use href="images/icons/sprite.svg#facebook"></use>
-            </svg>
-          </a>
-        </li>
-        <li class="footer__social-item">
-          <a class="footer__social-link" href="#" target="_blank" rel="nofollow" aria-label="Instagram">
-            <svg class="footer__social-icon" width="24" height="24">
-              <use href="images/icons/sprite.svg#instagram"></use>
-            </svg>
-          </a>
-        </li>
-        <li class="footer__social-item">
-          <a class="footer__social-link" href="#" target="_blank" rel="nofollow" aria-label="Pinterest">
-            <svg class="footer__social-icon" width="24" height="24">
-              <use href="images/icons/sprite.svg#pinterest"></use>
-            </svg>
-          </a>
-        </li>
-        <li class="footer__social-item">
-          <a class="footer__social-link" href="#" target="_blank" rel="nofollow" aria-label="YouTube">
-            <svg class="footer__social-icon" width="24" height="24">
-              <use href="images/icons/sprite.svg#youtube"></use>
-            </svg>
-          </a>
-        </li>
-        <li class="footer__social-item">
-          <a class="footer__social-link" href="#" target="_blank" rel="nofollow" aria-label="LinkedIn">
-            <svg class="footer__social-icon" width="24" height="24">
-              <use href="images/icons/sprite.svg#linkedin"></use>
-            </svg>
-          </a>
-        </li>
-      </ul>
-    </address>
+    @include('blocks/social.html', { "className": "footer__social" })
+
+
+
 
     <div class="footer__legal">
       <a href="#" class="footer__legal-link">Privacy Policy</a>

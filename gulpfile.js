@@ -19,6 +19,7 @@ global.app = {
 
 // Импорт задач
 import { svgStack, svgSymbol } from "./gulp/tasks/svgsprite.js";
+import { svgSymbolSprite } from "./gulp/tasks/svgSpriteSymbol.js";
 import { copysprite } from "./gulp/tasks/copysprite.js";
 import { copyicons } from "./gulp/tasks/copyicons.js";
 import { copyfonts } from "./gulp/tasks/copyfonts.js";
@@ -48,8 +49,7 @@ function watcher() {
   gulp.watch(path.watch.images, images);
   gulp.watch(path.watch.icons, gulp.series(copyicons, svgStack, svgSymbol));
   gulp.watch(path.watch.svgsprite, gulp.series(svgStack, svgSymbol));
-
-  // gulp.watch(path.watch.sprite, gulp.series("svgStack", "svgSymbol"));
+  gulp.watch(path.watch.sprite, svgSymbolSprite);
 }
 
 // Последовательная обработка шрифтов
@@ -67,7 +67,8 @@ const mainTasks = gulp.series(
     copyicons,
     copyfonts,
     html,
-    images
+    images,
+    svgSymbolSprite
   ),
   critical, // Запускаем critical последовательно
   gulp.parallel(scss, js)
@@ -88,6 +89,7 @@ export { scanAndClean }; //gulp scanAndClean
 export { critical }; //gulp critical
 export { dev };
 export { build, reset };
+export { svgSymbolSprite };
 export { svgStack, svgSymbol };
 
 gulp.task("default", dev);

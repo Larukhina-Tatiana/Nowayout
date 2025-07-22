@@ -70,6 +70,12 @@
     margin-left: -6px;
   }
 
+  &__social {
+    .social__list {
+      width: 300px;
+    }
+  }
+
   &__lang {
     display: flex;
     font-weight: 500;
@@ -92,35 +98,7 @@
     }
   }
 
-  &__social {
 
-    &-list {
-      width: 300px;
-      display: flex;
-      gap: 10px;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    &-link {
-      @include transition($transition-property: transform);
-
-      @media (any-hover: hover) {
-        &:hover {
-          transform: scale(1.3);
-        }
-      }
-
-      .footer__social-icon {
-        fill: currentColor;
-        @include transition(fill);
-
-        &:hover {
-          fill: $color-text-main;
-        }
-      }
-    }
-  }
 
 
   &__legal {

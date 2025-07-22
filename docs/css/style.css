@@ -486,9 +486,11 @@ section {
 }
 
 .icon {
-  display: block;
+  display: inline-block;
   fill: transparent;
   stroke: transparent;
+  width: 30px;
+  height: unset;
 }
 
 .icon--location {
@@ -749,6 +751,12 @@ section {
   margin-top: 70px;
   margin-bottom: 70px;
 }
+.burger__section-title {
+  display: inline-block;
+  margin-bottom: 8px;
+  line-height: 1.7142857143;
+  font-weight: 300;
+}
 .burger .menu-dropdown {
   top: 100%;
   width: -moz-fit-content;
@@ -828,10 +836,6 @@ section {
 }
 .burger-contacts__item {
   max-width: 370px;
-}
-.burger-contacts__title {
-  display: inline-block;
-  margin-bottom: 8px;
 }
 .burger-contacts__link {
   font-weight: 250;
@@ -1278,6 +1282,9 @@ section {
 .footer__lang, .footer__social {
   margin-left: -6px;
 }
+.footer__social .social__list {
+  width: 300px;
+}
 .footer__lang {
   display: flex;
   font-weight: 500;
@@ -1297,30 +1304,6 @@ section {
 }
 .footer__lang-btn:hover:not(.footer__lang-btn--active) {
   color: #E50012;
-}
-.footer__social-list {
-  width: 300px;
-  display: flex;
-  gap: 10px;
-  align-items: center;
-  justify-content: space-between;
-}
-.footer__social-link {
-  transition-duration: 300ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-}
-@media (any-hover: hover) {
-  .footer__social-link:hover {
-    transform: scale(1.3);
-  }
-}
-.footer__social-link .footer__social-icon {
-  fill: currentColor;
-  transition-duration: 300ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-}
-.footer__social-link .footer__social-icon:hover {
-  fill: #F7F5F9;
 }
 .footer__legal {
   display: flex;
@@ -1414,6 +1397,33 @@ section {
   .footer__lang {
     align-self: end;
   }
+}
+
+.social__list {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: space-between;
+}
+.social__link {
+  transition-duration: 300ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+@media (any-hover: hover) {
+  .social__link:hover {
+    transform: scale(1.3);
+  }
+  .social__link:hover .icon {
+    color: #E50012;
+  }
+}
+.social__link__icon {
+  fill: currentColor;
+  transition-duration: 300ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+.social__link__icon:hover {
+  fill: #F7F5F9;
 }
 
 .rooms {

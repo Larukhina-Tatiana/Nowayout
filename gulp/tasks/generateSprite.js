@@ -5,8 +5,8 @@ import plumber from "gulp-plumber";
 import notify from "gulp-notify";
 
 export const generateSprite = async () => {
-  const srcDir = app.path.src.svgsprite.replace("/**/*", ""); // Путь к иконкам
-  const spriteFile = path.join(app.path.build.svgsprite, "sprite.svg"); // Куда сохранить спрайт
+  const srcDir = app.path.src.sprite.replace("/**/*", ""); // Путь к иконкам
+  const spriteFile = path.join(app.path.build.sprite, "sprite.svg"); // Куда сохранить спрайт
 
   try {
     const files = fs
