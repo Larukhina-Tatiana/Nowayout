@@ -50,6 +50,7 @@ function watcher() {
   // gulp.watch(path.watch.icons, gulp.series(copyicons, svgStack, svgSymbol));
   // gulp.watch(path.watch.svgsprite, gulp.series(svgStack, svgSymbol));
   gulp.watch(path.watch.sprite, svgSymbolSprite);
+  gulp.watch(path.src.svgsprite, svgSymbolSprite);
 }
 
 // Последовательная обработка шрифтов

@@ -139,9 +139,8 @@ export const svgSymbolSprite = () => {
     })
     .pipe(gulp.dest(path.build.sprite))
     .on("end", () => {
-      const spritePath = `${path.build.spriteHtmlPath}/sprite.symbol.svg`;
-      // const spriteHtmlPath = `D:\\Frontend\\Portfolio\\Nowayout\\src\\html\\sprite\\sprite.html`;
-      const spriteHtmlPath = `${path.build.spriteHtmlPath}`;
+      const spritePath = `${path.build.sprite}/sprite.symbol.svg`;
+      const spriteHtmlPath = `${path.srcFolder}/html/sprite/sprite.html`;
 
       if (fs.existsSync(spritePath)) {
         const spriteContent = fs.readFileSync(spritePath, "utf8");
