@@ -18,7 +18,7 @@ global.app = {
 };
 
 // Импорт задач
-import { svgStack, svgSymbol } from "./gulp/tasks/svgsprite.js";
+// import { svgStack, svgSymbol } from "./gulp/tasks/svgsprite.js";
 import { svgSymbolSprite } from "./gulp/tasks/svgSpriteSymbol.js";
 import { copysprite } from "./gulp/tasks/copysprite.js";
 import { copyicons } from "./gulp/tasks/copyicons.js";
@@ -47,8 +47,8 @@ function watcher() {
   gulp.watch(path.watch.scss, scss);
   gulp.watch(path.watch.js, js);
   gulp.watch(path.watch.images, images);
-  gulp.watch(path.watch.icons, gulp.series(copyicons, svgStack, svgSymbol));
-  gulp.watch(path.watch.svgsprite, gulp.series(svgStack, svgSymbol));
+  // gulp.watch(path.watch.icons, gulp.series(copyicons, svgStack, svgSymbol));
+  // gulp.watch(path.watch.svgsprite, gulp.series(svgStack, svgSymbol));
   gulp.watch(path.watch.sprite, svgSymbolSprite);
 }
 
@@ -59,8 +59,8 @@ const images = gulp.series(imgAvif, imgWebp, imgImage, imgPng);
 
 const mainTasks = gulp.series(
   gulp.parallel(
-    svgStack,
-    svgSymbol,
+    // svgStack,
+    // svgSymbol,
     copy,
     copyfavicon,
     copysprite,
@@ -90,7 +90,7 @@ export { critical }; //gulp critical
 export { dev };
 export { build, reset };
 export { svgSymbolSprite };
-export { svgStack, svgSymbol };
+// export { svgStack, svgSymbol };
 
 gulp.task("default", dev);
 

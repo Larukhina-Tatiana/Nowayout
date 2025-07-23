@@ -66,6 +66,14 @@ body {
   // -webkit-text-size-adjust: 100%;
   // -ms-text-size-adjust: 100%;
   // -moz-text-size-adjust: 100%;
+  // scrollbar-width: thin;
+  // scrollbar-color: $color-accent $color-bg;
+
+  scrollbar-gutter: stable;
+
+  &.locked {
+    overflow: hidden;
+  }
 }
 
 
@@ -123,4 +131,27 @@ section {
       color: $color-accent;
     }
   }
+}
+
+::-webkit-scrollbar {
+  width: 5px
+}
+
+::-webkit-scrollbar-thumb {
+  background: #e50012;
+  border-radius: 15px;
+}
+
+::-webkit-scrollbar-track {
+  background: #000
+}
+
+::-webkit-scrollbar-button {
+  display: none;
+  height: 0;
+}
+
+scrollbar-button {
+  display: none;
+  height: 0;
 }

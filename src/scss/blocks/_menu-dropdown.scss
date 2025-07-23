@@ -1,6 +1,7 @@
 @use './utils/vars.scss' as *;
 
 .menu-dropdown {
+  padding: 0 32px 0 23px;
   transform-origin: top;
   transform: scaleY(0);
   clip-path: polygon(0 0, 100% 0, 100% 0, 0 0); // 👈 скрыто

@@ -1,7 +1,5 @@
 @use './utils/vars.scss' as *;
 
-
-
 .burger {
   align-items: center;
   background-color: $color-bg;
@@ -17,9 +15,18 @@
   z-index: 200;
   @include transition ($transition-property: (top));
 
+
+
   &.active {
     top: 0;
     padding: 0 30px;
+
+    .location {
+      border-right: none;
+      padding-left: 0;
+      margin-right: 20px;
+      display: flex;
+    }
   }
 
   &__container {
@@ -28,6 +35,11 @@
     justify-content: space-between;
     height: 70vh;
     overflow-y: scroll;
+
+    &::-webkit-scrollbar-button {
+      display: none;
+      height: 0;
+    }
   }
 
   &__block {
@@ -90,8 +102,9 @@
 
 
   .menu-dropdown {
-    top: 100%;
+    top: calc(100% + 6px);
     width: fit-content;
+    padding-left: 4px;
   }
 
   .lang {
