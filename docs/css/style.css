@@ -1021,6 +1021,9 @@ scrollbar-button {
     height: 100%;
     width: 100%;
   }
+  .header__menu-list .menu-dropdown {
+    padding: 0;
+  }
   .header__menu-item {
     position: relative;
     border-left: 1px solid rgba(255, 255, 255, 0.15);

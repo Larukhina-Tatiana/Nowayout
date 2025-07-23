@@ -5,6 +5,10 @@ import svgSprite from "gulp-svg-sprite";
 import through2 from "through2";
 import * as cheerio from "cheerio";
 import { path } from "../config/path.js";
+import fs from "fs";
+import { createRequire } from "module";
+const require = createRequire(import.meta.url);
+const { optimize } = require("svgo");
 
 // 🔧 Обработка ошибок
 const plumberNotify = (title) => ({
@@ -16,54 +20,53 @@ const plumberNotify = (title) => ({
   },
 });
 
-// 📘 Лог результатов
-const log = [];
-
-// 🔍 Функция проверки одноцветности
+// 🔍 Проверка одноцветности
 const isMonoIcon = ($) => {
   const fills = [];
 
   $("path, rect, circle, polygon").each((_, el) => {
-    const $el = $(el);
-    const fill = $el.attr("fill");
-
-    if (
-      fill &&
-      !/^url\(/.test(fill) &&
-      !/^#/.test(fill) &&
-      !/^rgb/.test(fill) &&
-      !/^hsl/.test(fill) &&
-      fill !== "none"
-    ) {
+    const fill = $(el).attr("fill");
+    if (fill && fill !== "none" && !/^url\(/.test(fill)) {
       fills.push(fill.trim());
     }
   });
 
   const uniqueFills = [...new Set(fills)];
-  return uniqueFills.length <= 1;
+  return uniqueFills.length <= 1; // Если уникальных цветов 1 или меньше, то монохромная
 };
-const isValidFill = (fill) =>
-  fill &&
-  !/^url\(/.test(fill) &&
-  fill !== "none" &&
-  !/^rgb/.test(fill) &&
-  !/^hsl/.test(fill);
 
-// 🎨 Обработка одноцветной иконки
+// 🎨 Применение currentColor
 const applyCurrentColor = ($) => {
   $("path, rect, circle, polygon").each((_, el) => {
-    const $el = $(el);
-    const fill = $el.attr("fill");
-
-    if (isValidFill(fill)) {
-      $el.removeAttr("fill");
-      $el.attr("fill", "currentColor");
+    const fill = $(el).attr("fill");
+    if (fill && fill !== "none") {
+      $(el).attr("fill", "currentColor");
     }
   });
 };
 
-// 📦 Основная задача генерации символ-спрайта
+// ⚗️ Очистка SVG через SVGO
+const cleanSvg = (svgString) => {
+  const result = optimize(svgString, {
+    multipass: true,
+    plugins: [
+      "removeComments",
+      "removeMetadata",
+      "removeTitle",
+      "cleanupAttrs",
+      "mergePaths",
+      "convertShapeToPath",
+      "removeEmptyContainers",
+      { name: "cleanupIDs", params: { remove: false } },
+    ],
+  });
+  return result.data;
+};
+
+// 🧩 Основная задача
 export const svgSymbolSprite = () => {
+  const log = [];
+
   return gulp
     .src(path.src.sprite, { allowEmpty: true })
     .pipe(plumber(plumberNotify("SVG Symbol Sprite")))
@@ -76,6 +79,19 @@ export const svgSymbolSprite = () => {
           const id = file.relative.replace(".svg", "");
           const isMono = isMonoIcon($);
 
+          if (!isMono) {
+            const fills = [];
+            $("path, rect, circle, polygon").each((_, el) => {
+              const fill = $(el).attr("fill");
+              if (fill && fill !== "none") {
+                fills.push(fill.trim());
+              }
+            });
+            console.log(`🎨 ${id} fills detected:`, [...new Set(fills)]);
+          } else {
+            console.log(`✅ ${id} is monochrome`);
+          }
+
           log.push({
             id,
             status: isMono ? "✅ currentColor" : "🎨 original colors",
@@ -83,8 +99,12 @@ export const svgSymbolSprite = () => {
 
           if (isMono) {
             applyCurrentColor($);
-            file.contents = Buffer.from($.xml());
           }
+
+          const cleaned = cleanSvg($.xml());
+          file.contents = Buffer.from(cleaned);
+        } else {
+          console.warn(`⚠️ File ${file.path} is not a buffer. Skipping.`);
         }
         cb(null, file);
       })
@@ -99,11 +119,15 @@ export const svgSymbolSprite = () => {
           },
         },
         shape: {
-          transform: [], // отключаем svgo — мы сами обрабатываем DOM
+          transform: [], // отключаем встроенные SVGO — уже применено вручную
         },
         svg: {
           xmlDeclaration: false,
           doctypeDeclaration: false,
+          js2svg: {
+            indent: 0,
+            pretty: false,
+          },
         },
       })
     )
@@ -113,5 +137,36 @@ export const svgSymbolSprite = () => {
         console.log(`• ${id}: ${status}`);
       });
     })
-    .pipe(gulp.dest(path.build.sprite));
+    .pipe(gulp.dest(path.build.sprite))
+    .on("end", () => {
+      const spritePath = `${path.build.spriteHtmlPath}/sprite.symbol.svg`;
+      // const spriteHtmlPath = `D:\\Frontend\\Portfolio\\Nowayout\\src\\html\\sprite\\sprite.html`;
+      const spriteHtmlPath = `${path.build.spriteHtmlPath}`;
+
+      if (fs.existsSync(spritePath)) {
+        const spriteContent = fs.readFileSync(spritePath, "utf8");
+        const $ = cheerio.load(spriteContent, { xmlMode: true });
+        const symbols = $("symbol").parent().html();
+
+        if (fs.existsSync(spriteHtmlPath)) {
+          try {
+            const htmlContent = fs.readFileSync(spriteHtmlPath, "utf8");
+            const updatedContent = htmlContent.replace(
+              /<!-- содержимое sprite.symbol.svg -->[\s\S]*<\/svg>/,
+              `<!-- содержимое sprite.symbol.svg -->\n${symbols}\n</svg>`
+            );
+            fs.writeFileSync(spriteHtmlPath, updatedContent);
+            console.log("✅ sprite.html успешно обновлен");
+          } catch (error) {
+            console.error("❌ Ошибка при обновлении sprite.html:", error);
+          }
+        } else {
+          console.warn("⚠️ sprite.html не найден. Пропуск обновления.");
+        }
+      } else {
+        console.warn(
+          "⚠️ sprite.symbol.svg не найден. Пропуск обновления sprite.html."
+        );
+      }
+    });
 };
