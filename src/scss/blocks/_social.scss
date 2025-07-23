@@ -1,12 +1,13 @@
   @use "./utils/vars.scss" as *;
 
   .social {
+    font-size: 0;
+    line-height: 1;
 
     &__list {
       display: flex;
-      gap: 10px;
+      gap: 16px;
       align-items: center;
-      justify-content: space-between;
     }
 
     &__link {

@@ -737,6 +737,7 @@ scrollbar-button {
   display: flex;
 }
 .burger__container {
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -760,6 +761,9 @@ scrollbar-button {
   margin-bottom: 10px;
 }
 .burger__rooms-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 40px;
   color: #d5d2da;
   font-size: 18px;
   font-weight: 250;
@@ -781,6 +785,10 @@ scrollbar-button {
   display: flex;
   flex-direction: column;
   gap: 18px;
+}
+.burger__menu-link {
+  color: inherit;
+  display: inline-block;
 }
 .burger__row {
   display: flex;
@@ -804,6 +812,12 @@ scrollbar-button {
 .burger .lang {
   padding: 0;
   border-right: none;
+}
+@media screen and (width >= 769px) {
+  .burger__menu-list {
+    flex-wrap: wrap;
+    max-height: 470px;
+  }
 }
 
 .burger-btn {
@@ -1430,11 +1444,14 @@ scrollbar-button {
   }
 }
 
+.social {
+  font-size: 0;
+  line-height: 1;
+}
 .social__list {
   display: flex;
-  gap: 10px;
+  gap: 16px;
   align-items: center;
-  justify-content: space-between;
 }
 .social__link {
   transition-duration: 300ms;

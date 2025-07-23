@@ -82,91 +82,10 @@
     <div class="header__burger-menu burger">
       <div class="burger__container">
         <div class="burger__block">
-          <div class="burger__rooms">
-            <p class="burger__rooms-title">Räume</p>
-            <ul class="burger__rooms-list">
-              <li class="burger__rooms-item">
-                <a class="burger__rooms-link red-hover" href="#" aria-label="Open Da Vinci room">Da Vinci</a>
-              </li>
-              <li class="burger__rooms-item">
-                <a class="burger__rooms-link red-hover" href="#" aria-label="Open School of Magic room">School of
-                  Magic</a>
-              </li>
-              <li class="burger__rooms-item">
-                <a class="burger__rooms-link red-hover" href="#" aria-label="Open Mission Belvedere room">Mission
-                  Belvedere</a>
-              </li>
-              <li class="burger__rooms-item">
-                <a class="burger__rooms-link red-hover" href="" aria-label="Open The Nun room">The Nun</a>
-              </li>
-              <li class="burger__rooms-item">
-                <a class="burger__rooms-link red-hover" href="" aria-label="Open The Unknown room">The Unknown</a>
-              </li>
-            </ul>
-          </div>
 
-          <div class="burger__menu">
-            <ul class="burger__menu-list">
-              <li class="burger__menu-item">
-                <a class="burger__menu-link red-hover" href="" aria-label="Open Zeitplan page">Zeitplan</a>
-              </li>
-              <li class="burger__menu-item">
-                <a class="burger__menu-link red-hover" href="" aria-label="Open Räume page">Räume</a>
-              </li>
-              <li class="burger__menu-item">
-                <a class="burger__menu-link red-hover" href="" aria-label="Open Gutscheine page">Gutscheine</a>
-              </li>
-              <li class="burger__menu-item">
-                <a class="burger__menu-link red-hover" href="" aria-label="Open Kombipakete page">Kombipakete</a>
-              </li>
-              <li class="burger__menu-item">
-                <a class="burger__menu-link red-hover" href="" aria-label="Open Erklärung page">Erklärung</a>
-              </li>
-              <li class="burger__menu-item">
-                <a class="burger__menu-link red-hover" href=""
-                  aria-label="Open Spezialangebote page">Spezialangebote</a>
-              </li>
-              <li class="burger__menu-item">
-                <a class="burger__menu-link red-hover" href="" aria-label="Open Schulparty page">Schulparty</a>
-              </li>
-              <li class="burger__menu-item">
-                <a class="burger__menu-link red-hover" href="" aria-label="Open Geburtstags Escape page">Geburtstags
-                  Escape</a>
-              </li>
-              <li class="burger__menu-item">
-                <a class="burger__menu-link red-hover" href="" aria-label="Open Heiratsantrag page">Heiratsantrag</a>
-              </li>
-              <li class="burger__menu-item">
-                <a class="burger__menu-link red-hover" href="" aria-label="Open Horror Escape Rooms page">Horror Escape
-                  Rooms</a>
-              </li>
-              <li class="burger__menu-item">
-                <a class="burger__menu-link red-hover" href="" aria-label="Open Kinder Escape Room page">Kinder Escape
-                  Room</a>
-              </li>
-              <li class="burger__menu-item">
-                <a class="burger__menu-link red-hover" href="" aria-label="Open Polterabend page">Polterabend</a>
-              </li>
-              <li class="burger__menu-item">
-                <a class="burger__menu-link red-hover" href="" aria-label="Open Firmen page">Firmen</a>
-              </li>
-              <li class="burger__menu-item">
-                <a class="burger__menu-link red-hover" href="" aria-label="Open Blog page">Blog</a>
-              </li>
-              <li class="burger__menu-item">
-                <a class="burger__menu-link red-hover" href="" aria-label="Open Faq page">Faq</a>
-              </li>
-              <li class="burger__menu-item">
-                <a class="burger__menu-link red-hover" href="" aria-label="Open Über uns page">Über uns</a>
-              </li>
-              <li class="burger__menu-item">
-                <a class="burger__menu-link red-hover" href="" aria-label="Open Karriere page">Karriere</a>
-              </li>
-              <li class="burger__menu-item">
-                <a class="burger__menu-link red-hover" href="" aria-label="Open Kontakt page">Kontakt</a>
-              </li>
-            </ul>
-          </div>
+          @include('blocks/burger-rooms.html', {})
+          @include('blocks/burger-menu.html', {})
+
         </div>
         <div class="burger__block">
           <div class="burger__row">
@@ -177,61 +96,6 @@
           @include('blocks/burger-contacts.html', {})
           <strong class="burger__section-title">Folgen Sie uns:</strong>
           @include('blocks/social.html', { "className": "burger__social" })
-
-          <!-- <div class="burger__contact">
-            <ul class="burger__contact-list">
-              <li class="contact__info-item">
-                <a href="https://www.facebook.com/nowayoutaustria/" target="_blank" rel="nofollow"
-                  class="burger__contact-link" aria-label="Facebook">
-                  <svg width="11" height="21" viewBox="0 0 11 21" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                      d="M7 12.207H9.5L10.5 8.20703H7V6.20703C7 5.17703 7 4.20703 9 4.20703H10.5V0.847031C10.174 0.804031 8.943 0.707031 7.643 0.707031C4.928 0.707031 3 2.36403 3 5.40703V8.20703H0V12.207H3V20.707H7V12.207Z"
-                      fill="#F7F5F9"></path>
-                  </svg>
-                </a>
-              </li>
-              <li class="contact__info-item">
-                <a href="https://www.instagram.com/nowayout_austria/" target="_blank" rel="nofollow"
-                  class="burger__contact-link" aria-label="Instagram">
-                  <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                      d="M12 2.70703C14.717 2.70703 15.056 2.71703 16.122 2.76703C17.187 2.81703 17.912 2.98403 18.55 3.23203C19.21 3.48603 19.766 3.83003 20.322 4.38503C20.8305 4.88493 21.224 5.48962 21.475 6.15703C21.722 6.79403 21.89 7.52003 21.94 8.58503C21.987 9.65103 22 9.99003 22 12.707C22 15.424 21.99 15.763 21.94 16.829C21.89 17.894 21.722 18.619 21.475 19.257C21.2247 19.9248 20.8311 20.5296 20.322 21.029C19.822 21.5374 19.2173 21.9308 18.55 22.182C17.913 22.429 17.187 22.597 16.122 22.647C15.056 22.694 14.717 22.707 12 22.707C9.283 22.707 8.944 22.697 7.878 22.647C6.813 22.597 6.088 22.429 5.45 22.182C4.78233 21.9315 4.17753 21.538 3.678 21.029C3.16941 20.5292 2.77593 19.9245 2.525 19.257C2.277 18.62 2.11 17.894 2.06 16.829C2.013 15.763 2 15.424 2 12.707C2 9.99003 2.01 9.65103 2.06 8.58503C2.11 7.51903 2.277 6.79503 2.525 6.15703C2.77524 5.48921 3.1688 4.88435 3.678 4.38503C4.17767 3.87626 4.78243 3.48276 5.45 3.23203C6.088 2.98403 6.812 2.81703 7.878 2.76703C8.944 2.72003 9.283 2.70703 12 2.70703ZM12 7.70703C10.6739 7.70703 9.40215 8.23382 8.46447 9.1715C7.52678 10.1092 7 11.3809 7 12.707C7 14.0331 7.52678 15.3049 8.46447 16.2426C9.40215 17.1802 10.6739 17.707 12 17.707C13.3261 17.707 14.5979 17.1802 15.5355 16.2426C16.4732 15.3049 17 14.0331 17 12.707C17 11.3809 16.4732 10.1092 15.5355 9.1715C14.5979 8.23382 13.3261 7.70703 12 7.70703ZM18.5 7.45703C18.5 7.12551 18.3683 6.80757 18.1339 6.57315C17.8995 6.33873 17.5815 6.20703 17.25 6.20703C16.9185 6.20703 16.6005 6.33873 16.3661 6.57315C16.1317 6.80757 16 7.12551 16 7.45703C16 7.78855 16.1317 8.10649 16.3661 8.34091C16.6005 8.57534 16.9185 8.70703 17.25 8.70703C17.5815 8.70703 17.8995 8.57534 18.1339 8.34091C18.3683 8.10649 18.5 7.78855 18.5 7.45703ZM12 9.70703C12.7956 9.70703 13.5587 10.0231 14.1213 10.5857C14.6839 11.1483 15 11.9114 15 12.707C15 13.5027 14.6839 14.2657 14.1213 14.8284C13.5587 15.391 12.7956 15.707 12 15.707C11.2044 15.707 10.4413 15.391 9.87868 14.8284C9.31607 14.2657 9 13.5027 9 12.707C9 11.9114 9.31607 11.1483 9.87868 10.5857C10.4413 10.0231 11.2044 9.70703 12 9.70703Z"
-                      fill="#F7F5F9"></path>
-                  </svg>
-                </a>
-              </li>
-              <li class="contact__info-item">
-                <a href="https://www.pinterest.com/NoWayOut_Vienna/" target="_blank" rel="nofollow"
-                  class="burger__contact-link" aria-label="Pinterest">
-                  <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                      d="M13.3701 2.80038C10.9774 2.47123 8.54634 3.01893 6.52592 4.34233C4.5055 5.66574 3.03214 7.67548 2.3779 10.0004C1.72365 12.3254 1.9327 14.8086 2.96646 16.9914C4.00021 19.1743 5.78885 20.9094 8.0021 21.8764C7.94224 21.1082 7.99718 20.3354 8.1651 19.5834C8.3501 18.7444 9.4611 14.1204 9.4611 14.1204C9.23986 13.6245 9.1293 13.0863 9.1371 12.5434C9.1371 11.0584 9.9941 9.95038 11.0601 9.95038C11.2516 9.94759 11.4415 9.98607 11.6168 10.0632C11.7921 10.1403 11.9487 10.2543 12.076 10.3974C12.2034 10.5405 12.2984 10.7093 12.3547 10.8924C12.4109 11.0754 12.4271 11.2685 12.4021 11.4584C12.4021 12.3584 11.8241 13.7204 11.5221 14.9984C11.4624 15.2328 11.4586 15.4779 11.511 15.714C11.5635 15.9501 11.6706 16.1706 11.8239 16.3577C11.9771 16.5448 12.1722 16.6933 12.3933 16.7912C12.6145 16.8891 12.8555 16.9337 13.0971 16.9214C14.9951 16.9214 16.2671 14.4904 16.2671 11.6204C16.2671 9.42038 14.8101 7.77238 12.1241 7.77238C11.4815 7.7474 10.8405 7.8533 10.24 8.08363C9.63958 8.31396 9.09221 8.66392 8.63115 9.11226C8.17008 9.56061 7.80495 10.098 7.55792 10.6918C7.31089 11.2855 7.18711 11.9233 7.1941 12.5664C7.16546 13.2797 7.3956 13.9793 7.8421 14.5364C7.92553 14.5987 7.98645 14.6864 8.01567 14.7863C8.04489 14.8862 8.04083 14.993 8.0041 15.0904C7.9581 15.2744 7.8421 15.7134 7.7961 15.8744C7.78653 15.929 7.76427 15.9806 7.73112 16.025C7.69797 16.0694 7.65484 16.1054 7.60523 16.1301C7.55561 16.1549 7.50088 16.1676 7.44545 16.1673C7.39002 16.167 7.33544 16.1536 7.2861 16.1284C5.9021 15.5744 5.2501 14.0514 5.2501 12.3124C5.2501 9.46538 7.6341 6.05738 12.4041 6.05738C16.2001 6.05738 18.7241 8.83438 18.7241 11.8044C18.7241 15.7134 16.5471 18.6524 13.3301 18.6524C12.8493 18.6677 12.3724 18.5616 11.9434 18.3438C11.5145 18.1261 11.1474 17.8036 10.8761 17.4064C10.8761 17.4064 10.2981 19.7224 10.1841 20.1604C9.95139 20.9171 9.608 21.6352 9.1651 22.2914C10.0881 22.5714 11.0471 22.7114 12.0111 22.7074C13.3247 22.7084 14.6256 22.4504 15.8393 21.948C17.053 21.4455 18.1556 20.7087 19.0842 19.7795C20.0127 18.8503 20.7488 17.7471 21.2504 16.5331C21.7519 15.319 22.0091 14.018 22.0071 12.7044C22.0059 10.2894 21.1309 7.95637 19.5437 6.13615C17.9566 4.31594 15.7644 3.13144 13.3721 2.80138L13.3701 2.80038Z"
-                      fill="#F7F5F9"></path>
-                  </svg>
-                </a>
-              </li>
-              <li class="contact__info-item">
-                <a href="https://www.youtube.com/channel/UCVY1N7t6nyLZZgCD5gGuS-w" rel="nofollow" target="_blank"
-                  class="burger__contact-link" aria-label="Youtube">
-                  <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                      d="M21.5879 7.8982C21.3575 7.04138 20.6819 6.36597 19.8252 6.13525C18.2602 5.70703 11.9998 5.70703 11.9998 5.70703C11.9998 5.70703 5.73963 5.70703 4.17456 6.11902C3.33435 6.34949 2.64234 7.04151 2.41187 7.8982C2 9.46314 2 12.7086 2 12.7086C2 12.7086 2 15.9705 2.41187 17.5191C2.64258 18.3758 3.31787 19.0512 4.17469 19.2819C5.75611 19.7102 12 19.7102 12 19.7102C12 19.7102 18.2602 19.7102 19.8252 19.2982C20.682 19.0677 21.3575 18.3922 21.5882 17.5355C21.9999 15.9705 21.9999 12.7251 21.9999 12.7251C21.9999 12.7251 22.0164 9.46314 21.5879 7.8982ZM10.0066 15.7069V9.71034L15.2124 12.7086L10.0066 15.7069Z"
-                      fill="#F7F5F9"></path>
-                  </svg>
-                </a>
-              </li>
-              <li class="contact__info-item">
-                <a href="https://www.linkedin.com/company/nowayout-austria/" target="_blank" rel="nofollow"
-                  class="burger__contact-link" aria-label="Linkedin">
-                  <svg width="20" height="19" viewBox="0 0 20 19" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                      d="M4.93994 2.70608C4.93968 3.23651 4.72871 3.74511 4.35345 4.12C3.97819 4.49488 3.46937 4.70534 2.93894 4.70508C2.40851 4.70481 1.89991 4.49385 1.52502 4.11858C1.15014 3.74332 0.939676 3.23451 0.939942 2.70408C0.940207 2.17365 1.15117 1.66504 1.52644 1.29016C1.9017 0.915272 2.41051 0.704813 2.94094 0.705078C3.47137 0.705344 3.97998 0.916312 4.35486 1.29157C4.72975 1.66683 4.94021 2.17565 4.93994 2.70608ZM4.99994 6.18608H0.999942V18.7061H4.99994V6.18608ZM11.3199 6.18608H7.33994V18.7061H11.2799V12.1361C11.2799 8.47608 16.0499 8.13608 16.0499 12.1361V18.7061H19.9999V10.7761C19.9999 4.60608 12.9399 4.83608 11.2799 7.86608L11.3199 6.18608Z"
-                      fill="#F7F5F9"></path>
-                  </svg>
-                </a>
-              </li>
-            </ul>
-          </div> -->
         </div>
       </div>
     </div>
