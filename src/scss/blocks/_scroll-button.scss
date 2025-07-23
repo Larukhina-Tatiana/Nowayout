@@ -3,11 +3,12 @@
 
 .scroll-button {
   position: fixed;
-  top: 35px;
+  top: 35%;
   right: 0;
   z-index: 999;
   width: 60px;
   height: 60px;
+  color: $color-accent;
   display: flex;
   justify-content: center;
   align-items: center;

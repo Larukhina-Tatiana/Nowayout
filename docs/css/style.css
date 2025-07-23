@@ -179,11 +179,12 @@ summary {
 
 .scroll-button {
   position: fixed;
-  top: 35px;
+  top: 35%;
   right: 0;
   z-index: 999;
   width: 60px;
   height: 60px;
+  color: #E50012;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -445,6 +446,11 @@ scrollbar-button {
     transform: translateX(0);
   }
 }
+@keyframes fadeIn {
+  from {
+    scale: 0.5;
+  }
+}
 @keyframes spin {
   from {
     transform: rotate(0deg);
@@ -524,6 +530,11 @@ scrollbar-button {
   fill: currentColor;
   width: 24px;
   height: 24px;
+}
+
+.icon--scroll-btn {
+  width: 60px;
+  height: 60px;
 }
 
 .title-h2 {
@@ -1394,9 +1405,6 @@ scrollbar-button {
 .footer__payment-item {
   flex-shrink: 0;
 }
-.footer__payment-icon {
-  fill: currentColor;
-}
 .footer__bottom {
   padding: 24px 0;
   display: flex;
@@ -1732,6 +1740,12 @@ scrollbar-button {
 
 .subscription {
   padding: clamp(1.5rem, -0.175rem + 7.15vw, 7.5rem);
+  animation-name: fadeIn;
+  animation-fill-mode: both;
+  animation-timing-function: linear;
+  view-timeline-name: --fadeIn-block;
+  animation-timeline: --fadeIn-block;
+  animation-range: 20% 50%;
 }
 .subscription__container {
   background: linear-gradient(90deg, #e50012 0, #e50012);
@@ -1993,7 +2007,9 @@ input:-webkit-autofill:active {
 }
 .contacts__address-svg {
   margin-right: 3px;
-  width: 30px;
+  width: 15px;
+  height: 14px;
+  flex-shrink: 0;
 }
 .contacts__location-contact {
   margin-block-start: 15px;
@@ -2028,6 +2044,13 @@ input:-webkit-autofill:active {
 .contacts__map-img {
   width: 100%;
   height: auto;
+  transition-duration: 300ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+@media (any-hover: hover) {
+  .contacts__map-img:hover {
+    scale: 1.1;
+  }
 }
 @media (min-width: 1319px) {
   .contacts__container {

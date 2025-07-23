@@ -4,6 +4,14 @@
   padding: clamp(1.5rem, -0.175rem + 7.15vw, 7.5rem);
   // padding: 24px;
 
+  animation-name: fadeIn;
+  animation-fill-mode: both;
+  animation-timing-function: linear;
+
+  view-timeline-name: --fadeIn-block;
+  animation-timeline: --fadeIn-block;
+  animation-range: 20% 50%;
+
   &__container {
     background: linear-gradient(90deg, #e50012 0, #e50012);
     padding: 0;
