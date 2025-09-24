@@ -1,10 +1,18 @@
 document.addEventListener("DOMContentLoaded", () => {
   const header = document.querySelector(".header");
+
+  // Добавление класса к шапке при скролле
+  if (header) {
+    window.addEventListener("scroll", () => {
+      header.classList.toggle("is-active", window.scrollY > 0);
+    });
+  }
+
   const location = document.querySelector(".header__location");
   const locationBtn = document.querySelector(".header__location-btn");
   const locationCurrent = document.querySelector(".header__location-current");
 
-  if (!header || !location || !locationBtn || !locationCurrent) return;
+  if (!location || !locationBtn || !locationCurrent) return;
 
   // Открытие/закрытие выбора города по клику на текущий город
   locationBtn.addEventListener("click", (e) => {
@@ -43,10 +51,5 @@ document.addEventListener("DOMContentLoaded", () => {
       location.classList.remove("is-open");
       location.setAttribute("aria-expanded", "false");
     }
-  });
-
-  // Добавление класса к шапке при скролле
-  window.addEventListener("scroll", () => {
-    header.classList.toggle("is-active", window.scrollY > 0);
   });
 });
