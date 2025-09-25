@@ -110,7 +110,7 @@ input:-webkit-autofill:active {
   text-align: center;
   bottom: -22%;
   left: 0;
-  transform: translateX(-100vw);
+  transform: translateX(-120vw);
   color: $white;
   background-color: transparent;
   @include transition ($transition-property: transform);

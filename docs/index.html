@@ -521,16 +521,23 @@
         <div class="swiper-wrapper">
           <div class="rooms__card swiper-slide">
             <div class="rooms__card-image">
-              <picture class="rooms__picture">
-                <source
-                  srcset="./images/rooms/room5@1x.avif 1x, ./images/rooms/room5@2x.avif 2x, ./images/rooms/room5@3x.avif 3x"
-                  type="image/avif">
-                <source
-                  srcset="./images/rooms/room5@1x.webp 1x, ./images/rooms/room5@2x.webp 2x, ./images/rooms/room5@3x.webp 3x"
-                  type="image/webp">
-                <img class="rooms__card-img" src="./images/rooms/room5@1x.png"
-                  srcset="./images/rooms/room5@2x.png 2x, ./images/rooms/room5@3x.png 3x" alt="Mission Belvedere"
-                  loading="eager" width="327" height="492">
+              <picture>
+                <!-- Мобильные изображения -->
+                <source srcset="
+                  images/rooms/m-room5@1x.avif 1x,
+                  images/rooms/m-room5@2x.avif 2x,
+                  images/rooms/m-room5@3x.avif 3x
+                " type="image/avif" media="(max-width: 600px)">
+                <!-- Десктопные изображения -->
+                <source srcset="
+                  images/rooms/room5@1x.avif 1x,
+                  images/rooms/room5@2x.avif 2x,
+                  images/rooms/room5@3x.avif 3x
+                " type="image/avif" media="(min-width: 601px)">
+                <!-- Fallback для десктопа -->
+                <img src="./images/rooms/room5@1x.png" srcset="./images/rooms/room5@2x.png 2x, images/rooms/room5@3x.png 3x"
+                  sizes="(max-width: 600px) 273px, 327px" alt="Mission Belvedere" loading="lazy" width="327"
+                  height="492">
               </picture>
               <div class="rooms__card-label" title="Adventure/Mystery">Adventure/Mystery</div>
             </div>
@@ -552,16 +559,24 @@
           </div>
           <div class="rooms__card swiper-slide">
             <div class="rooms__card-image">
-              <picture class="rooms__picture">
-                <source
-                  srcset="./images/rooms/room2@1x.avif 1x, images/rooms/room2@2x.avif 2x, images/rooms/room2@3x.avif 3x"
-                  type="image/avif">
-                <source
-                  srcset="./images/rooms/room2@1x.webp 1x, images/rooms/room2@2x.webp 2x, images/rooms/room2@3x.webp 3x"
-                  type="image/webp">
-                <img class="rooms__card-img" src="./images/rooms/room2@1x.png"
-                  srcset="./images/rooms/room2@2x.png 2x, images/rooms/room2@3x.png 3x" alt="Mission Belvedere"
-                  loading="lazy" width="327" height="492">
+              <picture>
+                <!-- Мобильные изображения -->
+                <source srcset="
+                    images/rooms/m-room2@1x.avif 1x,
+                    images/rooms/m-room2@2x.avif 2x,
+                    images/rooms/m-room2@3x.avif 3x
+                  " type="image/avif" media="(max-width: 600px)">
+                <!-- Десктопные изображения -->
+                <source srcset="
+                    images/rooms/room2@1x.avif 1x,
+                    images/rooms/room2@2x.avif 2x,
+                    images/rooms/room2@3x.avif 3x
+                  " type="image/avif" media="(min-width: 601px)">
+                <!-- Fallback для десктопа -->
+                <img src="./images/rooms/room2@1x.png" srcset="
+                    images/rooms/room2@2x.png 2x,
+                    images/rooms/room2@3x.png 3x
+                  " sizes="(max-width: 600px) 273px, 327px" alt="The Unknown" loading="lazy" width="327" height="492">
               </picture>
               <div class="rooms__card-label" title="Adventure/Fantasy">Adventure/Fantasy</div>
             </div>
@@ -582,16 +597,22 @@
           </div>
           <div class="rooms__card swiper-slide">
             <div class="rooms__card-image">
-              <picture class="rooms__picture">
-                <source
-                  srcset="./images/rooms/room1@1x.avif 1x, ./images/rooms/room1@2x.avif 2x, ./images/rooms/room1@3x.avif 3x"
-                  type="image/avif">
-                <source
-                  srcset="./images/rooms/room1@1x.webp 1x, ./images/rooms/room1@2x.webp 2x, ./images/rooms/room1@3x.webp 3x"
-                  type="image/webp">
-                <img class="rooms__card-img" src="./images/rooms/room1@1x.png"
-                  srcset="./images/rooms/room1@2x.png 2x, ./images/rooms/room1@3x.png 3x" alt="School of Magic"
-                  loading="lazy" width="327" height="492">
+              <picture>
+                <!-- Мобильные изображения -->
+                <source srcset="
+                  images/rooms/m-room1@1x.avif 1x,
+                  images/rooms/m-room1@2x.avif 2x,
+                  images/rooms/m-room1@3x.avif 3x
+                " type="image/avif" media="(max-width: 600px)">
+                <!-- Десктопные изображения -->
+                <source srcset="
+                  images/rooms/room1@1x.avif 1x,
+                  images/rooms/room1@2x.avif 2x,
+                  images/rooms/room1@3x.avif 3x
+                " type="image/avif" media="(min-width: 601px)">
+                <!-- Fallback для десктопа -->
+                <img src="./images/rooms/room1@1x.png" srcset="./images/rooms/room1@2x.png 2x, images/rooms/room1@3x.png 3x"
+                  sizes="(max-width: 600px) 273px, 327px" alt="School of Magic" loading="lazy" width="327" height="492">
               </picture>
               <div class="rooms__card-label" title="Adventure/Fantasy">Adventure/Fantasy</div>
             </div>
@@ -613,17 +634,24 @@
           </div>
           <div class="rooms__card swiper-slide">
             <div class="rooms__card-image">
-              <picture class="rooms__picture">
-                <source
-                  srcset="./images/rooms/room3@1x.avif 1x, images/rooms/room3@2x.avif 2x, images/rooms/room3@3x.avif 3x"
-                  type="image/avif">
-                <source
-                  srcset="./images/rooms/room3@1x.webp 1x, images/rooms/room3@2x.webp 2x, images/rooms/room3@3x.webp 3x"
-                  type="image/webp">
-                <img class="rooms__card-img" src="./images/rooms/room3@1x.png"
-                  srcset="./images/rooms/room3@2x.png 2x, images/rooms/room3@3x.png 3x" alt="The Unknown" loading="lazy"
-                  width="327" height="492">
+              <picture>
+                <!-- Мобильные изображения -->
+                <source srcset="
+                  images/rooms/m-room3@1x.avif 1x,
+                  images/rooms/m-room3@2x.avif 2x,
+                  images/rooms/m-room3@3x.avif 3x
+                " type="image/avif" media="(max-width: 600px)">
+                <!-- Десктопные изображения -->
+                <source srcset="
+                  images/rooms/room3@1x.avif 1x,
+                  images/rooms/room3@2x.avif 2x,
+                  images/rooms/room3@3x.avif 3x
+                " type="image/avif" media="(min-width: 601px)">
+                <!-- Fallback для десктопа -->
+                <img src="./images/rooms/room3@1x.png" srcset="./images/rooms/room3@2x.png 2x, images/rooms/room3@3x.png 3x"
+                  sizes="(max-width: 600px) 273px, 327px" alt="The Unknown" loading="lazy" width="327" height="492">
               </picture>
+
               <div class="rooms__card-label" title="größtes Horror Escape Game optionaler live
                   Schauspieler">
                 <span class="rooms__card-icon"></span>
@@ -649,15 +677,22 @@
           </div>
           <div class="rooms__card swiper-slide">
             <div class="rooms__card-image">
-              <picture class="rooms__picture">
-                <source
-                  srcset="./images/rooms/room4@1x.avif 1x, images/rooms/room4@2x.avif 2x, images/rooms/room4@3x.avif 3x"
-                  type="image/avif">
-                <source
-                  srcset="./images/rooms/room4@1x.webp 1x, images/rooms/room4@2x.webp 2x, images/rooms/room4@3x.webp 3x"
-                  type="image/webp">
-                <img class="rooms__card-img" src="./images/rooms/room4@1x.png"
-                  srcset="./images/rooms/room4@2x.png 2x, images/rooms/room4@3x.png 3x" alt="The Nun" loading="lazy">
+              <picture>
+                <!-- Мобильные изображения -->
+                <source srcset="
+                  images/rooms/m-room4@1x.avif 1x,
+                  images/rooms/m-room4@2x.avif 2x,
+                  images/rooms/m-room4@3x.avif 3x
+                " type="image/avif" media="(max-width: 600px)">
+                <!-- Десктопные изображения -->
+                <source srcset="
+                  images/rooms/room4@1x.avif 1x,
+                  images/rooms/room4@2x.avif 2x,
+                  images/rooms/room4@3x.avif 3x
+                " type="image/avif" media="(min-width: 601px)">
+                <!-- Fallback для десктопа -->
+                <img src="./images/rooms/room4@1x.png" srcset="./images/rooms/room4@2x.png 2x, images/rooms/room4@3x.png 3x"
+                  sizes="(max-width: 600px) 273px, 327px" alt="The Nun" loading="lazy" width="327" height="492">
               </picture>
               <div class="rooms__card-label" title="Horror with live actor">
                 <span class="rooms__card-icon"></span>

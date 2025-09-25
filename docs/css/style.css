@@ -1895,7 +1895,7 @@ input:-webkit-autofill:active {
   text-align: center;
   bottom: -22%;
   left: 0;
-  transform: translateX(-100vw);
+  transform: translateX(-120vw);
   color: #F7F5F9;
   background-color: transparent;
   transition-duration: 300ms;
